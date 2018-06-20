@@ -24,7 +24,7 @@
 \begin{document}
 
 % Frontmatter
-\frontmatter
+\frontmatter{}
 \input{frontmatter/titlepage}
 \input{frontmatter/license}
 \input{frontmatter/abstract}
@@ -32,7 +32,7 @@
 \input{frontmatter/toc}
 
 % Chapters
-\mainmatter
+\mainmatter{}
 
 % Set the chapter relative path
 \newcommand*{\thisch}{chapters}
@@ -53,9 +53,9 @@
 \include{\thisch/ch-main}
 
 % Backmatter
-\backmatter
+\backmatter{}
 
-\appendix
+\appendix{}
 
 \newcommand*{\thisappx}{backmatter}
 
