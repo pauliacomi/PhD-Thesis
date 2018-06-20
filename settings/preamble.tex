@@ -1,0 +1,107 @@
+% !TEX root = ../main.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX preamble where all required packages and macros can be defined. 
+% This needs to be done before the \begin{document} command.
+
+% Font encodings
+\usepackage[TS1,T1]{fontenc}
+
+% UNICODE recognition:
+% This package should recognise any UNICODE characters in the text and automatically replace them with their standard macros
+\usepackage[utf8]{inputenc}
+
+% Graphics package and path to graphics.
+\usepackage{graphicx}
+\graphicspath{ {figures/} }
+
+% Sections styles
+\usepackage{sectsty}
+
+% AMS maths packages
+\usepackage{
+    amsmath,
+    amsfonts,
+    amsthm
+}
+
+% Todo notes. Used for notes and annotations.
+\usepackage{todonotes}
+
+% Natbib package for text references
+\usepackage[
+    round,
+    super,
+    comma,
+    sort&compress
+]{natbib}
+\bibliographystyle{unsrtnat}
+\usepackage{natmove}
+
+% For better looking captions.
+\usepackage{caption}
+
+% For subfigures
+\usepackage{subcaption}
+
+% For float barriers and such
+\usepackage{placeins}
+
+% Better tables 
+\usepackage{
+    booktabs,
+    makecell,
+    array,
+    multirow,
+    tabularx
+    }
+
+% The SIunitx package enables the \SI{}{} command.
+\usepackage{siunitx}
+
+% The mchem package for formula subscripts using \ce{}
+\usepackage{mhchem} 
+
+% Clickable URL's can be made with this package: \url{}.
+\usepackage{url}
+
+% To reference another document, in this case the SI
+\usepackage{zref-xr,zref-user}
+\zxrsetup{
+    tozreflabel=false, 
+    toltxlabel=true, 
+    verbose
+}
+%\zexternaldocument*{si}
+
+% This package makes all references clickable. 
+% By default, these references become boxed and colored. This is turned back to normal with the \hypersetup command below.
+\usepackage{hyperref}
+
+\hypersetup{
+    %backref=true,                          %% add links (default)
+    %pagebackref=true,                      %% in the bibliography (default)
+    %hyperindex=true,                       %% in the index (default)
+    %bookmarks=true,                        %% Acrobat bookmarks (default)
+    breaklinks=true,                        %% break lines if long
+    colorlinks=true,                        %% colour links
+    urlcolor=blue,                          %% link colour
+    citecolor=blue,	                        %% bibliography link color
+    linkcolor=blue,	                        %% internal link color
+    anchorcolor=blue,                       %% anchor link color
+    bookmarksopen=false,                    %% bookmarks default open
+    linktocpage=false,                      %% pagenumber link in TOC
+    pdfborder={0 0 0}                       %% pdf border settings
+}
+
+
+% Font settings
+%% Title font
+%% Bibliography font
+\renewcommand{\bibfont}             {\usefont{T1}{bch}{m}{n}\selectfont}
+
+%% Figure legend fonts
+%% Legend font
+\renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont\small}
+%% Label legend font
+\renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}

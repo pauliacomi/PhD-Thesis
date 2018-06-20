@@ -1,0 +1,75 @@
+% The master file for the thesis. Compile it for entire thesis creation.
+
+% Select document class first
+\documentclass{scrbook}
+
+\KOMAoptions{
+    paper=a4,
+    fontsize=12pt,
+    DIV=12,
+    BCOR=0mm,
+    twoside=off,
+    index=totoc,
+    listof=totoc,
+}
+
+% Import the doc with packages and other settings
+\input{settings/preamble}
+
+% Import the doc with the drafting
+\input{settings/drafting}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Frontmatter
+\frontmatter
+\input{frontmatter/titlepage}
+\input{frontmatter/license}
+\input{frontmatter/abstract}
+\input{frontmatter/acknowledgements}
+\input{frontmatter/toc}
+
+% Chapters
+\mainmatter
+
+% Set the chapter relative path
+\newcommand*{\thisch}{chapters}
+
+\renewcommand*{\thisch}{chapters/ch1}
+\include{\thisch/ch-main}
+
+\renewcommand*{\thisch}{chapters/ch2}
+\include{\thisch/ch-main}
+
+\renewcommand*{\thisch}{chapters/ch3}
+\include{\thisch/ch-main}
+
+\renewcommand*{\thisch}{chapters/ch4}
+\include{\thisch/ch-main}
+
+\renewcommand*{\thisch}{chapters/ch5}
+\include{\thisch/ch-main}
+
+% Backmatter
+\backmatter
+
+\appendix
+
+\newcommand*{\thisappx}{backmatter}
+
+\renewcommand*{\thisappx}{backmatter/a1}
+\include{\thisappx/appx-main}
+
+\renewcommand*{\thisappx}{backmatter/a2}
+\include{\thisappx/appx-main}
+
+\renewcommand*{\thisappx}{backmatter/a3}
+\include{\thisappx/appx-main}
+
+
+\bibliography{chapters/ch4/biblio/bib}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
