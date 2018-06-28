@@ -1,0 +1,93 @@
+% !TEX root = ../../main.tex
+
+\subsection{Adsorption isotherms at 77K and room temperature}
+
+Nitrogen sorption isotherms measured at \SI{77}{\kelvin} have been
+measured on both powder and \(\rho\)-alumina pellets, with the dataset
+presented in Figure~\ref{fgr:shaping:n2adsorption}.
+
+\begin{figure}[p!]
+    \centering
+    
+    \begin{subfigure}{\linewidth}
+        \centering
+        \parbox{0.1\linewidth}{\caption{}\label{fgr:shaping:n277kuio66}}%
+        \includegraphics[width=0.3\textwidth]{n277k/UiO-66(Zr)-physisorption}%
+        \includegraphics[width=0.3\textwidth]{n277k/UiO-66(Zr)-physisorption-log}%
+    \end{subfigure}
+
+    \begin{subfigure}{\linewidth}
+        \centering
+        \parbox[c]{0.1\linewidth}{\caption{}\label{fgr:shaping:n277kuio66}}%
+        \includegraphics[width=0.3\textwidth]{n277k/MIL-100(Fe)-physisorption}%
+        \includegraphics[width=0.3\textwidth]{n277k/MIL-100(Fe)-physisorption-log}%
+    \end{subfigure}
+
+    \begin{subfigure}{\linewidth}
+        \centering
+        \parbox[c]{0.1\linewidth}{\caption{}\label{fgr:shaping:n277kmil127}}%
+        \includegraphics[width=0.3\textwidth]{n277k/MIL-127(Fe)-physisorption}%
+        \includegraphics[width=0.3\textwidth]{n277k/MIL-127(Fe)-physisorption-log}%
+        \label{fgr:shaping:n277kmil127}
+    \end{subfigure}
+    
+    \caption{Nitrogen isotherms at 77K for (a) UiO-66(Zr), 
+    (b) MIL-100(Fe) and (c) MIL-127(Fe). The powder sample is in light
+    blue while the \(\rho\)-alumina sample in dark blue. Logarithmic
+    graphs of the isotherms are on the right for clarity of the low
+    pressure region.}%
+    \label{fgr:shaping:n2adsorption}
+\end{figure}
+
+The isotherms can be processed to yield properties such as specific 
+surface area and pore volume for the powders and 
+the pellets.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Properties of the studied powders and pellets}
+    \begin{tabular}{lcccc}
+        \toprule
+        \thead{\textbf{MOF}}
+        & \thead{\textbf{form}}
+            & \thead{\textbf{BET surface area}}
+                & \thead{\textbf{Pore volume}}
+                    & \thead{\textbf{Bulk density}} \\
+        \midrule
+        \multirow{2}{*}{UiO-66(Zr)} & powder & 903 & 0.38 & 0.3192 \\
+            & \(\rho\)-alumina & 619 & 0.24 & 0.4724 \\
+        \multirow{2}{*}{MIL-100(Fe)} & powder & 1928 & 0.78 & 0.2165 \\
+            & \(\rho\)-alumina & 1451 & 0.6 & 0.3512 \\
+        \multirow{2}{*}{MIL-127(Fe)} & powder & 1400 & x & 0.412 \\
+            & \(\rho\)-alumina & 1266 & 0.49 & 0.526 \\
+        \bottomrule
+    \end{tabular}%
+    \label{tab:shaping:propertiestable}
+\end{table}%
+  
+As expected, the specific surface area of the shaped samples is decreased compared to the
+corresponding powder. While in the case of MIL-127(Fe) the BET area is only 10\% lower, 
+for the MIL-100(Fe) and UiO-66(Zr) materials a larger drop is seen, of 25\% and 31\%,
+respectively. 
+Another property which can be used to corroborate the effects of shaping is micropore volume,
+calculated as the volume of nitrogen adsorbed at a \(p/p^0\) of 0.2. A similar capacity
+decrease can be seen here with a 36\%, 23\% and x\% seen in UiO-66(Zr), MIL-100(Fe) and 
+MIL-127(Fe) respectively.
+
+\todo{some micropore volumes missing + density}
+
+The decrease in both surface area and micropore volume is too large for it to be a
+consequence of the presence of non-porous binder. It is therefore theorised that some 
+structure degradation must have occurred in the pelletisation process.
+
+Observation of the physisorption curves sheds light on the further impact of the 
+alumina binder on the materials chosen.
+The shapes of all isotherms are visually similar, with the pellet ones shifted
+downwards due to the aforementioned structure degradation.
+In both powders and pellets, the increased uptake after 0.9 \(p/p^0\) is a sign
+of condensation in very large pores or voids, which can be attributed to intra-pellet
+spaces and crystal agglomeration.
+In the MIL-127(Fe) pellets, a narrow hysteresis curve is seen, which closes at a 
+\(p/p^0\) of 0.5. This curve corresponds to capillary condensation in a pore size
+of around \SI{4}{\nano\metre}. This pore width is too small to be a sign of 
+inter-pellet voids and therefore must be a consequence of the shaping process.
