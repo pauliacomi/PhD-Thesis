@@ -1,0 +1,179 @@
+
+Calculates the pore size distribution using a 'classical' model which attempts to
+describe the adsorption in a pore as a combination of a statistical thickness and
+a condensation/evaporation behaviour described by surface tension
+
+Currently, the methods provided are:
+
+    - the BJH or Barrett, Joyner and Halenda method
+    - the DH or Dollimore-Heal method, an extension of the BJH method
+
+A common mantra of data processing is: "garbage in = garbage out". Only use methods
+when you are aware of their limitations and shortcomings.
+
+According to Rouquerol, in adopting this approach, it is assumed that:
+
+    - The Kelvin equation is applicable over the pore range (mesopores). Therefore
+    in pores which are below a certain size (around 2.5 nm), the granularity
+    of the liquid-vapour interface becomes too large for classical bulk methods
+    to be applied.
+    - The meniscus curvature is controlled be the pore size and shape. Ideal shapes
+    for the curvature are assumed.
+    - The pores are rigid and of well defined shape. They are considered
+    open-ended and non-intersecting
+    - The filling/emptying of each pore does not depend on its location.
+    - The adsorption on the pore walls is not different from surface adsorption.
+
+\subsection{Mesoporous size distribution}
+
+
+The BJH or Barrett, Joyner and Halenda method for calculation of pore size distribution
+is based on a classical description of the adsorbate behaviour in the adsorbent pores.
+Under this method, the adsorbate is adsorbing on the pore walls in a predictable way,
+and decreasing the apparent pore volume until condensation takes place, filling the
+entire pore. The two variables, layer thickness and radius where 
+condensation takes place can be modelled by a thickness model
+(such as Halsey, Harkins \& Jura, etc.) and a
+critical radius model for condensation/evaporation, based on a form of the Kelvin equation.
+
+\begin{equation}
+    r_p = t + r_k
+\end{equation}
+
+The original model used the desorption curve as a basis for calculating pore size distribution.
+Between two points of the curve, the volume desorbed can be described as the volume contribution
+from pore evaporation and the volume from layer thickness decrease as per the equation
+above. The computation is done cumulatively, starting from the filled pores and 
+calculating for each point the volume adsorbed in a pore from the following equation:
+
+\begin{align}
+    V_p & = \Big( \frac{\bar{r}_p}{\bar{r}_k + \Delta t_n} \Big)^2 \\
+    (\Delta V_n - \Delta t_n \sum_{i=1}^{n-1} \Delta A_p \\
+    + \Delta t_n \bar{t}_n \sum_{i=1}^{n-1} \frac{\Delta A_p}{\bar{r}_p})
+    A & = 2 \Delta V_p / r_p
+\end{align}
+
+Where:
+
+\begin{itemize}
+    
+    \item \(\Delta A_p\) is the area of the pores
+    \item \(\Delta V_p\) is the adsorbed volume change between two points
+    \item \(\bar{r}_p\) is the average pore radius calculated as a sum of the
+    kelvin radius and layer thickness of the pores at pressure p between two
+    measurement points
+    \item \(\bar{r}_k\) is the average kelvin radius between two measurement points
+    \item \(\bar{t}_n\) is the average layer thickness between two measurement points
+    \item \(\Delta t_n\) is the average change in layer thickness between two measurement points
+    
+\end{itemize}
+
+Then, by plotting \(\Delta V / (2*\Delta r_p)\) versus the width of the pores calculated
+for each point, the pore size distribution can be obtained.
+
+“The Determination of Pore Volume and Area Distributions in Porous Substances.
+   I. Computations from Nitrogen Isotherms”, Elliott P. Barrett, Leslie G. Joyner and
+   Paul P. Halenda, J. Amer. Chem. Soc., 73, 373 (1951)
+
+"Adsorption by Powders \& Porous Solids", F. Roquerol, J Roquerol
+   and K. Sing, Academic Press, 1999
+
+
+\subsection{Microporous size distribution}
+
+The H-K method attempts to describe the adsorption within pores by calculation
+of the average potential energy for a pore. The method starts by assuming the
+relationship between the gas phase as being:
+
+\begin{equation}
+    R_g T ln(\frac{p}{p_0}) = U_0 + P_a
+\end{equation}
+
+Here \(U_0\) is the potential function describing the surface to adsorbent
+interactions and \(P_a\) is the potential function describing the adsorbate-
+adsorbate interactions. This equation is derived from the equation of the free energy
+of adsorption at constant temperature where term \(T \Delta S^{tr}(w/w_{\infty})\)
+is assumed to be negligible.
+
+If a Lennard-Jones-type potential function describes the interactions between the
+adsorbate molecules and the adsorbent molecules then the two contributions to the
+total potential can be replaced by the extended function. The resulting equation becomes:
+
+\begin{align}
+    RTln(p/p_0) =   & N_A\frac{n_a A_a + n_A A_A}{2 \sigma^{4}(l-d)} \\
+                    & \times \int_{d/_2}^{1-d/_2}
+                        \Big[
+                        - \Big(\frac{\sigma}{r}\Big)^{4}
+                        + \Big(\frac{\sigma}{r}\Big)^{10}
+                        - \Big(\frac{\sigma}{l-r}\Big)^{4}
+                        + \Big(\frac{\sigma}{l-r}\Big)^{4}
+                        \Big] \mathrm{d}x
+\end{align}
+
+Where:
+
+\begin{itemize}
+    
+    \item \(R\) -- gas constant
+    \item \(T\) -- temperature
+    \item \(l\) -- width of pore
+    \item \(d\) -- defined as \(d=d_a+d_A\) the sum of the diameters of the adsorbate and
+    \item adsorbent molecules
+    \item \(N_A\) -- Avogadro's number
+    \item \(n_a\) -- number of molecules of adsorbent
+    \item \(A_a\) -- the Lennard-Jones potential constant of the adsorbent molecule defined as
+    
+        \begin{equation}
+            A_a = \frac{6mc^2\alpha_a\alpha_A}{\alpha_a/\varkappa_a + \alpha_A/\varkappa_A}
+        \end{equation}
+        
+    \item \(A_A\) -- the Lennard-Jones potential constant of the adsorbate molecule defined as
+    
+    \begin{equation}
+            A_a = \frac{3mc^2\alpha_A\varkappa_A}{2}
+    \end{equation}
+        
+    \item \(m\) -- mass of an electron
+    \item \(c\) -- speed of light in vacuum
+    \item \(\alpha_a\) -- polarizability of the adsorbate molecule
+    \item \(\alpha_A\) -- polarizability of the adsorbent molecule
+    \item \(\varkappa_a\) -- magnetic susceptibility of the adsorbate molecule
+    \item \(\varkappa_A\) -- magnetic susceptibility of the adsorbent molecule
+    
+\end{itemize}
+
+*Limitations*
+
+The assumptions made by using the H-K method are:
+
+\begin{itemize}
+    
+    \item It does not have a description of capillary condensation. This means that the
+    pore size distribution can only be considered accurate up to a maximum of 5 nm.
+    \item Each pore is uniform and of infinite length. Materials with varying pore
+    shapes or highly interconnected networks may not give realistic results.
+    \item The wall is made up of single layer atoms. Furthermore, since the HK method
+    is reliant on knowing the properties of the surface atoms as well as the
+    adsorbent molecules the material should ideally be homogenous.
+    \item Only dispersive forces are accounted for. If the adsorbate-adsorbent interactions
+    have other contributions, the Lennard-Jones potential function will not be
+    an accurate description of pore environment.
+    
+\end{itemize}
+
+References
+----------
+K. Kutics, G. Horvath, Determination of Pore size distribution in MSC from
+Carbon-dioxide Adsorption Isotherms, 86
+
+
+\subsection{Multiscale size distribution - DFT fitting}
+
+The function will take the data in the form of pressure and loading. It will
+then load the kernel either from disk or from memory and define a minimization
+function as the sum of squared differences of the sum of all individual kernel
+isotherm loadings multiplied by their contribution as per the following function:
+
+\begin{equation}
+    f(x) = \sum_{p=p_0}^{p=p_x} (n_{p,exp} - \sum_{w=w_0}^{w=w_y} n_{p, kernel} X_w )^2
+\end{equation}

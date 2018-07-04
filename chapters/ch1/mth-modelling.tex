@@ -1,0 +1,314 @@
+\subsection{Isotherm models}
+
+
+\subsubsection{The Henry model}
+
+Henry's law. Assumes a linear dependence of adsorbed amount with
+pressure.
+
+Usually, Henry's law is unrealistic because the adsorption sites
+will saturate at higher pressures.
+Only use if your data is linear.
+
+\subsubsection{BET model}
+
+The BET model assumes that adsorption happens on the surface of the material in
+incremental layers according to several assumptions:
+
+\begin{itemize}
+    \item The adsorption sites are equivalent, and therefore the surface is heterogeneous
+    \item There are no lateral interactions between adsorbed molecules
+    \item The adsorption happens in layers, with adsorbed molecules acting as adsorption
+    sites for new molecules
+    \item The adsorption energy of a molecule on the second and higher layers equals
+    the condensation energy of the adsorbent \(E_L\).
+\end{itemize}
+
+A particular surface percentage \(\theta_x\) is occupied with x layers.
+For each layer at equilibrium, the adsorption and desorption rates must be equal. We can
+then apply the Langmuir theory for each layer.
+
+\begin{align}
+    k_{a_1} p \theta_0 &= k_{d_1} \theta_1 \exp{(-\frac{E_1}{RT})} \\
+    k_{a_2} p \theta_1 &= k_{d_2} \theta_2 \exp{(-\frac{E_L}{RT})} \\
+    \cdots \\
+    k_{a_i} p \theta_{i-1} &= k_{d_i} \theta_i \exp{-\frac{E_L}{RT}} \\
+\end{align}
+
+Since we are assuming that all layers beside the first have the same properties,
+we can define \(g= \frac{k_{d_2}}{k_{a_2}} = \frac{k_{d_3}}{k_{a_3}} = \cdots\).
+The coverages \(\theta\) can now be expressed in terms of \(\theta_0\).
+
+\begin{align}
+    \theta_1 &= y \theta_0 \quad where \quad y = \frac{k_{a_1}}{k_{d_1}} p \exp{(-\frac{E_1}{RT})} \\
+    \theta_2 &= x \theta_1 \quad where \quad x = \frac{p}{g} \exp{(-\frac{E_L}{RT})} \\
+    \theta_3 &= x \theta_2 = x^2 \theta_1 \\
+    \cdots \\
+    \theta_i &= x^{i-1} \theta_1 = y x^{i-1} \theta_0 \\
+\end{align}
+
+A constant C may be defined such that
+
+\begin{equation}
+    C = \frac{y}{x} = \frac{k_{a_1}}{k_{d_1}} g \exp{(\frac{E_1 - E_L}{RT})}
+    \theta_i = C x^i \theta_0
+\end{equation}
+
+For all the layers, the equations can be summed:
+
+\begin{equation}
+    \frac{n}{n_m} = \sum_{i=1}^{\infty} i \theta^i = C \sum_{i=1}^{\infty} i x^i \theta_0
+\end{equation}
+
+Since
+
+\begin{equation}
+    \theta_0 = 1 - \sum_{1}^{\infty} \theta_i
+    \sum_{i=1}^{\infty} i x^i = \frac{x}{(1-x)^2}
+\end{equation}
+
+Then we obtain the BET equation
+
+\begin{equation}
+    L(P) = \frac{n}{n_m} = M\frac{K_A P}{(1-K_B P)(1-K_B P+ K_A P)}
+\end{equation}
+
+“Adsorption of Gases in Multimolecular Layers”, Stephen Brunauer,
+P. H. Emmett and Edward Teller, J. Amer. Chem. Soc., 60, 309(1938)
+
+\subsubsection{Langmuir and multi-site langmuir model}
+
+The Langmuir theory, proposed at the start of the 20th century, states that
+adsorption happens on active sites on a surface in a single layer. It is
+derived based on several assumptions.
+
+\begin{itemize}
+    
+    \item All sites are equivalent and have the same chance of being occupied
+    \item Each adsorbate molecule can occupy one adsorption site
+    \item There are no interactions between adsorbed molecules
+    \item The rates of adsorption and desorption are proportional to the number
+    of sites currently free and currently occupied, respectively
+    \item Adsorption is complete when all sites are filled.
+    
+\end{itemize}
+
+Using the following assumptions we can define rates for both the adsorption and
+desorption. The adsorption rate will be proportional to the number of sites available
+on the surface, as well as the number of molecules in the gas, which is represented by
+the pressure. The desorption rate, on the other hand, will be proportional to the
+number of occupied sites and the energy of adsorption.
+It is also useful to define \(\theta = \frac{n_a}{M}\) as the surface coverage,
+the number of sites occupied divided by the total sites. Mathematically:
+
+\begin{equation}
+    v_a = k_a p (1 - \theta)
+    v_d = k_d \theta \exp{(-\frac{E}{RT})}
+\end{equation}
+
+Here, \(M\) is the moles adsorbed at the completion of the monolayer, and therefore
+the maximum possible loading. At equilibrium, the rate of adsorption and the rate of
+desorption are equal, therefore the two equations can be combined.
+
+\begin{equation}
+    k_a p (1 - \theta) = k_d \theta \exp{(-\frac{E}{RT})}
+\end{equation}
+
+Rearranging to get an expression for the loading, the Langmuir equation becomes:
+
+\begin{equation}
+    L(P) = M\frac{KP}{1+KP}
+\end{equation}
+
+The Langmuir constant is the product of the individual desorption and adsorption constants
+\(k_a\) and \(k_d\) and exponentially related to the energy of adsorption
+\(\exp{(-\frac{E}{RT})}\).
+
+An extension to the Langmuir model is to consider the experimental isotherm to be
+the sum of several Langmuir-type isotherms with different monolayer capacities and affinities.
+The assumption is that the adsorbent presents several distinct types of homogeneous adsorption
+sites, and that separate Langmuir equations should be applied to each. This is particularly
+applicable in cases where the structure of the adsorbent suggests that different types of
+sites are present, such as in crystalline materials of variable chemistry like zeolites and MOFs.
+The resulting isotherm equation is:
+
+\begin{equation}
+    L(P) = \sum_i M_i\frac{K_i P}{1+K_i P}
+\end{equation}
+
+In practice, up to three adsorption sites are considered.
+This model is the dual-site model (\(i=2\))
+
+\subsubsection{Jensen Seaton model}
+
+When modelling adsorption in micropores, a requirement was highlighted by
+Jensen and Seaton in 1996, that at sufficiently high pressures the adsorption
+isotherm should not reach a horizontal plateau corresponding to saturation but
+that this asymptote should continue to rise due to the compression of the adsorbate
+in the pores. They came up with a semi-empirical equation to describe this phenomenon
+based on a function that interpolates between two asymptotes: the Henry’s law asymptote
+at low pressure and an asymptote reflecting the compressibility of the adsorbate at
+high pressure.
+
+Here \(K_H\) is the Henry constant, \(b\) is the compressibility of the
+adsorbed phase and \(c\) an empirical constant.
+
+The equation can be used to model both absolute and excess adsorption as the pore
+volume can be incorporated into the definition of \(b\), although this can lead
+to negative adsorption slopes for the compressibility asymptote.
+This equation has been found to provide a better fit for experimental data
+from microporous solids than the Langmuir or Toth equation, in particular for
+adsorbent/adsorbate systems with high Henry’s constants where the amount adsorbed
+increases rapidly at relatively low pressures and then slows down dramatically.
+
+References
+----------
+Jensen, C. R. C.; Seaton, N. A., An Isotherm Equation for Adsorption to High
+   Pressures in Microporous Adsorbents. Langmuir 1996, 12, (Copyright (C) 2012
+   American Chemical Society (ACS). All Rights Reserved.), 2866-2867.
+
+   
+\subsubsection{Quadratic model}
+
+The quadratic adsorption isotherm exhibits an inflection point; the loading
+is convex at low pressures but changes concavity as it saturates, yielding
+an S-shape. The S-shape can be explained by adsorbate-adsorbate attractive
+forces; the initial convexity is due to a cooperative
+effect of adsorbate-adsorbate attractions aiding in the recruitment of
+additional adsorbate molecules.
+
+The parameter \(K_a\) can be interpreted as the Langmuir constant; the
+strength of the adsorbate-adsorbate attractive forces is embedded in \(K_b\).
+
+References
+----------
+T. L. Hill, An introduction to statistical thermodynamics, Dover
+   Publications, 1986.
+
+\subsubsection{Temkin model}
+
+The Temkin adsorption isotherm, like the Langmuir model, considers
+a surface with M identical adsorption sites, but takes into account adsorbate-
+adsorbate interactions by assuming that the heat of adsorption is a linear
+function of the coverage. The Temkin isotherm is derived using a
+mean-field argument and used an asymptotic approximation
+to obtain an explicit equation for the loading.
+
+Here, M and K have the same physical meaning as in the Langmuir model.
+The additional parameter \(\theta\) describes the strength of the adsorbate-adsorbate
+interactions (\(\theta < 0\) for attractions).
+
+References
+----------
+V. P. M.I. Tempkin, Kinetics of ammonia synthesis on promoted iron
+catalyst, Acta Phys. Chim. USSR 12 (1940) 327–356.
+Phys. Chem. Chem. Phys., 2014,16, 5499-5513
+
+
+\subsubsection{Temkin model}
+
+The Toth model is an empirical modification to the Langmuir equation.
+The parameter \(t\) is a measure of the system heterogeneity.
+
+Thanks to this addition parameter, the Toth equation can accurately describe a
+large number of adsorbent/adsorbate systems and is recommended as the first
+choice of isotherm equation for fitting isotherms of many adsorbents such as
+hydrocarbons, carbon oxides, hydrogen sulphide and alcohols on activated carbons
+but also zeolites.
+
+
+\subsubsection{Virial model}
+
+A virial isotherm model attempts to fit the measured data to a factorized
+    exponent relationship between loading and pressure.
+
+\begin{equation}
+    P = n \exp{(K_1n^0 + K_2n^1 + K_3n^2 + K_4n^3 + \cdots + K_i n^{i-1})}
+\end{equation}
+
+It has been applied with success to describe the behaviour of standard as
+well as supercritical isotherms. The factors are usually empirical,
+although some relationship with physical can be determined:
+the first constant is related to the Henry constant at zero loading, while
+the second constant is a measure of the interaction strength with the surface.
+
+\begin{equation}
+    K_1 = -\ln{K_{H,0}}
+\end{equation}
+
+In practice, besides the first constant, only 2-3 factors are used.
+
+
+\subsubsection{Vacancy solution theory models}
+
+
+As a part of the Vacancy Solution Theory (VST) family of models, it is based on concept
+of a “vacancy” species, denoted v, and assumes that the system consists of a
+mixture of these vacancies and the adsorbate.
+
+The VST model is defined as follows:
+
+\begin{itemize}
+    
+    \item A vacancy is an imaginary entity defined as a vacuum space
+    which acts as the solvent in both the gas and adsorbed phases.
+    \item The properties of the adsorbed phase are defined as excess properties
+    in relation to a dividing surface.
+    \item The entire system including the adsorbent are in thermal equilibrium
+    however only the gas and adsorbed phases are in thermodynamic equilibrium.
+    \item The equilibrium of the system is maintained by the spreading pressure
+    which arises from a potential field at the surface
+
+\end{itemize}
+    
+It is possible to derive expressions for the vacancy chemical potential in both
+the adsorbed phase and the gas phase, which when equated give the following equation
+of state for the adsorbed phase:
+
+\begin{equation}
+    \pi = - \frac{R_g T}{\sigma_v} \ln{y_v x_v}
+\end{equation}
+
+where \(y_v\) is the activity coefficient and  \(x_v\) is the mole fraction of
+the vacancy in the adsorbed phase.
+This can then be introduced into the Gibbs equation to give a general isotherm equation
+for the Vacancy Solution Theory where \(K_H\) is the Henry’s constant and
+\(f(\theta)\) is a function that describes the non-ideality of the system based
+on activity coefficients:
+
+\begin{equation}
+    P = \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} f(\theta)
+\end{equation}
+
+The general VST equation requires an expression for the activity coefficients.
+The Wilson equation can be used, which expresses the activity coefficient in terms
+of the mole fractions of the two species (adsorbate and vacancy) and two constants
+\(\Lambda_{1v}\) and \(\Lambda_{1v}\). The equation becomes:
+
+\begin{equation}
+P = \bigg( \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} \bigg)
+    \bigg( \Lambda_{1v} \frac{1-(1-\Lambda_{v1})\theta}{\Lambda_{1v}+(1-\Lambda_{1v})\theta} \bigg)
+    \exp{\bigg( -\frac{\Lambda_{v1}(1-\Lambda_{v1})\theta}{1-(1-\Lambda_{v1})\theta}
+    -\frac{(1 - \Lambda_{1v})\theta}{\Lambda_{1v} + (1-\Lambda_{1v}\theta)} \bigg)}
+\end{equation}
+
+Cochran developed a simpler, three parameter equation based on
+the Flory–Huggins equation for the activity coefficient.
+The equation for then becomes:
+
+\begin{align}
+    P &= \bigg( \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} \bigg)
+        \exp{\frac{\alpha^2_{1v}\theta}{1+\alpha_{1v}\theta}}
+    \alpha_{1v} &= \frac{\alpha_{1}}{\alpha_{v}} - 1
+\end{align}
+
+where \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the adsorbate
+and the vacancy respectively.
+
+References
+----------
+Cochran, T. W.; Kabel, R. L.; Danner, R. P., Vacancy solution theory of
+adsorption using Flory-Huggins activity coefficient equations. AIChE J. 1985, 31, 268-77.
+
+Suwanayuen, S.; Danner, R. P., Gas-Adsorption Isotherm Equation Based On
+Vacancy Solution Theory. AIChE Journal 1980, 26, (1), 68-76.
