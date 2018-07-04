@@ -1,6 +1,40 @@
 
 \section{Introduction}
 
-\begin{figure}[h]
-    \includegraphics[height=80px]{test}
-\end{figure}
+Historically, the processing of isotherms was done by hand, with large 
+worksheets being used for the calculations. As an example, we point out that one of 
+the initial limitations of the BJH method was 
+that each point had to 
+be determined with an approximation of critical pore radius, due to the 
+tedious work involved in the calculation~\cite{barrettDeterminationPoreVolume1951}.
+
+The advent of computers meant that the calculations could be performed
+quickly and reliably and led to the introduction of more complex
+methods for isotherm processing, such as the DFT method for pore size
+distribution~\cite{seatonNewAnalysisMethod1989, tarazonaPhaseEquilibriaFluid1987}. 
+Commercial adsorption equipment which offers the users
+a complete software solution for any isotherm calculations is now
+commonplace and makes obtaining reports of desired properties
+for measured materials a matter of minutes.
+
+Given the current ubiquitousness of adsorption as a characterisation method,
+particularly for investigating surfaces and porous compounds,
+there is a large pool of data published in the scientific community.
+Key performance indicators such as specific surface area, working 
+capacity and pore volume are commonly reported in scientific literature
+and used as benchmarking tools for comparing performance.
+
+Recent efforts have also focused on building a database of adsorption 
+isotherms~\cite{sideriusNISTARPAEDatabase2015}, to offer a searchable pool of 
+standardised behaviours on different materials. This serves as both a useful reference for
+comparing synthesised compounds, as well as a method for quickly 
+finding suitable materials which have the desired properties
+for a particular application.
+
+In this work, we present pyGAPS, an open-source software package released
+under an MIT licence and written in Python, intended to be used for 
+manipulation, storage, visualisation and processing of adsorption isotherms.
+Developed internally at the MADIREL Laboratory in
+Marseilles, the software is aimed to give users a powerful yet easy to
+use package that can perform the kind of processing usually offered by
+commercial software.
