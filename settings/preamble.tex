@@ -31,12 +31,13 @@
 
 % Natbib package for text references
 \usepackage[
+    sectionbib,
     round,
     super,
     comma,
     sort&compress
 ]{natbib}
-\bibliographystyle{unsrtnat}
+\usepackage{chapterbib}
 \usepackage{natmove}
 
 % For better looking captions.
@@ -80,8 +81,10 @@
 \lstset{language=Python}
 
 % This package makes all references clickable. 
-% By default, these references become boxed and colored. This is turned back to normal with the \hypersetup command below.
 \usepackage{hyperref}
+% Adding package bookmark improves bookmarks handling.
+% More features and faster updated bookmarks.
+\usepackage{bookmark}
 
 \hypersetup{
     %backref=true,                          %% add links (default)
@@ -102,11 +105,11 @@
 
 % Font settings
 %% Title font
-%% Bibliography font
-\renewcommand{\bibfont}             {\usefont{T1}{bch}{m}{n}\selectfont}
+% %% Bibliography font
+% \renewcommand{\bibfont}             {\usefont{T1}{bch}{m}{n}\selectfont}
 
-%% Figure legend fonts
-%% Legend font
-\renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont\small}
-%% Label legend font
-\renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}
+% %% Figure legend fonts
+% %% Legend font
+% \renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont\small}
+% %% Label legend font
+% \renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}

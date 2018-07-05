@@ -1,4 +1,8 @@
-\subsection{Isotherm models}
+\subsection{Mathemathical descriptions of isotherms}
+
+A lot of effort was put into attempting to describe 
+the phenomenon of adsorption through a mathematical model.
+
 
 
 \subsubsection{The Henry model}
@@ -73,9 +77,6 @@ Then we obtain the BET equation
     L(P) = \frac{n}{n_m} = M\frac{K_A P}{(1-K_B P)(1-K_B P+ K_A P)}
 \end{equation}
 
-“Adsorption of Gases in Multimolecular Layers”, Stephen Brunauer,
-P. H. Emmett and Edward Teller, J. Amer. Chem. Soc., 60, 309(1938)
-
 \subsubsection{Langmuir and multi-site langmuir model}
 
 The Langmuir theory, proposed at the start of the 20th century, states that
@@ -142,7 +143,8 @@ This model is the dual-site model (\(i=2\))
 \subsubsection{Jensen Seaton model}
 
 When modelling adsorption in micropores, a requirement was highlighted by
-Jensen and Seaton in 1996, that at sufficiently high pressures the adsorption
+Jensen and Seaton in 1996~\cite{jensenIsothermEquationAdsorption1996} 
+that at sufficiently high pressures the adsorption
 isotherm should not reach a horizontal plateau corresponding to saturation but
 that this asymptote should continue to rise due to the compression of the adsorbate
 in the pores. They came up with a semi-empirical equation to describe this phenomenon
@@ -161,16 +163,10 @@ from microporous solids than the Langmuir or Toth equation, in particular for
 adsorbent/adsorbate systems with high Henry’s constants where the amount adsorbed
 increases rapidly at relatively low pressures and then slows down dramatically.
 
-References
-----------
-Jensen, C. R. C.; Seaton, N. A., An Isotherm Equation for Adsorption to High
-   Pressures in Microporous Adsorbents. Langmuir 1996, 12, (Copyright (C) 2012
-   American Chemical Society (ACS). All Rights Reserved.), 2866-2867.
-
-   
 \subsubsection{Quadratic model}
 
-The quadratic adsorption isotherm exhibits an inflection point; the loading
+The quadratic adsorption isotherm~\cite{hillIntroductionStatisticalThermodynamics1986} 
+exhibits an inflection point; the loading
 is convex at low pressures but changes concavity as it saturates, yielding
 an S-shape. The S-shape can be explained by adsorbate-adsorbate attractive
 forces; the initial convexity is due to a cooperative
@@ -180,32 +176,22 @@ additional adsorbate molecules.
 The parameter \(K_a\) can be interpreted as the Langmuir constant; the
 strength of the adsorbate-adsorbate attractive forces is embedded in \(K_b\).
 
-References
-----------
-T. L. Hill, An introduction to statistical thermodynamics, Dover
-   Publications, 1986.
-
 \subsubsection{Temkin model}
 
-The Temkin adsorption isotherm, like the Langmuir model, considers
+The Temkin adsorption isotherm~\cite{temkinKineticsAmmoniaSynthesis1940}, 
+like the Langmuir model, considers
 a surface with M identical adsorption sites, but takes into account adsorbate-
 adsorbate interactions by assuming that the heat of adsorption is a linear
 function of the coverage. The Temkin isotherm is derived using a
 mean-field argument and used an asymptotic approximation
-to obtain an explicit equation for the loading.
+to obtain an explicit equation for the 
+loading~\cite{simonOptimizingNanoporousMaterials2014}.
 
 Here, M and K have the same physical meaning as in the Langmuir model.
 The additional parameter \(\theta\) describes the strength of the adsorbate-adsorbate
 interactions (\(\theta < 0\) for attractions).
 
-References
-----------
-V. P. M.I. Tempkin, Kinetics of ammonia synthesis on promoted iron
-catalyst, Acta Phys. Chim. USSR 12 (1940) 327–356.
-Phys. Chem. Chem. Phys., 2014,16, 5499-5513
-
-
-\subsubsection{Temkin model}
+\subsubsection{Toth model}
 
 The Toth model is an empirical modification to the Langmuir equation.
 The parameter \(t\) is a measure of the system heterogeneity.
@@ -220,7 +206,8 @@ but also zeolites.
 \subsubsection{Virial model}
 
 A virial isotherm model attempts to fit the measured data to a factorized
-    exponent relationship between loading and pressure.
+exponent relationship between loading and 
+pressure~\cite{myersThermodynamicsAdsorptionPorous2002}.
 
 \begin{equation}
     P = n \exp{(K_1n^0 + K_2n^1 + K_3n^2 + K_4n^3 + \cdots + K_i n^{i-1})}
@@ -281,7 +268,8 @@ on activity coefficients:
 \end{equation}
 
 The general VST equation requires an expression for the activity coefficients.
-The Wilson equation can be used, which expresses the activity coefficient in terms
+The Wilson~\cite{suwanayuenGasAdsorptionIsotherm1980} equation can be used, 
+which expresses the activity coefficient in terms
 of the mole fractions of the two species (adsorbate and vacancy) and two constants
 \(\Lambda_{1v}\) and \(\Lambda_{1v}\). The equation becomes:
 
@@ -292,7 +280,8 @@ P = \bigg( \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} \bigg)
     -\frac{(1 - \Lambda_{1v})\theta}{\Lambda_{1v} + (1-\Lambda_{1v}\theta)} \bigg)}
 \end{equation}
 
-Cochran developed a simpler, three parameter equation based on
+Cochran~\cite{cochranVacancySolutionTheory1985} 
+developed a simpler, three parameter equation based on
 the Flory–Huggins equation for the activity coefficient.
 The equation for then becomes:
 
@@ -304,11 +293,3 @@ The equation for then becomes:
 
 where \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the adsorbate
 and the vacancy respectively.
-
-References
-----------
-Cochran, T. W.; Kabel, R. L.; Danner, R. P., Vacancy solution theory of
-adsorption using Flory-Huggins activity coefficient equations. AIChE J. 1985, 31, 268-77.
-
-Suwanayuen, S.; Danner, R. P., Gas-Adsorption Isotherm Equation Based On
-Vacancy Solution Theory. AIChE Journal 1980, 26, (1), 68-76.
