@@ -3,14 +3,14 @@
 A lot of effort was put into attempting to describe 
 the phenomenon of adsorption using a simple model.
 Through a mathematical understanding, the underlying 
-mechanisms of adsorption can be understood and 
-compared.
+mechanisms of adsorption can be understood.
 Unfortunately, the plethora of isotherm 
 features and shapes can only be truly recreated
 by molecular simulation, which requires an exact
 knowledge of the adsorbent structure and its interaction
 with the adsorbed gas.
-Nevertheless, the available models can be useful
+Nevertheless, great strides have been taken to
+obtain several models which can be useful
 when fitted to measured isotherms
 for obtaining simple parameters which are 
 representative of physical factors such as 
@@ -19,6 +19,8 @@ total pore volume and others.
 More importantly, it allows us to numerically 
 compare measured isotherms. 
 
+A page of figures for different models can be seen in 
+Figure~\ref{fgr:pyg:modelex}.\todo{change location}
 
 \subsubsection{The Henry model}
 
@@ -41,11 +43,12 @@ theoretical requirement for the applicability of Henry's law.
 Therefore, most models reduce to equation~\ref{eqn:pyg:henry}
 as \(\lim_{p \to 0} n(p)\).
 
-\subsubsection{Langmuir and multi-site langmuir model}
+\subsubsection{Langmuir and multi-site Langmuir model}
 
 The Langmuir theory~\cite{langmuirAdsorptionGasesPlane1918a}, 
 proposed at the start of the 20th century, states that
-adsorption takes place on specific sites on a surface, in a single layer. 
+adsorption takes place on specific sites on a surface, until 
+all sites are occupied. 
 It is derived based on several assumptions:
 
 \begin{itemize}
@@ -87,8 +90,8 @@ A common extension to the Langmuir model is to consider
 the experimental isotherm to be the sum of several Langmuir-type
 isotherms, each with specific maximum coverage and affinities.
 The underlying assumption is that the adsorbent has several distinct
-types of homogeneous adsorption sites and applying a Langmuir
-equation to each. This is particularly
+types of homogeneous adsorption sites and a Langmuir
+equation is used for each. This is particularly
 applicable in cases where the structure of the adsorbent 
 suggests that different types of sites are present, 
 such as in crystalline materials of variable chemistry like 
@@ -104,7 +107,7 @@ In practice, only up to three adsorption sites are usually considered.
 \subsubsection{BET model}
 
 The BET model~\cite{brunauerAdsorptionGasesMultimolecular1938}
-assumes that adsorption happens on the surface of the material in
+assumes that adsorption takes place on the surface of the material in
 incremental layers according to several assumptions:
 
 \begin{itemize}
@@ -121,10 +124,10 @@ For each layer at equilibrium, the adsorption and desorption rates must be equal
 We can then apply the Langmuir theory for each layer.
 
 \begin{align}
-    k_{a_1} p \theta_0 &= k_{d_1} \theta_1 \exp{(-\frac{E_1}{RT})} \\
-    k_{a_2} p \theta_1 &= k_{d_2} \theta_2 \exp{(-\frac{E_L}{RT})} \\
+    k_{a_1} p \theta_0 &= k_{d_1} \theta_1 \exp{\Big(-\frac{E_1}{RT}\Big)} \\
+    k_{a_2} p \theta_1 &= k_{d_2} \theta_2 \exp{\Big(-\frac{E_L}{RT}\Big)} \\
     \vdots \nonumber \\
-    k_{a_i} p \theta_{i-1} &= k_{d_i} \theta_i \exp{(-\frac{E_L}{RT})}
+    k_{a_i} p \theta_{i-1} &= k_{d_i} \theta_i \exp{\Big(-\frac{E_L}{RT}\Big)}
 \end{align}
 
 Since we are assuming that all layers beside the first have the same properties,
@@ -132,8 +135,8 @@ we can define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} = \cdots\).
 The coverage for each layer \(\theta\) can now be expressed in terms of \(\theta_0\).
 
 \begin{align}
-    \theta_1 &= y \theta_0 \quad where \quad y = \frac{k_{a_1}}{k_{d_1}} p \exp{(-\frac{E_1}{RT})} \\
-    \theta_2 &= x \theta_1 \quad where \quad x = \frac{p}{g} \exp{(-\frac{E_L}{RT})} \\
+    \theta_1 &= y \theta_0 \quad where \quad y = p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)} \\
+    \theta_2 &= x \theta_1 \quad where \quad x = \frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)} \\
     \theta_3 &= x \theta_2 = x^2 \theta_1 \\
     \vdots \nonumber \\
     \theta_i &= x^{i-1} \theta_1 = y x^{i-1} \theta_0
@@ -142,7 +145,7 @@ The coverage for each layer \(\theta\) can now be expressed in terms of \(\theta
 A constant C may be defined such that
 
 \begin{equation}
-    C = \frac{y}{x} = \frac{k_{a_1}}{k_{d_1}} g \exp{(\frac{E_1 - E_L}{RT})}
+    C = \frac{y}{x} = \frac{k_{a_1}}{k_{d_1}} g \exp{\Big(\frac{E_1 - E_L}{RT}\Big)}
     \theta_i = C x^i \theta_0
 \end{equation}
 
@@ -175,7 +178,7 @@ which introduces a power parameter for the denominator leading to
 the following formula:
 
 \begin{equation}\label{eqn:pyg:toth}
-    n_a(p) = n_a^m \frac{K p}{[1 + (K p)^t]^(1/t)}
+    n_a(p) = n_a^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
 \end{equation}
 
 The parameter \(t\) is a measure of the system heterogeneity. Thanks to this
@@ -194,13 +197,14 @@ The Temkin adsorption isotherm~\cite{temkinKineticsAmmoniaSynthesis1940},
 like the Langmuir model, considers
 a surface with \(n_a^m\) identical adsorption sites, but takes into account adsorbate-
 adsorbate interactions by assuming that the heat of adsorption is a linear
-function of the coverage. The Temkin isotherm is derived using a
-mean-field argument and used an asymptotic approximation
+function of the coverage. This expression for the Temkin isotherm is derived
+using a mean-field argument and uses an asymptotic approximation
 to obtain an explicit equation for the 
 loading~\cite{simonOptimizingNanoporousMaterials2014}.
 
 \begin{equation}\label{eqn:pyg:temkin}
-    n_a(p) = n_a^m \frac{Kp}{1+Kp} + n_a^m \theta (\frac{Kp}{1+Kp})^2 (\frac{Kp}{1+Kp} -1)
+    n_a(p) = n_a^m \frac{Kp}{1+Kp} + n_a^m \theta 
+    {\Big(\frac{Kp}{1+Kp}\Big)}^2 \Big(\frac{Kp}{1+Kp} -1\Big)
 \end{equation}
 
 Here, \(n_a^m\) and K have the same physical meaning as in the Langmuir model.
@@ -221,7 +225,7 @@ asymptote reflecting the compressibility of the adsorbate at
 high pressure.
 
 \begin{equation}\label{eqn:pyg:jseaton}
-    n(p) = K_H p (1 + \frac{K_H p}{(a (1+(b p)))^c})^{(-1/c)}
+    n(p) = K_H p \Big{(1 + \frac{K_H p}{{[a {(1 + b p)}]}^c}\Big)}^{(-1/c)}
 \end{equation}
 
 Here \(K_H\) is the Henry constant, \(b\) is the compressibility of the
@@ -265,7 +269,7 @@ pressure~\cite{myersThermodynamicsAdsorptionPorous2002}.
 
 It has been applied with success to describe the behaviour of standard as
 well as supercritical isotherms. The factors are usually empirical,
-although some relationship with physical can be determined:
+although some relationship with physical properties can be determined:
 the first constant is related to the Henry constant at zero loading, while
 the second constant is a measure of the interaction strength with the surface.
 
@@ -344,3 +348,74 @@ The equation for then becomes:
 
 Here \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the adsorbate
 and the vacancy respectively.
+
+\begin{figure}[p!]
+    \centering
+
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:henryex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/henry}}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:langmuirex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/langmuir}}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:betex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/bet}}
+    \end{subfigure}
+    \\
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:tothex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/toth}}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:quadraticex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/quadratic}}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:jseatonex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/jseaton}}
+    \end{subfigure}
+    \\
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:temkinex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/temkin}}
+    \end{subfigure}
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:virialex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/virial}}
+    \end{subfigure}3
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:wsvstex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/wvst}}
+    \end{subfigure}
+    \\
+    \begin{subfigure}{0.3\linewidth}
+        \parbox[c]{0.1\linewidth}{\caption{}%
+            \label{fgr:pyg:fhvstex}}
+        \parbox[b]{0.7\linewidth}{%
+            \includegraphics[width=\textwidth]{models/fhvst}}
+    \end{subfigure}
+
+    \caption{Examples of models }%
+    \label{fgr:pyg:modelex}
+\end{figure}
