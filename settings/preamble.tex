@@ -76,9 +76,43 @@
 }
 %\zexternaldocument*{si}
 
+% For colour definitions
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
 % For code snippets
 \usepackage{listings}
-\lstset{language=Python}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},     % background colour
+    basicstyle=\footnotesize,               % style for the entire code
+    keywordstyle=\color{magenta},           % style for keywords
+    commentstyle=\color{codegreen},         % style for comments 
+    stringstyle=\color{codepurple},         % style for strings
+    numberstyle=\tiny\color{codegray},      % style of line numbers
+    captionpos=t,                           % where to put the caption
+    breaklines=true,                        % activates or deactivates automatic line breaking of long line
+    breakatwhitespace=false,                % if true only breaks at whitespaces
+    frame=single,                           % adds a frame around the listing
+    emph={False, True},                     % emphasise booleans
+    emphstyle={\color{blue}},               % with blue
+    numbers=left,                           % line numbers
+    numbersep=5pt,                          % distance between number and listing
+    keepspaces=true,                        % do not drop spaces to keep alignment
+    showspaces=false,                       % highlight spaces in code
+    showstringspaces=false,                 % highlight spaces in strings
+    showtabs=false,                         % highlight tabs in code
+    tabsize=4                               % spaces inserted for each tab
+}
+
+\lstset{
+    language=Python,
+    style=mystyle
+}
 
 % This package makes all references clickable. 
 \usepackage{hyperref}

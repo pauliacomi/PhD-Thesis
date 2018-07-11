@@ -20,9 +20,9 @@ More importantly, it allows us to numerically
 compare measured isotherms. 
 
 A page of figures for different models can be seen in 
-Figure~\ref{fgr:pyg:modelex}.\todo{change location}
+Figure~\ref{pyg:fgr:modelex}.\todo{change location}
 
-\subsubsection{The Henry model}
+\subsubsection{The Henry model}\label{pyg:models:henry}
 
 The simplest method of describing adsorption on a 
 surface is Henry’s law. It assumes only interactions
@@ -30,7 +30,7 @@ with the adsorbate surface and is described by a
 linear dependence of adsorbed amount with
 increasing pressure.
 
-\begin{equation}\label{eqn:pyg:henry}
+\begin{equation}\label{pyg:eqn:henry}
     n_a(p) = K_H p
 \end{equation}
 
@@ -40,10 +40,10 @@ or Henry’s constant, can be thought of as a measure of the strength
 of the interaction of the probe gas with the surface. At very 
 low concentrations of gas there is a 
 theoretical requirement for the applicability of Henry's law.
-Therefore, most models reduce to equation~\ref{eqn:pyg:henry}
+Therefore, most models reduce to equation~\ref{pyg:eqn:henry}
 as \(\lim_{p \to 0} n(p)\).
 
-\subsubsection{Langmuir and multi-site Langmuir model}
+\subsubsection{Langmuir and multi-site Langmuir model}\label{pyg:models:langmuir}
 
 The Langmuir theory~\cite{langmuirAdsorptionGasesPlane1918a}, 
 proposed at the start of the 20th century, states that
@@ -63,23 +63,23 @@ It is derived based on several assumptions:
 \end{itemize}
 
 Using these assumptions we can define rates for both adsorption and
-desorption. The adsorption rate (equation~\ref{eqn:pyg:langmuir_ads}) 
+desorption. The adsorption rate (equation~\ref{pyg:eqn:langmuir_ads}) 
 will be proportional to the number of sites available on the surface, 
 as well as the number of molecules in the gas, which is given by pressure.
 The desorption rate, on the other hand, will be proportional to the 
-number of occupied sites and the energy of adsorption (equation~\ref{eqn:pyg:langmuir_des}).
+number of occupied sites and the energy of adsorption (equation~\ref{pyg:eqn:langmuir_des}).
 It is also useful to define \(\theta = n_a/n_a^m\) as the surface coverage,
 the number of sites occupied divided by the total sites. At equilibrium, 
 the rate of adsorption and the rate of
 desorption are equal, therefore the two equations can be combined.
 The equation can then be arranged to obtain an expression for the 
-loading called the Langmuir equation (\ref{eqn:pyg:langmuir}).
+loading called the Langmuir equation (\ref{pyg:eqn:langmuir}).
 
 \begin{gather}
-    v_a = k_a p (1 - \theta) \label{eqn:pyg:langmuir_ads} \\
-    v_d = k_d \theta \exp{(-\frac{E}{RT})} \label{eqn:pyg:langmuir_des} \\
+    v_a = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
+    v_d = k_d \theta \exp{(-\frac{E}{RT})} \label{pyg:eqn:langmuir_des} \\
     k_a p (1 - \theta) = k_d \theta \exp{(-\frac{E}{RT})} \\
-    n_a(p) = n_a^m \frac{Kp}{1+Kp} \label{eqn:pyg:langmuir}
+    n_a(p) = n_a^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
 \end{gather}
 
 The Langmuir constant \(K\)is the product of the individual desorption 
@@ -97,14 +97,14 @@ suggests that different types of sites are present,
 such as in crystalline materials of variable chemistry like 
 zeolites and MOFs. The resulting isotherm equation is:
 
-\begin{equation}\label{eqn:pyg:langmulti}
+\begin{equation}\label{pyg:eqn:langmulti}
     n_a(p) = \sum_i n_{a,i}^m\frac{K_i p}{1+K_i p}
 \end{equation}
 
 In practice, only up to three adsorption sites are usually considered.
 
 
-\subsubsection{BET model}
+\subsubsection{BET model}\label{pyg:models:bet}
 
 The BET model~\cite{brunauerAdsorptionGasesMultimolecular1938}
 assumes that adsorption takes place on the surface of the material in
@@ -121,7 +121,7 @@ incremental layers according to several assumptions:
 
 A particular surface percentage \(\theta_x\) is occupied with x layers.
 For each layer at equilibrium, the adsorption and desorption rates must be equal. 
-We can then apply the Langmuir theory for each layer.
+We can then apply the Langmuir theory for each layer. \todo{better structure}
 
 \begin{align}
     k_{a_1} p \theta_0 &= k_{d_1} \theta_1 \exp{\Big(-\frac{E_1}{RT}\Big)} \\
@@ -135,8 +135,8 @@ we can define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} = \cdots\).
 The coverage for each layer \(\theta\) can now be expressed in terms of \(\theta_0\).
 
 \begin{align}
-    \theta_1 &= y \theta_0 \quad where \quad y = p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)} \\
-    \theta_2 &= x \theta_1 \quad where \quad x = \frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)} \\
+    \theta_1 &= y \theta_0 \quad \text{where} \quad y = p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)} \\
+    \theta_2 &= x \theta_1 \quad \text{where} \quad x = \frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)} \\
     \theta_3 &= x \theta_2 = x^2 \theta_1 \\
     \vdots \nonumber \\
     \theta_i &= x^{i-1} \theta_1 = y x^{i-1} \theta_0
@@ -162,22 +162,22 @@ And since
     \sum_{i=1}^{\infty} i x^i = \frac{x}{(1-x)^2}
 \end{equation}
 
-Then we obtain the BET equation
+Then we obtain the BET equation \todo{check equation}
 
-\begin{equation}\label{eqn:pyg:bet}
+\begin{equation}\label{pyg:eqn:bet}
     n_a(p) = n_a^m \frac{K_a p}{(1-K_b p)(1-K_b p+ K_a p)}
 \end{equation}
 
-The equation reduces to the Langmuir equation (\ref{eqn:pyg:langmuir}) when
+The equation reduces to the Langmuir equation (\ref{pyg:eqn:langmuir}) when
 
-\subsubsection{Toth model}
+\subsubsection{Toth model}\label{pyg:models:toth}
 
 The Toth model is an empirical modification to the Langmuir equation
-(\ref{eqn:pyg:langmuir})
+(\ref{pyg:eqn:langmuir})
 which introduces a power parameter for the denominator leading to
 the following formula:
 
-\begin{equation}\label{eqn:pyg:toth}
+\begin{equation}\label{pyg:eqn:toth}
     n_a(p) = n_a^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
 \end{equation}
 
@@ -191,7 +191,7 @@ It is worth noting that the equation no longer reduces to the Henry law
 at low loading and therefore is theoretically inconsistent.
 
 
-\subsubsection{Temkin model}
+\subsubsection{Temkin model}\label{pyg:models:temkin}
 
 The Temkin adsorption isotherm~\cite{temkinKineticsAmmoniaSynthesis1940}, 
 like the Langmuir model, considers
@@ -202,7 +202,7 @@ using a mean-field argument and uses an asymptotic approximation
 to obtain an explicit equation for the 
 loading~\cite{simonOptimizingNanoporousMaterials2014}.
 
-\begin{equation}\label{eqn:pyg:temkin}
+\begin{equation}\label{pyg:eqn:temkin}
     n_a(p) = n_a^m \frac{Kp}{1+Kp} + n_a^m \theta 
     {\Big(\frac{Kp}{1+Kp}\Big)}^2 \Big(\frac{Kp}{1+Kp} -1\Big)
 \end{equation}
@@ -211,7 +211,7 @@ Here, \(n_a^m\) and K have the same physical meaning as in the Langmuir model.
 The additional parameter \(\theta\) describes the strength of the adsorbate-adsorbate
 interactions (\(\theta < 0\) for attractions).
 
-\subsubsection{Jensen-Seaton model}
+\subsubsection{Jensen-Seaton model}\label{pyg:models:jseaton}
 
 When modelling adsorption in micropores, a requirement was highlighted by
 Jensen and Seaton in 1996~\cite{jensenIsothermEquationAdsorption1996} 
@@ -224,7 +224,7 @@ two asymptotes: the Henry’s law asymptote at low pressure and an
 asymptote reflecting the compressibility of the adsorbate at
 high pressure.
 
-\begin{equation}\label{eqn:pyg:jseaton}
+\begin{equation}\label{pyg:eqn:jseaton}
     n(p) = K_H p \Big{(1 + \frac{K_H p}{{[a {(1 + b p)}]}^c}\Big)}^{(-1/c)}
 \end{equation}
 
@@ -239,7 +239,7 @@ from microporous solids than the Langmuir or Toth equation, in particular for
 adsorbent/adsorbate systems with high Henry’s constants where the amount adsorbed
 increases rapidly at relatively low pressures and then slows down dramatically.
 
-\subsubsection{Quadratic model}
+\subsubsection{Quadratic model}\label{pyg:models:quadratic}
 
 The quadratic adsorption isotherm~\cite{hillIntroductionStatisticalThermodynamics1986} 
 exhibits an inflection point. The loading is convex at low 
@@ -249,7 +249,7 @@ forces; the initial convexity is due to a cooperative
 effect of adsorbate-adsorbate attractions aiding in the recruitment of
 additional adsorbate molecules.
 
-\begin{equation}\label{eqn:pyg:quad}
+\begin{equation}\label{pyg:eqn:quad}
     n(p) = n_a^m \frac{(K_a + 2 K_b p)p}{1+K_{ap} + K_{bp}^2}
 \end{equation}
 
@@ -257,13 +257,13 @@ The parameter \(K_a\) can be interpreted as the Langmuir constant; the
 strength of the adsorbate-adsorbate attractive forces is embedded in \(K_b\).
 
 
-\subsubsection{Virial model}
+\subsubsection{Virial model}\label{pyg:models:virial}
 
 A virial isotherm model attempts to fit the measured data to a factorized
 exponent relationship between loading and 
 pressure~\cite{myersThermodynamicsAdsorptionPorous2002}.
 
-\begin{equation}\label{eqn:pyg:virial}
+\begin{equation}\label{pyg:eqn:virial}
     p = n \exp{(K_1n^0 + K_2n^1 + K_3n^2 + K_4n^3 + \cdots + K_i n^{i-1})}
 \end{equation}
 
@@ -280,7 +280,7 @@ the second constant is a measure of the interaction strength with the surface.
 In practice, besides the first constant, only 2-3 factors are used.
 
 
-\subsubsection{Vacancy solution theory models}
+\subsubsection{Vacancy solution theory models}\label{pyg:models:vst}
 
 
 As a part of the Vacancy Solution Theory (VST) family of models, it is based on concept
@@ -327,7 +327,7 @@ which expresses the activity coefficient in terms
 of the mole fractions of the two species (adsorbate and vacancy) and two constants
 \(\Lambda_{1v}\) and \(\Lambda_{1v}\). The equation becomes:
 
-\begin{equation}\label{eqn:pyg:wvst}
+\begin{equation}\label{pyg:eqn:wvst}
     p = \bigg( \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} \bigg)
     \bigg( \Lambda_{1v} \frac{1-(1-\Lambda_{v1})\theta}{\Lambda_{1v}+(1-\Lambda_{1v})\theta} \bigg)
     \exp{\bigg( -\frac{\Lambda_{v1}(1-\Lambda_{v1})\theta}{1-(1-\Lambda_{v1})\theta}
@@ -339,10 +339,10 @@ developed a simpler, three parameter equation based on
 the Flory–Huggins equation for the activity coefficient.
 The equation for then becomes:
 
-\begin{equation}\label{eqn:pyg:fhvst}
+\begin{equation}\label{pyg:eqn:fhvst}
     p = \bigg( \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} \bigg)
         \exp{\frac{\alpha^2_{1v}\theta}{1+\alpha_{1v}\theta}} 
-        \quad where \quad
+        \quad \text{where} \quad
     \alpha_{1v} = \frac{\alpha_{1}}{\alpha_{v}} - 1
 \end{equation}
 
@@ -354,68 +354,69 @@ and the vacancy respectively.
 
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:henryex}}
+            \label{pyg:fgr:henryex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/henry}}
     \end{subfigure}
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:langmuirex}}
+            \label{pyg:fgr:langmuirex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/langmuir}}
     \end{subfigure}
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:betex}}
+            \label{pyg:fgr:betex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/bet}}
     \end{subfigure}
-    \\
+    
+    
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:tothex}}
+            \label{pyg:fgr:tothex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/toth}}
     \end{subfigure}
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:quadraticex}}
+            \label{pyg:fgr:quadraticex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/quadratic}}
     \end{subfigure}
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:jseatonex}}
+            \label{pyg:fgr:jseatonex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/jseaton}}
     \end{subfigure}
     \\
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:temkinex}}
+            \label{pyg:fgr:temkinex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/temkin}}
     \end{subfigure}
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:virialex}}
+            \label{pyg:fgr:virialex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/virial}}
     \end{subfigure}3
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:wsvstex}}
+            \label{pyg:fgr:wsvstex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/wvst}}
     \end{subfigure}
     \\
     \begin{subfigure}{0.3\linewidth}
         \parbox[c]{0.1\linewidth}{\caption{}%
-            \label{fgr:pyg:fhvstex}}
+            \label{pyg:fgr:fhvstex}}
         \parbox[b]{0.7\linewidth}{%
             \includegraphics[width=\textwidth]{models/fhvst}}
     \end{subfigure}
 
     \caption{Examples of models }%
-    \label{fgr:pyg:modelex}
+    \label{pyg:fgr:modelex}
 \end{figure}
