@@ -1,4 +1,7 @@
-\subsection{Mathemathical descriptions of isotherms}
+% !TEX root = ../../main.tex
+
+\subsection{Mathemathical descriptions of isotherms}%
+\label{pyg:models}
 
 A lot of effort was put into attempting to describe
 the phenomenon of adsorption using a simple model.
@@ -19,8 +22,112 @@ total pore volume and others.
 More importantly, it allows us to numerically
 compare measured isotherms.
 
-A page of figures for different models can be seen in
-Figure~\ref{pyg:fgr:modelex}.\todo{change location}
+A page of figures for different models with several
+values of their parameter can be seen in
+Figure~\ref{pyg:fgr:modelex}.
+
+
+\begin{figure}[p]
+	\centering
+
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Henry}%
+			\label{pyg:fgr:henryex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/henry}}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Langmuir}%
+			\label{pyg:fgr:langmuirex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/langmuir}}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{BET}%
+			\label{pyg:fgr:betex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/bet}}
+	\end{subfigure}
+
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Toth}%
+			\label{pyg:fgr:tothex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/toth}}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Quadratic}%
+			\label{pyg:fgr:quadraticex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/quadratic}}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Jensen Seaton}%
+			\label{pyg:fgr:jseatonex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/jseaton}}
+	\end{subfigure}
+	\\
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Temkin}%
+			\label{pyg:fgr:temkinex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/temkin}}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{Virial}%
+			\label{pyg:fgr:virialex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/virial}}
+	\end{subfigure}
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{W-VST}%
+			\label{pyg:fgr:wsvstex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/wvst}}
+	\end{subfigure}
+	\\
+	\begin{subfigure}{0.3\linewidth}
+
+		\parbox[c]{1.0\linewidth}{\caption{FH-VST}%
+			\label{pyg:fgr:fhvstex}}
+
+		\parbox[b]{1.0\linewidth}{%
+
+			\includegraphics[width=\linewidth]{models/fhvst}}
+	\end{subfigure}
+
+	\caption{Examples of models
+	}%
+	\label{pyg:fgr:modelex}
+\end{figure}
 
 \subsubsection{The Henry model}\label{pyg:models:henry}
 
@@ -34,13 +141,15 @@ increasing pressure.
 	n_a(p) = K_H p
 \end{equation}
 
-Physically, Henry's law is unrealistic as adsorption sites
+It is derived from the Gibbs equation, by substituting a
+a two dimensional analogue to the ideal gas law.
+From a physical standpoint, Henry's law is unrealistic as adsorption sites
 will saturate at higher pressures. However, the constant \(K_H\),
 or Henry’s constant, can be thought of as a measure of the strength
 of the interaction of the probe gas with the surface. At very
 low concentrations of gas there is a
 theoretical requirement for the applicability of Henry's law.
-Therefore, most models reduce to equation~\ref{pyg:eqn:henry}
+Therefore, most models reduce to Equation~\ref{pyg:eqn:henry}
 as \(\lim_{p \to 0} n(p)\).
 
 \subsubsection{Langmuir and multi-site Langmuir
@@ -50,7 +159,8 @@ The Langmuir theory~\cite{langmuirAdsorptionGasesPlane1918a},
 proposed at the start of the 20th century, states that
 adsorption takes place on specific sites on a surface, until
 all sites are occupied.
-It is derived based on several assumptions:
+It is derived from a kinetic model of gas adsorption and
+is based on several assumptions:
 
 \begin{itemize}
 
@@ -67,13 +177,13 @@ It is derived based on several assumptions:
 \end{itemize}
 
 Using these assumptions we can define rates for both adsorption and
-desorption. The adsorption rate (equation~\ref{pyg:eqn:langmuir_ads})
+desorption. The adsorption rate (Equation~\ref{pyg:eqn:langmuir_ads})
 will be proportional to the number of sites available on the surface,
 as well as the number of molecules in the gas, which is given by
 pressure.
 The desorption rate, on the other hand, will be proportional to the
 number of occupied sites and the energy of adsorption
-(equation~\ref{pyg:eqn:langmuir_des}).
+(Equation~\ref{pyg:eqn:langmuir_des}).
 It is also useful to define \(\theta = n_a/n_a^m\) as the surface
 coverage,
 the number of sites occupied divided by the total sites. At
@@ -81,15 +191,16 @@ equilibrium,
 the rate of adsorption and the rate of
 desorption are equal, therefore the two equations can be combined.
 The equation can then be arranged to obtain an expression for the
-loading called the Langmuir equation (\ref{pyg:eqn:langmuir}).
+loading called the Langmuir Equation (\ref{pyg:eqn:langmuir}).
 
-\begin{gather}
-	v_a = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
-	v_d = k_d \theta \exp{(-\frac{E}{RT})}
-	\label{pyg:eqn:langmuir_des} \\
-	k_a p (1 - \theta) = k_d \theta \exp{(-\frac{E}{RT})} \\
-	n_a(p) = n_a^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
-\end{gather}
+\begin{align}
+	v_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
+	v_d                & = k_d \theta \exp{\Big(-\frac{E}{RT}\Big)}
+	\label{pyg:eqn:langmuir_des}                                           \\
+	v_a                & = v_d                                             \\
+	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E}{RT}\Big)}        \\
+	n_a(p)             & = n_a^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
+\end{align}
 
 The Langmuir constant \(K\)is the product of the individual
 desorption
@@ -128,79 +239,93 @@ incremental layers according to several assumptions:
 	\item The adsorption takes place in layers, with adsorbed
 	      molecules
 	      acting as sites for the next layer.
-	\item The adsorption energy of a molecule on the second and
-	      higher layers
-	      is the same and equals the condensation energy of the
-	      adsorbent \(E_L\).
 \end{itemize}
 
-A particular surface percentage \(\theta_x\) is occupied with x
-layers.
-For each layer at equilibrium, the adsorption and desorption rates
-must be equal.
-We can then apply the Langmuir theory for each layer. \todo{better
-	structure}
-
-\begin{align}
-	k_{a_1} p \theta_0     & = k_{d_1} \theta_1
-	\exp{\Big(-\frac{E_1}{RT}\Big)}             \\
-	k_{a_2} p \theta_1     & = k_{d_2} \theta_2
-	\exp{\Big(-\frac{E_L}{RT}\Big)}             \\
-	\vdots \nonumber
-	\\
-	k_{a_i} p \theta_{i-1} & = k_{d_i} \theta_i
-	\exp{\Big(-\frac{E_L}{RT}\Big)}
-\end{align}
-
-Since we are assuming that all layers beside the first have the same
-properties,
-we can define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
+A particular surface percentage \(\theta_x\) is occupied with
+x layers. For each layer at equilibrium, the adsorption and
+desorption rates must be equal.
+We can then apply the Langmuir theory for each layer
+as presented in Table~\ref{pyg:tab:bet-deriv}. We can
+assume that the adsorption energy of a molecule on the second
+and higher layers is just the condensation energy of the
+adsorbent \(E_{i>1} = E_L\). Since we are assuming that
+all layers beside the first have the same properties,
+we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
 \cdots\).
-The coverage for each layer \(\theta\) can now be expressed in terms
-of \(\theta_0\).
+
+\begin{table}[h]
+	\centering
+	\caption{Derivation of the BET method applied for,
+		each adsorbed layer}%
+	\label{pyg:tab:bet-deriv}
+	\begin{tabular}{cc}
+		\toprule
+		All layers                                        & Re-arranged \\
+		\midrule
+		\parbox{0.4\textwidth}{\begin{align*}
+				k_{a_1} p \theta_0     & = k_{d_1} \theta_1
+				\exp{\Big(-\frac{E_1}{RT}\Big)}             \\
+				k_{a_2} p \theta_1     & = k_{d_2} \theta_2
+				\exp{\Big(-\frac{E_2}{RT}\Big)}             \\
+				k_{a_2} p \theta_2     & = k_{d_3} \theta_3
+				\exp{\Big(-\frac{E_3}{RT}\Big)}             \\
+				\vdots                                      \\
+				k_{a_i} p \theta_{i-1} & = k_{d_i} \theta_i
+				\exp{\Big(-\frac{E_i}{RT}\Big)}
+			\end{align*}} &
+		\parbox{0.4\textwidth}{ \begin{align*}
+				p \theta_0     & = \frac{k_{d_1}}{k_{a_1}} \theta_1
+				\exp{\Big(-\frac{E_1}{RT}\Big)}                     \\
+				p \theta_1     & = g \theta_2
+				\exp{\Big(-\frac{E_L}{RT}\Big)}                     \\
+				p \theta_2     & = g \theta_3
+				\exp{\Big(-\frac{E_L}{RT}\Big)}                     \\
+				\vdots                                              \\
+				p \theta_{i-1} & = g \theta_i
+				\exp{\Big(-\frac{E_L}{RT}\Big)}
+			\end{align*}}              \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The coverage for each layer \(\theta\) can now be
+expressed in terms of \(\theta_0\).
 
 \begin{align}
-	\theta_1 & = y \theta_0 \quad \text{where} \quad y = p
-	\frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)} \\
-	\theta_2 & = x \theta_1 \quad \text{where} \quad x =
-	\frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)}             \\
-	\theta_3 & = x \theta_2 = x^2 \theta_1
-	\\
-	\vdots \nonumber
-	\\
-	\theta_i & = x^{i-1} \theta_1 = y x^{i-1} \theta_0
+	\theta_i & = \Big[p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)}\Big] x^{i-1} \theta_0
+	\intertext{where}
+	x        & = \frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)}
 \end{align}
 
-A constant C may be defined such that
+A constant C may be defined such that:
 
-\begin{equation}
-	C = \frac{y}{x} = \frac{k_{a_1}}{k_{d_1}} g
-	\exp{\Big(\frac{E_1 - E_L}{RT}\Big)}
-	\theta_i = C x^i \theta_0
-\end{equation}
+\begin{align}
+	C        & = \frac{k_{a_1}}{k_{d_1}} g \exp{\Big(\frac{E_1 - E_L}{RT}\Big)} \\
+	\theta_i & = C x^i \theta_0
+\end{align}
 
 For all the layers, the equations can be summed:
 
-\begin{equation}
-	\frac{n}{n_m} = \sum_{i=1}^{\infty} i \theta^i = C
+\begin{align}
+	\frac{n}{n_m} & = \sum_{i=1}^{\infty} i \theta^i = C
 	\sum_{i=1}^{\infty} i x^i \theta_0
-\end{equation}
-
-And since
-
-\begin{equation}
-	\theta_0 = 1 - \sum_{1}^{\infty} \theta_i
+	%
+	\intertext{and since}
+	%
+	\theta_0      & = 1 - \sum_{1}^{\infty} \theta_i
 	\sum_{i=1}^{\infty} i x^i = \frac{x}{(1-x)^2}
-\end{equation}
+\end{align}
 
-Then we obtain the BET equation \todo{check equation}
+Then we obtain the BET equation:
 
 \begin{equation}\label{pyg:eqn:bet}
-	n_a(p) = n_a^m \frac{K_a p}{(1-K_b p)(1-K_b p+ K_a p)}
+	n_a(p) = n_a^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
 \end{equation}
 
-The equation reduces to the Langmuir equation
-(\ref{pyg:eqn:langmuir}) when
+The BET constant \(C\) is a measure of the interaction with the 
+adsorption surface and can be seen to influence the ``knee''
+a BET-type isotherm has at low pressure, before the statistical
+monolayer formation.
 
 \subsubsection{Toth model}\label{pyg:models:toth}
 
@@ -213,19 +338,13 @@ the following formula:
 	n_a(p) = n_a^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
 \end{equation}
 
-The parameter \(t\) is a measure of the system heterogeneity. Thanks
-to this
-additional parameter, the Toth equation can accurately describe a
-large number of adsorbent/adsorbate systems and is recommended as the
-first
-choice of isotherm equation for fitting isotherms of many adsorbents
-such as
-hydrocarbons, carbon oxides, hydrogen sulphide and alcohols on
-activated carbons
-but also zeolites.
-It is worth noting that the equation no longer reduces to the Henry
-law
-at low loading and therefore is theoretically inconsistent.
+The parameter \(t\) is a measure of the system heterogeneity.
+Thanks to this additional parameter, the Toth equation can
+accurately describe a large number of adsorbent/adsorbate systems
+and, due to its correct behaviour in both the low and high pressure
+limits, is recommended as the fitting isotherms of many
+adsorbents such as hydrocarbons, carbon oxides, hydrogen sulphide
+and alcohols on activated carbons and zeolites.
 
 \subsubsection{Temkin model}\label{pyg:models:temkin}
 
@@ -432,105 +551,3 @@ The equation for then becomes:
 Here \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the
 adsorbate
 and the vacancy respectively.
-
-\begin{figure}[p!]
-	\centering
-
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:henryex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/henry}}
-	\end{subfigure}
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:langmuirex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/langmuir}}
-	\end{subfigure}
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:betex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/bet}}
-	\end{subfigure}
-
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:tothex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/toth}}
-	\end{subfigure}
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:quadraticex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/quadratic}}
-	\end{subfigure}
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:jseatonex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/jseaton}}
-	\end{subfigure}
-	\\
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:temkinex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/temkin}}
-	\end{subfigure}
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:virialex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/virial}}
-	\end{subfigure}3
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:wsvstex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/wvst}}
-	\end{subfigure}
-	\\
-	\begin{subfigure}{0.3\linewidth}
-
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:fhvstex}}
-
-		\parbox[b]{0.7\linewidth}{%
-
-			\includegraphics[width=\textwidth]{models/fhvst}}
-	\end{subfigure}
-
-	\caption{Examples of models
-	}%
-	\label{pyg:fgr:modelex}
-\end{figure}

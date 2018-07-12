@@ -185,7 +185,7 @@ Then, by plotting \(\Delta V / (2*\Delta r_p)\) versus the width
 of the pores calculated for each point, the pore size distribution
 can be obtained.
 
-In order to calculate the 
+In order to calculate the
 
 \begin{python}[caption={PSD using the BJH method},%
     label={pyg:lst:bjh}]
@@ -197,10 +197,10 @@ result_dict = pygaps.mesopore_size_distribution(
 \end{python}
 
 \begin{figure}[!htb]
-    \centering
-    \includegraphics[width=\linewidth]{psd/bjh-des}
-    \caption{BJH pore size distribution}%
-    \label{pyg:fgr:bjhplot}
+	\centering
+	\includegraphics[width=\linewidth]{psd/bjh-des}
+	\caption{BJH pore size distribution}%
+	\label{pyg:fgr:bjhplot}
 \end{figure}
 
 \paragraph{The Dollimore-Heal (DH) method}
@@ -244,16 +244,16 @@ for each point, the pore size distribution can be obtained.
 
 When it comes to micropores (width \SI{< 2}{\nano\metre}), classical
 fluid methods stop being viable. Adsorption of molecules in these pores
-of comparable scale is highly dependent on the surface properties and 
+of comparable scale is highly dependent on the surface properties and
 on guest-host interaction and leads to adsorbate densities often
 very different than those in the bulk liquid state.
-In order to model adsorption in such pores, a good description of 
+In order to model adsorption in such pores, a good description of
 both solid-fluid and fluid-fluid potential functions is required.
 
 \paragraph{The Horvath-Kawazoe (HK) method}
 
-The H-K method attempts to describe the adsorption within pores 
-by calculation of the average potential energy for a 
+The H-K method attempts to describe the adsorption within pores
+by calculation of the average potential energy for a
 pore~\cite{horvathMethodCalculationEffective1983}.
 The method starts by assuming the
 relationship between the gas phase as being:
@@ -263,13 +263,13 @@ relationship between the gas phase as being:
 \end{equation}
 
 Here \(U_0\) is the potential function describing the surface to adsorbent
-interactions and \(P_a\) is the potential function describing the 
-adsorbate-adsorbate interactions. This equation is derived from the 
-equation of the free energy of adsorption at constant temperature where 
+interactions and \(P_a\) is the potential function describing the
+adsorbate-adsorbate interactions. This equation is derived from the
+equation of the free energy of adsorption at constant temperature where
 the term \(T \Delta S^{tr}(w/w_{\infty})\) is assumed to be negligible.
 
-If it is assumed that a Lennard-Jones potential function can describe 
-the interactions between adsorbate and surface molecules, then 
+If it is assumed that a Lennard-Jones potential function can describe
+the interactions between adsorbate and surface molecules, then
 the two contributions to the total potential can be replaced by the
 extended function in Equation~\ref{pyg:eqn:hk}.
 
@@ -299,8 +299,8 @@ fluid molecule and solid molecule respectively which are defined as
 \end{align}
 
 Here \(m\) is the mass of an electron, \(\alpha_a\) and \(\alpha_A\) are
-the polarizability of the adsorbate and adsorbate molecule 
-and \(\varkappa_a\) and \(\varkappa_A\) the magnetic susceptibility of 
+the polarizability of the adsorbate and adsorbate molecule
+and \(\varkappa_a\) and \(\varkappa_A\) the magnetic susceptibility of
 the adsorbate molecule and adsorbent molecule, respectively.
 
 The HK method is applicable to slit pores, and it can be modified to
@@ -309,25 +309,31 @@ that there are several assumptions which limit its applicability:
 
 \begin{itemize}
 
-	\item It does not have a description of capillary condensation. This means that the
-	      pore size distribution can only be considered accurate up to a maximum of 5 nm.
-	\item Each pore is modelled as uniform and of infinite length. Materials with varying pore
-	      shapes or highly interconnected networks may not give realistic results.
-	\item The HK method is reliant on knowledge of the properties of the surface atoms.
-	      This assumption is true only if the material surface is homogenous. Furthermore,
-	      longer range interactions with multiple surface layers are not considered.
-	\item Only dispersive forces are accounted for. If the adsorbate-adsorbent interactions
-	      have other specific contributions, the Lennard-Jones potential function will not be
+	\item The HK method is reliant on knowledge of the properties of
+	      the surface atoms. This assumption is true only if the
+	      material surface is homogenous. Furthermore,
+	      longer range interactions with multiple surface layers are
+	      not considered.
+	\item Each pore is modelled as uniform and of infinite length.
+	      Materials with varying pore shapes or highly interconnected
+	      networks may not give realistic results.
+	\item Only dispersive forces are accounted for.
+	      If the adsorbate-adsorbent interactions
+	      have other specific contributions, the Lennard-Jones
+	      potential function will not be
 	      an accurate description of pore environment.
+	\item It does not have a description of capillary condensation.
+	      This means that the pore size distribution can only
+	      be considered accurate up to a maximum of 5 nm.
 
 \end{itemize}
 
-The \texttt{pyGAPS} framework contains the required physical properties 
-for the most commonly used adsorbates in its database, as well as 
+The \texttt{pyGAPS} framework contains the required physical properties
+for the most commonly used adsorbates in its database, as well as
 properties from literature for several materials:
 the original parameters developed by Horvath and Kawazoe for a carbon surface
-~\cite{horvathMethodCalculationEffective1983} and the oxide 
-surface parameters published by Saito and 
+~\cite{horvathMethodCalculationEffective1983} and the oxide
+surface parameters published by Saito and
 Foley~\cite{saitoCurvatureParametricSensitivity1991}.
 The user can provide custom dictionary of these parameters when calling the
 function as can be seen in the second example in Listing~\ref{pyg:lst:hkpsd}.
@@ -367,29 +373,51 @@ result_dict = pygaps.micropore_size_distribution(
 
 \subsubsection{Multiscale computational methods}
 
-The density functional theory approach can then simulate adsorption
-isotherms on pores of different geometries and sizes. By defining 
-a pore geometry and running the simulation with a range of 
-pore radii, a collection of isotherms is obtained. If an 
-experimental isotherm is considered as a contribution of adsorption
-in its different pores, then it stands to reason that the preponderence
-of those pores can be calculated if the original isotherm is deconvoluted.
+DFT theory emerged as a rigorous description of molecular
+adsorption in pores~\cite{seatonNewAnalysisMethod1989}. 
+It calculates the properties of the fluid
+directly from the forces acting between constituent molecules
+through a statistical mechanical approach. Latter developments,
+like non-local DFT (NLDFT)~\cite{tarazonaPhaseEquilibriaFluid1987}, 
+which makes an account for short range molecule correlation
+and therefore for the changes in the density profile
+around the pore walls, and quenched solid state DFT 
+(QSDFT)~\cite{neimarkQuenchedSolidDensity2009}, which allows for 
+heterogeneity of pore walls to be incorporated in the model,
+have improved the accuracy of the method.
 
-The function will take the data in the form of pressure and loading. 
-It will then load the kernel either from disk or from memory and define 
-a minimization function as the sum of squared differences of the sum of
-all individual kernel isotherm loadings multiplied by their contribution 
-as per the following function:
+The density functional theory approach can therefore simulate 
+adsorption isotherms on pores of different geometries and sizes. 
+By defining a pore geometry and running the simulation with a 
+range of pore radii, a collection of isotherms is obtained. 
+If an experimental isotherm is through of as a sum of 
+adsorption isotherms in different material pores, then it stands 
+to reason that the preponderence of those pores can be calculated
+through deconvolution.
+
+As the DFT method can model adsorbate condensation behaviour,
+as well as micropore filling and multilayer adsorption, it can 
+be used for multiscale pore size distribution. The downside is
+that DFT kernels are temperature, probe, pore-geometry and
+adsorbent specific and as such are not universally applicable.
+
+The \texttt{pyGAPS} framework can perform isotherm fitting to 
+DFT kernels through the \inline{dft_size_distribution} function. 
+The function takes an \texttt{Isotherm} object, then 
+then load the DFT kernel either from disk or from memory and 
+apply a minimization function on the sum of squared differences 
+of the sum of all individual kernel isotherms to generate 
+the contribution of each as per the following equation:
 
 \begin{equation}
 	f(x) = \sum_{p=p_0}^{p=p_x} \Big(n_{p,exp} - \sum_{w=w_0}^{w=w_y} n_{p, kernel} X_w \Big)^2
 \end{equation}
 
-The user can specify their own kernel, in a CSV format, which will be 
-used for the isotherm fitting on the \inline{dft_size_distribution}
-function. Alternatively, a common DFT kernel is included with the 
-framework, which is simulated with nitrogen on a carbon material 
-and slit-like pores in the range of \SIrange{0.4}{10}{\nano\meter}.
+The user can specify their own kernel in a CSV format, which will be
+used for the isotherm fitting. Alternatively, a common DFT 
+kernel is included with the framework, which is applicable on
+nitrogen adsorption on a carbon slit-like pores in the range of
+\SIrange{0.4}{10}{\nano\meter}.
 
 \begin{python}[caption={DFT size distribution in pyGAPS},%
     label={pyg:lst:dft}]
