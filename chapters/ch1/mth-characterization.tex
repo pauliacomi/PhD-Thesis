@@ -27,7 +27,7 @@ can be used.
 
 As previously mentioned, the method assumes that adsorption takes place
 in incremental layers according to the
-BET model (\ref{pyg:models:bet}).
+BET model (\autoref{pyg:models:bet}).
 Even if the adsorbent is porous, the initial amount adsorbed
 (usually between 0.05--0.4 \(p/p_0\)) can be
 described through the equation written in its linear form:
@@ -85,12 +85,12 @@ of some materials due to inter-molecular forces, which effectively
 lowers its cross-sectional area~\cite{rouquerolAdsorptionPowdersPorous2013}.
 
 In \texttt{pyGAPS}, starting from an isotherm object, it is easy to
-calculate the BET area by using the code in Listing~\ref{pyg:lst:betarea}.
+calculate the BET area by using the code in \autoref{pyg:lst:betarea}.
 The framework automatically applies the Rouquerol rules to
 find the optimum pressure range and returns the results as a
 dictionary. The \inline{verbose=True} option prints a short
 text with all the calculation variables as well as graphing the
-BET and Rouquerol plots (Figure~\ref{pyg:fgr:betarea}).
+BET and Rouquerol plots (\autoref{pyg:fgr:betarea}).
 The user can override
 automatic pressure range selection by using the range parameter
 (\inline{limits=(0.05, 0.3)}).
@@ -135,7 +135,7 @@ Amount for a monolayer: 		n = 0.01309 mol/g
 
 \subsubsection{Langmuir surface area}\label{pyg:charac:langmuirarea}
 
-The Langmuir equation (\ref{pyg:eqn:langmuir}) can be also
+The Langmuir equation (\autoref{pyg:eqn:langmuir}) can be also
 be expressed in a linear form by rearranging it as:
 
 \begin{equation}
@@ -166,14 +166,14 @@ case of complete surface coverage. As most adsorption processes
 important to regard the Langmuir surface area as an estimate.
 
 As with the BET area, the Langmuir area is calculated by using the code in
-Listing~\ref{pyg:lst:langmuirarea}. The framework will alert the user
+\autoref{pyg:lst:langmuirarea}. The framework will alert the user
 if the correlation is not linear in the selected range.
 Here the \inline{verbose=True} option prints a short
 text with all the calculation variables and the graphs the
-Langmuir plot as seen in Figure~\ref{pyg:fgr:langmuirarea-auto}.
+Langmuir plot as seen in \autoref{pyg:fgr:langmuirarea-auto}.
 If desired the user can override
 automatic pressure range selection as seen in the second example in
-Listing~\ref{pyg:lst:langmuirarea}.
+\autoref{pyg:lst:langmuirarea}.
 
 \begin{samepage}
 	\begin{python}[caption={Calculating a Langmuir area},label={pyg:lst:langmuirarea}]
@@ -246,9 +246,9 @@ and a single temperature.
 Several common thickness functions have been implemented in \texttt{pyGAPS},
 applicable for nitrogen at \SI{77}{\kelvin}
 such as the Halsey~\cite{halseyPhysicalAdsorptionNon1948}
-(equation~\ref{pyg:eqn:halsey}) and the
+(\autoref{pyg:eqn:halsey}) and the
 Harkins and Jura~\cite{harkinsSurfacesSolidsXIII1944a}
-(equation~\ref{pyg:eqn:harkinsjura}) curve.
+(\autoref{pyg:eqn:harkinsjura}) curve.
 
 \todo{check equations}
 \begin{align}
@@ -259,7 +259,7 @@ Harkins and Jura~\cite{harkinsSurfacesSolidsXIII1944a}
 These t-curves are selected by name as parameters in
 the functions that use them. The user can also define their
 own t-curve as a function and pass it as a parameter. An example
-is shown in Listing~\ref{pyg:lst:tplot} in the t-plot section.
+is shown in \autoref{pyg:lst:tplot} in the t-plot section.
 
 \subsubsection{t-plot Method}\label{pyg:charac:tplot}
 
@@ -270,7 +270,7 @@ external pore area and micropore volume
 calculations~\cite{lippensStudiesPoreSystems1965}.
 A plot is constructed, where the isotherm loading
 data is plotted versus the ideal thickness of the adsorbate layer,
-obtained through the a t-curve (Section~\ref{pyg:charac:tcurve}).
+obtained through the a t-curve (\autoref{pyg:charac:tcurve}).
 It stands to reason that, in the case when the experimentally measured
 loading follows the model, a straight line will be obtained with its
 intercept through the origin. However, since in most cases there
@@ -292,7 +292,7 @@ adsorption is taking place. If the linear region occurs at low loadings,
 it will represent the total surface area of the material.
 If at the end of the curve, it will instead represent adsorption on
 the external surface area of the sample. The formula to calculate the area
-is presented in Equation~\ref{pyg:fgr:areatplot},
+is presented in \autoref{pyg:fgr:areatplot},
 where \(\rho_{l}\) is the liquid density of the adsorbate at experimental
 conditions.
 
@@ -325,8 +325,8 @@ plateaus in the data and
 automatically fit them with a straight line, returning a dictionary
 with the slope, intercept and calculated pore volume and specific area
 for each linear region found. As an example, the first function in
-Listing~\ref{pyg:lst:tplot} will generate the graph in
-Figure~\ref{pyg:fgr:tplot-auto}. The isotherm in this example is measured
+\autoref{pyg:lst:tplot} will generate the graph in
+\autoref{pyg:fgr:tplot-auto}. The isotherm in this example is measured
 on a sample of MCM-41.
 
 \begin{python}[float=htb, caption={Generating a t-plot},%
@@ -370,7 +370,7 @@ pygaps.t_plot(isotherm, thickness_model=carbon_model, verbose=True)
 
 \end{figure}
 
-The first linear region in Figure~\ref{pyg:fgr:tplot-auto} can be attributed
+The first linear region in \autoref{pyg:fgr:tplot-auto} can be attributed
 to adsorption on the mesopore surface,
 while the second one represents adsorption on the available surface
 after mesopore filling. Therefore, the surface area values calculated 
@@ -380,13 +380,13 @@ event occurs, the pore volume calculated for the second region gives
 us the mesopore volume. We can obtain a more accurate result for the
 surface area by fitting the first linear region to a zero intercept
 through manual region selection, as shown in the second example in 
-Listing~\ref{pyg:lst:tplot}.
+\autoref{pyg:lst:tplot}.
 
 Finally, the framework allows for the thickness model to be substituted
 with an user-provided function which will be used for the t-plot, 
-as mentioned before in Section~\ref{pyg:charac:tcurve}.
+as mentioned before in \autoref{pyg:charac:tcurve}.
 Usage of a carbon black-type thickness curve is presented in the last
-example in Listing~\ref{pyg:lst:tplot}.
+example in \autoref{pyg:lst:tplot}.
 
 \subsubsection{\(\alpha_s\) Method}\label{pyg:charac:alphasplot}
 
@@ -423,7 +423,7 @@ taken how the reference isotherm is measured.
 
 To generate an \(\alpha_s\)-plot in \texttt{pyGAPS}, both 
 an analysis isotherm and a reference isotherm must be supplied 
-as shown in Listing~\ref{pyg:lst:alphasplot}.
+as shown in \autoref{pyg:lst:alphasplot}.
 In this example, the reference isotherm is measured on non-porous silica.
 The reference material area can be specified by using 
 the \inline{reference_area} parameter. If not specified, it 

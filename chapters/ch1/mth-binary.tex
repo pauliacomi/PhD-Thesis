@@ -31,15 +31,15 @@ IAST, with spreading pressure being calculated through the
 underlying isotherm model or through interpolation, respectively. 
 
 In this case, we fit the experimental data to the available models 
-in \texttt{pyGAPS} which have been presented in Section~\ref{pyg:models},
+in \texttt{pyGAPS} which have been presented in \autoref{pyg:models},
 then use the resulting model isotherms for IAST simulations. 
 In order to get a `best-fit' model isotherm,
-we use the function in Listing~\ref{lst:model},
+we use the function in \autoref{lst:model},
 which fits all available models and selects the one with the lowest 
 residuals between the fitted function and the real data.
 The isotherms and their best-fitting model is displayed in 
-Figure~\ref{pyg:fig:takedaco2n2iso} for the \ce{CO2}-\ce{N2} pair and 
-in Figure~\ref{pyg:fig:takedac3h6c3h8iso} for the \ce{C3H8}-\ce{C3H6} pair.
+\autoref{pyg:fig:takedaco2n2iso} for the \ce{CO2}-\ce{N2} pair and 
+in \autoref{pyg:fig:takedac3h6c3h8iso} for the \ce{C3H8}-\ce{C3H6} pair.
 
 \begin{python}[caption={Guessing the best model},label={lst:model}]
 model = pygaps.ModelIsotherm.from_pointisotherm(iso, guess_model=True)
@@ -58,7 +58,7 @@ points for the adsorbed and gaseous phases at different concentrations
 of the two gases at 1 bar. To do this we use the \inline{pygaps.iast_vle()}
 function which produces an analogue of a vapour-liquid equilibrium at 
 a specified pressure for a binary mixture. The resulting graph of this
-function can be seen in Figure~\ref{pyg:fig:takedac3h6c3h8iast}.
+function can be seen in \autoref{pyg:fig:takedac3h6c3h8iast}.
 As expected, the predicted adsorbed mixture is rich in carbon dioxide.
 Selectivity can also be calculated in a single point, with the value at 
 15\% \ce{CO2} and \SI{1}{bar} being 16.5. 

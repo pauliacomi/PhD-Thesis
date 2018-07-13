@@ -58,7 +58,7 @@ used in these models merely approximate.
 
 Since the Kelvin equation is the basis of both the BJH and DH methods
 its theory and its implementation will be described here. The original
-form of the equation (Equation~\ref{pyg:eqn:kelvin}) gives the dependence
+form of the equation (\autoref{pyg:eqn:kelvin}) gives the dependence
 of pressure on the radius of curvature of a meniscus in a pore \(r\) by
 means of surface tension \(\gamma\), molar liquid volume, here expressed
 as \(v_l=M_m/\rho_l\) and the fluid contact angle with the surface
@@ -70,7 +70,7 @@ as \(v_l=M_m/\rho_l\) and the fluid contact angle with the surface
 \end{equation}
 
 To apply the Kelvin equation to different types of pore systems, the
-generalized form presented in Equation~\ref{pyg:eqn:kelvin-general}
+generalized form presented in \autoref{pyg:eqn:kelvin-general}
 is used. It replaces the meniscus radius by a mean radius of curvature
 \(r_m\).
 
@@ -91,7 +91,7 @@ filling state of the pore~\cite{doAdsorptionAnalysisEquilibria1998}.
 If considering a cylindrical pore open at both ends, the radius reduces
 to the original Kelvin equation during the desorption phase, and takes
 other values with different combinations of parameters
-as can be seen in Table~\ref{pyg:tab:kelvin-meniscus}.
+as can be seen in \autoref{pyg:tab:kelvin-meniscus}.
 
 \begin{table}[htb]
 	\centering
@@ -140,7 +140,7 @@ in a predictable way, and decreasing the apparent pore volume until
 condensation takes place, filling the entire pore. The critical radius
 is a sum of two radii, the adsorbed layer thickness, which can be
 modelled by a thickness model (such as Halsey, Harkins \& Jura or similar
-as presented in Section~\ref{pyg:charac:tcurve})
+as presented in \autoref{pyg:charac:tcurve})
 and a critical radius model for condensation/evaporation,
 based on a form of the Kelvin equation.
 
@@ -152,7 +152,7 @@ The original model uses the desorption curve as a basis for calculating
 pore size distribution. Between two points of the curve, the volume
 desorbed can be described as the volume contribution
 from pore evaporation and the volume from layer thickness decrease as
-per Equation~\ref{pyg:eqn:condensradius}. The computation is done
+per \autoref{pyg:eqn:condensradius}. The computation is done
 cumulatively, starting from the filled pores and calculating for each
 point the volume adsorbed in a pore from the following equation:
 
@@ -271,7 +271,7 @@ the term \(T \Delta S^{tr}(w/w_{\infty})\) is assumed to be negligible.
 If it is assumed that a Lennard-Jones potential function can describe
 the interactions between adsorbate and surface molecules, then
 the two contributions to the total potential can be replaced by the
-extended function in Equation~\ref{pyg:eqn:hk}.
+extended function in \autoref{pyg:eqn:hk}.
 
 \begin{multline}\label{pyg:eqn:hk}
 	RTln(p/p_0) =   N_A\frac{n_a A_a + n_A A_A}{2 \sigma^{4}(l-d)} \\
@@ -336,7 +336,7 @@ the original parameters developed by Horvath and Kawazoe for a carbon surface
 surface parameters published by Saito and
 Foley~\cite{saitoCurvatureParametricSensitivity1991}.
 The user can provide custom dictionary of these parameters when calling the
-function as can be seen in the second example in Listing~\ref{pyg:lst:hkpsd}.
+function as can be seen in the second example in \autoref{pyg:lst:hkpsd}.
 
 \begin{python}[float=htb, caption={Using the HK method for PSD},%
     label={pyg:lst:hkpsd}]
