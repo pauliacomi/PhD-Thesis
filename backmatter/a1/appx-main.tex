@@ -7,35 +7,111 @@
 
 \section{Thermogravimetry}\label{appx:char:TGA}
 
-TGA experiments were carried out on ca. \SI{15}{\milli\gram} sample with a Q500 
-(TA Instruments) apparatus in a dynamic “Hi-Res” mode using \SI{3}{\kelvin\per\minute}
-under both nitrogen and argon flow at
-\SI{30}{\cm\cubed\per\minute}. For comparison, the curves have been normalized at 
-\SI{800}{\degreeCelsius}.
+Thermogravimetry (TGA) is a standard laboratory technique where the
+weight of a sample is monitored while ambient temperature is controlled.
+Changes in sample mass can be correlated to physical events, such
+as adsorption, desorption, sample decomposition or oxidation, depending
+on temperature and its rate of change.
 
-\section{Bulk density determination}
+TGA experiments are carried out on approximately \SI{15}{\milli\gram} of 
+sample with a TA Instruments Q500 up to \SI{800}{\degreeCelsius}.
+The sample is placed on a platinum crucible and sealed in a temperature
+controlled oven, under gas flow of \SI{40}{\cm\cubed\per\minute}.
+Experiments can use a blanket of either air or argon. The temperature
+ramp can be specified directly and should be chosen to ensure 
+that the sample is in equilibrium with the oven temperature and no
+thermal conductivity effects come into play. Alternatively,
+a dynamic “Hi-Res” mode can be used which allows for automatic
+cessation of heating rate while the sample undergoes mass loss.
 
-Bulk density was determined by weighing \SI{1.5}{\milli\litre} empty vessels and
-settling the powder or the spheres of the MOFs inside. Powders have been added by small
-increments and settled through vibration between each
-addition. We finally weighed the full vessels, which allowed the bulk
-density to be determined. The experiments were recorded with the
-same vessel after cleaning.
+The main purpose of thermogravimetry as used in this thesis is the
+determination of sample decomposition temperature, to ensure
+that thermal activation prior to adsorption is complete and 
+that all guest molecules have been removed without loss of
+structure. To this end, experiments are performed under an inert
+atmosphere (argon), and the sample activation temperature is chosen
+as \SIrange{50}{100}{\degreeCelsius} lower than the sample 
+decomposition temperature.
 
-\section{Nitrogen physisorption at \SI{77}{\kelvin}}
+\section{Bulk density determination}\label{appx:char:bulkdensity}
 
-Nitrogen physisorption at \SI{77}{\kelvin} was used to calculate BET areas and accessible pore 
-volumes~\cite{rouquerolAdsorptionPowdersPorous2013}. 
-Approximately \SI{60}{\milli\gram} of sample were used for each measurement. 
-The adsorption experiments were carried out on a Micromeritics Triflex apparatus.
-The BET area on these microporous solids was calculated using the 
-procedure devised by \citeauthor{rouquerolAdsorptionPowdersPorous2013} Accessible pore
-volume was calculated from the amount adsorbed at \(p/p^0 = 0.2\). 
-The pore sizes were calculated by applying the Dollimore-Heal method on the desorption
-branch of the isotherm.
+Bulk density is a useful metric for the industrial use of adsorbent
+materials, as their volume plays a critical role in equipment sizing.
 
-\section{Vapour adsorption}
+Bulk density is determined by weighing \SI{1.5}{\milli\litre} empty 
+glass vessels and settling the MOFs inside. Powder materials are then added
+in small increments and settled through vibration between each
+addition. The full vessel is finally weighed, which allowed the bulk
+density to be determined. The same cell is used in all experiments,
+with cleaning through sonication between each experiment.
 
-Adsorption of water or ethanol vapour was measured at \SI{298}{\kelvin} on a BELmax apparatus
-(MicrotracBEL, Japan). Approximately \SI{50}{\milli\gram} of material was used for each
-experiment.
+\section{Skeletal density determination}\label{appx:char:truedensity}
+
+True density or skeletal density is determined through gas pycnometry
+in a MicrotracBEL BELSORP-max apparatus. Helium is chosen
+as the fluid of choice as it is assumed to be non-adsorbing.
+
+The volume of a glass sample cell (\(V_c\)) is precisely measured through
+dosing of the reference volume with helium up to (\(p_1\)), then opening the valve 
+connecting the two and allowing the gas to expand up to (\(p_2\)). 
+Afterwards approximately \SI{50}{\milli\gram} of sample are weighed
+and inserted in a glass sample cell. After sample activation using the
+supplied electric heater to ensure no solvent residue is left in the pores,
+the same procedure is repeated to determine the volume of the cell
+and the adsorbent. With the volume of the sample determined, the
+density can be calculated by.
+
+\begin{equation}
+%
+    V_s = V_c + \frac{V_r}{1- \frac{p_1}{p_2}}
+%
+\end{equation}
+
+
+\section{Nitrogen physisorption at \SI{77}{\kelvin}}\label{appx:char:N2phys}
+
+Nitrogen adsorption experiments are carried out on a 
+Micromeritics Triflex apparatus. Approximately \SI{60}{\milli\gram}
+of sample are used for each measurement.
+Empty glass cells are weighed and filled with the samples, which 
+are then activated in a Micromeritics Smart VacPrep up to 
+their respective activation
+temperature under vaccum and then back-filled with an inert
+atmosphere. After sample activation, the cells are re-weighed
+to determine the precise sample mass. The cells are covered with
+a porous mantle which allows for a constant temperature gradient
+during measurement by wicking liquid nitrogen around the
+cell. Finally, the cells are immersed in a liquid nitrogen bath
+and the adsorption isotherm is recoded using the volumetric
+method. A separate cell is used to condense the adsorptive 
+throughout the measurement for accurate determination of
+its saturation pressure.
+
+\section{Vapour physisorption at \SI{298}{\kelvin}}\label{appx:char:vapourphys}
+
+Vapour adsorption isotherms throughout this work are measured
+using a MicrotracBEL BELSORP-max apparatus in vapour mode.
+Glass cells are first weighed and then filled with about
+\SI{50}{\milli\gram} of sample. The vials are then heated
+under vacuum up to the activation temperature of the material
+and re-weighed in order to measure the exact sample mass
+without adsorbed guests. The cells are then immersed in a
+mineral oil bath kept at \SI{298}{\kelvin}. To ensure that the 
+cold point of the system occurs in the material and to 
+prevent condensation on cell walls, the reference volume, dead space 
+and vapour source are temperature controlled through an
+insulated enclosure.
+
+\section{Gravimetric isotherms}\label{appx:char:gravimetry}
+
+The gravimetric isotherms in this thesis are obtained 
+using a commercial Rubotherm GmbH balance. Approximately 
+\SI{1}{\gram} of dried sample is used for these experiments. 
+Samples are activated in situ by heating under vacuum. 
+The gas is introduced using a step-by-step method, and equilibrium is
+assumed to have been reached when the variation of weight remained
+below \SI{30}{\micro\gram} over a \SI{15}{\minute} interval. 
+The volume of the sample is determined from a blank experiment 
+with helium as the non-adsorbing
+gas and used in combination with the gas density measured by the
+Rubotherm balance to compensate for buoyancy.

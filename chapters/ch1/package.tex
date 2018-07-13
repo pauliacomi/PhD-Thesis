@@ -1,0 +1,220 @@
+% !TEX root = ../../main.tex
+
+\section{pyGAPS overview}
+
+\subsection{Intended use cases}
+
+The software was imagined for use in two types of scenario.
+First, as a command line interface, in environments such as
+\texttt{IPython} and \texttt{Jupyter}. The typical user working
+in these environments is likely to be processing a small batch of
+results at one time, and is interested in obtaining the results in
+graphical form. For this type of application, the framework should
+provide an unobtrusive way of importing the user data, as well as
+present an API which does not require extensive knowledge of 
+processing methods. Finally, a powerful graphing environment is
+required which will allow the user to visualise their original
+dataset and results.
+
+The second envisaged application is related to bulk data processing.
+Requirements here shift towards parameter control, scripting and
+extensibility. The framework API should offer the option to change 
+implicit parameters, select calculation limits and return the results
+in a numerical form for further processing. This type of application 
+is also likely to require storage of isotherms in a database or
+under other types of data files.
+
+\subsection{Core structure}
+
+In order to offer a clear structuring of functionality, 
+\texttt{pyGAPS} introduces several classes which abstract data and
+functionality for facile interaction. The classes are
+intuitively named: \texttt{Isotherm}, \texttt{Sample} and \texttt{Adsorbent}.
+
+\subsubsection{The \texttt{Isotherm} class}
+
+The \texttt{Isotherm} class is a representation of an adsorption 
+isotherm i.e.\ a function of the amount adsorbed, or loading, 
+with pressure at a fixed temperature. The class also contains
+other information relating to the isotherm, such as the material
+name and batch it describes, the adsorbate used and other 
+user-defined properties.
+
+Because the aforementioned relationship can be either a physical 
+measurement defined by individual pressure-loading pairs or a model, 
+describing the relationship as a function rather than discrete data, 
+the Isotherm class is used as a parent class for two subclasses: 
+\texttt{PointIsotherm}, describing datapoints and \texttt{ModelIsotherm} 
+containing a model such as Henry, Langmuir etc., which encapsulate
+the respective functionality. The two classes are interchangeable as they
+share most methods and properties. Once an instance of an \texttt{Isotherm}
+class is created, it can then be used for the processing, conversion 
+and graphing capabilities of \texttt{pyGAPS}.
+
+\subsubsection{The \texttt{Sample} class}
+
+The isotherm classes contain the name and batch of the sample 
+they are measured on in a string format. The user might want to 
+specify other information about the material,
+such as the date of synthesis or the material's density,
+as well as store this information in the database.
+For this case, \texttt{pyGAPS} provides the \texttt{Sample} class.
+The framework uses the string values
+in the isotherm to connect an \texttt{Isotherm} instance to a 
+specific \texttt{Sample}.
+
+\subsubsection{The \texttt{Adsorbate} class}
+
+Finally, in order for many of the calculations included in 
+\texttt{pyGAPS} to be performed, properties of the adsorbate 
+used are needed e.g. \ liquid density, vapour pressure etc.
+The \texttt{Adsorbate} class is provided for this purpose,
+which is connected to an \texttt{Isotherm} class similarly to a 
+\texttt{Sample}. The physical properties are either calculated 
+in the background through an equation of state,
+either the open source CoolProp library~\cite{bellPurePseudopureFluid2014} 
+or the NIST-made REFPROP~\cite{lemmonNISTReferenceFluid1989}.
+The properties can also be retrieved from the internal database 
+or specified by the user.
+
+\subsection{Creation of an Isotherm}
+
+An \texttt{Isotherm} can be created either from the command line 
+directly or through an import from a supported format. For the direct
+creation, the code takes
+two kinds of inputs: the data itself, in the form of a 
+\texttt{pandas.DataFrame}, and the isotherm parameters describing it.
+Only four parameters are strictly required:
+the material name, the material batch, the adsorbate used and the 
+experimental temperature. Other parameters can be passed as well 
+and will be stored in the isotherm class.
+
+\begin{python}[caption={Creating the \texttt{DataFrame}},%
+    label={pyg:lst:isodata}]
+isotherm_data = pandas.DataFrame({
+    'pressure' : [1, 2, 3, 4, 5, 3, 2],
+    'loading' : [1, 2, 3, 4, 5, 3, 2],
+    'enthalpy' : [15, 15, 15, 15, 15, 15, 15],
+    'xrd_peak_1' : [0, 0, 1, 2, 2, 1, 0],
+})
+\end{python}
+
+The \texttt{DataFrame} must contain a column containing the pressure
+points and one containing the corresponding loading points of the 
+isotherm. Other columns can also be passed, when
+secondary data such as enthalpy of adsorption is present at 
+each measurement point. These columns will be saved in the case of
+the \texttt{PointIsotherm} class and can be
+plotted afterwards.
+
+\begin{python}[float=htb, caption=Creating the \texttt{PointIsotherm},
+    label={pyg:lst:isocreation}]
+point_isotherm = pygaps.PointIsotherm(
+
+    # First the pandas.DataFrame with the points
+    # and the keys to what the columns represent.
+
+    isotherm_data,
+
+    loading_key='loading',          # The loading column
+    pressure_key='pressure',        # The pressure column
+    other_keys=['enthalpy',
+                'xrd_peak_1'],      # The columns containing other data
+
+    # Some of the unit parameters can be 
+    # specified if desired.
+
+    pressure_mode='absolute',       # absolute pressure
+    pressure_unit='bar',            # with units of bar
+    adsorbent_basis='mass',         # adsorbent mass basis
+    adsorbent_unit='kg',            # with units of kg
+    loading_basis='mass',           # loading mass basis
+    loading_unit='g',               # with units of g
+
+    # Finally the isotherm description
+    # parameters are passed.
+
+    'sample_name' : 'carbon',       # Required
+    'sample_batch' : 'X1',          # Required
+    'adsorbate' : 'nitrogen',       # Required
+    't_exp' : 77,                   # Required
+    't_act' : 150,                  # Recognised / named
+    'user'  : 'Username',           # Recognised / named
+    'DOI'   : '10.000/mydoi',       # Unknown / user specific
+)
+\end{python}
+
+If no unit data is specified in the constructor, the framework will
+assume that the isotherm is in units of \si{\milli\mole\per\gram} 
+loading as a function of \si{\bar}. Both the units and the basis 
+can be specified, as it is explained in a latter section.
+
+Finally, the data is saved in the newly created class or used to
+generate parameters for a model such as BET, Langmuir, etc.,
+in the case of a \texttt{PointIsotherm} and
+\texttt{ModelIsotherm} respectively. It should be noted that the creation of
+\texttt{Sample} and \texttt{Adsorbate} instances is similar.
+
+Alternatively, the isotherm can be imported from a file containing 
+a format that is recognised by \texttt{pyGAPS}. Parsing from 
+suitably structured JSON, CSV and Excel files is supported.
+
+\subsection{Workflow}
+
+Once an isotherm object is created, it will be used for all 
+further processing. The class contains methods which can be 
+used to inspect the data visually, or retrieve
+parts of the isotherm such as the adsorption or desorption branches with
+user-chosen limits or units. Singular values of pressure or 
+loading can be calculated, either through interpolation in the
+case of a \texttt{PointIsotherm} or by evaluation
+of the internal model in the \texttt{ModelIsotherm}. For an isotherm with
+datapoints, these can also be converted into different units or modes.
+
+Characterisation functions take a single isotherm object as their
+first parameter. This is the case for the BET area, Langmuir area, 
+t-plot, \(\alpha_s\) plot, and pore size distribution methods.
+These characterisation functions attempt to automate as much
+of the process as possible. For example, the BET area limits are
+automatically calculated using the 
+Rouquerol~\cite{rouquerolAdsorptionPowdersPorous2013} method, 
+with all the checks implemented into the code. In another example
+the straight line sections of the t-plot are determined automatically
+through a calculation of the second derivative of the transformed isotherm.
+For detailed control, there is an option to specify
+options for each individual method, such as manual BET limits, 
+different thickness functions for the t-plot or Kelvin-based 
+mesoporous pore distribution methods, custom parameters for the
+Horvath-Kawazoe microporous pore distribution, custom
+DFT or NLDFT kernels and more. The results are returned in a 
+dictionary or can be directly graphed if the \texttt{verbose} 
+parameter is passed.
+
+\subsection{Units}
+
+When computers work with physical data, units are often a matter 
+that introduces confusion. Here we explain how \texttt{pyGAPS} 
+handles units and other physical world concepts such as relative
+pressure and mass or volume basis.
+
+The following dimensions can be specified for an Isotherm: 
+the measurement \textit{pressure}, the quantity of guest adsorbed
+or \textit{loading} and the amount of adsorbent material
+the loading is reported on, or \textit{adsorbent}.
+
+Pressure can be reported either in an absolute value, in several 
+common units such as \si{\bar}, torr, \si{\pascal}, or as 
+\textit{relative pressure}, the pressure divided by the saturation 
+vapour pressure of the adsorbate at the respective measurement
+temperature. Conversions between the two modes are automatic 
+and handled internally.
+
+Both the \textit{loading} and \textit{adsorbent} can be reported
+in three different bases: a molar basis, a mass basis or a volume
+basis. Within each basis different units are recognised and can be
+easily converted. The conversions between bases can also
+easily performed if the required conversion factors (i.e.\ molar 
+mass and density) are available. For \textit{loading}, these 
+factors are automatically calculated internally, while
+for the \textit{adsorbent} they should be provided by the user 
+in the respective \texttt{Sample} class.

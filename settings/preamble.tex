@@ -22,7 +22,8 @@
 \usepackage{
     amsmath,
     amsfonts,
-    amsthm
+    amsthm,
+    amssymb
 }
 
 % Todo notes. Used for notes and annotations.
@@ -30,12 +31,13 @@
 
 % Natbib package for text references
 \usepackage[
+    sectionbib,
     round,
     super,
     comma,
     sort&compress
 ]{natbib}
-\bibliographystyle{unsrtnat}
+\usepackage{chapterbib}
 \usepackage{natmove}
 
 % For better looking captions.
@@ -74,9 +76,72 @@
 }
 %\zexternaldocument*{si}
 
+% For colour definitions
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+% For code snippets
+\usepackage{listings}
+
+\lstdefinestyle{pythonstyle}{
+    language=Python,                        % using Python
+    backgroundcolor=\color{backcolour},     % background colour
+    basicstyle=\footnotesize\ttfamily,      % style for the entire code
+    keywordstyle=\color{magenta},           % style for keywords
+    commentstyle=\color{codegreen},         % style for comments 
+    stringstyle=\color{codepurple},         % style for strings
+    numberstyle=\tiny\color{codegray},      % style of line numbers
+    emph={False, True},                     % emphasise booleans
+    emphstyle={\color{blue}},               % with blue
+    captionpos=t,                           % where to put the caption
+    breaklines=true,                        % activates or deactivates automatic line breaking of long line
+    breakatwhitespace=false,                % if true only breaks at whitespaces
+    frame=single,                           % adds a frame around the listing
+    numbers=left,                           % line numbers
+    numbersep=5pt,                          % distance between number and listing
+    keepspaces=true,                        % do not drop spaces to keep alignment
+    showspaces=false,                       % highlight spaces in code
+    showstringspaces=false,                 % highlight spaces in strings
+    showtabs=false,                         % highlight tabs in code
+    tabsize=4                               % spaces inserted for each tab
+}
+
+\lstdefinestyle{pythonoutputstyle}{
+    basicstyle=\footnotesize\ttfamily,      % style for the entire code
+    keywordstyle=\color{magenta},           % style for keywords
+    commentstyle=\color{codegreen},         % style for comments 
+    stringstyle=\color{codepurple},         % style for strings
+    numberstyle=\tiny\color{codegray},      % style of line numbers
+    captionpos=t,                           % where to put the caption
+    breaklines=true,                        % activates or deactivates automatic line breaking of long line
+    breakatwhitespace=false,                % if true only breaks at whitespaces
+    frame=leftline,                         % adds a line
+    xleftmargin=15pt,                       % left margin
+    keepspaces=true,                        % do not drop spaces to keep alignment
+    showspaces=false,                       % highlight spaces in code
+    showstringspaces=false,                 % highlight spaces in strings
+    showtabs=false,                         % highlight tabs in code
+    tabsize=4                               % spaces inserted for each tab
+}
+
+\lstnewenvironment{python}[1][]
+    {\lstset{style=pythonstyle, #1}}
+    {}
+\lstnewenvironment{pythonout}[1][]
+    {\lstset{style=pythonoutputstyle, #1}}
+    {}
+
+\newcommand{\inline}{\lstinline[style=pythonstyle, keywordstyle={}]}
+
 % This package makes all references clickable. 
-% By default, these references become boxed and colored. This is turned back to normal with the \hypersetup command below.
 \usepackage{hyperref}
+% Adding package bookmark improves bookmarks handling.
+% More features and faster updated bookmarks.
+\usepackage{bookmark}
 
 \hypersetup{
     %backref=true,                          %% add links (default)
@@ -97,11 +162,11 @@
 
 % Font settings
 %% Title font
-%% Bibliography font
-\renewcommand{\bibfont}             {\usefont{T1}{bch}{m}{n}\selectfont}
+% %% Bibliography font
+% \renewcommand{\bibfont}             {\usefont{T1}{bch}{m}{n}\selectfont}
 
-%% Figure legend fonts
-%% Legend font
-\renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont\small}
-%% Label legend font
-\renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}
+% %% Figure legend fonts
+% %% Legend font
+% \renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont\small}
+% %% Label legend font
+% \renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}
