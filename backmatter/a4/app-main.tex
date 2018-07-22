@@ -5,3 +5,33 @@
 
 \chapter{Calculation of uncertainty in adsorption measurements}%
 \label{appx:uncertainty}
+
+To obtain the experimental errors, the procedure described in 
+the Guide to the Expression of Uncertainty in Measurement (REF )
+was used. The quantity, enthalpy or pressure, is first was expressed
+as a function f(y)f of other physical measured quantities through a
+functional relationship (\autoref{appx:uncert:eqn:general}). 
+The standard uncertainty (u_c (y))
+is then calculated on the basis of \autoref{appx:uncert:eqn:standarduncert}, where u_i (x_i ) is
+the standard uncertainty in each input quantity. Here it is assumed 
+that the input quantities are independent and uncorrelated. 
+The error margins (a_i) for each quantity were taken from manufacturer 
+specifications of the equipment used for recording. They were then divided
+by a value k_i k chosen to cover the expected variance in that quantity,
+as each variable is assumed to be characterized by a probability 
+distribution. The error introduced by the equation of state used 
+(NIST REFPROP (REF )) were assumed to be minor compared to the error 
+introduced by the physical quantities, with the same to be 
+said regarding the error in the calorimetric heat signal, which 
+represents less than 1\% of the error in enthalpy. Finally, the expanded 
+uncertainty was calculated by choosing a suitable coverage factor of
+1.645, corresponding to a 95\% confidence interval.
+
+\begin{equation}\label{appx:uncert:eqn:general}
+    f(y)=f(N_1,N_2 \cdots N_i)
+\end{equation}
+
+\begin{equation}\label{appx:uncert:eqn:standarduncert}
+    u_c(y) = \sqrt( \sum_(i=1)^N {\Big( \frac{\partial f(y)}{\partial x_i} u_i x_i  \Big)}^2 )
+\end{equation}
+
