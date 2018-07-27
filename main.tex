@@ -1,24 +1,13 @@
 % The master file for the thesis. Compile it for entire thesis creation.
 
-% Select document class first
-\documentclass[fleqn]{scrbook}
-
-\KOMAoptions{
-    paper=a4,
-    fontsize=12pt,
-    DIV=12,
-    BCOR=0mm,
-    twoside=off,
-    index=totoc,
-    listof=totoc,
-}
-
-% Import the doc with packages and other settings
+% Import the packages and their settings
 \input{settings/preamble}
+
+% Import the user-defined styles
+\input{settings/fontstyles}
 
 % Import the doc with the drafting
 \input{settings/drafting}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -63,6 +52,9 @@
 \include{\thisappx/appx-main}
 
 \renewcommand*{\thisappx}{backmatter/a3}
+\include{\thisappx/appx-main}
+
+\renewcommand*{\thisappx}{backmatter/a4}
 \include{\thisappx/appx-main}
 
 % Backmatter
