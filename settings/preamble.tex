@@ -4,6 +4,21 @@
 % LaTeX preamble where all required packages and macros can be defined. 
 % This needs to be done before the \begin{document} command.
 
+% Select document class first
+\documentclass[fleqn]{scrbook}
+
+    \KOMAoptions{
+        paper=a4,
+        fontsize=12pt,
+        DIV=12,
+        BCOR=0mm,
+        twoside=off,
+        index=totoc,
+        listof=totoc,
+    }
+
+%%%%%%%%%%%%%%%%%%%%%% Encodings, fonts and colours
+
 % Font encodings
 \usepackage[TS1,T1]{fontenc}
 
@@ -11,23 +26,16 @@
 % This package should recognise any UNICODE characters in the text and automatically replace them with their standard macros
 \usepackage[utf8]{inputenc}
 
-% Graphics package and path to graphics.
-\usepackage{graphicx}
-\graphicspath{ {figures/} }
+% For colour definitions
+\usepackage{color}
 
-% Sections styles
-\usepackage{sectsty}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-% AMS maths packages
-\usepackage{
-    amsmath,
-    amsfonts,
-    amsthm,
-    amssymb
-}
 
-% Todo notes. Used for notes and annotations.
-\usepackage{todonotes}
+%%%%%%%%%%%%%%%%%%%%%% Bibliography packages and settings
 
 % Natbib package for text references
 \usepackage[
@@ -38,8 +46,35 @@
     sort&compress
 ]{natbib}
 \usepackage{chapterbib}
+% Moves references after punctuation
 \usepackage{natmove}
 \renewcommand*{\natmovechars}{.}
+% Adds bibliography to TOC
+\usepackage[nottoc]{tocbibind}
+
+
+%%%%%%%%%%%%%%%%%%%%%% Science-related packages
+
+% AMS maths packages
+\usepackage{
+    amsmath,
+    amsfonts,
+    amsthm,
+    amssymb
+}
+
+% The SIunitx package enables the \SI{}{} command.
+\usepackage{siunitx}
+
+% The mchem package for formula subscripts using \ce{}
+\usepackage[version=4]{mhchem} 
+
+
+%%%%%%%%%%%%%%%%%%%%%% Packages for graphs, tables and listings
+
+% Graphics package and path to graphics.
+\usepackage{graphicx}
+\graphicspath{ {figures/} }
 
 % For better looking captions.
 \usepackage{caption}
@@ -59,32 +94,6 @@
     tabularx
     }
 
-% The SIunitx package enables the \SI{}{} command.
-\usepackage{siunitx}
-
-% The mchem package for formula subscripts using \ce{}
-\usepackage[version=4]{mhchem} 
-
-% Clickable URL's can be made with this package: \url{}.
-\usepackage{url}
-
-% To reference another document, in this case the SI
-\usepackage{zref-xr,zref-user}
-\zxrsetup{
-    tozreflabel=false, 
-    toltxlabel=true, 
-    verbose
-}
-%\zexternaldocument*{si}
-
-% For colour definitions
-\usepackage{color}
-
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
- 
 % For code snippets
 \usepackage{listings}
 
@@ -138,6 +147,24 @@
 
 \newcommand{\inline}{\lstinline[style=pythonstyle, keywordstyle={}]}
 
+
+%%%%%%%%%%%%%%%%%%%%%% Miscellaneous
+
+% Todo notes. Used for notes and annotations.
+\usepackage{todonotes}
+
+
+%%%%%%%%%%%%%%%%%%%%%% References and bookmarks
+
+% To reference another document, in this case the SI
+\usepackage{zref-xr,zref-user}
+\zxrsetup{
+    tozreflabel=false, 
+    toltxlabel=true, 
+    verbose
+}
+%\zexternaldocument*{si}
+
 % This package makes all references clickable. 
 \usepackage{hyperref}
 % Adding package bookmark improves bookmarks handling.
@@ -153,7 +180,7 @@
     % pagebackref=true,                     %% in the bibliography (default)
     % hyperindex=true,                      %% in the index (default)
     breaklinks=true,                        %% break lines if long
-    colorlinks=true,                        %% colour links
+    colorlinks=false,                       %% colour links
     urlcolor=blue,                          %% link colour
     citecolor=blue,	                        %% bibliography link color
     linkcolor=blue,	                        %% internal link color
@@ -161,15 +188,3 @@
     linktocpage=false,                      %% pagenumber link in TOC
     pdfborder={0 0 0}                       %% pdf border settings
 }
-\renewcommand*{\appendixautorefname}{appendix}
-
-% Font settings
-%% Title font
-% %% Bibliography font
-% \renewcommand{\bibfont}             {\usefont{T1}{bch}{m}{n}\selectfont}
-
-% %% Figure legend fonts
-% %% Legend font
-% \renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont\small}
-% %% Label legend font
-% \renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}
