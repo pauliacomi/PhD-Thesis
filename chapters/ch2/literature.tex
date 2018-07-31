@@ -1,37 +1,55 @@
 % !TEX root = ../../main.tex
 
-\section{Literature}
+\section{Thermodynamics of adsorption}
+
+As mentioned in the introduction \todo{reference}, adsorption 
+is a consequence of intermolecular attraction between the 
+material surface and the molecules of the fluid. The sum of 
+all interactions accounts for the depth of the potential 
+well and therefore for the energy corresponding to the 
+process. As this energy is net positive adsorption is an
+overall exothermic phenomenon.
+
+However, in order to make the transition from a molecular 
+viewpoint to a macroscale bulk fluid representation of 
+adsorption, the thermodynamics of the process must be 
+clearly defined.
+
+\subsection{The Gibbs surface excess approach}
+
+A description of the adsorbed phase can be made through the change
+in density or concentration of the fluid starting from the 
+adsorbent surface. When represented as such, the density 
+has a maxima in the immediate zone close to the surface and then
+decreases until attaining the density of the bulk fluid.
+However, when defined as such the boundary between the 
+adsorbed phase and the bulk phase is difficult to pinpoint.
+In some cases, such as adsorption in porous materials, the 
+adsorbed phase can be taken as total pore volume, but in 
+most cases it is useful to refer to the Gibbs surface 
+excess approach of quantifying the amount adsorbed.
+
+This concept describes the adsorbed phase only in terms
+of an \textit{excess} from the properties of the bulk phase. 
+As long as the volume of the adsorbed layer can be considered 
+negligible and the concentration of adsorbate in the bulk 
+phase is low, the total amount adsorbed and the surface excess
+amount may be considered equal.
+
+\subsection{Enthalpy of adsorption}
+
+\begin{figure}[htb]
+    \centering
+
+    \includegraphics[width=\linewidth]{enthalpy-curves}
+    \caption{
+      General enthalpy curves corresponding to different 
+      IUPAC-defined isotherm 
+      types\cite{llewellynGasAdsorptionMicrocalorimetry2005}.
+    }%
+    \label{calo:fig:enthalpy-iupac-iso}
+
+\end{figure}
 
 
-\subsubsection{Isosteric heat}
-
-The isosteric heats are calculated from experimental data using the Clausius-Clapeyron
-equation as the starting point:
-
-\begin{equation}
-    \Big( \frac{\partial \ln P}{\partial T} \Big)_{n_a} = -\frac{\Delta H_{ads}}{R T^2}
-\end{equation}
-
-Where \(\Delta H_{ads}\) is the enthalpy of adsorption. In order to approximate the
-partial differential, two or more isotherms are measured at different temperatures. The
-assumption made is that the heat of adsorption does not vary in the temperature range
-chosen. Therefore, the isosteric heat of adsorption can be calculated by using the pressures
-at which the loading is identical using the following equation for each point:
-
-\begin{equation}
-    \Delta H_{ads} = - R \frac{\partial \ln P}{\partial 1 / T}
-\end{equation}
-
-and plotting the values of \(\ln P\) against \(1 / T\) we should obtain a straight
-line with a slope of \(- \Delta H_{ads} / R\).
-
-The isosteric heat is sensitive to the differences in pressure between the two isotherms. If
-the isotherms measured are too close together, the error margin will increase.
-The method also assumes that enthalpy of adsorption does not vary with temperature. If the
-variation is large for the system in question, the isosteric heat calculation will give
-unrealistic values.
-
-Even with carefully measured experimental data, there are two assumptions used in deriving
-the Clausius-Clapeyron equation: an ideal bulk gas phase and a negligible adsorbed phase
-molar volume. These have a significant effect on the calculated isosteric heats of adsorption,
-especially at high relative pressures and for heavy adsorbates.
+\subsection{}
