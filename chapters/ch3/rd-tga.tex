@@ -2,6 +2,38 @@
 
 \subsection{Thermogravimetry results}
 
+A selection of TGA curves measured on the leached samples
+can be seen in \autoref{arg}. The complete set of data
+can be found in \autoref{appx:def}, \autoref{appx:def:tga}.
+
+A typical TGA curve, as measured on a pristine material
+is characterised by three main mass losses: a loss
+at low temperature, usually until \SI{100}{\degreeCelsius},
+which is indicative of adsorbed water from the environment;
+a secondary mass loss in the \SIrange{100}{200}{\degreeCelsius}
+range, corresponding to the evacuation of residual solvent 
+from the pores and finally, a large step which is a sign of 
+sample degradation as the linker is oxidized.
+
+There are three types of differences that can be seen 
+between curves on different samples:
+
+\begin{itemize}
+    \item the aforementioned change in overall height,
+    which indicates the presence of missing linker defects;
+    \item differences in the solvent removal step, as they
+    have different boiling points and interactions with the 
+    framework;
+    \item in case the defects are capped by an agent such as 
+    the modulator molecule used, it may introduce a new 
+    mass loss step between solvent removal and complete
+    structure breakdown;
+    \item finally, a highly defective structure loses part 
+    of its thermal resistance and begins to decompose 
+    at lower temperatures, altering both the onset of mass
+    loss and the complete oxidation temperature.
+\end{itemize}
+
 From the TGA curve of the pristine UiO-66 material, 
 it is immediately obvious that there are some defects 
 already present in the sample. By using the normalized
@@ -9,11 +41,42 @@ mass at \SI{420}{\degreeCelsius} a linker-to-cluster
 ratio of around 11:1 can be calculated. This corresponds 
 to one BDC linker per cluster on average and shows that
 there are still intrinsic defects in the as-synthesised 
-structure.
+structure. These defects are most likely capped by 
+formate moieties, which have been generated during 
+the solvothermal synthesis in DMF through solvent 
+self-hydrolysis (through \autoref{def:eqn:dmf-hydrolysis}), as 
+commercially available DMF has a small percentage of 
+residual water~\cite{shearerDefectEngineeringTuning2016}.
+
+\begin{equation}\label{def:eqn:dmf-hydrolysis}
+    \ce{HCON(CH3)2 + H2O -> HCOOH + 2HN(CH3)2}
+\end{equation}
+
+It follows that the mass loss step around \SI{250}{\degreeCelsius}
+is the evacuation of formate capping agents from the 
+structure, to generate an open metal site. The same step
+can be found in the samples which have been leached with
+formic acid.
+
+In samples with where other leaching acids were present,
+it is likely that the original formate capping the defects 
+has been replaced with an acid molecule from solution,
+purely through kinetic means due to the large excess.
+As evidenced through \autoref{arg}, the mass loss corresponding 
+to the formate is reduced, or no longer present. 
+Acetic acid leaves the 
+structure at a higher temperature, as 
+a new peak is present at \SI{390}{\degreeCelsius}.
+Benzoic acid introduces a progressive mass loss near the
+total decomposition temperature of \SI{550}{\degreeCelsius}.
+As it is similar to the btc linker, its higher stability
+is not surprising. Finally, trifluoroacetic acid is 
 
 The graphs in \autoref{def:fgr:tga-defects} summarize the 
 trends in missing linker defects as calculated through 
 thermogravimetry with all the samples used.
+
+
 
 When DMF is used as a solvent, the resulting leached samples 
 have a 

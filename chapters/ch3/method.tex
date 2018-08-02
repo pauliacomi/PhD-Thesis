@@ -33,7 +33,7 @@ A summary of all generated materials can be found in
 \autoref{leaching:tab:samples}.
 
 \begin{table}[p]
-	\centering
+	\centering\small
 	\caption{Samples used in the UiO-66(Zr) linker leaching study}
 	\begin{tabular}{lcccc}
 		\toprule
@@ -58,32 +58,33 @@ A summary of all generated materials can be found in
 		JM & \ce{DMF}               & \ce{BA}  & 1:10  & --- \\
 		JM & \ce{DMF}               & \ce{BA}  & 1:20  & --- \\
 		JM & \ce{DMF}               & \ce{BA}  & 1:100 & Completely dissolved \\
-		JM & \ce{H2O}               & \ce{FA}  & 1:10  & --- \\
-		JM & \ce{H2O}               & \ce{FA}  & 1:100 & --- \\
-		JM & \ce{H2O}               & \ce{AA}  & 1:10  & --- \\
-		JM & \ce{H2O}               & \ce{AA}  & 1:100 & --- \\
-		JM & \ce{H2O}               & \ce{TFA} & 1:10  & --- \\
-		JM & \ce{H2O}               & \ce{TFA} & 1:100 & --- \\
-		JM & \ce{H2O}               & \ce{BA}  & 1:10  & --- \\
-		JM & \ce{H2O}               & \ce{BA}  & 1:100 & --- \\
-		JM & \ce{MeOH}              & None     & 0     & Control  \\
-		JM & \ce{MeOH}              & \ce{FA}  & 1:10  & --- \\
-		JM & \ce{MeOH}              & \ce{FA}  & 1:100 & --- \\
-		JM & \ce{MeOH}              & \ce{AA}  & 1:10  & --- \\
-		JM & \ce{MeOH}              & \ce{AA}  & 1:100 & --- \\
-		JM & \ce{MeOH}              & \ce{TFA} & 1:10  & --- \\
-		JM & \ce{MeOH}              & \ce{TFA} & 1:100 & --- \\
-		JM & \ce{MeOH}              & \ce{BA}  & 1:10  & --- \\
-		JM & \ce{MeOH}              & \ce{BA}  & 1:100 & --- \\
-		JM & \ce{DMSO}              & None     & 0     & Control  \\
-		JM & \ce{DMSO}              & \ce{FA}  & 1:10  & --- \\
-		JM & \ce{DMSO}              & \ce{FA}  & 1:100 & --- \\
-		JM & \ce{DMSO}              & \ce{AA}  & 1:10  & --- \\
-		JM & \ce{DMSO}              & \ce{AA}  & 1:100 & --- \\
-		JM & \ce{DMSO}              & \ce{TFA} & 1:10  & --- \\
-		JM & \ce{DMSO}              & \ce{TFA} & 1:100 & Completely dissolved \\
-		JM & \ce{DMSO}              & \ce{BA}  & 1:10  & --- \\
-		JM & \ce{DMSO}              & \ce{BA}  & 1:100 & --- \\
+		JM237 & \ce{H2O}               & None  & None  & Parent material \\
+		JM328 & \ce{H2O}               & \ce{FA}  & 1:10  & --- \\
+		JM329 & \ce{H2O}               & \ce{FA}  & 1:100 & --- \\
+		JM330 & \ce{H2O}               & \ce{AA}  & 1:10  & --- \\
+		JM331 & \ce{H2O}               & \ce{AA}  & 1:100 & --- \\
+		JM332 & \ce{H2O}               & \ce{BA}  & 1:10  & --- \\
+		JM333 & \ce{H2O}               & \ce{BA}  & 1:100 & --- \\
+		JM334 & \ce{H2O}               & \ce{TFA} & 1:10  & --- \\
+		JM335 & \ce{H2O}               & \ce{TFA} & 1:100 & --- \\
+		JM351 & \ce{MeOH}              & \ce{FA}  & 1:10  & --- \\
+		JM352 & \ce{MeOH}              & \ce{FA}  & 1:100 & --- \\
+		JM353 & \ce{MeOH}              & \ce{AA}  & 1:10  & --- \\
+		JM354 & \ce{MeOH}              & \ce{AA}  & 1:100 & --- \\
+		JM355 & \ce{MeOH}              & \ce{BA}  & 1:10  & --- \\
+		JM356 & \ce{MeOH}              & \ce{BA}  & 1:100 & --- \\
+		JM357 & \ce{MeOH}              & \ce{TFA} & 1:10  & --- \\
+		JM358 & \ce{MeOH}              & \ce{TFA} & 1:100 & --- \\
+		JM359 & \ce{MeOH}              & None     & 0     & Control  \\
+		JM360 & \ce{DMSO}              & \ce{FA}  & 1:10  & --- \\
+		JM361 & \ce{DMSO}              & \ce{FA}  & 1:100 & --- \\
+		JM362 & \ce{DMSO}              & \ce{AA}  & 1:10  & --- \\
+		JM363 & \ce{DMSO}              & \ce{AA}  & 1:100 & --- \\
+		JM364 & \ce{DMSO}              & \ce{BA}  & 1:10  & --- \\
+		JM365 & \ce{DMSO}              & \ce{BA}  & 1:100 & --- \\
+		JM366 & \ce{DMSO}              & \ce{TFA} & 1:10  & --- \\
+		JM367 & \ce{DMSO}              & \ce{TFA} & 1:100 & Completely dissolved \\
+		JM368 & \ce{DMSO}              & None     & 0     & Control  \\
 		\bottomrule
 	\end{tabular}%
 	\label{leaching:tab:samples}
@@ -101,6 +102,9 @@ its metal oxide, a stoichiometric analysis of the TGA curve
 can allow for the percentage of missing linkers to be
 determined. TGA curves for this study were measured under
 an air atmosphere using the method described in \autoref{appx:char:TGA}.
+A heating rate of \SI{5}{\degreeCelsius\per\minute} was used,
+as it is assumed to be low enough for the sample to be in
+permanent thermal equilibrium with the furnace.
 The curves are then normalized with respect to the weight at
 \SI{600}{\degreeCelsius}, which is assumed to correspond to pure
 \ce{ZrO2}. The maximum possible mass loss of a solvent-free
@@ -110,8 +114,6 @@ of the TGA curve between \SIrange{400}{500}{\degreeCelsius},
 in the range where it is assumed that the molecules included in
 the framework are completely evacuated, is used as a measure of the
 number of BDC linkers which are missing.
-
-\todo{example curve}
 
 If the distribution of defects can introduce changes in the
 long-range order and topology of their parent framework,
@@ -141,7 +143,7 @@ in \autoref{appx:char:nmr} to qualitatively and quantitatively assess
 the presence of the capping agents in the UiO-66(Zr) samples. \todo{method}
 
 Finally, both nitrogen adsorption at \SI{77}{\kelvin} and \ce{CO2} 
-adsorption at \SI{303}{\kelvin} were used to describe the surface 
+adsorption at \SI{303}{\kelvin} can be used to describe the surface 
 characteristics and porosity of the samples. The methods for obtaining
 the isotherms are presented in detail in \autoref{appx:char:N2phys}
 and \autoref{appx:char:highthroughput} for \ce{N2} and \ce{CO2}
