@@ -29,9 +29,8 @@ between curves on different samples:
     mass loss step between solvent removal and complete
     structure breakdown;
     \item finally, a highly defective structure loses part 
-    of its thermal resistance and begins to decompose 
-    at lower temperatures, altering both the onset of mass
-    loss and the complete oxidation temperature.
+    of its thermal resistance altering both the onset of mass
+    loss and the final decomposition temperature.
 \end{itemize}
 
 From the TGA curve of the pristine UiO-66 material, 
@@ -109,17 +108,27 @@ is not surprising. Finally, the samples leached with
 TFA have a more complicated curve, with two or even 
 three peaks in the derivative with respect to temperature.
 This kind of degradation suggests the existence of different types
-of capping sites, some more strongly bound than others. 
+of capping sites, some more strongly bound than others.\todo{explain}
+Increase in thermal stability~\cite{vandevoordeImprovingMechanicalStability2015}.
+and~\cite{jiaoHeatTreatmentDefectiveUiO662017}.
 
 The solvent used can be removed in all cases before 
 \SI{200}{\degreeCelsius}. DMSO is the one with the highest
 preponderence in the leached samples (\autoref{def:fgr:tga-dmso-aa}) 
 and the most difficult to remove, likely due to its high boiling point.
 
-The graphs in \autoref{def:fgr:tga-defects} summarize the 
+It is also clearly visible that the leaching procedure has,
+without doubt, led to the generation of missing linker 
+defects. The graphs in \autoref{def:fgr:tga-defects} summarize the 
 trends in missing linker defects as calculated through 
-the plateau at \SI{420}{\degreeCelsius}. Several clear trends can be 
-
+the plateau at \SI{420}{\degreeCelsius}. The DMF leached samples,
+due to the multiple datapoints with different acid concentrations
+show the clearest influence of this variable on defect
+generation. Even small amounts of modulator leads to the decrease of 
+the linker-to-node ratio, but the increase in concentration stops 
+having an effect at around 20:1 equivalents. It is likely that
+the trends are similar with other solvents, even if less 
+datapoints are available.
 
 \begin{figure}[htb]
     \centering
@@ -147,7 +156,8 @@ the plateau at \SI{420}{\degreeCelsius}. Several clear trends can be
     normalized mass at \SI{420}{\degreeCelsius} for (a) DMF 
     (b) \ce{H2O}, (c) \ce{MeOH} and (d) DMSO leached samples.
     A ratio of 12 to 1 corresponds to a completely defect-free
-    structure.}%
+    structure. An exponential decay trendline is fitted to 
+    each set of points.}%
     \label{def:fgr:tga-defects}
     
 \end{figure}
