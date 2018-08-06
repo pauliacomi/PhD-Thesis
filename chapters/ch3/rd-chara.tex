@@ -58,8 +58,15 @@ size distribution was calculated through the Horvatz-Kawazoe
 method for micropores, the Dollimore-Heal method for mesopores
 and DFT kernel fitting for a multiscale distribution. While 
 the applicability of these methods for determination of absolute
-pore size is doubtful, they can provide comparisons between 
-different samples of the same material.
+pore size may be questioned, they can be readily used to
+compare between different samples of the same material.
+In general, the leaching process has a positive effect on 
+both surface area and pore volume, both of which increase 
+with a higher concentration of acid used. The strength of 
+the initial interaction of the nitrogen probe with the pore 
+walls is changed as well, with more defective samples likely
+to have a more pronounced interaction, either through the introduction
+of CUS or modification of pore environment.
 
 \begin{figure}[htb]
     \centering
@@ -145,7 +152,18 @@ to the acidic character of the modulators, except for \todo{table acids?}
 benzoic acid which has a lower pKa (4.2) than acetic acid (4.7). 
 When examining the influence of the solvent, another trend appears
 to emerge, with samples leached in DMSO having the largest propensity
-for defect generation, followed by DMF, water and methanol.
+for defect generation, followed by DMF, water and methanol. 
+The contribution of the of the solvent is not as easy to determine due
+to the complex interplay of multiple 
+The polarity of the solvent molecule has been linked to 
+defect generation during modulated synthesis in the seminal
+report by \citeauthor{shearerDefectEngineeringTuning2016}. The leaching
+results do not, however, conform to the same trend, as water with a 
+relative polarity of 1.0 introduces more defects than methanol 
+(relative polarity of 0.7) and DMF (0.38) is less effective than 
+DMSO (0.44). The solubility of terephtalic acid in the solvent 
+of choice is likely a limiting factor in the 
+\todo{temperature of leaching?}
 
 In this case, the plateau might not be an accurate indication of
 the number of defects since the comparatively large molecule,
@@ -153,7 +171,7 @@ high boiling point and similarity to the terephtalate linker
 make the removal of benzoic acid capping open metal sites harder. 
 The nitrogen 
 
-\begin{figure}[!h]
+\begin{figure}[!htb]
     \centering
     \( \vcenter{\hbox{\includegraphics[width=0.3\linewidth]{structures/site-linker}}}\)%
     \( \longrightarrow \)%
@@ -164,9 +182,43 @@ The nitrogen
 
 The calculated pore sizes with both the HK method and the DFT method 
 show two sharp peaks corresponding to the octahedral and tetrahedral
-pores in the UiO-66 structure. 
+pores in the UiO-66 structure. In \autoref{def:fgr:psd}, the pore
+size distribution for the DMSO dataset is depicted. The appearance of 
+a tertiary pore is visible in the leached samples with formic,
+acetic and trifluoroacetic acid. This pore size likely corresponds
+to the increased pore volume introduced by missing linker-type 
+defects. The calculated diameter of this tertiary pore is
+inversely proportional to the molecular size of the 
+leaching compound used, which is a clear indication of the presence of 
+the acid molecules in the structure as capping agents. On the samples
+which have been activated at \SI{320}{\degreeCelsius}, the pore width
+shifts to a single value as the coordinated acids are evacuated.
 
-\begin{figure}[htb]
+The pore size distribution calculated in the benzoic acid leached
+samples shows the disappearance of peaks larger than around 
+\SI{1}{\nano\metre}, as the compound replaces formate as the 
+capping agent for the initial defects in the structure. Due to the 
+similarity of the terephtalate linker with benzoate, the structure
+becomes more ``ideal'' than the pristine material. At high concentrations
+of benzoic acid, an overall decrease in porosity may be seen, as 
+two benzoate molecules may act as capping agents in adjacent 
+sites as depicted in \autoref{def:fgr:benzoic-defect}, effectively 
+lowering the available pore volume. The effect is corroborated 
+by trends in the linker-to-node ratio, surface area and total 
+pore volume in both methanol, DMSO and to a lesser extent DMF. 
+
+At very high concentrations of TFA and BA, a fourth pore size
+begins to be appear in the DFT calculated pore distribution.
+This is likely evidence that missing cluster defects can be 
+introduced at these concentrations. It should be noted that 
+if such large-scale modifications of the structure are possible,
+complete structural breakdown is not far away. Indeed, samples with 
+higher concentrations of acid could not be obtained with TFA in DMSO,
+with sample subjected to these conditions ending up completely
+dissolved.
+
+
+\begin{figure}[!h]
     \centering
 
     \begin{subfigure}{0.25\linewidth}
@@ -178,7 +230,7 @@ pores in the UiO-66 structure.
         \label{def:fgr:psd-dmso-aa-hk}
     \end{subfigure}%
     \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-fta-psd-hk}%
+        \includegraphics[width=\textwidth]{n2phys/dmso-tfa-psd-hk}%
         \label{def:fgr:psd-dmso-tfa-hk}
     \end{subfigure}%
     \begin{subfigure}{0.25\linewidth}
@@ -203,7 +255,9 @@ pores in the UiO-66 structure.
         \label{def:fgr:psd-dmso-ba-dft}
     \end{subfigure}%
 
-    \caption{C}%
-        \label{def:fgr:nitrogen-predictors}
+    \caption{Calculated pore size distribution for the DMSO-leached
+    samples with the HK (a-d) and DFT (e-h) methods.}%
+    \label{def:fgr:psd}
         
 \end{figure}
+
