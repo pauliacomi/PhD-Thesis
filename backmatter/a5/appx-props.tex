@@ -1,0 +1,55 @@
+% !TEX root = ../../main.tex
+
+\FloatBarrier%
+\section{Acid and solvent properties}\label{appx:def:props}
+
+\begin{table}[htb]
+	\centering
+	\caption{Solvent properties}
+	\begin{tabular}{lcccc}
+		\toprule
+	    \textbf{Solvent}
+        & \textbf{Polarity} 
+        & \textbf{Boiling point} 
+        & \textbf{Viscosity}
+        & \textbf{Acidity} \\
+        & relative to water & \si{\degreeCelsius} & 
+        cP, at \SI{20}{\degreeCelsius} & pKa \\
+		\midrule
+		DMF      & 0.386 & 65 & 0.92 & base of formic acid\\
+		DMSO     & 0.444 & 100 & 1.99 & 35 \\
+        EtOH     & 0.762 & 153 & 0.54 & 15.5 \\
+        \ce{H2O} & 1.000 & 189 & 0.89 & 14 \\
+        \bottomrule
+	\end{tabular}%
+	\label{appx:def:tab:solvent}
+\end{table}%
+
+\begin{table}[htb]
+	\centering
+	\caption{Leaching acid properties}
+	\begin{tabular}{lccccc}
+        \toprule
+        & \textbf{Acidity} 
+        & \multicolumn{4}{c}{Solubility (g/100g) at \SI{25}{\degreeCelsius}}              \\
+        \cmidrule{3-6}
+        \textbf{Acid} & pKa  
+		      & \textbf{\ce{H2O}}
+		      & \textbf{MeOH} 
+		      & \textbf{DMF} 
+		      & \textbf{DMSO}                                            \\
+		\midrule
+		formic   &  3.75  & miscible & miscible & miscible & miscible \\
+		acetic   &  4.45  & miscible & miscible & miscible & miscible \\
+        trifluoroacetic & 0.3 & miscible & miscible & miscible & miscible \\
+        benzoic   &  4.19 
+            & 0.24~\cite{acreeIUPACNISTSolubilityData2013} 
+            & 77~\cite{acreeIUPACNISTSolubilityData2013} 
+            & 149~\cite{acreeIUPACNISTSolubilityData2013} 
+            & 162~\cite{acreeIUPACNISTSolubilityData2013} \\
+        \bottomrule
+	\end{tabular}%
+	\label{appx:def:tab:acid}
+\end{table}%
+
+\pagebreak
