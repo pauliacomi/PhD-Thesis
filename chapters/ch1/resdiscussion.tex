@@ -1,3 +1,37 @@
 % !TEX root = ../../main.tex
 
 \section{Case studies}
+
+The NIST database of standard materials is a 
+
+The complete dataset was downloaded using the publicly available API. 
+The database yielded \~18500 isotherms.
+Some sorting was performed on the dataset:
+
+\begin{itemize}
+    \item All isotherms which were recorded on a volume 
+    basis were discarded. As the density of the samples in
+    question is not known, they could not be converted to 
+    a mass basis. 
+    \item No isotherms with less than 6 points were considered,
+    as sufficient datapoints are needed for a model.
+    \item Isotherms were then converted into \si{\milli\mol\per\gram},
+    to ensure a consistent unit set.
+    \item Possible outliers were removed from the data by selecting 
+    only isotherms recorded under \SI{100}{\bar}, with maximum capacities
+    under \SI{100}{\milli\mol} and with a temperature of under 
+    \SI{443}{\kelvin}.
+\end{itemize}
+
+The process of data collation reduced the number of isotherms
+to \~15800. A distribution of the isotherms as a function of adsorbate
+and temperature can be found in \autoref{def:pyg:nist-set}.
+
+\begin{figure}[htb]
+    \centering
+
+    \missingfigure[figwidth=0.5\textwidth]{Co2 isotherms go here}
+
+    \caption{\ce{CO2} adsorption isotherms at \SI{303}{\kelvin}}%
+    \label{def:pyg:nist-set}
+\end{figure}
