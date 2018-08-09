@@ -7,12 +7,14 @@ worksheets being used for the calculations. As an example,
 we point out that one of the initial limitations of the BJH method was 
 that each point had to 
 be determined with an approximation of critical pore radius, due to the 
-tedious work involved in the calculation~\cite{barrettDeterminationPoreVolume1951}.
+tedious work involved in the 
+calculation~\cite{barrettDeterminationPoreVolume1951}.
 
 The advent of computers meant that the calculations could be performed
 quickly and reliably and led to the introduction of more complex
 methods for isotherm processing, such as the DFT method for pore size
-distribution~\cite{seatonNewAnalysisMethod1989, tarazonaPhaseEquilibriaFluid1987}. 
+distribution~\cite{seatonNewAnalysisMethod1989,%
+tarazonaPhaseEquilibriaFluid1987}. 
 Commercial adsorption equipment which offers the users
 a complete software solution for any isotherm calculations is now
 commonplace and makes obtaining reports of desired properties
@@ -26,16 +28,28 @@ capacity and pore volume are commonly reported in scientific literature
 and used as benchmarking tools for comparing performance.
 
 Recent efforts have also focused on building a database of adsorption 
-isotherms~\cite{sideriusNISTARPAEDatabase2015}, to offer a searchable pool of 
-standardised behaviours on different materials. This serves as both a
+isotherms~\cite{sideriusNISTARPAEDatabase2015}, to offer a searchable
+pool of standardised behaviours on different materials. This serves as both a
 useful reference for comparing synthesised compounds, as well as a
-method for quickly finding suitable materials which have the desired properties
-for a particular application.
+method for quickly finding suitable materials which have the
+desired properties for a particular application.
+
+\subsection*{Chapter summary}
 
 In this chapter an open-source software package is presented, which 
-is released under an MIT licence and written in Python, intended to be used for 
-manipulation, storage, visualisation and processing of adsorption isotherms.
-Developed internally at the MADIREL Laboratory in
+is released under an MIT licence and written in Python, intended to be
+used for manipulation, storage, visualisation and processing of
+adsorption isotherms. Developed internally at the MADIREL Laboratory in
 Marseilles, the software is aimed to give users a powerful yet easy to
 use package that can perform the kind of processing usually offered by
-commercial software.
+commercial software, but using large datasets of hundreds or thousands
+of isotherms.
+
+\subsection*{Contribution}
+
+Paul Iacomi wrote the python code for the pyGAPS framework and is 
+responsible for its publication and maintenance as an open source
+package. The IAST functionality is a modified version of
+the pyIAST code, published by Cory Simon. The data used in this chapter 
+is available from the NIST Adsorption Database, maintained by Dan Siderius.
+
