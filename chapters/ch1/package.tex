@@ -5,10 +5,10 @@
 \subsection{Intended use cases}
 
 The software was imagined for use in two types of scenario.
-First, as a command line interface, in environments such as
-\texttt{IPython} and \texttt{Jupyter}. The typical user working
+First, as a command line interface, in common data science environments
+such as \texttt{IPython} and \texttt{Jupyter}. The typical user working
 in these environments is likely to be processing a small batch of
-results at one time, and is interested in obtaining the results in
+results at a time, and is interested in obtaining the results in
 graphical form. For this type of application, the framework should
 provide an unobtrusive way of importing the user data, as well as
 present an API which does not require extensive knowledge of 
@@ -28,7 +28,7 @@ under other types of data files.
 
 In order to offer a clear structuring of functionality, 
 \texttt{pyGAPS} introduces several classes which abstract data and
-functionality for facile interaction. The classes are
+concepts for facile interaction. The classes are
 intuitively named: \texttt{Isotherm}, \texttt{Sample} and \texttt{Adsorbent}.
 
 \subsubsection{The \texttt{Isotherm} class}
@@ -40,16 +40,21 @@ other information relating to the isotherm, such as the material
 name and batch it describes, the adsorbate used and other 
 user-defined properties.
 
-Because the aforementioned relationship can be either a physical 
-measurement defined by individual pressure-loading pairs or a model, 
-describing the relationship as a function rather than discrete data, 
-the Isotherm class is used as a parent class for two subclasses: 
-\texttt{PointIsotherm}, describing datapoints and \texttt{ModelIsotherm} 
-containing a model such as Henry, Langmuir etc., which encapsulate
-the respective functionality. The two classes are interchangeable as they
-share most methods and properties. Once an instance of an \texttt{Isotherm}
-class is created, it can then be used for the processing, conversion 
-and graphing capabilities of \texttt{pyGAPS}.
+This relationship can be defined in two ways:
+
+\begin{itemize}
+    \item individual pressure-loading pairs of points which have 
+    been recorded as part of a measurement or
+    \item as a mathematical function describing the relationship 
+    between the two properties. 
+\end{itemize}
+
+As such, the Isotherm class is used as a parent class for two subclasses: 
+\texttt{PointIsotherm}, containing datapoints and \texttt{ModelIsotherm} 
+containing a model such as Henry, Langmuir etc. The two classes are interchangeable 
+as they share most methods and properties. Once an instance of 
+an \texttt{Isotherm} class is created, it can then be used for the 
+processing, conversion and graphing capabilities of \texttt{pyGAPS}.
 
 \subsubsection{The \texttt{Sample} class}
 
@@ -67,15 +72,15 @@ specific \texttt{Sample}.
 
 Finally, in order for many of the calculations included in 
 \texttt{pyGAPS} to be performed, properties of the adsorbate 
-used are needed e.g. \ liquid density, vapour pressure etc.
+used are needed e.g.\ liquid density, vapour pressure etc.
 The \texttt{Adsorbate} class is provided for this purpose,
-which is connected to an \texttt{Isotherm} class similarly to a 
-\texttt{Sample}. The physical properties are either calculated 
-in the background through an equation of state,
+which is connected to an \texttt{Isotherm} class in the same way as a 
+\texttt{Sample}. The physical properties are calculated 
+automatically through an equation of state,
 either the open source CoolProp library~\cite{bellPurePseudopureFluid2014} 
-or the NIST-made REFPROP~\cite{lemmonNISTReferenceFluid1989}.
-The properties can also be retrieved from the internal database 
-or specified by the user.
+or the NIST-made REFPROP~\cite{lemmonNISTReferenceFluid1989} if available
+on the user's computer. The properties can also be retrieved 
+from the internal database or specified by the user.
 
 \subsection{Creation of an Isotherm}
 
