@@ -3,10 +3,7 @@
 \subsection{Assessing porosity}
 
 Characterization of pore sizes and their distribution in porous materials
-is often the main goal when performing adsorption experiments. It is
-therefore important that \texttt{pyGAPS} includes several robust methods
-for determining pore distribution from isotherm data.
-
+is often the main goal when performing adsorption experiments.
 When it comes to porous materials, three kinds of pore sizes have been
 defined, based on their lengthscales: micropores (\SI{< 2}{\nano\metre}),
 mesopores (\SIrange{2}{50}{\nano\metre}), and macropores (\SI{> 50}{\nano\metre}).
@@ -31,7 +28,7 @@ of continuous fluid properties and comparable density of the adsorbed
 state to bulk liquid density breaks down. An atomistic approach
 is required here, to address the interaction between solid-fluid
 and fluid-fluid through potential functions. The Horvath-Kawazoe or
-HK method is often used, and it is implemented in \texttt{pyGAPS}.
+HK method is often used.
 
 Finally, methods based on density functional theory (DFT) and
 derivations such as non-local DFT (NLDFT) and quenched solid state DFT
@@ -40,11 +37,7 @@ derivations such as non-local DFT (NLDFT) and quenched solid state DFT
 \textit{in-silico} simulation of isotherms on a range of pore sizes,
 which can then be collated in a so-called \textit{DFT kernel}, able to
 be used in decomposition of a experimental isotherm to obtain a
-pore size distribution. While the generation of DFT kernels is
-outside the scope of the \texttt{pyGAPS} framework, it is able to use
-user-provided kernels to fit adsorption isotherms, and comes with
-a basic kernel for \ce{N2} adsorption at \SI{77}{\kelvin} on
-carbon slit pores.
+pore size distribution.
 
 It should be noted that all methods here described require knowledge of
 the pore geometry and depend on the material having pores which
@@ -187,21 +180,6 @@ can be obtained.
 
 In order to calculate the
 
-\begin{python}[caption={PSD using the BJH method},%
-    label={pyg:lst:bjh}]
-result_dict = pygaps.mesopore_size_distribution(
-    charact_iso,
-    psd_model='BJH',
-    verbose=True
-)
-\end{python}
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=\linewidth]{psd/bjh-des}
-	\caption{BJH pore size distribution}%
-	\label{pyg:fgr:bjhplot}
-\end{figure}
 
 \paragraph{The Dollimore-Heal (DH) method}
 
@@ -328,49 +306,6 @@ that there are several assumptions which limit its applicability:
 
 \end{itemize}
 
-The \texttt{pyGAPS} framework contains the required physical properties
-for the most commonly used adsorbates in its database, as well as
-properties from literature for several materials:
-the original parameters developed by Horvath and Kawazoe for a carbon surface
-~\cite{horvathMethodCalculationEffective1983} and the oxide
-surface parameters published by Saito and
-Foley~\cite{saitoCurvatureParametricSensitivity1991}.
-The user can provide custom dictionary of these parameters when calling the
-function as can be seen in the second example in \autoref{pyg:lst:hkpsd}.
-
-\begin{python}[float=htb, caption={Using the HK method for PSD},%
-    label={pyg:lst:hkpsd}]
-# Calling the HK micropore method with the 
-# Saito-Foley oxide surface parameters
-result_dict = pygaps.micropore_size_distribution(
-    isotherm,
-    psd_model='HK',
-    adsorbent_model='OxideIon(SF)',
-    verbose=True
-)
-# Defining a custom adsorbate parameter dictionary 
-# and using it in the HK method
-adsorbate_params = {
-    'magnetic_susceptibility': 3.6e-35,
-    'molecular_diameter': 0.3,
-    'polarizability': 1.76e-30,
-    'surface_density': 6.71e+18
-}
-result_dict = pygaps.micropore_size_distribution(
-    isotherm,
-    psd_model='HK',
-    adsorbent_model='OxideIon(SF)',
-    adsorbate_model=adsorbate_params,
-    verbose=True
-)
-\end{python}
-
-\begin{figure}[!htb]
-	\includegraphics[width=\textwidth]{psd/hk}
-	\caption{Pore size distribution calculated through the Horvath-Kawazoe method on the UIO-66(Zr) sample}%
-	\label{fig:pyg:fig:hk}
-\end{figure}
-
 \subsubsection{Multiscale computational methods}
 
 DFT theory emerged as a rigorous description of molecular
@@ -400,35 +335,3 @@ as well as micropore filling and multilayer adsorption, it can
 be used for multiscale pore size distribution. The downside is
 that DFT kernels are temperature, probe, pore-geometry and
 adsorbent specific and as such are not universally applicable.
-
-The \texttt{pyGAPS} framework can perform isotherm fitting to 
-DFT kernels through the \inline{dft_size_distribution} function. 
-The function takes an \texttt{Isotherm} object, then 
-then load the DFT kernel either from disk or from memory and 
-apply a minimization function on the sum of squared differences 
-of the sum of all individual kernel isotherms to generate 
-the contribution of each as per the following equation:
-
-\begin{equation}
-	f(x) = \sum_{p=p_0}^{p=p_x} \Big(n_{p,exp} - \sum_{w=w_0}^{w=w_y} n_{p, kernel} X_w \Big)^2
-\end{equation}
-
-The user can specify their own kernel in a CSV format, which will be
-used for the isotherm fitting. Alternatively, a common DFT 
-kernel is included with the framework, which is applicable on
-nitrogen adsorption on a carbon slit-like pores in the range of
-\SIrange{0.4}{10}{\nano\meter}.
-
-\begin{python}[caption={DFT size distribution in pyGAPS},%
-    label={pyg:lst:dft}]
-result_dict = pygaps.dft_size_distribution(
-    charact_iso,
-    'internal',
-    verbose=True
-)
-\end{python}
-\begin{figure}[!htb]
-	\includegraphics[width=\textwidth]{psd/dft-plt}
-	\caption{Pore size distribution calculated through the DFT fitting on the Takeda 5A carbon}%
-	\label{fig:pyg:fig:dft}
-\end{figure}

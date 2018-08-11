@@ -90,7 +90,7 @@ BET surface area is impossible. In total, only around a
 third of the isotherms had enough data for this purpose.
 Several materials are seen to be essentially non-porous
 with around 80 isotherms recorded having a BET area of less 
-than \SI{100}{\metre^2}. As expected, a decrease in 
+than \SI{100}{\metre^2\per\gram}. As expected, a decrease in 
 number of samples is seen with increasing surface area
 reflecting the lower preponderence of highly porous 
 materials due to the challenges involved in their 
@@ -120,7 +120,7 @@ unable to be accounted for.
 If the partial pressure range is narrowed, by only using 
 points up to 0.15 \(p/p_0\), the correlation improves 
 dramatically, with near-overlap when the area is below 
-\SI{2000}{\metre^2}. In this case the selection corresponds
+\SI{2000}{\metre^2\per\gram}. In this case the selection corresponds
 to a region below the ``knee'' of an ideal BET isotherm,
 before the statistical monolayer is filled.
 
@@ -184,25 +184,44 @@ sampling of a physical property.
     \caption{A histogram and estimate of the probability density 
     function for (top) BET surface area and (bottom) loading
     at half saturation pressure for CuBTC. The black dotted line
-    is the ``ideal'' surface area of this MOF.}%
+    is the simulated surface area of this MOF.}%
     \label{pyg:fgr:nist-area-cubtc}
 \end{wrapfigure}
 
-To extend the analysis to other materials, the top 16 MOFs with 
-at least 8 recorded nitrogen isotherms were selected. A 
-violin plot with the results of the calculation for 
+Instead, three normal distributions appear to emerge, one with a
+median around \SI{500}{\metre^2\per\gram}, a second around \SI{1300}{\metre^2\per\gram}
+and a third with a median around \SI{1900}{\metre^2\per\gram} which also
+corresponds to the nitrogen accessible surface area determined through
+simulation. As the NIST data has a DOI for each recorded isotherm, each
+measurement can be traced to the publication it originated in.
+By cherry-picking several studies from each normal distribution
+we can find that the low surface areas correspond to data 
+measured on modified versions of CuBTC, such as shaped 
+samples~\cite{liSeparationCO2CH42014} (\SI{640}{\metre^2\per\gram}), hollow 
+nanoparticles~\cite{liControllableSynthesisMetal2013} (\SI{450}{\metre^2\per\gram})
+or nanoplates~\cite{pengSurfactantdirectedAssemblyMesoporous2012}
+(\SI{803}{\metre^2\per\gram}).
+Studies selected from materials with higher surface area 
+showed no consistent underlying cause for the variability,
+although some can be accounted for through synthesis method
+such as mechanosynthesis~\cite{klimakowMechanochemicalSynthesisMetal2010}
+(\SI{1700}{\metre^2\per\gram}), or structural 
+defects~\cite{barinDefectCreationLinker2014} (\SI{2050}{\metre^2\per\gram}).
+
+To extend the analysis to other materials, MOFs with 
+at least 8 recorded nitrogen isotherms were selected, resulting in 
+16 materials. A violin plot with the results of the calculation for 
 these datapoints is presented in \autoref{pyg:fgr:nist-area-repr}.
-The blue points represent the surface area of the material as
+The blue points mark the surface area of the material as
 obtained from literature of simulated values or, if not available,
 the original synthesis paper of the MOF in question.
 It is obvious that, in most cases, there is a large spread in
-the calculated values, with some samples, such as IRMOF-1,
-IRMOF-3 and MIL-101(Cr) which may have a surface area anywhere
-between \SIrange{200}{5000}{\metre^2}. Furthermore, the
-distributions in MIL-101(Cr) and IRMOF-1 are clearly 
-bimodal. Other materials, such as ZIF-8, the MIL-53 family
+the calculated values, with some samples such as IRMOF-1,
+IRMOF-3 and MIL-101(Cr) having a surface area anywhere
+between \SIrange{200}{5000}{\metre^2\per\gram}. Other materials, 
+such as ZIF-8, the MIL-53 family
 and MIL-100(Fe) have less variability in their surface areas,
-although still within the range of 200 to \SI{500}{\metre^2}.
+although can still be shifted by 200 to \SI{500}{\metre^2\per\gram}.
 
 \begin{figure}[tb]
     \centering
@@ -265,3 +284,7 @@ and many other sanity checks are implemented in these machines.
 However, it is often the case that the most important factor
 in the repeatability MOF and porous material adsorption isotherms 
 is not the measurement procedure, but rather the material itself.
+As evidenced by the closer look at the CuBTC dataset, synthesis
+method, crystalinity, material form, particle size and contribution
+of defects all have an impact on the resulting adsorption behaviour
+of the material. As such, 
