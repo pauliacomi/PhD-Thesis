@@ -34,8 +34,8 @@ the following sorting was performed.
     \si{\milli\mol\per\gram} using the pyGAPS conversion 
     functionality to ensure a consistent unit set.
     \item No isotherms with less than 6 measurement points were 
-    considered, as sufficient it was considered to be the bare 
-    minimum needed for any characterisation.
+    considered, as it was considered to be the bare 
+    minimum required for characterisation.
     \item Possible outliers were removed from the data by selecting 
     only isotherms recorded under \SI{100}{\bar}, with maximum capacities
     under \SI{100}{\milli\mol} and with a temperature of under 
@@ -49,12 +49,12 @@ function of adsorbate and temperature can be found
 in \autoref{pyg:fgr:nist-dataset}.
 We can see that most isotherms are recorded at either 
 \SI{77}{\kelvin}, \SI{273}{\kelvin} or \SI{298}{\kelvin} as 
-these are temperatures are readily available through immersion
+these temperatures are readily available through immersion
 in liquid nitrogen, water-ice mixture, or a thermally controlled
-water bath. In total, isotherms measured with 20 different 
-probe gasses are found in the database, including four 
-common vapours and all linear saturated hydrocarbons up 
-to a carbon number of four. 
+water bath respectively. In total, isotherms measured with all 20 
+probe gasses available in pyGAPS are found in the database, 
+including four common vapours and all linear saturated hydrocarbons
+up to a carbon number of four. 
 
 \begin{figure}[htb]
     \centering
@@ -89,7 +89,7 @@ in the low pressure region, computing a well-defined
 BET surface area is impossible. In total, only around a
 third of the isotherms had enough data for this purpose.
 Several materials are seen to be essentially non-porous
-with around 80 isotherms recorded have a BET area of less 
+with around 80 isotherms recorded having a BET area of less 
 than \SI{100}{\metre^2}. As expected, a decrease in 
 number of samples is seen with increasing surface area
 reflecting the lower preponderence of highly porous 
@@ -163,21 +163,28 @@ derived parameters to structural properties, an analysis of the
 reliability of the data from the NIST ISODB should be performed.
 
 The material with the most recorded isotherms is CuBTC, with 
-122 datapoints. The spread of the calculated BET surface areas,
+122 datapoints. A spread of the calculated BET surface areas,
 together with the ``ideal'' area of this MOF as obtained
-through simulations~\cite{parkHowReproducibleAre2017} are 
+through simulations~\cite{parkHowReproducibleAre2017} is 
 presented in \autoref{pyg:fgr:nist-area-cubtc}.
 To verify if the variability is due to uncertainty in the 
 surface area calculation a secondary metric, namely the 
 capacity at 0.5 \(p/p_0\) has been calculated and its 
 distribution plotted alongside that of the BET area. The
-trend is identical.
+identical trends in both parameters show that there is an
+inherent uncertainty in the dataset. The results not only 
+have a large standard deviation, but also do not have a 
+typical normal distribution one would expect from repeated
+sampling of a physical property.
 
 \begin{wrapfigure}{h}{0.5\textwidth}
     \centering
-
+    \captionsetup{format=plain}
     \includegraphics[width=0.47\textwidth]{nist/nist-area-cubtc}%
-    \caption{A cool graph}%
+    \caption{A histogram and estimate of the probability density 
+    function for (top) BET surface area and (bottom) loading
+    at half saturation pressure for CuBTC. The black dotted line
+    is the ``ideal'' surface area of this MOF.}%
     \label{pyg:fgr:nist-area-cubtc}
 \end{wrapfigure}
 
@@ -200,7 +207,15 @@ although still within the range of 200 to \SI{500}{\metre^2}.
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\linewidth]{nist/nist-area-repr}%
-    \caption{A cool graph}%
+    \caption{A violin plot of the calculated surface areas for 
+    all available nitrogen isotherms on the top 16 MOFs. 
+    The top and bottom lines in each plot are the limits for 
+    the surface area values. The shaded area is a kernel-density estimate
+    of the probability density function using Gaussian kernels.
+    The median of each dataset is displayed as the horizontal line
+    between the two limits. Finally, the round blue point is the 
+    BET surface area of the material as reported in literature through
+    simulation or optimised synthesis.}%
     \label{pyg:fgr:nist-area-repr}
 \end{figure}
 
