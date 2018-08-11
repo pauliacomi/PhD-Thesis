@@ -164,6 +164,35 @@ Alternatively, the isotherm can be imported from a file containing
 a format that is recognised by \texttt{pyGAPS}. Parsing from 
 suitably structured JSON, CSV and Excel files is supported.
 
+\subsection{Units}
+
+When computers work with physical data, units are often a matter 
+that introduces confusion. Here we explain how \texttt{pyGAPS} 
+handles units and other physical world concepts such as relative
+pressure and mass or volume basis.
+
+The following dimensions can be specified for an Isotherm: 
+the measurement \textit{pressure}, the quantity of guest adsorbed
+or \textit{loading} and the amount of adsorbent material
+the loading is reported on, or \textit{adsorbent}.
+
+Pressure can be reported either in an absolute value, in several 
+common units such as \si{\bar}, torr, \si{\pascal}, or as 
+\textit{relative pressure}, the pressure divided by the saturation 
+vapour pressure of the adsorbate at the respective measurement
+temperature. Conversions between the two modes are automatic 
+and handled internally.
+
+Both the \textit{loading} and \textit{adsorbent} can be reported
+in three different bases: a molar basis, a mass basis or a volume
+basis. Within each basis different units are recognised and can be
+easily converted. The conversions between bases can also
+easily performed if the required conversion factors (i.e.\ molar 
+mass and density) are available. For \textit{loading}, these 
+factors are automatically calculated internally, while
+for the \textit{adsorbent} they should be provided by the user 
+in the respective \texttt{Sample} class.
+
 \subsection{Workflow}
 
 Once an isotherm object is created, it will be used for all 
@@ -195,31 +224,428 @@ DFT or NLDFT kernels and more. The results are returned in a
 dictionary or can be directly graphed if the \texttt{verbose} 
 parameter is passed.
 
-\subsection{Units}
 
-When computers work with physical data, units are often a matter 
-that introduces confusion. Here we explain how \texttt{pyGAPS} 
-handles units and other physical world concepts such as relative
-pressure and mass or volume basis.
+\subsection{Characterisation}
 
-The following dimensions can be specified for an Isotherm: 
-the measurement \textit{pressure}, the quantity of guest adsorbed
-or \textit{loading} and the amount of adsorbent material
-the loading is reported on, or \textit{adsorbent}.
+\subsubsection{BET surface area}
 
-Pressure can be reported either in an absolute value, in several 
-common units such as \si{\bar}, torr, \si{\pascal}, or as 
-\textit{relative pressure}, the pressure divided by the saturation 
-vapour pressure of the adsorbate at the respective measurement
-temperature. Conversions between the two modes are automatic 
-and handled internally.
+In \texttt{pyGAPS}, starting from an isotherm object, it is easy to
+calculate the BET area by using the code in \autoref{pyg:lst:betarea}.
+The framework automatically applies the Rouquerol rules to
+find the optimum pressure range and returns the results as a
+dictionary. The \inline{verbose=True} option prints a short
+text with all the calculation variables as well as graphing the
+BET and Rouquerol plots (\autoref{pyg:fgr:betarea}).
+The user can override
+automatic pressure range selection by using the range parameter
+(\inline{limits=(0.05, 0.3)}).
 
-Both the \textit{loading} and \textit{adsorbent} can be reported
-in three different bases: a molar basis, a mass basis or a volume
-basis. Within each basis different units are recognised and can be
-easily converted. The conversions between bases can also
-easily performed if the required conversion factors (i.e.\ molar 
-mass and density) are available. For \textit{loading}, these 
-factors are automatically calculated internally, while
-for the \textit{adsorbent} they should be provided by the user 
-in the respective \texttt{Sample} class.
+\begin{samepage}
+	\begin{python}[caption={Calculating a BET area},label={pyg:lst:betarea}]
+area_dict = pygaps.area_BET(isotherm, verbose=True)
+\end{python}
+	\begin{pythonout}
+BET surface area: a = 1277 m2/g
+Minimum pressure point chosen is 0.005 and maximum is 0.034
+The slope of the BET fit: 		s = 76.344
+The intercept of the BET fit: 	i = 0.052
+BET constant: 					C = 1463
+Amount for a monolayer: 		n = 0.01309 mol/g
+\end{pythonout}
+\end{samepage}
+
+\begin{figure}[!htb]
+	\centering
+
+	\begin{subfigure}{0.45\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{pyg:fgr:betarea-plt}}
+		\parbox[b]{0.85\linewidth}{%
+			\includegraphics[width=\linewidth]{characterization/bet-plt}}
+	\end{subfigure}%
+	\begin{subfigure}{0.45\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{pyg:fgr:betarea-roq}}
+		\parbox[b]{0.85\linewidth}{%
+			\includegraphics[width=\linewidth]{characterization/bet-roq}}
+	\end{subfigure}%
+
+	\caption{Output from the BET area function (a) the BET plot showing
+		the selected points for fitting the equation, as well as the location
+		of the statistical monolayer and (b) the Rouquerol plot for this
+		calculation.}%
+	\label{pyg:fgr:betarea}
+
+\end{figure}
+
+
+\subsubsection{Langmuir surface area}
+
+As with the BET area, the Langmuir area is calculated by using the code in
+\autoref{pyg:lst:langmuirarea}. The framework will alert the user
+if the correlation is not linear in the selected range.
+Here the \inline{verbose=True} option prints a short
+text with all the calculation variables and the graphs the
+Langmuir plot as seen in \autoref{pyg:fgr:langmuirarea-auto}.
+If desired the user can override
+automatic pressure range selection as seen in the second example in
+\autoref{pyg:lst:langmuirarea}.
+
+\begin{samepage}
+	\begin{python}[caption={Calculating a Langmuir area},label={pyg:lst:langmuirarea}]
+area_dict = pygaps.area_langmuir(isotherm, verbose=True)
+\end{python}
+	\begin{pythonout}
+WARINING The correlation is not linear!
+\end{pythonout}
+	\begin{python}
+area_dict = pygaps.area_langmuir(isotherm, 
+                                 limits=(0.05, 0.3), 
+                                 verbose=True)
+\end{python}
+	\begin{pythonout}
+Langmuir surface area: 	a = 415 m2/g
+Minimum pressure point chosen is 0.0 and maximum is 0.194
+The slope of the Langmuir line: 		s = 234.968
+The intercept of the Langmuir line: 	i = 1.607
+The Langmuir constant is:				K = 146
+Amount for a monolayer: 				n = 0.00426 mol/g
+\end{pythonout}
+\end{samepage}
+
+\begin{figure}[!htb]
+	\centering
+
+	\begin{subfigure}{0.45\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{pyg:fgr:langmuirarea-auto}}
+		\parbox[b]{0.85\linewidth}{%
+			\includegraphics[width=\linewidth]{characterization/langmuir-auto}}
+	\end{subfigure}%
+	\begin{subfigure}{0.45\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{pyg:fgr:langmuirarea-manual}}
+		\parbox[b]{0.85\linewidth}{%
+			\includegraphics[width=\linewidth]{characterization/langmuir-manual}}
+	\end{subfigure}%
+
+	\caption{Output from the Langmuir area function (a) the Langmuir plot
+		showing the automatic fitting attempt which generates a warning and (b) a manually
+		selected pressure range for the Langmuir plot.}%
+	\label{pyg:fgr:langmuirarea}
+
+\end{figure}
+
+
+\subsubsection{t-plot Method}
+
+have been implemented in \texttt{pyGAPS},
+These t-curves are selected by name as parameters in
+the functions that use them. The user can also define their
+own t-curve as a function and pass it as a parameter. An example
+is shown in \autoref{pyg:lst:tplot} in the t-plot section.
+
+
+In \texttt{pyGAPS}, when the function is called without any parameters
+except an isotherm, the framework will attempt to find 
+plateaus in the data and
+automatically fit them with a straight line, returning a dictionary
+with the slope, intercept and calculated pore volume and specific area
+for each linear region found. As an example, the first function in
+\autoref{pyg:lst:tplot} will generate the graph in
+\autoref{pyg:fgr:tplot-auto}. The isotherm in this example is measured
+on a sample of MCM-41.
+
+\begin{python}[float=htb, caption={Generating a t-plot},%
+    label={pyg:lst:tplot}]
+# using automatic region detection
+pygaps.t_plot(isotherm, verbose=True)
+
+# specifying a manual region
+pygaps.t_plot(isotherm, limits=(0.3,0.44), verbose=True)
+
+# using the Halsey thickness curve
+pygaps.t_plot(isotherm, thickness_model='Halsey', verbose=True)
+
+# defining a custom t-curve to use in the t-plot
+def carbon_model(relative_p):
+	return 0.88*(relative_p**2) + 6.45*relative_p + 2.98
+
+pygaps.t_plot(isotherm, thickness_model=carbon_model, verbose=True)
+\end{python}
+
+\begin{figure}[!htb]
+	\centering
+
+	\begin{subfigure}{0.45\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{pyg:fgr:tplot-auto}}
+		\parbox[b]{0.85\linewidth}{%
+			\includegraphics[width=\linewidth]{characterization/tplot-auto}}
+	\end{subfigure}%
+	\begin{subfigure}{0.45\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{pyg:fgr:tplot-manual}}
+		\parbox[b]{0.85\linewidth}{%
+			\includegraphics[width=\linewidth]{characterization/tplot-manual}}
+	\end{subfigure}%
+
+	\caption{Output from the t-plot method function (a) an automatically
+		obtained t-plot with the calculated fit regions and (b) a manually
+		selected range for the t-plot.}%
+	\label{pyg:fgr:tplot}
+
+\end{figure}
+
+The first linear region in \autoref{pyg:fgr:tplot-auto} can be attributed
+to adsorption on the mesopore surface,
+while the second one represents adsorption on the available surface
+after mesopore filling. Therefore, the surface area values calculated 
+for the first and second region correspond to the area of the mesopores
+and the external particle area, respectively. As only one pore filling 
+event occurs, the pore volume calculated for the second region gives
+us the mesopore volume. We can obtain a more accurate result for the
+surface area by fitting the first linear region to a zero intercept
+through manual region selection, as shown in the second example in 
+\autoref{pyg:lst:tplot}.
+
+Finally, the framework allows for the thickness model to be substituted
+with an user-provided function which will be used for the t-plot, 
+as mentioned before in \autoref{pyg:charac:tcurve}.
+Usage of a carbon black-type thickness curve is presented in the last
+example in \autoref{pyg:lst:tplot}.
+
+\subsubsection{\(\alpha_s\) Method}
+
+To generate an \(\alpha_s\)-plot in \texttt{pyGAPS}, both 
+an analysis isotherm and a reference isotherm must be supplied 
+as shown in \autoref{pyg:lst:alphasplot}.
+In this example, the reference isotherm is measured on non-porous silica.
+The reference material area can be specified by using 
+the \inline{reference_area} parameter. If not specified, it 
+is automatically calculated by applying the BET
+method on the reference isotherm.
+
+\begin{python}[caption={Generating an \(\alpha_s\)-plot},label={pyg:lst:alphasplot}]
+pygaps.alpha_s(isotherm, 
+			   reference_isotherm=isotherm_r,
+			   verbose=True)
+\end{python}
+
+\begin{figure}[!htb]
+	\centering
+
+	\includegraphics[width=0.45\linewidth]{characterization/alphas-auto}
+	\caption{Output from the \(\alpha_s\)-plot function showing two
+		automatically fit regions.}%
+	\label{pyg:fgr:alphasplot}
+
+\end{figure}
+
+
+\subsubsection{ }
+It is
+therefore important that \texttt{pyGAPS} includes several robust methods
+for determining pore distribution from isotherm data.
+
+HK, and it is implemented in \texttt{pyGAPS}
+
+While the generation of DFT kernels is
+outside the scope of the \texttt{pyGAPS} framework, it is able to use
+user-provided kernels to fit adsorption isotherms, and comes with
+a basic kernel for \ce{N2} adsorption at \SI{77}{\kelvin} on
+carbon slit pores.
+
+\begin{python}[caption={PSD using the BJH method},%
+    label={pyg:lst:bjh}]
+result_dict = pygaps.mesopore_size_distribution(
+    charact_iso,
+    psd_model='BJH',
+    verbose=True
+)
+\end{python}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\linewidth]{psd/bjh-des}
+	\caption{BJH pore size distribution}%
+	\label{pyg:fgr:bjhplot}
+\end{figure}
+
+
+
+The \texttt{pyGAPS} framework contains the required physical properties
+for the most commonly used adsorbates in its database, as well as
+properties from literature for several materials:
+the original parameters developed by Horvath and Kawazoe for a carbon surface
+~\cite{horvathMethodCalculationEffective1983} and the oxide
+surface parameters published by Saito and
+Foley~\cite{saitoCurvatureParametricSensitivity1991}.
+The user can provide custom dictionary of these parameters when calling the
+function as can be seen in the second example in \autoref{pyg:lst:hkpsd}.
+
+\begin{python}[float=htb, caption={Using the HK method for PSD},%
+    label={pyg:lst:hkpsd}]
+# Calling the HK micropore method with the 
+# Saito-Foley oxide surface parameters
+result_dict = pygaps.micropore_size_distribution(
+    isotherm,
+    psd_model='HK',
+    adsorbent_model='OxideIon(SF)',
+    verbose=True
+)
+# Defining a custom adsorbate parameter dictionary 
+# and using it in the HK method
+adsorbate_params = {
+    'magnetic_susceptibility': 3.6e-35,
+    'molecular_diameter': 0.3,
+    'polarizability': 1.76e-30,
+    'surface_density': 6.71e+18
+}
+result_dict = pygaps.micropore_size_distribution(
+    isotherm,
+    psd_model='HK',
+    adsorbent_model='OxideIon(SF)',
+    adsorbate_model=adsorbate_params,
+    verbose=True
+)
+\end{python}
+
+\begin{figure}[!htb]
+	\includegraphics[width=\textwidth]{psd/hk}
+	\caption{Pore size distribution calculated through the Horvath-Kawazoe method on the UIO-66(Zr) sample}%
+	\label{fig:pyg:fig:hk}
+\end{figure}
+
+
+The \texttt{pyGAPS} framework can perform isotherm fitting to 
+DFT kernels through the \inline{dft_size_distribution} function. 
+The function takes an \texttt{Isotherm} object, then 
+then load the DFT kernel either from disk or from memory and 
+apply a minimization function on the sum of squared differences 
+of the sum of all individual kernel isotherms to generate 
+the contribution of each as per the following equation:
+
+\begin{equation}
+	f(x) = \sum_{p=p_0}^{p=p_x} \Big(n_{p,exp} - \sum_{w=w_0}^{w=w_y} n_{p, kernel} X_w \Big)^2
+\end{equation}
+
+The user can specify their own kernel in a CSV format, which will be
+used for the isotherm fitting. Alternatively, a common DFT 
+kernel is included with the framework, which is applicable on
+nitrogen adsorption on a carbon slit-like pores in the range of
+\SIrange{0.4}{10}{\nano\meter}.
+
+\begin{python}[caption={DFT size distribution in pyGAPS},%
+    label={pyg:lst:dft}]
+result_dict = pygaps.dft_size_distribution(
+    charact_iso,
+    'internal',
+    verbose=True
+)
+\end{python}
+\begin{figure}[!htb]
+	\includegraphics[width=\textwidth]{psd/dft-plt}
+	\caption{Pore size distribution calculated through the DFT fitting on the Takeda 5A carbon}%
+	\label{fig:pyg:fig:dft}
+\end{figure}
+
+
+
+The \texttt{pyGAPS} framework includes a modified version of 
+the pyIAST code~\cite{simonPyIASTIdealAdsorbed2016} which has 
+been adapted to work with the \texttt{Isotherm} 
+classes. Both model isotherms and real data can be used for 
+IAST, with spreading pressure being calculated through the 
+underlying isotherm model or through interpolation, respectively. 
+
+In this case, we fit the experimental data to the available models 
+in \texttt{pyGAPS} which have been presented in \autoref{pyg:models},
+then use the resulting model isotherms for IAST simulations. 
+In order to get a `best-fit' model isotherm,
+we use the function in \autoref{lst:model},
+which fits all available models and selects the one with the lowest 
+residuals between the fitted function and the real data.
+The isotherms and their best-fitting model is displayed in 
+\autoref{pyg:fig:takedaco2n2iso} for the \ce{CO2}-\ce{N2} pair and 
+in \autoref{pyg:fig:takedac3h6c3h8iso} for the \ce{C3H8}-\ce{C3H6} pair.
+
+\begin{python}[caption={Guessing the best model},label={lst:model}]
+model = pygaps.ModelIsotherm.from_pointisotherm(iso, guess_model=True)
+\end{python}
+\begin{pythonout}
+Attempting to model using Henry
+Model Henry success, rmse is 7.42
+Attempting to model using Jensen-Seaton
+Modelling using Jensen-Seaton failed
+...............................
+Best model fit is Quadratic
+\end{pythonout}
+
+For the carbon dioxide separation, we simulate all equilibrium 
+points for the adsorbed and gaseous phases at different concentrations 
+of the two gases at 1 bar. To do this we use the \inline{pygaps.iast_vle()}
+function which produces an analogue of a vapour-liquid equilibrium at 
+a specified pressure for a binary mixture. The resulting graph of this
+function can be seen in \autoref{pyg:fig:takedac3h6c3h8iast}.
+As expected, the predicted adsorbed mixture is rich in carbon dioxide.
+Selectivity can also be calculated in a single point, with the value at 
+15\% \ce{CO2} and \SI{1}{bar} being 16.5. 
+
+\begin{figure}[htb]
+
+    \centering
+    \begin{subfigure}[b]{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{iast/takeda-co2n2}
+        \caption{}%
+        \label{pyg:fig:takedaco2n2iso}
+    \end{subfigure}%
+    \begin{subfigure}[b]{.5\textwidth}
+        \centering
+        \includegraphics[width=0.92\linewidth]{iast/takeda-co2n2-vle}
+        \caption{}%
+        \label{pyg:fig:takedaco2n2iast}
+    \end{subfigure}
+    \caption{
+    Modelling binary adsorption of \ce{CO2} and \ce{N2}: 
+    (\protect\subref{pyg:fig:takedaco2n2iso}) the pure component
+    isotherms and their best fit models and 
+    (\protect\subref{pyg:fig:takedaco2n2iast}) 
+    the predicted composition of the gaseous
+    and adsorbed phase for different fractions of 
+    \ce{CO2} at \SI{1}{\bar}
+    }%
+    \label{pyg:fig:takedaco2n2}
+
+\end{figure}
+
+For the propane-propylene separation, we simulate the selectivity for
+propane within a pressure range for a 50\% mixture of the two gases. 
+It can be seen that there is little or no preference for the 
+unsaturated molecule, though the selectivity increases slightly at 
+pressures above \SI{1}{\bar}.
+
+\begin{figure}[htb]
+
+    \centering
+    \begin{subfigure}[b]{.45\textwidth}
+        \includegraphics[width=.9\linewidth]{iast/takeda-c3h6c3h8}
+        \caption{}%
+        \label{pyg:fig:takedac3h6c3h8iso}
+    \end{subfigure}
+    \begin{subfigure}[b]{.45\textwidth}
+        \includegraphics[width=\linewidth]{iast/takeda-c3h6c3h8-svp}
+        \caption{}%
+        \label{pyg:fig:takedac3h6c3h8iast}
+    \end{subfigure}
+    \caption{%
+    Modelling binary adsorption of a propane-propylene mixture: 
+    (\protect\subref{pyg:fig:takedac3h6c3h8iso}) the pure-component
+    isotherms and their best fit models and 
+    (\protect\subref{pyg:fig:takedac3h6c3h8iast})
+    the predicted selectivity of propane adsorption 
+    of a 50-50\% mixture in a range of pressure from 0.1 to 7 bar}%
+    \label{pyg:fig:takedac3h6c3h8}
+
+\end{figure}

@@ -72,7 +72,6 @@ several checks to ensure that the selected BET region is valid:
 
 \end{itemize}
 
-All these checks are implemented in \texttt{pyGAPS}.
 Regardless, the BET surface area should still be interpreted carefully.
 Since adsorption takes place on the pore surface, microporous materials
 which have pores of similar or smaller size as the probe molecule used
@@ -83,55 +82,6 @@ area of the molecule on the surface cannot be guaranteed. For example,
 nitrogen has been known to adopt a different conformation on the surface
 of some materials due to inter-molecular forces, which effectively
 lowers its cross-sectional area~\cite{rouquerolAdsorptionPowdersPorous2013}.
-
-In \texttt{pyGAPS}, starting from an isotherm object, it is easy to
-calculate the BET area by using the code in \autoref{pyg:lst:betarea}.
-The framework automatically applies the Rouquerol rules to
-find the optimum pressure range and returns the results as a
-dictionary. The \inline{verbose=True} option prints a short
-text with all the calculation variables as well as graphing the
-BET and Rouquerol plots (\autoref{pyg:fgr:betarea}).
-The user can override
-automatic pressure range selection by using the range parameter
-(\inline{limits=(0.05, 0.3)}).
-
-\begin{samepage}
-	\begin{python}[caption={Calculating a BET area},label={pyg:lst:betarea}]
-area_dict = pygaps.area_BET(isotherm, verbose=True)
-\end{python}
-	\begin{pythonout}
-BET surface area: a = 1277 m2/g
-Minimum pressure point chosen is 0.005 and maximum is 0.034
-The slope of the BET fit: 		s = 76.344
-The intercept of the BET fit: 	i = 0.052
-BET constant: 					C = 1463
-Amount for a monolayer: 		n = 0.01309 mol/g
-\end{pythonout}
-\end{samepage}
-
-\begin{figure}[!htb]
-	\centering
-
-	\begin{subfigure}{0.45\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:betarea-plt}}
-		\parbox[b]{0.85\linewidth}{%
-			\includegraphics[width=\linewidth]{characterization/bet-plt}}
-	\end{subfigure}%
-	\begin{subfigure}{0.45\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:betarea-roq}}
-		\parbox[b]{0.85\linewidth}{%
-			\includegraphics[width=\linewidth]{characterization/bet-roq}}
-	\end{subfigure}%
-
-	\caption{Output from the BET area function (a) the BET plot showing
-		the selected points for fitting the equation, as well as the location
-		of the statistical monolayer and (b) the Rouquerol plot for this
-		calculation.}%
-	\label{pyg:fgr:betarea}
-
-\end{figure}
 
 \subsubsection{Langmuir surface area}\label{pyg:charac:langmuirarea}
 
@@ -165,61 +115,6 @@ case of complete surface coverage. As most adsorption processes
 (except chemisorption) don't follow this behaviour, it is
 important to regard the Langmuir surface area as an estimate.
 
-As with the BET area, the Langmuir area is calculated by using the code in
-\autoref{pyg:lst:langmuirarea}. The framework will alert the user
-if the correlation is not linear in the selected range.
-Here the \inline{verbose=True} option prints a short
-text with all the calculation variables and the graphs the
-Langmuir plot as seen in \autoref{pyg:fgr:langmuirarea-auto}.
-If desired the user can override
-automatic pressure range selection as seen in the second example in
-\autoref{pyg:lst:langmuirarea}.
-
-\begin{samepage}
-	\begin{python}[caption={Calculating a Langmuir area},label={pyg:lst:langmuirarea}]
-area_dict = pygaps.area_langmuir(isotherm, verbose=True)
-\end{python}
-	\begin{pythonout}
-WARINING The correlation is not linear!
-\end{pythonout}
-	\begin{python}
-area_dict = pygaps.area_langmuir(isotherm, 
-                                 limits=(0.05, 0.3), 
-                                 verbose=True)
-\end{python}
-	\begin{pythonout}
-Langmuir surface area: 	a = 415 m2/g
-Minimum pressure point chosen is 0.0 and maximum is 0.194
-The slope of the Langmuir line: 		s = 234.968
-The intercept of the Langmuir line: 	i = 1.607
-The Langmuir constant is:				K = 146
-Amount for a monolayer: 				n = 0.00426 mol/g
-\end{pythonout}
-\end{samepage}
-
-\begin{figure}[!htb]
-	\centering
-
-	\begin{subfigure}{0.45\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:langmuirarea-auto}}
-		\parbox[b]{0.85\linewidth}{%
-			\includegraphics[width=\linewidth]{characterization/langmuir-auto}}
-	\end{subfigure}%
-	\begin{subfigure}{0.45\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:langmuirarea-manual}}
-		\parbox[b]{0.85\linewidth}{%
-			\includegraphics[width=\linewidth]{characterization/langmuir-manual}}
-	\end{subfigure}%
-
-	\caption{Output from the Langmuir area function (a) the Langmuir plot
-		showing the automatic fitting attempt which generates a warning and (b) a manually
-		selected pressure range for the Langmuir plot.}%
-	\label{pyg:fgr:langmuirarea}
-
-\end{figure}
-
 \subsubsection{Ideal isotherms or thickness functions}\label{pyg:charac:tcurve}
 
 The initial part of an isotherm (the Henry regime) can be seen to
@@ -243,9 +138,8 @@ for calculating mesoporous size distributions. It is important to
 clarify that the function is only applicable for a single adsorbent
 and a single temperature.
 
-Several common thickness functions have been implemented in \texttt{pyGAPS},
-applicable for nitrogen at \SI{77}{\kelvin}
-such as the Halsey~\cite{halseyPhysicalAdsorptionNon1948}
+Two common thickness functions applicable for nitrogen at \SI{77}{\kelvin}
+are the Halsey~\cite{halseyPhysicalAdsorptionNon1948}
 (\autoref{pyg:eqn:halsey}) and the
 Harkins and Jura~\cite{harkinsSurfacesSolidsXIII1944}
 (\autoref{pyg:eqn:harkinsjura}) curve.
@@ -256,10 +150,6 @@ Harkins and Jura~\cite{harkinsSurfacesSolidsXIII1944}
 	t_{Harkins\&Jura} & = {\Big(\frac{0.1399}{0.034 - \log_{10}(p/p_0)}\Big)}^{1/2} \label{pyg:eqn:harkinsjura}
 \end{align}
 
-These t-curves are selected by name as parameters in
-the functions that use them. The user can also define their
-own t-curve as a function and pass it as a parameter. An example
-is shown in \autoref{pyg:lst:tplot} in the t-plot section.
 
 \subsubsection{t-plot Method}\label{pyg:charac:tplot}
 
@@ -319,75 +209,6 @@ is applicable to both the material and the adsorbate.
 Also, features on the t-plot found at loadings lower than the monolayer
 thickness do not have any physical meaning.
 
-In \texttt{pyGAPS}, when the function is called without any parameters
-except an isotherm, the framework will attempt to find 
-plateaus in the data and
-automatically fit them with a straight line, returning a dictionary
-with the slope, intercept and calculated pore volume and specific area
-for each linear region found. As an example, the first function in
-\autoref{pyg:lst:tplot} will generate the graph in
-\autoref{pyg:fgr:tplot-auto}. The isotherm in this example is measured
-on a sample of MCM-41.
-
-\begin{python}[float=htb, caption={Generating a t-plot},%
-    label={pyg:lst:tplot}]
-# using automatic region detection
-pygaps.t_plot(isotherm, verbose=True)
-
-# specifying a manual region
-pygaps.t_plot(isotherm, limits=(0.3,0.44), verbose=True)
-
-# using the Halsey thickness curve
-pygaps.t_plot(isotherm, thickness_model='Halsey', verbose=True)
-
-# defining a custom t-curve to use in the t-plot
-def carbon_model(relative_p):
-	return 0.88*(relative_p**2) + 6.45*relative_p + 2.98
-
-pygaps.t_plot(isotherm, thickness_model=carbon_model, verbose=True)
-\end{python}
-
-\begin{figure}[!htb]
-	\centering
-
-	\begin{subfigure}{0.45\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:tplot-auto}}
-		\parbox[b]{0.85\linewidth}{%
-			\includegraphics[width=\linewidth]{characterization/tplot-auto}}
-	\end{subfigure}%
-	\begin{subfigure}{0.45\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:tplot-manual}}
-		\parbox[b]{0.85\linewidth}{%
-			\includegraphics[width=\linewidth]{characterization/tplot-manual}}
-	\end{subfigure}%
-
-	\caption{Output from the t-plot method function (a) an automatically
-		obtained t-plot with the calculated fit regions and (b) a manually
-		selected range for the t-plot.}%
-	\label{pyg:fgr:tplot}
-
-\end{figure}
-
-The first linear region in \autoref{pyg:fgr:tplot-auto} can be attributed
-to adsorption on the mesopore surface,
-while the second one represents adsorption on the available surface
-after mesopore filling. Therefore, the surface area values calculated 
-for the first and second region correspond to the area of the mesopores
-and the external particle area, respectively. As only one pore filling 
-event occurs, the pore volume calculated for the second region gives
-us the mesopore volume. We can obtain a more accurate result for the
-surface area by fitting the first linear region to a zero intercept
-through manual region selection, as shown in the second example in 
-\autoref{pyg:lst:tplot}.
-
-Finally, the framework allows for the thickness model to be substituted
-with an user-provided function which will be used for the t-plot, 
-as mentioned before in \autoref{pyg:charac:tcurve}.
-Usage of a carbon black-type thickness curve is presented in the last
-example in \autoref{pyg:lst:tplot}.
-
 \subsubsection{\(\alpha_s\) Method}\label{pyg:charac:alphasplot}
 
 In order to extend the t-plot analysis with other adsorbents and 
@@ -420,28 +241,3 @@ be a description of the adsorption on a completely non-porous sample
 of the same material. It is often impossible to obtain such 
 non-porous versions, therefore care must be
 taken how the reference isotherm is measured.
-
-To generate an \(\alpha_s\)-plot in \texttt{pyGAPS}, both 
-an analysis isotherm and a reference isotherm must be supplied 
-as shown in \autoref{pyg:lst:alphasplot}.
-In this example, the reference isotherm is measured on non-porous silica.
-The reference material area can be specified by using 
-the \inline{reference_area} parameter. If not specified, it 
-is automatically calculated by applying the BET
-method on the reference isotherm.
-
-\begin{python}[caption={Generating an \(\alpha_s\)-plot},label={pyg:lst:alphasplot}]
-pygaps.alpha_s(isotherm, 
-			   reference_isotherm=isotherm_r,
-			   verbose=True)
-\end{python}
-
-\begin{figure}[!htb]
-	\centering
-
-	\includegraphics[width=0.45\linewidth]{characterization/alphas-auto}
-	\caption{Output from the \(\alpha_s\)-plot function showing two
-		automatically fit regions.}%
-	\label{pyg:fgr:alphasplot}
-
-\end{figure}
