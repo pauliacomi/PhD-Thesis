@@ -15,7 +15,7 @@ understood. Unfortunately, the plethora of isotherm
 features and shapes can only be truly recreated
 by molecular simulation, which requires an exact
 knowledge of the adsorbent structure and its interaction
-with the guest molecules. 
+with the guest molecules.
 Nevertheless, simple models derived from a kinetic or thermodynamic
 view of adsorption can be useful for obtaining simple parameters
 which are representative of physical factors such as
@@ -24,7 +24,7 @@ and total capacity.
 
 Isotherm models which have a thermodynamical basis are derived
 from the Gibbs equation (\autoref{pyg:eqn:gibbs}). This approach
-describes adsorption in terms of a surface excess with respect 
+describes adsorption in terms of a surface excess with respect
 to the bulk gas phase. The pressure and volume concepts of the bulk phase
 are replaced by the 2-dimensional analogues of spreading pressure (\( \pi \))
 and surface area.
@@ -39,117 +39,89 @@ adsorbed can be obtained as a function of bulk phase pressure.
 Models which are derived from this equation include
 Henry's law, the virial model and vacancy solution theory.
 
-Adsorption can also be described a kinetic standpoint, where 
-the rate of adsorption and desorption of molecules on 
+Adsorption can also be described a kinetic standpoint, where
+the rate of adsorption and desorption of molecules on
 available sites is mathematically modelled. Equations based
 on kinetics include the Langmuir model, the BET model
-the Temkin model and empirical or semi-empirical derivatives 
+the Temkin model and empirical or semi-empirical derivatives
 such as the Toth, Quadratic or the Jensen-Seaton model
-A page of figures for different models and how the 
+A page of figures for different models and how the
 described isotherm varies with different values of
 their parameters can be seen in
 \autoref{pyg:fgr:modelex}. The following section will describe
-these equations, together with their assumptions and 
+these equations, together with their assumptions and
 applicability.
 
 \begin{figure}[p]
 	\centering
 
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Henry}%
 			\label{pyg:fgr:henryex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/henry}}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Langmuir}%
 			\label{pyg:fgr:langmuirex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/langmuir}}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{BET}%
 			\label{pyg:fgr:betex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/bet}}
 	\end{subfigure}%
-
+	\\
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Toth}%
 			\label{pyg:fgr:tothex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/toth}}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Quadratic}%
 			\label{pyg:fgr:quadraticex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/quadratic}}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Jensen Seaton}%
 			\label{pyg:fgr:jseatonex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/jseaton}}
 	\end{subfigure}%
 	\\
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Temkin}%
 			\label{pyg:fgr:temkinex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/temkin}}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{Virial}%
 			\label{pyg:fgr:virialex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/virial}}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{W-VST}%
 			\label{pyg:fgr:wsvstex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/wvst}}
 	\end{subfigure}%
 	\\
 	\begin{subfigure}{0.3\linewidth}
-
 		\parbox[c]{1.0\linewidth}{\caption{FH-VST}%
 			\label{pyg:fgr:fhvstex}}
-
 		\parbox[b]{1.0\linewidth}{%
-
 			\includegraphics[width=\linewidth]{models/fhvst}}
 	\end{subfigure}%
 
-	\caption{Examples of models
+	\caption{The various adsorption models
+		discussed in this chapter, alongside the influence
+		of their parameters on the resulting isotherm.
 	}%
 	\label{pyg:fgr:modelex}
 \end{figure}
@@ -222,7 +194,7 @@ loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
 	v_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{RT}\Big)}
 	\label{pyg:eqn:langmuir_des}                                           \\
 	v_a                & = v_d                                             \\
-	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{RT}\Big)}        \\
+	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{RT}\Big)}  \\
 	n_a(p)             & = n_a^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
 \end{align}
 
@@ -260,7 +232,7 @@ are formed. The conditions imagined by the BET model are:
 	\item The surface adsorption sites are equivalent, and therefore the
 	      surface is considered heterogeneous.
 	\item There are no lateral interactions between adsorbed
-		  molecules.
+	      molecules.
 	\item The adsorption occurs in layers, with adsorbed
 	      molecules acting as sites for the next layer.
 \end{itemize}
@@ -283,7 +255,7 @@ we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
 	\label{pyg:tab:bet-deriv}
 	\begin{tabular}{cc}
 		\toprule
-		All layers                                        & Re-arranged \\
+		All layers                                         & Re-arranged \\
 		\midrule
 		\parbox{0.4\textwidth}{\begin{align*}
 				k_{a_1} p \theta_0     & = k_{d_1} \theta_1
@@ -346,7 +318,7 @@ Then we obtain the BET equation:
 \end{equation}
 
 The BET constant \(C\) is exponentially proportional to the
-difference between the surface adsorption energy and the 
+difference between the surface adsorption energy and the
 intermolecular attraction and can be seen to influence the ``knee''
 a BET-type isotherm has at low pressure, before statistical
 monolayer formation.
@@ -376,8 +348,8 @@ The Temkin adsorption
 isotherm~\cite{temkinKineticsAmmoniaSynthesis1940},
 like the Langmuir model, considers
 a surface with \(n_a^m\) identical adsorption sites, but takes into
-account adsorbate-adsorbate interactions by assuming that the 
-heat of adsorption is a linear function of  coverage. 
+account adsorbate-adsorbate interactions by assuming that the
+heat of adsorption is a linear function of  coverage.
 The formula in \autoref{pyg:eqn:temkin} is derived
 using a mean-field argument and uses an asymptotic approximation
 to obtain an explicit equation for the
@@ -401,8 +373,8 @@ highlighted by
 Jensen and Seaton in 1996~\cite{jensenIsothermEquationAdsorption1996}
 that at sufficiently high pressures the adsorption
 isotherm should not reach a horizontal plateau corresponding to
-saturation but that this asymptote should continue to rise due to 
-the compression of the adsorbate in the pores. They developed a 
+saturation but that this asymptote should continue to rise due to
+the compression of the adsorbate in the pores. They developed a
 semi-empirical equation to describe this phenomenon based on a function
 that interpolates between two asymptotes: the Henry’s law asymptote at
 low pressure and an asymptote reflecting the compressibility of
@@ -417,10 +389,10 @@ Here \(K_H\) is the Henry constant, \(b\) is the compressibility of
 the adsorbed phase and \(c\) an empirical constant.
 
 The equation can be used to model both absolute and excess adsorption
-as the pore volume can be incorporated into the definition of \(b\), 
-although this can lead to negative adsorption slopes for the 
-compressibility asymptote. This equation has been found to provide a 
-better fit for experimental data from microporous solids than the 
+as the pore volume can be incorporated into the definition of \(b\),
+although this can lead to negative adsorption slopes for the
+compressibility asymptote. This equation has been found to provide a
+better fit for experimental data from microporous solids than the
 Langmuir or Toth equation, in particular for
 adsorbent/adsorbate systems with high Henry’s constants where the
 amount adsorbed increases rapidly at relatively low pressures and
@@ -442,10 +414,10 @@ of additional adsorbate molecules.
 \end{equation}
 
 The parameter \(K_a\) can be interpreted as the Langmuir constant;
-the strength of the adsorbate-adsorbate attractive forces is 
-embedded in \(K_b\). It is often useful in systems where the 
+the strength of the adsorbate-adsorbate attractive forces is
+embedded in \(K_b\). It is often useful in systems where the
 energy of guest-guest interactions is actually higher than
-the energy of adsorption, such as when adsorbing water 
+the energy of adsorption, such as when adsorbing water
 on a hydrophobic surface.
 
 \subsection{Virial model}\label{pyg:models:virial}
@@ -460,11 +432,11 @@ pressure~\cite{myersThermodynamicsAdsorptionPorous2002}.
 \end{equation}
 
 It has been applied with success to describe the behaviour of
-standard as well as supercritical isotherms. The factors are 
-usually empirical, although some relationship with physical 
+standard as well as supercritical isotherms. The factors are
+usually empirical, although some relationship with physical
 properties can be determined:
 the first constant is related to the Henry constant at
-zero loading, while the second constant is a measure of the 
+zero loading, while the second constant is a measure of the
 interaction strength with the surface.
 
 \begin{equation}
@@ -475,8 +447,8 @@ In practice, besides the first constant, only 2--3 factors are used.
 
 \subsection{Vacancy solution theory models}\label{pyg:models:vst}
 
-The vacancy solution theory (VST) family of models, 
-are based on the concept of a “vacancy” species and 
+The vacancy solution theory (VST) family of models,
+are based on the concept of a “vacancy” species and
 assume that the adsorbed phase is analogous to a mixture of
 vacancies and the adsorbate. The main assumptions in the
 VST models are defined as follows:
@@ -487,14 +459,14 @@ VST models are defined as follows:
 	      space, which acts as the solvent in both the gas and adsorbed
 	      phases.
 	\item The properties of the adsorbed phase are defined through
-		  the Gibbs approach, as excess properties in relation to
-		  a dividing surface.
+	      the Gibbs approach, as excess properties in relation to
+	      a dividing surface.
 	\item The entire system, including the adsorbent, is at
-		  thermal equilibrium. However, only the gas and the adsorbed 
-		  phases are in thermodynamic equilibrium.
+	      thermal equilibrium. However, only the gas and the adsorbed
+	      phases are in thermodynamic equilibrium.
 	\item The equilibrium of the system is maintained by the
-		  spreading pressure which arises from a potential field 
-		  at the surface.
+	      spreading pressure which arises from a potential field
+	      at the surface.
 
 \end{itemize}
 
@@ -509,10 +481,10 @@ equated give the following equation of state for the adsorbed phase:
 Here \(y_v\) is the activity coefficient and \(x_v\) is the mole
 fraction of the vacancy in the adsorbed phase.
 This can then be introduced into the Gibbs equation (\autoref{pyg:eqn:gibbs})
-to obtain a general isotherm equation for VST-type models 
+to obtain a general isotherm equation for VST-type models
 (\autoref{pyg:eqn:vst}) where \(K_H\) is the Henry’s constant and
 \(f(\theta)\) is a function that describes the non-ideality of the
-system in terms of activity coefficients of the adsorbate and 
+system in terms of activity coefficients of the adsorbate and
 vacancy species.
 
 \begin{equation}\label{pyg:eqn:vst}
@@ -521,7 +493,7 @@ vacancy species.
 
 The general VST equation requires an expression for the activity
 coefficients \(f(\theta)\). One option is to use the
-Wilson~\cite{suwanayuenGasAdsorptionIsotherm1980} approach, 
+Wilson~\cite{suwanayuenGasAdsorptionIsotherm1980} approach,
 which expresses the activity coefficient in terms
 of the mole fractions of the two species (adsorbate and vacancy) and
 two constants \(\Lambda_{1v}\) and \(\Lambda_{1v}\). The equation
@@ -536,13 +508,13 @@ then for activity coefficients becomes:
 			(1-\Lambda_{1v}\theta)} \bigg)}
 \end{equation}
 
-A simpler alternative was introduced by 
-Cochran~\cite{cochranVacancySolutionTheory1985}. The result is a 
-three parameter equation based on the Flory–Huggins equation for the 
-activity coefficient. \(f(\theta)\) is represented as 
+A simpler alternative was introduced by
+Cochran~\cite{cochranVacancySolutionTheory1985}. The result is a
+three parameter equation based on the Flory–Huggins equation for the
+activity coefficient. \(f(\theta)\) is represented as
 
 \begin{equation}\label{pyg:eqn:fhvst}
-	f(\theta) = 
+	f(\theta) =
 	\exp{\frac{\alpha^2_{1v}\theta}{1+\alpha_{1v}\theta}}
 	\quad \text{where} \quad
 	\alpha_{1v} = \frac{\alpha_{1}}{\alpha_{v}} - 1
@@ -550,6 +522,6 @@ activity coefficient. \(f(\theta)\) is represented as
 
 Here \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the
 adsorbate and the vacancy respectively.
-Both the Wilson and Flory–Huggins expressions for the vacanty-adsorbate
+Both the Wilson and Flory–Huggins expressions for the vacancy-adsorbate
 interactions can be directly inserted in the general VST model
 (\autoref{pyg:eqn:vst}).

@@ -4,7 +4,7 @@
 
 Until now, we have only referred to isotherms pertaining to the adsorption
 of a single adsorbate. However, besides gas storage, most if not all
-industrial applications of adsorbents involve multiple chemical 
+industrial applications of adsorbents involve multiple chemical
 species undergoing competitive adsorption. Experiments involving
 several adsorbents are generally difficult and time consuming.
 There is therefore a need to predict such multicomponent systems
@@ -12,29 +12,29 @@ in order to rapidly screen for potentially interesting separations
 starting from pure component data.
 
 To this end, the several methods have been devised, with perhaps
-the most common approach as considering the adsorbed phase as 
-an analogue to a fluid mixture, in a manner analogous to the 
-vacancy solution theory presented in \autoref{pyg:models:vst}. 
-This method, also known as ideal adsorbed solution theory (IAST) 
+the most common approach as considering the adsorbed phase as
+an analogue to a fluid mixture, in a manner analogous to the
+vacancy solution theory presented in \autoref{pyg:models:vst}.
+This method, also known as ideal adsorbed solution theory (IAST)
 will be presented here. Other multicomponent theories
 such as real adsorbed solution theory (RAST) or the Nitta model
 exist, but usually require more information such as specific
 surface binary activity coefficients, and are therefore less suited to
-a general approach. Furthermore, the IAST method has been 
+a general approach. Furthermore, the IAST method has been
 proven~\cite{cessfordEvaluationIdealAdsorbed2012,%
-vanheestIdentificationMetalOrganic2012} to be successful in the 
+	vanheestIdentificationMetalOrganic2012} to be successful in the
 prediction of multicomponent adsorption even when considering
 adsorption in microporous materials such as MOFs.
 
 Originally derived by \citeauthor{myersThermodynamicsMixedgasAdsorption1965},
 the IAST model~\cite{myersThermodynamicsMixedgasAdsorption1965} is based
-on three main assumptions. First, that the 
-same surface area is available for all components. Then it is 
-assumed that the mixture behaves like an ideal solution at constant 
+on three main assumptions. First, that the
+same surface area is available for all components. Then it is
+assumed that the mixture behaves like an ideal solution at constant
 spreading pressure and temperature. This means the spreading pressure of
 each component is the same as the surface potential of the mixture \(\pi\)
 and therefore the mean strength of interaction is equal between all
-molecules of solution. Finally the surface adsorbed phase is assumed 
+molecules of solution. Finally the surface adsorbed phase is assumed
 to be in equilibrium with the gas phase. \autoref{pyg:eqn:iast}
 can then be written, where \(p_{i,g}\) is the partial pressure of
 the component in the gas phase, \( p_i^0(\pi)\) the pressure of
@@ -42,48 +42,48 @@ that component which will give the same spreading pressure on the
 surface and \(x_i\) is its fraction in the adsorbed phase.
 
 \begin{align}
-    %
-    p_{i,g} & = p_i^0(\pi)x_i %
-    \label{pyg:eqn:iast} \\
-    %
-    \frac{\pi A}{R_g T} & = \int_{0}^{P_{i}^{0}} n_{ads,i} d\ln{(p_i)} %
-    \label{pyg:eqn:iast-2} \\
-    %
-    \sum_{1=1}^{N} x_i & = 1 %
-    \label{pyg:eqn:iast-3}
+	%
+	p_{i,g}             & = p_i^0(\pi)x_i                              %
+	\label{pyg:eqn:iast}                                               \\
+	%
+	\frac{\pi A}{R_g T} & = \int_{0}^{P_{i}^{0}} n_{ads,i} d\ln{(p_i)} %
+	\label{pyg:eqn:iast-2}                                             \\
+	%
+	\sum_{1=1}^{N} x_i  & = 1                                          %
+	\label{pyg:eqn:iast-3}
 \end{align}
 
 For better consistency, fugacity can be used instead of pressure,
-in order to account for non-ideality of the gas phase, 
+in order to account for non-ideality of the gas phase,
 with a suitable equation of state required to relate them to bulk pressure.
-The pressure and spreading pressure are then related through 
+The pressure and spreading pressure are then related through
 the integrated Gibbs isotherm (\autoref{pyg:eqn:iast-2}). As the sum of all
 fractions in the adsorbed phase is equal to unity (\autoref{pyg:eqn:iast-3}),
-the equations can be solved for a given pressure and gas composition to give 
+the equations can be solved for a given pressure and gas composition to give
 the fractions of each component in the adsorbed phase at the hypothetical
 pressure \(P_{i}^{0}\). The total amount adsorbed can then be calculated.
 
 \begin{equation}
-    \frac{1}{n_{ads,t}} = \sum_{1=1}^{N} \frac{x_i}{n_{ads,i}^0}
+	\frac{1}{n_{ads,t}} = \sum_{1=1}^{N} \frac{x_i}{n_{ads,i}^0}
 \end{equation}
 
-Finally, the number of moles adsorbed for each component is given 
-by multiplying the total amount adsorbed by the fraction of each 
+Finally, the number of moles adsorbed for each component is given
+by multiplying the total amount adsorbed by the fraction of each
 component.
 
 \begin{equation}
-    n_{ads, i} = x_i n_{ads,t}
+	n_{ads, i} = x_i n_{ads,t}
 \end{equation}
 
 In order to calculate the spreading pressure, an adsorption model
 such as the ones presented in \autoref{pyg:models} is required.
 By substituting the amount adsorbed (\(n_{ads}\)) in \autoref{pyg:eqn:iast}
-and calculation of the resulting integral, an expression for 
-spreading pressure can be determined. The integral can only be 
+and calculation of the resulting integral, an expression for
+spreading pressure can be determined. The integral can only be
 evaluated analytically in the case of a few models, for example in
 the previously mentioned Henry, Langmuir and multi-site Langmuir,
 BET, Quadratic and Temkin models. In other cases, a numerical approach
-must be used for its calculation. An alternative to using a 
+must be used for its calculation. An alternative to using a
 model is to use an interpolation method between recorded experimental
 points to approximate the amount adsorbed at a pressure \(p\). Numerical
 quadrature is then used to evaluate the integral and obtain the

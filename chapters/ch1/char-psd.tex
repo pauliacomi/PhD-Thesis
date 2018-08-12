@@ -50,11 +50,11 @@ used in these models merely approximate.
 
 \paragraph{The Kelvin equation}
 
-Since the Kelvin equation is the basis of most mesoporous PSD 
+Since the Kelvin equation is the basis of most mesoporous PSD
 calculations, such as the BJH and DH methods, it will be described
 first. The original form of the equation (\autoref{pyg:eqn:kelvin})
 gives the dependence of pressure on the radius of curvature of a
-meniscus in a pore \(r\) by means of surface tension \(\gamma\), 
+meniscus in a pore \(r\) by means of surface tension \(\gamma\),
 molar liquid volume, here expressed as \(v_l=M_m/\rho_l\) and the
 fluid contact angle with the surface
 \(\theta\). The fluid is often assumed to be fully wetting, with
@@ -94,13 +94,13 @@ as can be seen in \autoref{pyg:tab:kelvin-meniscus}.
 	\label{pyg:tab:kelvin-meniscus}
 	\begin{tabular}{ccc}
 		\toprule
-		              & \multicolumn{2}{c}{Pore filling}              \\
+		                    & \multicolumn{2}{c}{Assumed meniscus geometry}              \\
 		\cmidrule{2-3}
-		Pore geometry & Adsorption                       & Desorption \\
+		Pore geometry       & Adsorption                                    & Desorption \\
 		\midrule
-		slit          & cylindrical                      & concave    \\
-		cylinder      & cylindrical                      & spherical  \\
-		sphere        & spherical                        & spherical  \\
+		infinite slit       & infinite radius cylindrical                   & concave    \\
+		open-ended cylinder & cylindrical                                   & spherical  \\
+		sphere              & spherical                                     & spherical  \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -187,7 +187,7 @@ method~\cite{dollimorePoresizeDistributionTypical1970}
 is an extension of the BJH method which takes into account the
 geometry of the pores by introducing a length component.
 Like the BJH method, it is based on a classical description of
-the adsorbate behaviour in the adsorbent pores and uses the 
+the adsorbate behaviour in the adsorbent pores and uses the
 same assumptions. The modified equation becomes:
 
 \begin{align}
@@ -234,7 +234,7 @@ guest-guest interactions. This equation is derived from the
 equation of the free energy of adsorption at constant temperature where
 the term \(T \Delta S^{tr}(w/w_{\infty})\) is assumed to be negligible.
 
-If it is assumed that a Lennard-Jones-type potential function can 
+If it is assumed that a Lennard-Jones-type potential function can
 accurately describe the interactions between adsorbate and surface
 molecules, then the two contributions to the total potential can be
 replaced by the extended function in \autoref{pyg:eqn:hk}.
@@ -243,11 +243,11 @@ replaced by the extended function in \autoref{pyg:eqn:hk}.
 	RTln(p/p_0) =   N_A\frac{n_a A_a + n_A A_A}{2 \sigma^{4}(l-d)} \\
 	\times \int_{d/_2}^{1-d/_2}
 	\Big[
-		- \Big(\frac{\sigma}{r}\Big)^{4}
-		+ \Big(\frac{\sigma}{r}\Big)^{10}
-		- \Big(\frac{\sigma}{l-r}\Big)^{4}
-		+ \Big(\frac{\sigma}{l-r}\Big)^{4}
-		\Big] \mathrm{d}x
+	- {\Big(\frac{\sigma}{r}\Big)}^{4}
+	+ {\Big(\frac{\sigma}{r}\Big)}^{10}
+	- {\Big(\frac{\sigma}{l-r}\Big)}^{4}
+	+ {\Big(\frac{\sigma}{l-r}\Big)}^{4}
+	\Big] \mathrm{d}x
 \end{multline}
 
 Here \(l\) is the width of the pore, \(d\) defined as \(d=d_a+d_A\) is
@@ -285,43 +285,43 @@ that there are several assumptions which limit its applicability.
 	      networks may not give realistic results.
 	\item Only dispersive forces are accounted for.
 	      If the adsorbate-adsorbent interactions
-		  have other specific contributions, as is the case 
-		  for dipole-dipole or \(pi\)-backbonding interactions,
-		  the Lennard-Jones potential function will not be
+	      have other specific contributions, as is the case
+	      for dipole-dipole or \(pi\)-backbonding interactions,
+	      the Lennard-Jones potential function will not be
 	      an accurate description.
 	\item The model does not have a description of capillary condensation.
 	      This means that the pore size distribution can only
-		  be considered accurate up to a maximum of 
-		  \SIrange{3}{5}{\nano\metre}.
+	      be considered accurate up to a maximum of
+	      \SIrange{3}{5}{\nano\metre}.
 
 \end{itemize}
 
 \subsubsection{Multiscale computational methods}
 
 DFT theory emerged as a rigorous description of molecular
-adsorption in pores~\cite{seatonNewAnalysisMethod1989}. 
+adsorption in pores~\cite{seatonNewAnalysisMethod1989}.
 It calculates the properties of the fluid
 directly from the forces acting between constituent molecules
 through a statistical mechanical approach. Latter developments,
-like non-local DFT (NLDFT)~\cite{tarazonaPhaseEquilibriaFluid1987}, 
+like non-local DFT (NLDFT)~\cite{tarazonaPhaseEquilibriaFluid1987},
 which makes an account for short range molecule correlation
 and therefore for the changes in the density profile
-around the pore walls, and quenched solid state DFT 
-(QSDFT)~\cite{neimarkQuenchedSolidDensity2009}, which allows for 
+around the pore walls, and quenched solid state DFT
+(QSDFT)~\cite{neimarkQuenchedSolidDensity2009}, which allows for
 heterogeneity of pore walls to be incorporated in the model,
 have improved the accuracy of the method.
 
-The density functional theory approach can therefore simulate 
-adsorption isotherms on pores of different geometries and sizes. 
-By defining a pore geometry and running the simulation with a 
-range of pore radii, a collection of isotherms is obtained. 
-If an experimental isotherm is thought of as a sum of 
-adsorption isotherms in different size pores, then it stands 
+The density functional theory approach can therefore simulate
+adsorption isotherms on pores of different geometries and sizes.
+By defining a pore geometry and running the simulation with a
+range of pore radii, a collection of isotherms is obtained.
+If an experimental isotherm is thought of as a sum of
+adsorption isotherms in different size pores, then it stands
 to reason that the preponderence of those pores can be calculated
 through deconvolution.
 
 Since the DFT method can model adsorbate condensation behaviour,
-as well as micropore filling and multilayer adsorption, it can 
+as well as micropore filling and multilayer adsorption, it can
 be used for multiscale pore size distribution. The downside is
 that DFT kernels are temperature, probe, pore-geometry and
 adsorbent specific and as such are not universally applicable.

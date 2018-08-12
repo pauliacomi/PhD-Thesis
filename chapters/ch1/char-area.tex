@@ -5,7 +5,7 @@
 \subsubsection{BET surface area}\label{pyg:charac:betarea}
 
 The BET method~\cite{brunauerAdsorptionGasesMultimolecular1938}
-for determining surface area is the recommended IUPAC 
+for determining surface area is the recommended IUPAC
 method~\cite{thommesPhysisorptionGasesSpecial2015}
 to calculate the surface area of a porous material.
 It is generally applied on isotherms obtained through \ce{N2}
@@ -26,7 +26,7 @@ described through the equation written in its linear form:
 	\frac{p/p_0}{n_{ads} (1-p/p_0)} = \frac{1}{n_{m} C} + \frac{C - 1}{n_{m} C}(p/p_0)
 \end{equation}
 
-If a plot of the isotherm points as \({(p/p_0)}/{n_{ads}(1-p/p_0)}\) 
+If a plot of the isotherm points as \({(p/p_0)}/{n_{ads}(1-p/p_0)}\)
 versus \(p/p_0\) is generated, a linear region
 can usually be found. The slope and intercept of this line
 can then be used to calculate \(n_{m}\), the amount adsorbed at the
@@ -83,7 +83,7 @@ be expressed in a linear form by rearranging it as:
 \end{equation}
 
 Assuming the data can be fitted with a Langmuir model, by plotting
-\({p}/{n}\) against pressure, a straight line will be obtained. 
+\({p}/{n}\) against pressure, a straight line will be obtained.
 The slope and intercept of this line can then be used to calculate
 \(n_{m}\), the amount adsorbed at the monolayer capacity, as well
 as \(K\), the Langmuir constant.
@@ -123,7 +123,7 @@ in a function capable of predicting the thickness of the adsorbed layer
 as a function of pressure. This kind of empirical function,
 also referred to as a \textit{thickness function} or \textit{t-curve},
 can be used as an alternative method for surface area determination,
-as explained in the following section. 
+as explained in the following section.
 These curves are also used in the classical methods
 for calculating mesoporous size distribution. It is important to
 clarify that the function is only applicable for a single adsorbent
@@ -131,13 +131,15 @@ and temperature.
 
 For example, two common thickness functions applicable for nitrogen
 at \SI{77}{\kelvin} are the Halsey~\cite{halseyPhysicalAdsorptionNon1948}
-(\autoref{pyg:eqn:halsey}) and the 
+(\autoref{pyg:eqn:halsey}) and the
 Harkins and Jura~\cite{harkinsSurfacesSolidsXIII1944}
 (\autoref{pyg:eqn:harkinsjura}) curves.
 
 \begin{align}
-	t_{Halsey}        & = 0.354 {\Big(\frac{-5}{\log(p/p_0)}\Big)}^{1/3} \label{pyg:eqn:halsey}                 \\
-	t_{Harkins\&Jura} & = {\Big(\frac{0.1399}{0.034 - \log_{10}(p/p_0)}\Big)}^{1/2} \label{pyg:eqn:harkinsjura}
+	t_{Halsey}        & = 0.354 {\Big(\frac{-5}{\log(p/p_0)}\Big)}^{1/3}            %
+	\label{pyg:eqn:halsey}                                                          \\
+	t_{Harkins\&Jura} & = {\Big(\frac{0.1399}{0.034 - \log_{10}(p/p_0)}\Big)}^{1/2} %
+	\label{pyg:eqn:harkinsjura}
 \end{align}
 
 \subsubsection{t-plot method}\label{pyg:charac:tplot}
@@ -154,7 +156,7 @@ isotherm conforms to the model, a straight line will be obtained with its
 intercept through the origin. However, as in most cases there
 are differences between adsorption in pores and surface multilayer
 adsorption, the t-plot will deviate and reveal features which can
-be analysed to obtain material characteristics. For example, a sharp 
+be analysed to obtain material characteristics. For example, a sharp
 vertical deviation will indicate condensation in a type of mesopore
 while a gradual slope will indicate adsorption on a specific surface.
 
@@ -162,7 +164,7 @@ The slope of a linear section can be used to calculate the area where
 adsorption is taking place. If the linear region occurs at low loadings,
 it will represent the total surface area of the material.
 If at the end of the curve, it will instead represent adsorption on
-external surface area. The formula to calculate an area starting 
+external surface area. The formula to calculate an area starting
 from the t-plot slope is presented in \autoref{pyg:fgr:areatplot},
 where \(\rho_{l}\) is the liquid density of the adsorbate at experimental
 conditions.
@@ -171,7 +173,7 @@ conditions.
 	a_{surface} = \frac{s M_m}{\rho_{l}}
 \end{equation}
 
-If the linear region selected is after a vertical deviation, 
+If the linear region selected is after a vertical deviation,
 the intercept of the calculated line will no longer pass through
 the origin. This intercept can be used to calculate the volume of
 the filled pore through the following equation:
@@ -180,9 +182,9 @@ the filled pore through the following equation:
 	V_{ads} = \frac{i M_m}{\rho_{l}}
 \end{equation}
 
-As the t-plot method compares the experimental isotherm 
+As the t-plot method compares the experimental isotherm
 with an ideal model, care must be taken to ensure that the t-curve
-is an accurate representation of the thickness of the adsorbate layer. 
+is an accurate representation of the thickness of the adsorbate layer.
 Since there is no such thing as a universal thickness curve,
 a reliable model which is applicable to both material and adsorbate
 should be chosen. It should also be noted that, features on the t-plot
@@ -191,7 +193,7 @@ physical meaning.
 
 \subsubsection{\(\alpha_s\) Method}\label{pyg:charac:alphasplot}
 
-In order to extend the t-plot analysis with other adsorbents and 
+In order to extend the t-plot analysis with other adsorbents and
 non-standard thickness curves, the \(\alpha_s\) method was
 devised~\cite{atkinsonAdsorptivePropertiesMicroporous1984}.
 Instead of attempting to find an ideal isotherm that describes the
@@ -207,7 +209,7 @@ theoretically close at this point.
 	\alpha_s = \frac{n_a}{n_{0.4}}
 \end{equation}
 
-The analysis then proceeds as in the t-plot method, with the 
+The analysis then proceeds as in the t-plot method, with the
 same explanation for observed features. The only difference is
 that the surface area calculation from linear regions observed
 uses the known specific area of the reference material.
@@ -216,9 +218,9 @@ uses the known specific area of the reference material.
 	A = \frac{s A_{ref}}{(n_{ref})_{0.4}}
 \end{equation}
 
-The reference isotherm chosen for the \(\alpha_s\) method must 
+The reference isotherm chosen for the \(\alpha_s\) method must
 be a description of adsorption on a completely non-porous sample
-of the same material. It is often impossible to obtain such 
-a version. Furthermore, an adsorption isotherm on a non-porous 
+of the same material. It is often impossible to obtain such
+a version. Furthermore, an adsorption isotherm on a non-porous
 solid may be a challenging endeavour, due to the small ratio
 of surface area to volume.

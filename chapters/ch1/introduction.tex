@@ -2,9 +2,9 @@
 
 \section{Introduction}
 
-Historically, the processing of isotherms was done by hand, with large 
-worksheets being used for the calculations. As an example, 
-we point out that one of the initial limitations of the 
+Historically, the processing of isotherms was done by hand, with large
+worksheets being used for the calculations. As an example,
+we point out that one of the initial limitations of the
 Barrett-Joyner and Halenda method of determining pore size distribution
 was that each point had to be estimated with an approximation of critical
 pore radius, due to the tedious work involved in the
@@ -14,7 +14,7 @@ The advent of computers meant that the calculations could be performed
 quickly and reliably and led to the introduction of more computationally
 demanding methods for isotherm processing, such as the DFT kernel fitting
 method for pore size distribution~\cite{seatonNewAnalysisMethod1989,%
-tarazonaPhaseEquilibriaFluid1987}. 
+	tarazonaPhaseEquilibriaFluid1987}.
 Commercial adsorption equipment which offers the users
 a complete software solution for any isotherm calculations is now
 commonplace and makes obtaining reports of desired properties
@@ -23,9 +23,9 @@ for measured materials a matter of seconds.
 Given the current ubiquitousness of adsorption as a characterisation method,
 particularly for investigating surfaces and porous compounds,
 there is a large pool of data published in the scientific community.
-Recent efforts have focused on building a database of adsorption 
+Recent efforts have focused on building a database of adsorption
 isotherms~\cite{sideriusNISTARPAEDatabase2015}, to offer a searchable
-pool of standardised behaviours on different materials. This serves as 
+pool of standardised behaviours on different materials. This serves as
 both a useful reference for comparing synthesised compounds, as well as a
 method for quickly finding suitable materials which have the
 desired properties for a particular application.
@@ -34,45 +34,46 @@ The abundance of data reflects a trend in recent years where, due
 to the prevalence of digital records and cheap storage, more
 datapoints are available than ever before. As such, challenges
 now lie in making sense of the so called ``big data''.
-Key performance indicators (KPI) such as specific surface area, working 
+Key performance indicators (KPI) such as specific surface area, working
 capacity and pore volume are commonly reported in scientific literature
 and used as benchmarking tools. Furthermore,
 several studies have attempted to find a reliable indicator for
 the suitability of an adsorbent for a specific
 application~\cite{regeSimpleParameterSelecting2001, %
-ackley2000psa,%
-wiersumAdsorbentPerformanceIndicator2013} such as presure swing 
+	ackley2000psa,%
+	wiersumAdsorbentPerformanceIndicator2013} such as pressure swing
 adsorption.
 
-However, we feel that a critical step in the process has yet 
-to be fully addressed. Transitioning from isotherms published in 
-literature to the calculation of such KPIs requires individual 
+However, we feel that a critical step in the process has yet
+to be fully addressed. Transitioning from isotherms published in
+literature to the calculation of such KPIs requires individual
 implementation of previously mentioned techniques. As such,
-not only can errors arise in such implementations, but 
+not only can errors arise in such implementations, but
 a critical survey of the results is tedious and time consuming.
 In conclusion, a standardised method of high throughput processing
 of such data would be invaluable not only for reference purposes,
-but also for in-depth studies of data reliability, 
-structure-property relationships and effect of variables on 
+but also for in-depth studies of data reliability,
+structure-property relationships and effect of variables on
 the adsorption properties of a material.
 
 \subsection*{Chapter summary}
 
-In this chapter an open-source software package is presented, which 
+In this chapter an open-source software package is presented, which
 is released under an MIT licence and written in Python, intended to be
 used for manipulation, storage, visualisation and processing of
-adsorption isotherms. The software is aimed to give users a powerful 
-yet easy to use package that can perform the kind of processing 
+adsorption isotherms. The software is aimed to give users a powerful
+yet easy to use package that can perform the kind of processing
 common to adsorption methodology, but using large datasets of hundreds
-or thousands of isotherms. The code is then used to process a 
+or thousands of isotherms. The code is then used to process a
 dataset of 26000 isotherms from the NIST adsorption database in order
 to highlight the variability of adsorption data reported in literature
-on MOFs.  
+on MOFs.
 
 \subsection*{Contribution}
 
-Paul Iacomi wrote the python code for the pyGAPS framework and is 
+Paul Iacomi wrote the python code for the pyGAPS framework and is
 responsible for its publication and maintenance as an open source
 package. The IAST functionality is a modified version of
-the pyIAST code, published by Cory Simon. The data used in this chapter 
+the pyIAST code, published by Corey Simon. The data used in this chapter
 is available from the NIST Adsorption Database, maintained by Dan Siderius.
+\todo{isotherms recoded by emily}
