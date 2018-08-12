@@ -1,6 +1,14 @@
 % !TEX root = ../../main.tex
 
-\section{Applicability of high throughput processing on an adsorption database}
+\section{Processing a large adsorption dataset}
+
+With the capability for fast processing 
+afforded by \texttt{pyGAPS}, we now turn to using it on an 
+available database of adsorption isotherms. The goal is to 
+test the speed and accuracy of the calculations, as well
+as to obtain a description of the dataset. Further insights 
+may be obtained from benchmarking of different KPIs, or 
+assessing the reliability of the available data.
 
 \subsection{The NIST ISODB dataset}
 
@@ -98,7 +106,7 @@ creation. Overall, while this initial calculation does
 not impart any further insights, it serves as an useful overview
 of the ISODB dataset.
 
-\subsection{A comparison between surface area determination methods}
+\subsection{A comparison between surface area calculation methods}
 
 The Langmuir surface area is an often-reported alternative 
 to the, now standard, BET method area.
@@ -192,21 +200,21 @@ Instead, three normal distributions appear to emerge, one with a
 median around \SI{500}{\metre^2\per\gram}, a second around \SI{1300}{\metre^2\per\gram}
 and a third with a median around \SI{1900}{\metre^2\per\gram} which also
 corresponds to the nitrogen accessible surface area determined through
-simulation. As the NIST data has a DOI for each recorded isotherm, each
+simulation. As the NIST data also records the DOI for each isotherm, each
 measurement can be traced to the publication it originated in.
 By cherry-picking several studies from each normal distribution
 we can find that the low surface areas correspond to data 
 measured on modified versions of CuBTC, such as shaped 
-samples~\cite{liSeparationCO2CH42014} (\SI{640}{\metre^2\per\gram}), hollow 
-nanoparticles~\cite{liControllableSynthesisMetal2013} (\SI{450}{\metre^2\per\gram})
-or nanoplates~\cite{pengSurfactantdirectedAssemblyMesoporous2012}
-(\SI{803}{\metre^2\per\gram}).
+samples (\SI{640}{\metre^2\per\gram})~\cite{liSeparationCO2CH42014}, hollow 
+nanoparticles (\SI{450}{\metre^2\per\gram})~\cite{liControllableSynthesisMetal2013} 
+or nanoplates
+(\SI{803}{\metre^2\per\gram})~\cite{pengSurfactantdirectedAssemblyMesoporous2012}.
 Studies selected from materials with higher surface area 
 showed no consistent underlying cause for the variability,
 although some can be accounted for through synthesis method
-such as mechanosynthesis~\cite{klimakowMechanochemicalSynthesisMetal2010}
-(\SI{1700}{\metre^2\per\gram}), or structural 
-defects~\cite{barinDefectCreationLinker2014} (\SI{2050}{\metre^2\per\gram}).
+such as mechanosynthesis
+(\SI{1700}{\metre^2\per\gram})~\cite{klimakowMechanochemicalSynthesisMetal2010},
+or structural defects (\SI{2050}{\metre^2\per\gram})~\cite{barinDefectCreationLinker2014}.
 
 To extend the analysis to other materials, MOFs with 
 at least 8 recorded nitrogen isotherms were selected, resulting in 
@@ -259,7 +267,7 @@ is likely accounted for through the variation introduced by the
 sample preparation method and adsorption apparatus.
 For example, a recent NIST interlaboratory study in which \ce{CO2} 
 isotherms were recorded on a reference 
-material~\cite{nguyenReferenceHighpressureCO22018}, had six 
+material~\cite{nguyenReferenceHighpressureCO22018}, received six
 out of thirteen initial datasets outside the uncertainty range.
 Errors were determined to arise from sample mass measurement,
 insufficient activation conditions or improper choice of an 
