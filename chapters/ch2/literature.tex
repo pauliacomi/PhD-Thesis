@@ -1,90 +1,170 @@
 % !TEX root = ../../main.tex
 
-\section{Thermodynamics of adsorption}
+\section{Energetics of adsorption}
 
-As mentioned in the introduction \todo{reference}, adsorption 
+\subsection{Forces involved in adsorption}
+
+From a classical molecular point of view, we can define the 
+guest-host and guest-guest interactions as a sum of several
+components with distinct physical meaning.
+
+\begin{equation}\label{calo:eqn:interactions}
+  \Phi_t = \Phi_{R} + \Phi_{D} + \Phi_{C} + \Phi_{I}
+\end{equation}
+
+The first two types of interaction, namely short range 
+electrostatic repulsion between the electron clouds of 
+neighbouring atoms and long range dispersion arising from
+incidental short-lived partial charges are common to all
+atoms, and can therefore be called ``non-specific''. Such 
+interactions are commonly modelled through the use of a 
+Lennard-Jones type potential function.
+
+\begin{equation}\label{calo:eqn:lennard-jones}
+  V_\text{LJ} = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6 \right]
+\end{equation}
+
+The latter two types, Coulombic interactions and induction 
+interactions arise from permanent charges and multipoles in the 
+system. Coulombic interactions are attraction and repulsion
+interactions between charges such as molecular ions,
+Induction, also known as polarization or Debye forces, is the interaction
+between a charged particle or a multipole with the induced multipole
+in a non-charged system. The ease of inducing such an interaction
+in a molecule is termed polarizability. These interactions 
+can be referred to as ``non-specific''.
+
+The total interactions can also be broken down as contributions
+from guest-host interactions and guest-guest interactions.
+If changes in the adsorbent occur as a result of adsorption,
+a host-host or self-potential interaction should be considered.
+The guest-host interaction can be assumed constant for a homogeneous
+surface or a function of coverage, in the case of a 
+heterogeneous surface.
+
+Unfortunately, only the total sum of all interactions
+is measurable through direct methods. Therefore, the 
+absolute contribution of each component is unknowable unless
+computational methods are employed.
+
+\subsection{Adsorption thermodynamics}
+
+As mentioned in the previous section, adsorption 
 is a consequence of intermolecular attraction between the 
 material surface and the molecules of the fluid. The sum of 
 all interactions accounts for the depth of the potential 
 well and therefore for the energy corresponding to the 
-process. As this energy is net positive adsorption is an
+process. As this energy is net positive, adsorption is an
 overall exothermic phenomenon.
 
 However, in order to make the transition from a molecular 
 viewpoint to a macroscale bulk fluid representation of 
-adsorption, the thermodynamics of the process must be 
-clearly defined.
-
-
-\subsection{Energetic components of adsorption}
-
-From a molecular point of view, we can define the total
-interactions taking place during adsorption as a sum of 
-several distinct components.
-
-\begin{equation}\label{calo:eqn:interactions}
-  \Phi_t = \Phi_{aa} + \Phi_{aa} + \Phi_{aa} + \Phi_{aa}
-\end{equation}
-
-The term \(\Phi_{aa}\) is representative of the guest-host
-interaction. It can be constant, for a homogeneous surface 
-or a function of the occupancy, in the case of a 
-heterogeneous surface. The term \(\Phi_{aa}\) is the interaction
-between adsorbate molecules. Finally, \(\Phi_{aa}\) is 
-a 
-
-Unfortunately, only the total sum of all interactions
-is measurable through available methods. Therefore, the 
-absolute contribution of each component is unknowable 
-through direct methods. However, when used for comparison,
-it is likely that the only one contribution has 
+adsorption, the a thermodynamic description of the adsorbed 
+phase of the process must be defined.
 
 \subsection{The Gibbs surface excess approach}
 
-A description of the adsorbed phase can be made through the change
-in density or concentration of the fluid starting from the 
-adsorbent surface. When represented as such, the density 
-has a maxima in the immediate zone close to the surface and then
-decreases until attaining the density of the bulk fluid.
-However, when defined as such the boundary between the 
-adsorbed phase and the bulk phase is difficult to pinpoint.
-In some cases, such as adsorption in porous materials, the 
-adsorbed phase can be taken as total pore volume, but in 
-most cases it is useful to refer to the Gibbs surface 
-excess approach of quantifying the amount adsorbed.
+A description of the adsorbed phase can be made through 
+an expressing the change in density or concentration of fluid
+from the adsorbent surface to the bulk phase. The density 
+has a maxima in the immediate zone close to the surface, and then
+decreases until it reaches the density of the bulk fluid.
+However, when defined as such, the boundary between the 
+two phases is difficult to pinpoint.
+Therefore, in most cases it is useful to employ the concept 
+of the Gibbs dividing surface.
 
-This concept describes the adsorbed phase only in terms
-of an \textit{excess} from the properties of the bulk phase. 
-As long as the volume of the adsorbed layer can be considered 
-negligible and the concentration of adsorbate in the bulk 
-phase is low, the total amount adsorbed and the surface excess
-amount may be considered equal.
+\begin{figure}[htb]
+  \centering
+
+  \includegraphics[width=\linewidth]{gibbs-surface}
+  \caption{
+    Representation of the adsorbed and bulk phases according to
+    the (left) layer model and the (right) Gibbs dividing surface
+    approach. Adapted from \citeauthor{rouquerolAdsorptionPowdersPorous2013}%
+    \cite{rouquerolAdsorptionPowdersPorous2013}.
+  }%
+  \label{calo:fig:gibbs-surface}
+
+\end{figure}
+
+This approach describes the adsorbed phase only in terms
+of an \textit{excess} from the properties of the bulk phase.
+As represented in \autoref{calo:fig:gibbs-surface}, the total
+amount adsorbed can be defined as:
+
+\begin{equation}
+  n_{ads}^{absolute} = A \int_0^r c\ dz
+\end{equation}
+
+The imaginary Gibbs dividing surface is placed such that the
+concentration of the adsorbent in the adsorbed phase is only
+measured as an excess from the concentration of the bulk fluid.
+The relationship between the total amount adsorbed and the 
+excess amount adsorbed is expressed as:
+
+\begin{equation}
+  n_{ads}^{excess} = n_{ads}^{absolute} + V_{ads} \cdot c_{bulk}
+\end{equation}
+
+As long as the volume of the adsorbed layer \(V_{ads}\) can be 
+considered negligible and the concentration of adsorbate in the bulk 
+phase \(c_{bulk}\) is low, the total amount adsorbed and the surface 
+excess amount may be considered as approximately equal. 
+At high pressures or when the difference in concentration between
+the adsorbed and the bulk phase is low, the total amount adsorbed
+begins to diverge significantly from the surface excess. 
+
+Without corrections, both the gravimetric and manometric
+method of adsorption will measure excess amounts adsorbed.
+In the case of adsorption in porous materials, the volume of the
+adsorbed phase may be taken as total pore volume. 
 
 \subsection{Enthalpy of adsorption}
 
-From a molecular point of view, we can define the total
-interactions taking place during adsorption as a sum of 
-several distinct components.
+Adsorption can be considered as a closed system of constant volume
+V and temperature T. No mass of material crosses the system boundary,
+therefore the change in chemical potential is also
+zero \(d\mu = 0\). The Helmholtz free energy is used for a description 
+of the thermodynamic potential of such as system. 
 
-\begin{equation}\label{calo:eqn:interactions}
-  \Phi_t = \Phi_{aa} + \Phi_{aa} + \Phi_{aa} + \Phi_{aa}
+The differential enthalpy of adsorption is then the change of the 
+total enthalpy with respect to the number of moles adsorbed
+at a certain equilibrium pressure and surface concentration.
+It is given by:
+
+\begin{equation}
+  \Delta_{ads} \dot{h} = 
 \end{equation}
 
-The 
-
-Unfortunately, the methods available 
+The differential enthalpy of adsorption is often represented as a
+function of partial coverage. In \autoref{calo:fig:enthalpy-iupac-iso},
+the isotherm types as defined by IUPAC are presented together with
+a probable differential enthalpy curve. Type I isotherms often 
+have an initial plateau, corresponding to adsorption in micropores
+until a sharp decrease at complete pore filling occurs. Multilayer
+adsorption in non-porous or mesoporous materials yields a slowly
+decreasing enthalpy curve, as the solid-guest interactions decrease
+with increasing layers adsorbed. Finally, cooperative adsorption,
+as seen in a type III isotherm, often give rise to initial enthalpies
+of adsorption which are below the enthalpy of vaporisation.
+It should be noted that changes in the adsorbed fluid similar 
+to phase changes may occur, which can be seen in the enthalpy curve
+as a distinct peak~\cite{llewellynAdsorptionMFItypeZeolites1993, %
+llewellynAdsorptionMFItypeZeolites1993a}.
 
 \begin{figure}[htb]
-    \centering
+  \centering
 
-    \includegraphics[width=\linewidth]{enthalpy-curves}
-    \caption{
-      General enthalpy curves corresponding to different 
-      IUPAC-defined isotherm 
-      types adapted from \citeauthor{llewellynGasAdsorptionMicrocalorimetry2005}%
-      \cite{llewellynGasAdsorptionMicrocalorimetry2005}.
-    }%
-    \label{calo:fig:enthalpy-iupac-iso}
+  \includegraphics[width=\linewidth]{enthalpy-curves}
+  \caption{
+    Generalized curves of differential enthalpy of adsorption with 
+    respect to coverage corresponding to different 
+    IUPAC-defined isotherm types.
+    Adapted from \citeauthor{llewellynGasAdsorptionMicrocalorimetry2005}%
+    \cite{llewellynGasAdsorptionMicrocalorimetry2005}.
+  }%
+  \label{calo:fig:enthalpy-iupac-iso}
 
 \end{figure}
 
@@ -95,23 +175,23 @@ Experimentally, two methods are widely used for determining the
 enthalpy of adsorption. The first relies on the applicability of the 
 Clausius-Clapeyron equation to two or more isotherms measured 
 at different temperatures. The second method relies on a 
-direct measurement of the heat produced during adsorption 
+direct measurement of the evolved heat during adsorption 
 using a calorimeter.
 
 There are also ways of determining the enthalpy of adsorption
 from computer simulation methods. The accuracy of these methods
 depends on the chosen model of interaction with the surface.
 
-\subsubsection{Isosteric heat}
+\subsubsection{Isosteric enthalpy of adsorption}
 
-The isosteric heats are calculated from experimental data using the
-Clausius-Clapeyron equation as the starting point:
+The isosteric enthalpy of adsorption is calculated from experimental
+data using the Clausius-Clapeyron equation as the starting point:
 
 \begin{equation}
     \Big( \frac{\partial \ln P}{\partial T} \Big)_{n_a} = -\frac{\Delta H_{ads}}{R T^2}
 \end{equation}
 
-Where \(\Delta H_{ads}\) is the isosteric heat of adsorption.
+Where \(\Delta H_{ads}\) is the isosteric enthalpy of adsorption.
 If it is assumed that the adsorption enthalpy does not vary with 
 temperature, the equation can be rearranged to:
 
@@ -121,31 +201,25 @@ temperature, the equation can be rearranged to:
 
 In order to approximate the partial differential, two or more
 isotherms are measured at different temperatures. 
-Afterwards the isosteric heat of adsorption can be calculated
+Afterwards the isosteric enthalpy of adsorption can be calculated
 by using the pressures at which the loading is identical using the 
 rearranged equation. By plotting the values of \(\ln P\) against
 \(1 / T\) we should obtain a straight line with a slope
 of \(- \Delta H_{ads} / R\).
 
-The isosteric heat is sensitive to the differences in pressure between
+The isosteric enthalpy is sensitive to the differences in pressure between
 the two isotherms. If the isotherms measured are too close together, 
-the error margin will increase. The method also assumes that enthalpy 
-of adsorption does not vary with temperature. If the
-variation is large for the system in question, the isosteric
-heat calculation will give unrealistic values.
+the error margin will increase. The method also assumes that isosteric
+enthalpy does not vary with temperature. If the
+variation is large for the system in question, the calculation will
+give unrealistic values.
 
 Even with carefully measured experimental data, there are two 
 assumptions used in deriving the Clausius-Clapeyron equation: 
 an ideal bulk gas phase and a negligible adsorbed phase
 molar volume. These have a significant effect on the calculated 
-isosteric heats of adsorption, especially at high relative pressures 
+isosteric enthalpy of adsorption, especially at high relative pressures 
 and for heavy adsorbates.
 
 \subsubsection{Microcalorimetry}
-
-
-The enthalpy of adsorption as measured by a calorimeter is a 
-sum of all heat contributions during the experiment. They can 
-be split into guest-host contributions and host-host contributions.
-The guest-host contributions include 
 
