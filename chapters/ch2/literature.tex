@@ -139,14 +139,16 @@ It is given by:
 
 The differential enthalpy of adsorption is often represented as a
 function of partial coverage. In \autoref{calo:fig:enthalpy-iupac-iso},
-the isotherm types as defined by IUPAC are presented together with
-a probable differential enthalpy curve. Type I isotherms often 
+isotherm types as defined by IUPAC are presented together with
+a typical differential enthalpy curve. Type I isotherms often 
 have an initial plateau, corresponding to adsorption in micropores
-until a sharp decrease at complete pore filling occurs. Multilayer
-adsorption in non-porous or mesoporous materials yields a slowly
-decreasing enthalpy curve, as the solid-guest interactions decrease
-with increasing layers adsorbed. Finally, cooperative adsorption,
-as seen in a type III isotherm, often give rise to initial enthalpies
+until a sharp decrease at complete pore filling occurs. If the surface
+of the pores is heterogeneous, higher energy sites will be occupied
+first, resulting in a sharp slope at low loadings. Multilayer
+adsorption in non-porous or mesoporous materials (II and IV) yields
+a slowly decreasing enthalpy curve, as the solid-guest interactions
+drop off with increasing layers adsorbed. Finally, cooperative adsorption,
+as seen in a type III isotherm, often gives rise to initial enthalpies
 of adsorption which are below the enthalpy of vaporisation.
 It should be noted that changes in the adsorbed fluid similar 
 to phase changes may occur, which can be seen in the enthalpy curve
@@ -168,19 +170,19 @@ llewellynAdsorptionMFItypeZeolites1993a}.
 
 \end{figure}
 
-
 \subsection{Measuring the enthalpy of adsorption}
 
 Experimentally, two methods are widely used for determining the 
 enthalpy of adsorption. The first relies on the applicability of the 
 Clausius-Clapeyron equation to two or more isotherms measured 
-at different temperatures. The second method relies on a 
+at different temperatures while the second is a 
 direct measurement of the evolved heat during adsorption 
-using a calorimeter.
+using calorimetry.
 
-There are also ways of determining the enthalpy of adsorption
-from computer simulation methods. The accuracy of these methods
-depends on the chosen model of interaction with the surface.
+A value for the enthalpy of adsorption in a particular system
+may also be obtained from computer simulation methods. 
+The accuracy of these procedures depends on the accuracy of
+the chosen model of interaction between simulated molecules.
 
 \subsubsection{Isosteric enthalpy of adsorption}
 
@@ -223,3 +225,59 @@ and for heavy adsorbates.
 
 \subsubsection{Microcalorimetry}
 
+A direct measurement of the enthalpy of adsorption is possible using
+calorimetric methods.
+
+The 
+For the best performance, a 3D Tian-Calvet thermopile is used, which
+allows for a complete integration of evolved heat.
+
+Two options exist, based on two methods of obtaining adsorption isotherms:
+the continuous and the discontinuous or point-by-point method. In
+the point-by-point method, discrete steps of introduction of adsorbate 
+are taken. A reference volume is filled with gas at a pressure p, which
+is allowed to equilibrate before a valve between the reference volume 
+and the cell containing the adsorbate. 
+In the other method, the flow of adsorbate is continuous, usually kept 
+constant by a restriction in the pipe diameter which is severe enough
+to enter sonic flow regimes. At this point, the flowrate is no longer 
+influenced by a pressure differential, instead becoming a function only
+of upstream pressure and environment temperature.
+
+The heat generated during adsorption (or required during desorption)
+is therefore measured either as discrete peaks, corresponding to 
+each event or as a continuous heat curve. An example of such a signal 
+is presented in \todo{figure}.
+
+The point-by-point method is less accurate than a continuous introduction,
+as the measured heat is necessarily a cumulative value of instantaneous
+differential enthalpy for the coverage range of each adsorbed point.
+However, it has the advantage of ensuring complete equilibrium at 
+each step, by observing the return to the baseline of the calorimetry
+signal, or no changes in the pressure signal. On the other hand, the 
+continuous method allows for subtle changes in the enthalpy of 
+adsorption, such as those corresponding to adsorbed phase ordering or 
+changes, to be seen experimentally. Additionally, the time-resolved data
+can be used to investigate transient phenomena. Equilibrium between 
+the adsorbed phase and gas phase is no longer assured, and must be
+tested for by performing multiple experiments at different adsorbate
+flowrates. Alternatively, the experiment can be stopped to observe that the 
+time for the heat signal to return to its baseline does not diverge 
+from the dead time of the calorimeter.
+
+The heat value which is measured through calorimetry corresponds to 
+two components, the differential enthalpy of adsorption and the 
+work required to expand the gas into the measurement cell.
+In this relationship as expressed in \autoref{calo:eqn:calo-heat}
+the value for work can be substituted by \(V\Delta P\) and 
+accounted for at each point.
+
+\begin{align}\
+  \dot{Q} & = \Delta_{ads} h + W \label{calo:eqn:calo-heat} \\
+  \dot{Q} & = \Delta_{ads} h + V\Delta P \\
+  \Delta_{ads} h & = \dot{Q} - V\Delta P
+\end{align}
+
+Finally, to obtain a value for the differential enthalpy of adsorption,
+the enthalpy is divided by the amount of gas adsorbed in the same 
+time.
