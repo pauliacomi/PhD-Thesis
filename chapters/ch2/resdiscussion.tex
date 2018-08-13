@@ -6,47 +6,6 @@
 \subsection{Routine characterization of a MOF sample}
 
 
-When a newly synthesised sample is available, an initial characterisation is often performed
-to compare the material with previous batches. Adsorption of nitrogen at \SI{77}{\kelvin}
-is commonly used to verify if predictors such as specific surface area and pore size 
-distribution are consistent with other samples or literature values. 
-
-The nitrogen isotherm is first imported in \texttt{pyGAPS}. To obtain the BET 
-area, the \lstinline{pygaps.area_BET()} method is used with the isotherm object as the 
-parameter and the \lstinline{verbose} option, with Figure~\ref{fig:uiobet} as the output.
-It can be seen that the framework has automatically selected the points within the 
-applicable BET region using the checks devised by Rouquerol et al.
-\cite{rouquerolAdsorptionPowdersPorous2013} to assert method validity. 
-The statistical BET monolayer point is within
-the selected region, which is one of the checks implemented for method validity.
-The calculated surface area is \SI{1277}{\metre^2\per\gram}, which is similar to
-literature values~\cite{wiersumEvaluationUiO66GasBased2011, 
-valenzanoDisclosingComplexStructure2011}.
-
-
-The same isotherm is used to calculate the pore size distribution of the UiO-66(Zr) sample.
-This MOF has octahedral cages surrounded by eight corner 
-tetrahedral cages of 11 and 8 \si{\angstrom} respectively. 
-The structure is therefore expected to have only 
-micropores. Two methods are available in \texttt{pyGAPS} for micropore size distributions:
-a `classical' Horvath-Kawazoe (HK) method~\cite{horvathMethodCalculationEffective1983}, 
-as well as a DFT fitting routine.
-The HK method is called by using the function in Listing~\ref{lst:PSD}.
-Here, the surface characteristic parameters determined by Saito and 
-Foley~\cite{saitoCurvatureParametricSensitivity1991} are to
-be used, with the framework automatically supplying the parameters for the adsorbed gas. 
-
-The DFT fitting is done using the internal kernel
-which is applicable for \ce{N2} on carbon slit pores and included with \texttt{pyGAPS}. 
-Results are shown in Figure~\ref{fig:uiopsd}. We can see that whilst both methods
-produce a bimodal size distribution, neither is accurate in describing the crystallographic pore
-widths. This is to be expected, since neither method is applicable to the UiO-66(Zr)
-system. However, when comparing two samples of the same MOF, these methods can still
-highlight differences in the quality of the two batches. For example, it can be seen
-that the DFT method shows wide peaks at >\SI{1}{\nano\meter}
-which can be an indication of the presence of defects in the UiO-66(Zr) structure.
-Indeed, TGA analysis of the pristine sample shows a linker ratio (11.8 linkers per cluster)
-that is lower than it would be in a perfect sample (see figure in supplemental information.) 
 
 
 New materials are often screened for their ability to act as a \ce{CO2} capture material. 
@@ -72,26 +31,28 @@ a plateau and the change in adsorbed amount is small from point to point, errors
 introduced in the direct calculation of the heat of adsorption. The two techniques are thus 
 complementary.  
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 
     \centering
     \begin{subfigure}[b]{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{uio-isosteric-iso}
         \caption{}%
-        \label{fig:uioisostericiso}
+        \label{calo:fig:uioisostericiso}
     \end{subfigure}%
     \begin{subfigure}[b]{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{uio-isosteric-heat}
         \caption{}%
-        \label{fig:uioisostericheat}
+        \label{calo:fig:uioisostericheat}
     \end{subfigure}
-    \caption{Calculation of enthalpy of adsorption: (\protect\subref{fig:uioisostericiso}) 
-    the dataset of isotherms used and (\protect\subref{fig:uioisostericheat}) the calculated
-    isosteric heat (red line) together with the measured differential enthalpy of adsorption 
-    (blue triangles)}%
-    \label{fig:uioisosteric}
+    \caption{Calculation of enthalpy of adsorption: 
+    (\protect\subref{calo:fig:uioisostericiso}) 
+    the dataset of isotherms used and 
+    (\protect\subref{calo:fig:uioisostericheat}) the calculated
+    isosteric heat (red line) together with the measured 
+    differential enthalpy of adsorption (blue triangles)}%
+    \label{calo:fig:uioisosteric}
 
 \end{figure}
 
@@ -102,7 +63,8 @@ the adsorption behaviour of pure gases, with a focus on describing the pore envi
 Afterwards, the performance of different binary separations is evaluated, 
 such as \ce{CO2}/\ce{N2} and propane/propylene.
 
-Pure gas adsorption data has been recorded at \SI{303}{\kelvin} in conjunction with
+Pure gas adsorption data has been recorded at \SI{303}{\kelvin} in 
+conjunction with 
 microcalorimetry on \ce{N2}, \ce{CO}, \ce{CO2}, \ce{CH4}, \ce{C2H6},
 \ce{C3H6} and \ce{C3H8}. The complete dataset is plotted with the 
 \lstinline{pygaps.plot_iso()} function and can be seen in Figure~\ref{fig:takedadataset}.
