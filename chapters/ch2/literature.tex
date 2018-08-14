@@ -14,7 +14,7 @@ components with distinct physical meaning.
 
 The first two types of interaction, namely short range 
 electrostatic repulsion between the electron clouds of 
-neighbouring atoms and long range dispersion arising from
+neighbouring atoms \(\Phi_{R}\) and long range dispersion \(\Phi_{D}\) arising from
 incidental short-lived partial charges are common to all
 atoms, and can therefore be called ``non-specific''. Such 
 interactions are commonly modelled through the use of a 
@@ -24,15 +24,23 @@ Lennard-Jones type potential function.
   V_\text{LJ} = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6 \right]
 \end{equation}
 
-The latter two types, Coulombic interactions and induction 
-interactions arise from permanent charges and multipoles in the 
+The latter two types, Coulombic interactions \(\Phi_{C}\) and induction 
+interactions \(\Phi_{R}\) arise from permanent charges and multipoles in the 
 system. Coulombic interactions are attraction and repulsion
-interactions between charges such as molecular ions,
+interactions between charges such as molecular ions, permanent
+dipoles and quadrupoles.
 Induction, also known as polarization or Debye forces, is the interaction
 between a charged particle or a multipole with the induced multipole
 in a non-charged system. The ease of inducing such an interaction
 in a molecule is termed polarizability. These interactions 
-can be referred to as ``non-specific''.
+can be referred to as ``specific''.
+
+Therefore, in the standard definition of adsorption, only 
+Van-der-Waals forces are responsible. However, depending on the
+systems involved, stronger interactions such 
+as hydrogen bonding, electron sharing, stacking or \(\pi\) interactions
+may also play a role in the overall stability of the guest-host
+attraction.
 
 The total interactions can also be broken down as contributions
 from guest-host interactions and guest-guest interactions.
@@ -60,12 +68,12 @@ overall exothermic phenomenon.
 However, in order to make the transition from a molecular 
 viewpoint to a macroscale bulk fluid representation of 
 adsorption, the a thermodynamic description of the adsorbed 
-phase of the process must be defined.
+phase of the process must be performed.
 
-\subsection{The Gibbs surface excess approach}
+\subsubsection{The Gibbs surface excess approach}
 
 A description of the adsorbed phase can be made through 
-an expressing the change in density or concentration of fluid
+expressing the change in density or concentration of fluid
 from the adsorbent surface to the bulk phase. The density 
 has a maxima in the immediate zone close to the surface, and then
 decreases until it reaches the density of the bulk fluid.
@@ -97,11 +105,12 @@ amount adsorbed can be defined as:
   n_{ads}^{absolute} = A \int_0^r c\ dz
 \end{equation}
 
-The imaginary Gibbs dividing surface is placed such that the
-concentration of the adsorbent in the adsorbed phase is only
-measured as an excess from the concentration of the bulk fluid.
+The imaginary Gibbs dividing surface is usually placed parallel to
+the real surface of the adsorbent and in the resulting system, the
+concentration of the adsorbent in the adsorbed phase are 
+expressed as an excess from the concentration of the bulk fluid.
 The relationship between the total amount adsorbed and the 
-excess amount adsorbed is expressed as:
+excess amount adsorbed is then:
 
 \begin{equation}
   n_{ads}^{excess} = n_{ads}^{absolute} + V_{ads} \cdot c_{bulk}
@@ -110,7 +119,10 @@ excess amount adsorbed is expressed as:
 As long as the volume of the adsorbed layer \(V_{ads}\) can be 
 considered negligible and the concentration of adsorbate in the bulk 
 phase \(c_{bulk}\) is low, the total amount adsorbed and the surface 
-excess amount may be considered as approximately equal. 
+excess amount may be considered as approximately equal.
+This is usually the case for experiments such as nitrogen 
+adsorption at \SI{77}{\kelvin}, or room temperature adsorption
+below \SI{1}{\bar}.
 At high pressures or when the difference in concentration between
 the adsorbed and the bulk phase is low, the total amount adsorbed
 begins to diverge significantly from the surface excess. 
