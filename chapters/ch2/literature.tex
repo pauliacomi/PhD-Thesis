@@ -2,7 +2,7 @@
 
 \section{Energetics of adsorption}
 
-\subsection{Forces involved in adsorption}
+\subsection{Forces involved in adsorption}\label{calo:forces}
 
 From a classical molecular point of view, we can define the 
 guest-host and guest-guest interactions as a sum of several
@@ -49,11 +49,6 @@ a host-host or self-potential interaction should be considered.
 The guest-host interaction can be assumed constant for a homogeneous
 surface or a function of coverage, in the case of a 
 heterogeneous surface.
-
-Unfortunately, only the total sum of all interactions
-is measurable through direct methods. Therefore, the 
-absolute contribution of each component is unknowable unless
-computational methods are employed.
 
 \subsection{Adsorption thermodynamics}
 
@@ -102,7 +97,7 @@ As represented in \autoref{calo:fig:gibbs-surface}, the total
 amount adsorbed can be defined as:
 
 \begin{equation}
-  n_{ads}^{absolute} = A \int_0^r c\ dz
+  n_{ads}^{a} = A \int_0^r c\ dz
 \end{equation}
 
 The imaginary Gibbs dividing surface is usually placed parallel to
@@ -113,7 +108,7 @@ The relationship between the total amount adsorbed and the
 excess amount adsorbed is then:
 
 \begin{equation}
-  n_{ads}^{excess} = n_{ads}^{absolute} + V_{ads} \cdot c_{bulk}
+  n_{ads}^{\sigma} = n_{ads}^{a} + V_{ads} \cdot c_{bulk}
 \end{equation}
 
 As long as the volume of the adsorbed layer \(V_{ads}\) can be 
@@ -132,22 +127,77 @@ method of adsorption will measure excess amounts adsorbed.
 In the case of adsorption in porous materials, the volume of the
 adsorbed phase may be taken as total pore volume. 
 
-\subsection{Enthalpy of adsorption}
+\subsubsection{Differential enthalpy of adsorption}
 
 Adsorption can be considered as a closed system of constant volume
 V and temperature T. No mass of material crosses the system boundary,
-therefore the change in chemical potential is also
-zero \(d\mu = 0\). The Helmholtz free energy is used for a description 
-of the thermodynamic potential of such as system. 
-
-The differential enthalpy of adsorption is then the change of the 
-total enthalpy with respect to the number of moles adsorbed
-at a certain equilibrium pressure and surface concentration.
-It is given by:
-
+therefore the total change in chemical potential is also
+zero \(d\mu = 0\). Through
+a derivation~\cite{rouquerolAdsorptionPowdersPorous2013} of the
+gas and adsorbed phase/adsorbent energies we may obtain a 
+Gibbs-Duhem type equation:
+%
 \begin{equation}
-  \Delta_{ads} \dot{h} = 
+  d \mu^{\sigma} = - \frac{S^{\sigma}}{n^{\sigma}} dT + \frac{A}{n^{\sigma}} d \pi
 \end{equation}
+%
+from which the Gibbs adsorption isotherm (\autoref{pyg:eqn:gibbs}) may
+be derived, as well as 
+%
+\begin{equation}\label{calo:eqn:enthalpy}
+ \ln p = \frac{\dot{u}_{T, \Gamma}^{\sigma} - u_T^g - RT}{RT} %
+ - \frac{\dot{s}_{T, \Gamma}^{\sigma} - s^{g}_{0}}{R} %
+ = \frac{\Delta_{ads} \dot{h}_{T, \Gamma}}{RT} - \frac{\Delta_{ads} \dot{s}_{T, \Gamma}}{R}
+\end{equation}
+%
+an expression relating the differential enthalpy of adsorption 
+\(\Delta_{ads} \dot{h}_{T, \Gamma}\) and
+the differential entropy of adsorption \(\Delta_{ads} \dot{s}_{T, \Gamma}\)
+to the pressure of an ideal gas. 
+The relationship between the differential enthalpy and the differential energy
+of the adsorbed phase is given by:
+%
+\begin{equation}
+  \Delta_{ads} \dot{h}_{T, \Gamma} = \Delta_{ads} \dot{u}_{T, \Gamma} - RT
+\end{equation}
+
+\subsubsection{Application of differential enthalpy of adsorption to the characterisation of materials}
+
+As the differential enthalpy of adsorption represents
+the interactions taking place during adsorption, it is often
+used in conjunction with the isotherm to study the properties 
+of adsorbent materials.
+Unfortunately, only the total sum of all interactions
+is measurable through direct methods. Therefore, the 
+absolute contribution of each component presented in 
+\autoref{calo:forces} cannot be determined.
+However, with careful choice of experiments and interpretation 
+of results, specific components may be compared.
+
+Effect of structure of the guest on guest-host interactions 
+can be investigated for example through changing the Si/Al ratio
+in a series of MFI zeolites~\cite{llewellynAdsorptionMFItypeZeolites1993}.
+The role of compensation cations in a ion-exchanged 
+X-faujasite~\cite{maurinAdsorptionArgonNitrogen2005} 
+or the influence of open metal sites~\cite{grajciarUnderstandingCOAdsorption2011}
+and their distribution~\cite{yoonControlledReducibilityMetalOrganic2010}
+can be assessed through analysis of the calorimetry curves.
+The contribution of non-specific effects such as \(\pi\)
+backbonding~\cite{rubesAdsorptionPropanePropylene2013} can be 
+seen by the choice of a suitable probe pair, such as a saturated
+and unsaturated version of hydrocarbons (ethane/ethylene/acetylene).
+Guest-guest interactions during adsorption may also be monitored,
+such as cooperative effects such as 2-dimensional analogues of phase
+changes~\cite{rouquerolCalorimetricEvidenceBidimensional1977}.
+If the adsorbate itself undergoes changes during adsorption,
+as is the case in soft materials, the measured enthalpy of 
+adsorption can be a clear indication of such changes 
+in structure~\cite{bourrellyDifferentAdsorptionBehaviors2005}.
+The net enthalpy of adsorption is such a system is often
+lowered through the energetic contribution of the state
+change of the adsorbate and may be of use for a reduction in 
+the thermal load to be dissipated for adsorption or required to 
+recover the adsorbed material~\cite{masonMethaneStorageFlexible2015}.
 
 The differential enthalpy of adsorption is often represented as a
 function of partial coverage. In \autoref{calo:fig:enthalpy-iupac-iso},
@@ -165,7 +215,8 @@ of adsorption which are below the enthalpy of vaporisation.
 It should be noted that changes in the adsorbed fluid similar 
 to phase changes may occur, which can be seen in the enthalpy curve
 as a distinct peak~\cite{llewellynAdsorptionMFItypeZeolites1993, %
-llewellynAdsorptionMFItypeZeolites1993a}.
+llewellynAdsorptionMFItypeZeolites1993a, %
+rouquerolCalorimetricEvidenceBidimensional1977}.
 
 \begin{figure}[htb]
   \centering
@@ -182,14 +233,15 @@ llewellynAdsorptionMFItypeZeolites1993a}.
 
 \end{figure}
 
+
 \subsection{Measuring the enthalpy of adsorption}
 
 Experimentally, two methods are widely used for determining the 
-enthalpy of adsorption. The first relies on the applicability of the 
-Clausius-Clapeyron equation to two or more isotherms measured 
-at different temperatures while the second is a 
-direct measurement of the evolved heat during adsorption 
-using calorimetry.
+enthalpy of adsorption. The first relies on measurement of two 
+or more isotherms at different temperatures and the use of 
+a Clausius-Clapeyron-type equation for indirect calculation, 
+while the second is a direct measurement of the evolved heat
+during adsorption using calorimetry.
 
 A value for the enthalpy of adsorption in a particular system
 may also be obtained from computer simulation methods. 
@@ -198,30 +250,38 @@ the chosen model of interaction between simulated molecules.
 
 \subsubsection{Isosteric enthalpy of adsorption}
 
-The isosteric enthalpy of adsorption is calculated from experimental
-data using the Clausius-Clapeyron equation as the starting point:
-
+If the differential enthalpy of adsorption is assumed be independent
+of temperature, \autoref{calo:eqn:enthalpy} can be differentiated 
+with respect to temperature keeping the surface adsorbed amount constant
+to obtain an equation analogous to the Clausius-Clapeyron equation:
+%
 \begin{equation}
-    \Big( \frac{\partial \ln P}{\partial T} \Big)_{n_a} = -\frac{\Delta H_{ads}}{R T^2}
+    \Big( \frac{\partial \ln p}{\partial T} \Big)_{n_a} = -\frac{\Delta_{ads}\dot{h}_{T, \Gamma}}{R T^2}
 \end{equation}
-
-Where \(\Delta H_{ads}\) is the isosteric enthalpy of adsorption.
-If it is assumed that the adsorption enthalpy does not vary with 
-temperature, the equation can be rearranged to:
-
-\begin{equation}
-    \Delta H_{ads} = - R \frac{\partial \ln P}{\partial 1 / T}
+%
+The equation can be rearranged to calculate the differential enthalpy:
+%
+\begin{equation}\label{calo:eqn:claus-clap}
+  \Delta_{ads}\dot{h}_{T, \Gamma} = R \Big( \frac{\partial \ln p}{\partial 1 / T} \Big)_{\Gamma}
 \end{equation}
+%
+where \(\Delta_{ads}\dot{h}_{T, \Gamma}\) is the often termed the 
+isosteric enthalpy of adsorption.
 
 In order to approximate the partial differential, two or more
 isotherms are measured at different temperatures. 
 Afterwards the isosteric enthalpy of adsorption can be calculated
 by using the pressures at which the loading is identical using the 
-rearranged equation. By plotting the values of \(\ln P\) against
+rearranged equation. By plotting the values of \(\ln p\) against
 \(1 / T\) we should obtain a straight line with a slope
-of \(- \Delta H_{ads} / R\).
+of \(- \Delta_{ads}\dot{h}_{T, \Gamma} / R\).
 
-The isosteric enthalpy is sensitive to the differences in pressure between
+As experimental isotherms do not necessarily have points spaced 
+at equal loading intervals, often interpolation is used to obtain
+data at the desired points. Alternatively, a model may be used 
+to first fit the isotherm, which is then used for the calculation.
+
+The isosteric enthalpy is sensitive to differences in pressure between
 the two isotherms. If the isotherms measured are too close together, 
 the error margin will increase. The method also assumes that isosteric
 enthalpy does not vary with temperature. If the
@@ -229,7 +289,7 @@ variation is large for the system in question, the calculation will
 give unrealistic values.
 
 Even with carefully measured experimental data, there are two 
-assumptions used in deriving the Clausius-Clapeyron equation: 
+assumptions used in deriving \autoref{calo:eqn:claus-clap}: 
 an ideal bulk gas phase and a negligible adsorbed phase
 molar volume. These have a significant effect on the calculated 
 isosteric enthalpy of adsorption, especially at high relative pressures 
@@ -239,45 +299,57 @@ and for heavy adsorbates.
 
 A direct measurement of the enthalpy of adsorption is possible using
 calorimetric methods.
+An isothermal calorimeter is most often used for this purpose, 
+to best approximate a reversible exchange of heat between the 
+system under investigation and the surrounding 
+heat sink. To allow for a complete integration of evolved heat,
+with minimal losses, a 3D Tian-Calvet thermopile~\cite{calvetRecentProgressMicrocalorimetry1963}
+can be used. In order to cancel out variations in environment,
+differential mounting is employed, in which the signal 
+is the difference in voltage between a reference and experimental
+thermopile. In order to ensure the ``isothermicity'' of the calorimeter, a 
+suitable heat sink must be used, leading to two types of design. 
+Ambient temperature calorimeters uses resistance heating to
+maintain the internal temperature while utilising the environment 
+as its heat sink. At low temperature, the
+environment acts as a heat source and therefore the heat sink must 
+be provided, often in the form of a constant-temperature bath
+undergoing a phase change or through a cryostat. Sketches of 
+an ambient and a low temperature differential Tian-Calvet calorimeter
+can be seen in \autoref{calo:fig:calo-types}.
 
-The 
-For the best performance, a 3D Tian-Calvet thermopile is used, which
-allows for a complete integration of evolved heat.
+\begin{figure}[htb]
 
-Two options exist, based on two methods of obtaining adsorption isotherms:
-the continuous and the discontinuous or point-by-point method. In
-the point-by-point method, discrete steps of introduction of adsorbate 
-are taken. A reference volume is filled with gas at a pressure p, which
-is allowed to equilibrate before a valve between the reference volume 
-and the cell containing the adsorbate. 
-In the other method, the flow of adsorbate is continuous, usually kept 
-constant by a restriction in the pipe diameter which is severe enough
-to enter sonic flow regimes. At this point, the flowrate is no longer 
-influenced by a pressure differential, instead becoming a function only
-of upstream pressure and environment temperature.
+  \centering
+  \begin{subfigure}[b]{.45\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{calo-ht}
+      \caption{Ambient-temperature calorimeter}%
+      \label{calo:fig:calo-ht}
+  \end{subfigure}
+  \begin{subfigure}[b]{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{calo-lt}
+      \caption{Low-temperature calorimeter}%
+      \label{calo:fig:calo-lt}
+  \end{subfigure}%
+  \caption{Two types of isothermal Tian-Calvet calorimeters
+  for adsorption measurements, specialized for
+  different temperature ranges.
+  Adapted from \citeauthor{llewellynGasAdsorptionMicrocalorimetry2005}%
+  \cite{llewellynGasAdsorptionMicrocalorimetry2005}.
+  }%
+  \label{calo:fig:calo-types}
 
-The heat generated during adsorption (or required during desorption)
-is therefore measured either as discrete peaks, corresponding to 
-each event or as a continuous heat curve. An example of such a signal 
-is presented in \todo{figure}.
+\end{figure}
 
-The point-by-point method is less accurate than a continuous introduction,
-as the measured heat is necessarily a cumulative value of instantaneous
-differential enthalpy for the coverage range of each adsorbed point.
-However, it has the advantage of ensuring complete equilibrium at 
-each step, by observing the return to the baseline of the calorimetry
-signal, or no changes in the pressure signal. On the other hand, the 
-continuous method allows for subtle changes in the enthalpy of 
-adsorption, such as those corresponding to adsorbed phase ordering or 
-changes, to be seen experimentally. Additionally, the time-resolved data
-can be used to investigate transient phenomena. Equilibrium between 
-the adsorbed phase and gas phase is no longer assured, and must be
-tested for by performing multiple experiments at different adsorbate
-flowrates. Alternatively, the experiment can be stopped to observe that the 
-time for the heat signal to return to its baseline does not diverge 
-from the dead time of the calorimeter.
-
-The heat value which is measured through calorimetry corresponds to 
+Care must be taken to ensure that
+the recorded heat through such an experiment can be related directly 
+to adsorption enthalpy and not to other heat effects.
+The accepted convention~\cite{rouquerolGasSolidInteractions1980} is that 
+the adsorbate itself is inert and 
+therefore does not contribute to the variation of any state function.
+The heat which is measured through calorimetry corresponds to 
 two components, the differential enthalpy of adsorption and the 
 work required to expand the gas into the measurement cell.
 In this relationship as expressed in \autoref{calo:eqn:calo-heat}
@@ -285,11 +357,69 @@ the value for work can be substituted by \(V\Delta P\) and
 accounted for at each point.
 
 \begin{align}\
-  \dot{Q} & = \Delta_{ads} h + W \label{calo:eqn:calo-heat} \\
-  \dot{Q} & = \Delta_{ads} h + V\Delta P \\
-  \Delta_{ads} h & = \dot{Q} - V\Delta P
+  \dot{Q} & = \Delta_{ads} \dot{h} + W \label{calo:eqn:calo-heat} \\
+  \dot{Q} & = \Delta_{ads} \dot{h} + V\Delta P \\
+  \Delta_{ads} \dot{h} & = \dot{Q} - V\Delta P
 \end{align}
+
+
 
 Finally, to obtain a value for the differential enthalpy of adsorption,
 the enthalpy is divided by the amount of gas adsorbed in the same 
 time.
+
+Two options exist regarding the method of introduction of adsorbate:
+the continuous and the discontinuous or point-by-point method. In
+the point-by-point method, discrete insertion steps made. 
+A reference volume is filled with gas at a pressure \(p\), which
+is allowed to equilibrate before a valve between the reference volume 
+and the cell containing the adsorbate. 
+In the other method, the flow of adsorbate is continuous, usually kept 
+constant by a restriction in the pipe diameter which is severe enough
+to allow the gas to enter sonic flow regimes. At this point, the 
+flowrate is no longer influenced by a pressure differential, 
+instead becoming a function only of upstream pressure and environment 
+temperature.
+The heat evolved during adsorption (or required during desorption)
+is therefore measured either as discrete peaks, corresponding to 
+each event or as a continuous heat curve. An example of such a signal 
+for each method presented in \todo{calo:eqn:calo-measure}.
+
+\begin{figure}[htb]
+
+  \centering
+  \begin{subfigure}[b]{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{calo-point}
+      \caption{}%
+      \label{calo:fig:calo-point}
+  \end{subfigure}
+  \begin{subfigure}[b]{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{calo-cont}
+    \caption{}%
+    \label{calo:fig:calo-cont}
+\end{subfigure}%
+  \caption{Typical pressure and calorimeter signals for the two
+  available methods of introducing adsorbate into the measurement
+  cell (a) discontinuous and (b) continuous.
+  }%
+  \label{calo:fig:calo-measure}
+
+\end{figure}
+
+The point-by-point method is less accurate than a continuous introduction,
+as the measured heat is necessarily a cumulative value of instantaneous
+differential enthalpy for the coverage range of each adsorbed point.
+However, it has the advantage of ensuring complete equilibrium at 
+each step, by observing the return to the baseline of the calorimetry
+signal or a stable pressure signal. On the other hand, the 
+continuous method allows for subtle changes in the differential enthalpy of 
+adsorption, such as those corresponding to adsorbed phase changes, 
+to be seen experimentally. Additionally, the time-resolved data
+can be used to investigate transient phenomena. Equilibrium between 
+the adsorbed phase and gas phase is no longer guaranteed, and must be
+tested for by performing multiple experiments at different adsorbate
+flowrates. Alternatively, the experiment can be stopped to observe that the 
+time for the heat signal to return to its baseline does not diverge 
+from the dead time of the calorimeter.
