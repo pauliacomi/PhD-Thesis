@@ -2,38 +2,39 @@
 
 \section{Measurements and analysis}
 
-\subsection{Comparison between the enthalpy of adsorption measured
+\subsection{Comparison between enthalpies of adsorption measured
 	through the direct and indirect method}
 
 In order to view the difference that may arise between the isosteric 
 and calorimetric method of measuring the enthalpy of adsorption, 
 a sample of UiO-66(Zr) previously used for a study of 
 carbon dioxide~\cite{wiersumEvaluationUiO66GasBased2011} adsorption
-was also measured through microcalorimetry.
-Two previous isotherms were recorded at \SI{303}{\kelvin} and
-\SI{323}{\kelvin} respectively, with the new isotherm measured in the 
-calorimeter at \SI{303}{\kelvin}. The complete set of isotherms is
-loaded into \texttt{pyGAPS} and plotted by the \lstinline{pygaps.plot_iso()}
-function as seen in \autoref{calo:fgr:uioisostericiso}.
-To calculate the isosteric enthalpy of adsorption, the two isotherms
-measured for this purpose are first fitted with a virial type model,
-then passed through the \lstinline{pygaps.isosteric_heat()} function.
-Results from the calculation are overlaid on top of the measured
-calorimetric data in \autoref{calo:fgr:uioisostericheat} as a function
-of amount adsorbed.
+was also measured using microcalorimetry.
+Two previous isotherms were recorded through gravimetry at \SI{303}{\kelvin} and
+\SI{323}{\kelvin} respectively and the new isotherm was measured in the 
+calorimeter at \SI{303}{\kelvin}. The complete set of isotherms can
+be found in \autoref{calo:fgr:uioisostericiso}.
+The two isotherms measured at \SI{303}{\kelvin} are nearly identical, 
+ensuring that the both adsorption apparatus are working as intended.
+The isosteric enthalpy of adsorption is calculated from the two isotherms
+at different temperature, both using an interpolation method, or through
+first fitting a virial model (\autoref{pyg:model:virial}).
+The values are then adjusted according to \autoref{calo:eqn:adj}.
+Calculated and measured values for the enthalpy of adsorption are overlaid
+in \autoref{calo:fgr:uioisostericheat} as a function of amount adsorbed.\todo{is this ok?}
 
 \begin{figure}[htb]
 	\centering
 
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{uio-isosteric-iso}
+		\includegraphics[width=.8\linewidth]{uio/uio-isosteric-iso}
 		\caption{}%
 		\label{calo:fgr:uioisostericiso}
 	\end{subfigure}%
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{uio-isosteric-heat}
+		\includegraphics[width=.8\linewidth]{uio/uio-isosteric-heat}
 		\caption{}%
 		\label{calo:fgr:uioisostericheat}
 	\end{subfigure}
@@ -47,17 +48,22 @@ of amount adsorbed.
 
 \end{figure}
 
-The two datasets overlap for the most part but
-diverge at low loadings and near complete
-coverage. At low loading the small errors in pressure measurement introduce
-large errors in the isosteric enthalpy. This, together with the breakdown
-of the assumption of equilibrium due to active sites in the MOF mean that
-the calorimetric measurement is more suited to this range. At higher
-loadings, where the isotherm reaches a plateau and the change in adsorbed
-amount is small between each adsorbate insertion, errors are
-introduced in the direct calculation of the enthalpy of adsorption.
+When comparing the differential enthalpy of adsorption measured through
+calorimetry to the isosteric enthalpy obtained through interpolation, 
+a good overlap can be seen for the most part, but the two values
+diverge at low loadings and near complete coverage. 
+At low loading the small errors in pressure measurement introduce
+large errors in the isosteric enthalpy. By using the model-fitted 
+isotherms instead, a better agreement can be achieved. However, the 
+virial model still cannot account for the presence of active sites in the 
+MOF, as seen in the discrepancy of the first adsorption point.
+The calorimetric measurement is therefore more suited to the low pressure
+range. At higher loadings, where the isotherm reaches a plateau and
+the change in adsorbed amount is small between each adsorbate
+insertion, errors are introduced in the calorimetric calculation of
+the enthalpy of adsorption.
 Here, the indirect calculation provides the more accurate results.
-As such, the two techniques are complementary.
+As such, the two techniques can be thought of as complementary.
 
 \subsection{Analysis of a carbon sample for gas separation applications}
 
@@ -106,13 +112,13 @@ The difference between the two isotherms is due exclusively to steric and packin
 	\centering
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\linewidth]{takeda-dataset}
+		\includegraphics[width=.95\linewidth]{takeda/takeda-dataset}
 		\caption{}%
 		\label{fgr:takedadataset}
 	\end{subfigure}%
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{takeda-enth-henry}
+		\includegraphics[width=.8\linewidth]{takeda/takeda-enth-henry}
 		\caption{}%
 		\label{fgr:takedatrends}
 	\end{subfigure}
