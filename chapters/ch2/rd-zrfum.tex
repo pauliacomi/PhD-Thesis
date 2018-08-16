@@ -1,6 +1,12 @@
 % !TEX root = ../../main.tex
 
-\subsection{Discovering possible separations}
+\subsection{A study on a novel MOF}
+
+With the methods of characterisation through calorimetry
+outlined on a reference material, a similar study on a 
+MOF sample can be performed. The aim is to screen for 
+potentially interesting features for use in gas 
+storage and separation.
 
 \subsubsection{Material}
 
@@ -67,6 +73,33 @@ dataset can be seen in \autoref{calo:fgr:zrfum-dataset}.
 \begin{figure}[htb]
     \centering
 
+	\begin{subfigure}[b]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{zrfum/zrfum-dataset}
+        \caption{}%
+        \label{calo:fgr:zrfum-dataset}
+    \end{subfigure}%
+	\quad
+	\begin{subfigure}[b]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{zrfum/zrfum-enthalpy}
+        \caption{}%
+        \label{calo:fgr:zrfum-enthalpy}
+    \end{subfigure}
+    \caption{(a) The experimental isotherms of all recorded gases and
+    (b) the corresponding enthalpy curves.}%
+    \label{calo:fgr:zrfum-analysis}
+
+\end{figure}
+
+Values for initial Henry's constant and initial enthalpy of adsorption
+were calculated using the methods available in pyGAPS.
+The same trend as with the Takeda 5A sample was plotted in 
+\autoref{calo:fgr:zrfum-trends}. 
+
+\begin{figure}[htb]
+    \centering
+
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
         \includegraphics[width=0.95\linewidth]{zrfum/zrfum-dataset}
@@ -86,8 +119,3 @@ dataset can be seen in \autoref{calo:fgr:zrfum-dataset}.
     \label{calo:fgr:zrfum-analysis}
 
 \end{figure}
-
-Values for initial Henry's constant and initial enthalpy of adsorption
-were calculated using the methods available in pyGAPS.
-The same trend as with the Takeda 5A sample was plotted in 
-\autoref{calo:fgr:zrfum-trends}. 

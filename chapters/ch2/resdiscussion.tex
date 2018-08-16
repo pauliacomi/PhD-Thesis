@@ -122,7 +122,7 @@ due to a combination of a small molecule size and interactions with
 the carbon pore walls. The enthalpy curve shows a higher energy of 
 adsorption at low loading by \SIrange{5}{10}{\kilo\joule\per\mole}, 
 corresponding to adsorption on a slightly heterogeneous surface.
-The adsorption of hydrocarbons is in accordance to their size, with
+The adsorption of hydrocarbons takes place in accordance to their size, with
 both the initial slope and the enthalpy of adsorption increasing linearly
 as a function of the carbon number. Each methyl group is seen 
 to contribute, on average, with around \SIrange{10}{15}{\kilo\joule\per\mole}
@@ -140,42 +140,54 @@ low loadings as well as the initial differential enthalpy of adsorption.
 Here, initial Henry's constant is calculated by fitting a virial model to
 the isotherm, then taking the limit of the function at zero loading. 
 
-The initial enthalpy of adsorption
-
-In order to The initial enthalpy of  is obtained through the \lstinline{pygaps.initial_enthalpy_comp()} function.
-This fits the enthalpy curve to a compound contribution from
-guest-host interaction, defects, guest-guest attraction and repulsion using a minimization
-algorithm. The results of the calculations are plotted versus the polarizability of the
-gas used, which can be obtained from the respective \texttt{Adsorbate} class.
-Figure~\ref{fgr:takedatrends} shows that both the parameters fall on a linear
-trend, which suggests that the interactions between those guests and the pore walls are
-mostly due to Lennard-Jones interactions. Carbon dioxide has a higher enthalpy
-of adsorption than the baseline due to the contribution from its quadrupole moment.
-There is almost a complete overlap between propane and propylene, which leads to
-the conclusion that the unsaturated double bond does not interact in a specific way
-with the carbon surface.
-The difference between the two isotherms is due exclusively to steric and packing effects.
+The initial enthalpy of adsorption can be determined from calorimetric 
+methods simply by taking the value of the first measured point.
+However, this procedure is susceptible to large errors, particularly
+if the isotherm has no points in the low coverage region. An alternative
+is to take an average of all recorded points, a method which assumes
+a homogenous surface. \citeauthor{myersThermodynamicsAdsorptionPorous2002},
+has suggested that the enthalpy curve follows a polynomial model, similar
+to a virial isotherm~\cite{myersThermodynamicsAdsorptionPorous2002}.
+In this work, an empirical method is used where the enthalpy curve
+is treated as a compound contribution from guest-host interaction,
+guest-guest attraction and repulsion, the factors of which are determined
+using a minimization algorithm. Adsorbate-adsorbate interaction is 
+represented as a logistic function, which can account for both 
+a heterogeneous surface and a micropore filling step. Power functions
+are used for both attraction and repulsion factors. An example of 
+an enthalpy curve fitted with this method can be seen 
+in \autoref{calo:fgr:takeda-enth-fit}
 
 \begin{figure}[ht]
 
 	\centering
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\linewidth]{takeda/takeda-dataset}
+		\includegraphics[width=.95\linewidth]{takeda/takeda-enthalpy-fit}
 		\caption{}%
-		\label{fgr:takedadataset}
+		\label{calo:fgr:takeda-enth-fit}
 	\end{subfigure}%
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{takeda/takeda-enth-henry}
 		\caption{}%
-		\label{fgr:takedatrends}
+		\label{calo:fgr:takeda-trends}
 	\end{subfigure}
-	\caption{Takeda 5A dataset processing: (\protect\subref{fgr:takedadataset}) the
-		experimental dataset all recorded gases and (\protect\subref{fgr:takedatrends}) the calculated
-		trends of initial heat of adsorption and Henry's constant}%
-	\label{fgr:takedaanalysis}
+	\caption{Takeda 5A dataset processing: (\protect\subref{calo:fgr:takeda-enth-fit})
+	 an example of the empirical enthalpy fit model and (\protect\subref{calo:fgr:takeda-trends}) the calculated
+		trends for initial heat of adsorption and Henry's constant}%
+	\label{calo:fgr:takeda-analysis}
 
 \end{figure}
+
+A useful method of displaying the two parameters are by plotting them
+as a function of the polarizability of the probe, as in
+\autoref{calo:fgr:takeda-trends}. Both parameters follow a linear
+trend, which suggests that the interactions between those guests and the pore walls are
+mostly due to specific interactions. Carbon dioxide has a higher enthalpy
+of adsorption than the baseline, which can be ascribed to the contribution 
+from its quadrupole moment. There is almost a complete overlap between 
+propane and propylene, confirming that the unsaturated double bond does not
+interact in a specific way with the carbon surface.
 
 \input{\thisch/rd-zrfum}
