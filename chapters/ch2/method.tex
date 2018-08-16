@@ -63,8 +63,6 @@ molar volume. These have a significant effect on the calculated
 isosteric enthalpy of adsorption, especially at high relative pressures
 and for heavy adsorbates.
 
-\subsubsection{Measurements in this work}
-
 \subsection{Microcalorimetry}\label{calo:method:calo}
 
 A direct measurement of the enthalpy of adsorption is possible using
@@ -208,7 +206,7 @@ flowrates. Alternatively, the experiment can be stopped to observe that the
 time for the heat signal to return to its baseline does not diverge
 from the dead time of the calorimeter.
 
-\subsubsection{Measurements in this work}
+\subsection{Experimental apparatus and accuracy}
 
 In this thesis, combined isotherms and enthalpy of adsorption
 measurements were made experimentally using a Tian-Calvet type
@@ -216,7 +214,7 @@ microcalorimeter coupled with a home-made manometric gas dosing
 system~\cite{llewellynGasAdsorptionMicrocalorimetry2005}.
 Two calorimeter designs were used, one for ambient temperature
 and one for low temperature adsorption, as displayed in
-\autoref{calo:fig:calo-types}.
+\autoref{calo:fig:calo-types}. 
 
 The method of adsorbate introduction can be chosen either as
 continuous or discontinuous. For routine measurements,
@@ -227,14 +225,44 @@ For each injection of gas, equilibrium was assumed to have
 been reached after \SIrange{90}{150}{\minute} depending on the
 sample and adsorbate used. This was confirmed by the return
 of the calorimetric signal to its baseline (<\SI{5}{\micro\watt}).
+For the continuous method, a sonic nozzle was used to 
+maintain the flowrate between \SIrange{0.5}{2}{\micro\mol\per\minute},
+low enough that the system can be considered at equilibrium.
 
-At low coverage the error in the signal can be estimated to around
-\( \pm \) \SI{0.2} {\kilo\joule\per\mol}.
+As the isotherms are recorded through the manometric method,
+the accuracy in the adsorbed amount depends on the reliability
+of measuring individual state variables (temperature,
+pressure, volume) and the equation of state relating them to adsorbate loading.
+Characteristic to this method, the pressure recorded for 
+a point is measured in relation to the previous one. Therefore,
+the error is compounded with each successive measurement point,
+and is the largest contribution to the total error. The 
+uncertainty can be lowered dramatically by increasing 
+the available surface area inside the calorimeter.
 Between \SIrange{50}{200}{\milli\gram}
 of sample is used in each experiment, such that the specific
 surface area inside the calorimeter cell is larger than
-\SI{50}{\metre^2\per\gram}. A complete error
-analysis for the resulting isotherms and enthalpy curves
-can be found in \autoref{appx:errors}.
+\SI{50}{\metre^2\per\gram}. Finally, the REFPROP equation
+of state is used~\cite{lemmonNISTReferenceFluid1989}, 
+currently the most accurate available.
+Overall, error in isotherms measured in this way can be 
+reduced to less than 5\%.
 
-\subsubsection{Data processing}
+The error in the differential enthalpy of adsorption has a
+contribution from both the heat signal of the calorimeter 
+and the accuracy in the amount adsorbed.
+At low coverage the error in the calorimetric signal can be
+estimated to around \( \pm \) \SI{0.2} {\kilo\joule\per\mol}.
+This uncertainty is orders of magnitude lower than the contribution
+from loading, and is therefore omitted in the error calculation.
+As the value obtained from integration of the signal peaks
+must be divided by the change in adsorbed amount \(\Delta n\),
+the error is largest in flat sections of the isotherm, where 
+the amount adsorbed is low. Thus, uncertainty varies from 
+0.5--5\% in the beginnings of the isotherm to over 100\% when
+an isotherm plateau is reached.
+
+A complete error analysis for the resulting isotherms and enthalpy
+curves can be found in \autoref{appx:errors}. Also, a direct comparison
+between calorimetry and gravimetry isotherms is presented in the 
+following section.
