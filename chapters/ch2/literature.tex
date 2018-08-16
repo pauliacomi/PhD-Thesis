@@ -31,19 +31,20 @@ interactions between charges such as molecular ions, permanent
 dipoles and quadrupoles.
 Induction, also known as polarization or Debye forces, is the interaction
 between a charged particle or a multipole with the induced multipole
-in a non-charged system. The ease of inducing such an interaction
-in a molecule is termed polarizability. These interactions
+in a non-charged system. The ease with which a charge can induce such an 
+interaction in a molecule is termed polarizability. These interactions
 can be referred to as ``specific''.
 
-Therefore, in the standard definition of adsorption, only
-Van-der-Waals forces are responsible. However, depending on the
-systems involved, stronger interactions such
-as hydrogen bonding, electron sharing, stacking or \(\pi\) interactions
-may also play a role in the overall stability of the guest-host
+In the standard definition of adsorption, only
+Van-der-Waals forces are said to account for the interactions between
+the guest and the host. However, depending on the
+systems involved, other types of interactions such
+as hydrogen bonding, electron sharing, stacking or \( \pi \) interactions
+may also play a role in the overall strength of the guest-host
 attraction.
 
 The total interactions can also be broken down as contributions
-from guest-host interactions and guest-guest interactions.
+from adsorbate-adsorbent interactions and guest-guest interactions.
 If changes in the adsorbent occur as a result of adsorption,
 a host-host or self-potential interaction should be considered.
 The guest-host interaction can be assumed constant for a homogeneous
@@ -107,8 +108,8 @@ expressed as an excess from the concentration of the bulk fluid.
 The relationship between the total amount adsorbed and the
 excess amount adsorbed is then:
 
-\begin{equation}
-	n_{ads}^{\sigma} = n_{ads}^{a} + V_{ads} \cdot c_{bulk}
+\begin{equation}\label{calo:eqn:total-excess}
+	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
 \end{equation}
 
 As long as the volume of the adsorbed layer \(V_{ads}\) can be
@@ -116,18 +117,43 @@ considered negligible and the concentration of adsorbate in the bulk
 phase \(c_{bulk}\) is low, the total amount adsorbed and the surface
 excess amount may be considered as approximately equal.
 This is usually the case for experiments such as nitrogen
-adsorption at \SI{77}{\kelvin}, or room temperature adsorption
+adsorption at \SI{77}{\kelvin}, or ambient temperature adsorption
 below \SI{1}{\bar}.
-At high pressures or when the difference in concentration between
+At high pressures, or when the difference in concentration between
 the adsorbed and the bulk phase is low, the total amount adsorbed
 begins to diverge significantly from the surface excess.
 
-Without corrections, both the gravimetric and manometric
-method of adsorption will measure excess amounts adsorbed.
+In most cases, isotherms are reported in terms of excess surface 
+amount. From an engineering viewpoint, this representation
+is often more useful. However, any modelling and simulations of 
+isotherms refers to the total amount adsorbed.
+If \(n_t\) is to be calculated, a value
+for the volume of the adsorbed phase and the sample is required, for a 
+correction using \autoref{calo:eqn:total-excess}.
 In the case of adsorption in porous materials, the volume of the
-adsorbed phase may be taken as total pore volume.
+adsorbed phase may be taken as total pore volume. This approach
+assumes that the volume enclosed by the Gibbs dividing surface is
+the same as the volume of the sample, which may not be the case 
+if it is determined with a blank measurement of a 
+non-adsorbing gas.
 
-\subsubsection{Differential enthalpy of adsorption}
+\subsubsection{Thermodynamic quantities of the adsorbed phase}
+
+A complete thermodynamic theory can be developed for a surface 
+excess phase which is in equilibrium with a gas 
+phase~\cite{rouquerolAdsorptionPowdersPorous2013}, with only
+a brief summary to be presented here.
+The surface excess may be considered a distinct thermodynamic phase, 
+characterised by an area \(A\), a two-dimensional analogue of 
+pressure named spreading pressure \(\pi\) and a surface excess 
+concentration corresponding to the amount adsorbed per unit
+area or \(\Gamma = n^{\sigma}/A\).
+
+The differential energy of adsorption can be described as the 
+change in the internal energy of the system upon the transition
+of an infinitesimal amount of adsorbate from the bulk phase
+to the surface excess phase. It can be measured directly, through
+calorimetry.
 
 Adsorption can be considered as a closed system of constant volume
 V and temperature T. No mass of material crosses the system boundary,
@@ -155,11 +181,14 @@ an expression relating the differential enthalpy of adsorption
 the differential entropy of adsorption \(\Delta_{ads} \dot{s}_{T, \Gamma}\)
 to the pressure of an ideal gas.
 The relationship between the differential enthalpy and the differential energy
-of the adsorbed phase is given by:
+of the adsorbed phase is therefore given by:
 %
 \begin{equation}\label{calo:eqn:adj}
 	\Delta_{ads} \dot{h}_{T, \Gamma} = \Delta_{ads} \dot{u}_{T, \Gamma} - RT
 \end{equation}
+
+The differential enthalpy of adsorption is the quantity which
+can be calculated indirectly through the isosteric method.
 
 \subsubsection{Application of differential enthalpy of adsorption to the characterisation of materials}
 
