@@ -75,8 +75,86 @@ that can be obtained through the combined manometric and
 calorimetric method. Pure gas adsorption data has been recorded at 
 \SI{303}{\kelvin} using \ce{N2}, \ce{CO}, \ce{CO2}, \ce{CH4}, \ce{C2H6},
 \ce{C3H6} and \ce{C3H8} as probes. The complete dataset can be seen 
-in \autoref{fgr:takedadataset}, with the correspoding differential 
-enthalpy curves presented in 
+in \autoref{calo:fgr:takeda-dataset}, with the corresponding differential 
+enthalpy curves presented in \autoref{calo:fgr:takeda-enthalpy}.
+
+\begin{figure}[ht]
+
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{takeda/takeda-dataset}
+		\caption{}%
+		\label{calo:fgr:takeda-dataset}
+	\end{subfigure}%
+	\quad
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{takeda/takeda-enthalpy}
+		\caption{}%
+		\label{calo:fgr:takeda-enthalpy}
+	\end{subfigure}
+	\caption{Recorded data on the Takeda 5A sample, 
+		(\protect\subref{calo:fgr:takeda-dataset}) the
+		experimental dataset all recorded gases and 
+		(\protect\subref{calo:fgr:takeda-enthalpy}) 
+		corresponding differential enthalpy.}%
+	\label{calo:fgr:takeda-data}
+
+\end{figure}
+
+It should first be highlighted that the isotherms can be split into 
+two adsorption regimes: subcritical, as is the case for carbon
+dioxide and all hydrocarbons except methane, and supercritical,
+as is the case for nitrogen, carbon monoxide and methane.
+Supercritical gasses do not have any distinction between the 
+gaseous and liquid phase, therefore the density of the adsorbed phase
+cannot be likened to that of a corresponding liquid. The enthalpy
+of vaporisation of such a fluid in this regime is necessarily 0.
+
+Nitrogen and carbon monoxide are similar in their adsorption behaviour,
+with a nearly linear isotherm and low capacities.
+The enthalpy curves are also an indication of non-specific 
+interactions with the surface, as the enthalpy of adsorption
+is nearly constant throughout the entire loading range.
+Carbon dioxide has the highest loading capacity of the entire dataset, likely
+due to a combination of a small molecule size and interactions with 
+the carbon pore walls. The enthalpy curve shows a higher energy of 
+adsorption at low loading by \SIrange{5}{10}{\kilo\joule\per\mole}, 
+corresponding to adsorption on a slightly heterogeneous surface.
+The adsorption of hydrocarbons is in accordance to their size, with
+both the initial slope and the enthalpy of adsorption increasing linearly
+as a function of the carbon number. Each methyl group is seen 
+to contribute, on average, with around \SIrange{10}{15}{\kilo\joule\per\mole}
+to the mean enthalpy of adsorption~\cite{denayerChromatographicStudyAdsorption1998}.
+When it comes to saturated versus unsaturated hydrocarbons, propylene is 
+seen to have a higher capacity than propane. As the enthalpy of 
+adsorption is identical at low loading, specific interactions with the 
+\(\pi\) electrons of the double bond are unlikely, with packing effects 
+from the smaller kinetic diameter of propylene as a more plausible
+explanation.
+
+Two parameters can be useful in characterising the local pore environment
+before guest-guest interactions come into effect: the Henry constant at
+low loadings as well as the initial differential enthalpy of adsorption. 
+Here, initial Henry's constant is calculated by fitting a virial model to
+the isotherm, then taking the limit of the function at zero loading. 
+
+The initial enthalpy of adsorption
+
+In order to The initial enthalpy of  is obtained through the \lstinline{pygaps.initial_enthalpy_comp()} function.
+This fits the enthalpy curve to a compound contribution from
+guest-host interaction, defects, guest-guest attraction and repulsion using a minimization
+algorithm. The results of the calculations are plotted versus the polarizability of the
+gas used, which can be obtained from the respective \texttt{Adsorbate} class.
+Figure~\ref{fgr:takedatrends} shows that both the parameters fall on a linear
+trend, which suggests that the interactions between those guests and the pore walls are
+mostly due to Lennard-Jones interactions. Carbon dioxide has a higher enthalpy
+of adsorption than the baseline due to the contribution from its quadrupole moment.
+There is almost a complete overlap between propane and propylene, which leads to
+the conclusion that the unsaturated double bond does not interact in a specific way
+with the carbon surface.
+The difference between the two isotherms is due exclusively to steric and packing effects.
 
 \begin{figure}[ht]
 
@@ -99,33 +177,5 @@ enthalpy curves presented in
 	\label{fgr:takedaanalysis}
 
 \end{figure}
-
-Nitrogen and carbon monoxide are similar in their adsorption behaviour,
-with a nearly linear isotherm and low capacities.
-Hydrocarbons are adsorbed with higher loadings, with both propane and propylene
-reaching a plateau at low pressures. Propylene is seen to have a
-higher capacity than propane, with packing effects as a likely cause.
-Carbon dioxide has the highest loading capacity of the entire dataset.
-
-Two parameters can be useful in characterising the local pore environment
-before guest-guest interactions come into effect: the Henry constant at
-low loadings as well as the initial enthalpy of adsorption. Both can
-be calculated with \texttt{pyGAPS}, with several options in
-regard to the methodology. Here, Henry's constant is calculated using the
-\lstinline{pygaps.initial_henry_virial()} function, which fits a virial model to
-the isotherm and then takes the limit at loading approaching zero. The initial enthalpy of
-adsorption is obtained through the \lstinline{pygaps.initial_enthalpy_comp()} function.
-This fits the enthalpy curve to a compound contribution from
-guest-host interaction, defects, guest-guest attraction and repulsion using a minimization
-algorithm. The results of the calculations are plotted versus the polarizability of the
-gas used, which can be obtained from the respective \texttt{Adsorbate} class.
-Figure~\ref{fgr:takedatrends} shows that both the parameters fall on a linear
-trend, which suggests that the interactions between those guests and the pore walls are
-mostly due to Lennard-Jones interactions. Carbon dioxide has a higher enthalpy
-of adsorption than the baseline due to the contribution from its quadrupole moment.
-There is almost a complete overlap between propane and propylene, which leads to
-the conclusion that the unsaturated double bond does not interact in a specific way
-with the carbon surface.
-The difference between the two isotherms is due exclusively to steric and packing effects.
 
 \input{\thisch/rd-zrfum}
