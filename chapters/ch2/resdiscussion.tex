@@ -38,12 +38,13 @@ in \autoref{calo:fgr:uioisostericheat} as a function of amount adsorbed.\todo{is
 		\caption{}%
 		\label{calo:fgr:uioisostericheat}
 	\end{subfigure}
-	\caption{Calculation of enthalpy of adsorption:
-		(\protect\subref{calo:fgr:uioisostericiso})
-		the dataset of isotherms used and
-		(\protect\subref{calo:fgr:uioisostericheat}) the calculated
-		isosteric heat (red line) together with the measured
-		differential enthalpy of adsorption (blue triangles)}%
+	\caption{(\protect\subref{calo:fgr:uioisostericiso})
+		The gravimetric isotherms (red and blue) used for isosteric enthalpy
+		calculation and the manometric isotherm measured in the calorimeter (black).
+		(\protect\subref{calo:fgr:uioisostericheat}) Calculated
+		isosteric enthalpy using an interpolation (blue line) and a
+		virial fit (red line) of the gravimetric isotherms together with
+		the directly measured differential enthalpy of adsorption (blue triangles)}%
 	\label{calo:fgr:uioisosteric}
 
 \end{figure}
@@ -66,19 +67,38 @@ bars in \autoref{calo:fgr:uioisostericheat}.
 Here, the indirect calculation provides the more accurate results.
 As such, the two techniques can be thought of as complementary.
 
-\subsection{Analysis of a carbon sample for gas separation applications}
+\subsection{An example dataset on a reference material}
 
-A sample of reference carbon Takeda 5A (\autoref{appx:synthesis:takeda})
-is to be investigated for an in-depth characterisation of
-the adsorption behaviour of pure gases, with a focus on describing the pore environment.
-Afterwards, the performance of different binary separations is evaluated,
-such as \ce{CO2}/\ce{N2} and propane/propylene.
+A sample of microporous carbon, Takeda 5A (\autoref{appx:synthesis:takeda})
+was used as a reference material to exemplify the type of information
+that can be obtained through the combined manometric and 
+calorimetric method. Pure gas adsorption data has been recorded at 
+\SI{303}{\kelvin} using \ce{N2}, \ce{CO}, \ce{CO2}, \ce{CH4}, \ce{C2H6},
+\ce{C3H6} and \ce{C3H8} as probes. The complete dataset can be seen 
+in \autoref{fgr:takedadataset}, with the correspoding differential 
+enthalpy curves presented in 
 
-Pure gas adsorption data has been recorded at \SI{303}{\kelvin} in
-conjunction with
-microcalorimetry on \ce{N2}, \ce{CO}, \ce{CO2}, \ce{CH4}, \ce{C2H6},
-\ce{C3H6} and \ce{C3H8}. The complete dataset is plotted with the
-\lstinline{pygaps.plot_iso()} function and can be seen in Figure~\ref{fgr:takedadataset}.
+\begin{figure}[ht]
+
+	\centering
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=.95\linewidth]{takeda/takeda-dataset}
+		\caption{}%
+		\label{fgr:takedadataset}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{takeda/takeda-enth-henry}
+		\caption{}%
+		\label{fgr:takedatrends}
+	\end{subfigure}
+	\caption{Takeda 5A dataset processing: (\protect\subref{fgr:takedadataset}) the
+		experimental dataset all recorded gases and (\protect\subref{fgr:takedatrends}) the calculated
+		trends of initial heat of adsorption and Henry's constant}%
+	\label{fgr:takedaanalysis}
+
+\end{figure}
 
 Nitrogen and carbon monoxide are similar in their adsorption behaviour,
 with a nearly linear isotherm and low capacities.
@@ -107,27 +127,5 @@ There is almost a complete overlap between propane and propylene, which leads to
 the conclusion that the unsaturated double bond does not interact in a specific way
 with the carbon surface.
 The difference between the two isotherms is due exclusively to steric and packing effects.
-
-\begin{figure}[ht]
-
-	\centering
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-		\includegraphics[width=.95\linewidth]{takeda/takeda-dataset}
-		\caption{}%
-		\label{fgr:takedadataset}
-	\end{subfigure}%
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-		\includegraphics[width=.8\linewidth]{takeda/takeda-enth-henry}
-		\caption{}%
-		\label{fgr:takedatrends}
-	\end{subfigure}
-	\caption{Takeda 5A dataset processing: (\protect\subref{fgr:takedadataset}) the
-		experimental dataset all recorded gases and (\protect\subref{fgr:takedatrends}) the calculated
-		trends of initial heat of adsorption and Henry's constant}%
-	\label{fgr:takedaanalysis}
-
-\end{figure}
 
 \input{\thisch/rd-zrfum}
