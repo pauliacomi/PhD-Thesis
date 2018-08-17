@@ -54,12 +54,12 @@ Since the Kelvin equation is the basis of most mesoporous PSD
 calculations, such as the BJH and DH methods, it will be described
 first. The original form of the equation (\autoref{pyg:eqn:kelvin})
 gives the dependence of pressure on the radius of curvature of a
-meniscus in a pore \(r\) by means of surface tension \(\gamma\),
+meniscus in a pore \(r\) by means of surface tension \( \gamma \),
 molar liquid volume, here expressed as \(v_l=M_m/\rho_l\) and the
 fluid contact angle with the surface
-\(\theta\). The fluid is often assumed to be fully wetting, with
+\( \theta \). The fluid is often assumed to be fully wetting, with
 \(\theta=0\) and \(\cos\theta=1\).
-
+%
 \begin{equation}\label{pyg:eqn:kelvin}
 	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l RT}\frac{2 \cos\theta}{r}
 \end{equation}
@@ -68,14 +68,14 @@ To apply the Kelvin equation to different types of pore systems, the
 generalized form presented in \autoref{pyg:eqn:kelvin-general}
 is used. It replaces the meniscus radius by a mean radius of curvature
 \(r_m\).
-
+%
 \begin{equation}\label{pyg:eqn:kelvin-general}
 	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l RT}\frac{2}{r_m}
 \end{equation}
-
+%
 The mean radius of curvature is defined through the two principal
 radii of the curved interface.
-
+%
 \begin{equation}\label{pyg:eqn:kelvin-mradius}
 	\frac{1}{r_m} = \frac{1}{2}\Big(\frac{1}{r_1}+\frac{1}{r_2}\Big)
 \end{equation}
@@ -138,7 +138,7 @@ modelled by a thickness model (such as Halsey, Harkins \& Jura or similar
 as presented in \autoref{pyg:charac:tcurve})
 and a critical radius model for condensation/evaporation,
 based on a form of the Kelvin equation.
-
+%
 \begin{equation}\label{pyg:eqn:condensradius}
 	r_p = t + r_k
 \end{equation}
@@ -150,14 +150,14 @@ from pore evaporation and the volume from layer thickness decrease as
 per \autoref{pyg:eqn:condensradius}. The computation is done
 cumulatively, starting from the filled pores and calculating the volume
 adsorbed in a pore for each point using the following equation:
-
+%
 \begin{align}
 	V_p & = \Big( \frac{\bar{r}_p}{\bar{r}_k + \Delta t_n} \Big)^2
 	\Big(\Delta V_n - \Delta t_n \sum_{i=1}^{n-1} \Delta A_p
 	+ \Delta t_n \bar{t}_n \sum_{i=1}^{n-1} \frac{\Delta A_p}{\bar{r}_p}\Big)\intertext{where}
 	A   & = 2 \Delta V_p / r_p
 \end{align}
-
+%
 In the BJH equation:
 
 \begin{itemize}
@@ -189,7 +189,7 @@ geometry of the pores by introducing a length component.
 Like the BJH method, it is based on a classical description of
 the adsorbate behaviour in the adsorbent pores and uses the
 same assumptions. The modified equation becomes:
-
+%
 \begin{align}
 	V_p & = \Big(\frac{\bar{r}_p}{\bar{r}_k + \Delta t_n}\Big)^2
 	\Big(\Delta V_n - \Delta t_n \sum_{i=1}^{n-1} \Delta A_p
@@ -223,11 +223,11 @@ by calculation of the average potential energy for a
 pore~\cite{horvathMethodCalculationEffective1983}.
 The method starts by assuming the relationship between the gas
 phase as being:
-
+%
 \begin{equation}
 	R_g T \ln\Big(\frac{p}{p_0}\Big) = U_0 + P_a
 \end{equation}
-
+%
 Here \(U_0\) is the potential function describing the surface to adsorbent
 interactions and \(P_a\) is the potential function describing
 guest-guest interactions. This equation is derived from the
@@ -238,7 +238,7 @@ If it is assumed that a Lennard-Jones-type potential function can
 accurately describe the interactions between adsorbate and surface
 molecules, then the two contributions to the total potential can be
 replaced by the extended function in \autoref{pyg:eqn:hk}.
-
+%
 \begin{multline}\label{pyg:eqn:hk}
 	RTln(p/p_0) =   N_A\frac{n_a A_a + n_A A_A}{2 \sigma^{4}(l-d)} \\
 	\times \int_{d/_2}^{1-d/_2}
@@ -249,13 +249,13 @@ replaced by the extended function in \autoref{pyg:eqn:hk}.
 	+ {\Big(\frac{\sigma}{l-r}\Big)}^{4}
 	\Big] \mathrm{d}x
 \end{multline}
-
+%
 Here \(l\) is the width of the pore, \(d\) defined as \(d=d_a+d_A\) is
 the sum of the diameters of the adsorbate and adsorbent molecules,
 \(n_a\) is number of molecules of adsorbent
 and \(A_a\) and \(A_A\) the Lennard-Jones potential constant of the
-fluid molecule and solid molecule respectively. They are defined as
-
+fluid molecule and solid molecule respectively. They are defined as:
+%
 \begin{align}
 	A_a & = \frac{6mc^2\alpha_a\alpha_A}{\alpha_a/\varkappa_a + \alpha_A/\varkappa_A}
 	%
@@ -263,8 +263,8 @@ fluid molecule and solid molecule respectively. They are defined as
 	%
 	A_a & = \frac{3mc^2\alpha_A\varkappa_A}{2}
 \end{align}
-
-Where \(m\) is the mass of an electron, \(\alpha_a\) and \(\alpha_A\) are
+%
+where \(m\) is the mass of an electron, \(\alpha_a\) and \(\alpha_A\) are
 the polarizability of the adsorbate and adsorbate molecule
 and \(\varkappa_a\) and \(\varkappa_A\) the magnetic susceptibility of
 the adsorbate molecule and adsorbent molecule, respectively.
