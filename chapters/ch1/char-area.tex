@@ -21,7 +21,7 @@ that adsorption takes place in incremental layers on the material
 surface. Even if the adsorbent is porous, the initial amount adsorbed
 (usually between 0.05--0.4 \(p/p_0\)) can be
 described through the equation written in its linear form:
-
+%
 \begin{equation}
 	\frac{p/p_0}{n_{ads} (1-p/p_0)} = \frac{1}{n_{m} C} + \frac{C - 1}{n_{m} C}(p/p_0)
 \end{equation}
@@ -31,7 +31,7 @@ versus \(p/p_0\) is generated, a linear region
 can usually be found. The slope and intercept of this line
 can then be used to calculate \(n_{m}\), the amount adsorbed at the
 statistical monolayer, as well as \(C\), the BET constant.
-
+%
 \begin{align}
 	n_{m} & = \frac{1}{s+i} & C & = \frac{s}{i} + 1
 \end{align}
@@ -40,7 +40,7 @@ From the BET monolayer capacity, the specific surface area can be
 calculated if the area taken up by one of the adsorbate molecules
 on the surface is known. The calculation uses the following equation
 together with Avogadro's number:
-
+%
 \begin{equation}
 	a_{BET} = n_m A_N \sigma
 \end{equation}
@@ -77,7 +77,7 @@ lowers its cross-sectional area~\cite{rouquerolAdsorptionPowdersPorous2013}.
 
 The Langmuir equation (\autoref{pyg:eqn:langmuir}) can be also
 be expressed in a linear form by rearranging it as:
-
+%
 \begin{equation}
 	\frac{p}{n} = \frac{1}{K n_m} + \frac{p}{n_m}
 \end{equation}
@@ -87,14 +87,14 @@ Assuming the data can be fitted with a Langmuir model, by plotting
 The slope and intercept of this line can then be used to calculate
 \(n_{m}\), the amount adsorbed at the monolayer capacity, as well
 as \(K\), the Langmuir constant.
-
+%
 \begin{align}
 	n_m & = \frac{1}{s} & K & = \frac{1}{i * n_m}
 \end{align}
 
 The surface area can then be calculated by using the monolayer
 capacity in a manner analogous to the BET surface area method.
-
+%
 \begin{equation}
 	a_{Langmuir} = n_m A_N \sigma
 \end{equation}
@@ -134,7 +134,7 @@ at \SI{77}{\kelvin} are the Halsey~\cite{halseyPhysicalAdsorptionNon1948}
 (\autoref{pyg:eqn:halsey}) and the
 Harkins and Jura~\cite{harkinsSurfacesSolidsXIII1944}
 (\autoref{pyg:eqn:harkinsjura}) curves.
-
+%
 \begin{align}
 	t_{Halsey}        & = 0.354 {\Big(\frac{-5}{\log(p/p_0)}\Big)}^{1/3}            %
 	\label{pyg:eqn:halsey}                                                          \\
@@ -168,7 +168,7 @@ external surface area. The formula to calculate an area starting
 from the t-plot slope is presented in \autoref{pyg:fgr:areatplot},
 where \(\rho_{l}\) is the liquid density of the adsorbate at experimental
 conditions.
-
+%
 \begin{equation}\label{pyg:fgr:areatplot}
 	a_{surface} = \frac{s M_m}{\rho_{l}}
 \end{equation}
@@ -177,7 +177,7 @@ If the linear region selected is after a vertical deviation,
 the intercept of the calculated line will no longer pass through
 the origin. This intercept can be used to calculate the volume of
 the filled pore through the following equation:
-
+%
 \begin{equation}
 	V_{ads} = \frac{i M_m}{\rho_{l}}
 \end{equation}
@@ -204,7 +204,7 @@ The dimensionless \(\alpha_s\) values are obtained from this isotherm by
 dividing the loading values by the amount adsorbed at a specific relative
 pressure, usually taken as \(p/p_0=0.4\) since nitrogen hysteresis loops
 theoretically close at this point.
-
+%
 \begin{equation}
 	\alpha_s = \frac{n_a}{n_{0.4}}
 \end{equation}
@@ -213,9 +213,9 @@ The analysis then proceeds as in the t-plot method, with the
 same explanation for observed features. The only difference is
 that the surface area calculation from linear regions observed
 uses the known specific area of the reference material.
-
+%
 \begin{equation}
-	A = \frac{s A_{ref}}{(n_{ref})_{0.4}}
+	A = \frac{s A_{ref}}{{(n_{ref})}_{0.4}}
 \end{equation}
 
 The reference isotherm chosen for the \(\alpha_s\) method must

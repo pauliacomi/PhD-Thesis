@@ -26,8 +26,8 @@ Isotherm models which have a thermodynamical basis are derived
 from the Gibbs equation (\autoref{pyg:eqn:gibbs}). This approach
 describes adsorption in terms of a surface excess with respect
 to the bulk gas phase. The pressure and volume concepts of the bulk phase
-are replaced by the 2-dimensional analogues of spreading pressure (\( \pi \))
-and surface area.
+are replaced by the 2-dimensional analogues of spreading pressure 
+(\( \pi \)) and surface area.
 
 \begin{equation}\label{pyg:eqn:gibbs}
 	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n}{A} R_g T
@@ -212,11 +212,11 @@ applicable in cases where the structure of the adsorbent
 suggests that different types of sites are present,
 such as in crystalline materials of variable chemistry like
 zeolites and MOFs. The resulting isotherm equation becomes:
-
+%
 \begin{equation}\label{pyg:eqn:langmulti}
 	n_a(p) = \sum_i n_{a,i}^m\frac{K_i p}{1+K_i p}
 \end{equation}
-
+%
 In practice, only up to three adsorption sites are usually
 considered.
 
@@ -247,7 +247,7 @@ and higher layers is just the condensation energy of the
 adsorbent \(E_{i>1} = E_L\). Since it follows that
 all layers beside the first have the same properties,
 we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
-\cdots\).
+\cdots \).
 
 \begin{table}[h]
 	\centering
@@ -283,24 +283,24 @@ we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
 	\end{tabular}
 \end{table}
 
-The coverage for each layer \(\theta\) can now be
+The coverage for each layer \( \theta \) can now be
 expressed in terms of \(\theta_0\).
-
+%
 \begin{align}
 	\theta_i & = \Big[p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)}\Big] x^{i-1} \theta_0
 	\intertext{where}
 	x        & = \frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)}
 \end{align}
-
+%
 A constant C may be defined such that:
-
+%
 \begin{align}
 	C        & = \frac{k_{a_1}}{k_{d_1}} g \exp{\Big(\frac{E_1 - E_L}{RT}\Big)} \\
 	\theta_i & = C x^i \theta_0
 \end{align}
-
+%
 For all the layers, the equations can be summed:
-
+%
 \begin{align}
 	\frac{n}{n_m} & = \sum_{i=1}^{\infty} i \theta^i = C
 	\sum_{i=1}^{\infty} i x^i \theta_0
@@ -308,11 +308,11 @@ For all the layers, the equations can be summed:
 	\intertext{and since}
 	%
 	\theta_0      & = 1 - \sum_{1}^{\infty} \theta_i
-	\sum_{i=1}^{\infty} i x^i = \frac{x}{(1-x)^2}
+	\sum_{i=1}^{\infty} i x^i = \frac{x}{{(1-x)}^2}
 \end{align}
-
+%
 Then we obtain the BET equation:
-
+%
 \begin{equation}\label{pyg:eqn:bet}
 	n_a(p) = n_a^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
 \end{equation}
@@ -329,11 +329,11 @@ The Toth model is an empirical modification to the Langmuir equation
 (\autoref{pyg:eqn:langmuir})
 which introduces a power parameter for the denominator leading to
 the following equation:
-
+%
 \begin{equation}\label{pyg:eqn:toth}
 	n_a(p) = n_a^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
 \end{equation}
-
+%
 The parameter \(t\) is a measure of the system heterogeneity.
 Thanks to this additional parameter, the Toth equation can
 accurately describe a large number of adsorbent/adsorbate systems
@@ -354,15 +354,15 @@ The formula in \autoref{pyg:eqn:temkin} is derived
 using a mean-field argument and uses an asymptotic approximation
 to obtain an explicit equation for the
 loading~\cite{simonOptimizingNanoporousMaterials2014}.
-
+%
 \begin{equation}\label{pyg:eqn:temkin}
 	n_a(p) = n_a^m \frac{Kp}{1+Kp} + n_a^m \theta
 	{\Big(\frac{Kp}{1+Kp}\Big)}^2 \Big(\frac{Kp}{1+Kp} -1\Big)
 \end{equation}
-
+%
 Here, \(n_a^m\) and K have the same physical meaning as in the
 Langmuir model.
-The additional parameter \(\theta\) describes the strength of the
+The additional parameter \( \theta \) describes the strength of the
 adsorbate-adsorbate
 interactions (\(\theta < 0\) for attractions).
 
@@ -379,13 +379,13 @@ semi-empirical equation to describe this phenomenon based on a function
 that interpolates between two asymptotes: the Henry’s law asymptote at
 low pressure and an asymptote reflecting the compressibility of
 the adsorbate at high pressure.
-
+%
 \begin{equation}\label{pyg:eqn:jseaton}
 	n(p) = K_H p \Big{(1 + \frac{K_H p}{{[a {(1 + b
 									p)}]}^c}\Big)}^{(-1/c)}
 \end{equation}
-
-Here \(K_H\) is the Henry constant, \(b\) is the compressibility of
+%
+where \(K_H\) is the Henry constant, \(b\) is the compressibility of
 the adsorbed phase and \(c\) an empirical constant.
 
 The equation can be used to model both absolute and excess adsorption
@@ -408,7 +408,7 @@ an S-shape. The S-shape can be explained by adsorbate-adsorbate
 attractive forces: the initial convexity is due to a cooperative
 effect of adsorbate-adsorbate attractions aiding in the recruitment
 of additional adsorbate molecules.
-
+%
 \begin{equation}\label{pyg:eqn:quad}
 	n(p) = n_a^m \frac{(K_a + 2 K_b p)p}{1+K_{ap} + K_{bp}^2}
 \end{equation}
@@ -425,7 +425,7 @@ on a hydrophobic surface.
 A virial isotherm model attempts to fit the measured data to a
 factorized exponent relationship between loading and
 pressure~\cite{myersThermodynamicsAdsorptionPorous2002}.
-
+%
 \begin{equation}\label{pyg:eqn:virial}
 	p = n \exp{(K_1n^0 + K_2n^1 + K_3n^2 + K_4n^3 + \cdots + K_i
 		n^{i-1})}
@@ -438,11 +438,11 @@ properties can be determined:
 the first constant is related to the Henry constant at
 zero loading, while the second constant is a measure of the
 interaction strength with the surface.
-
+%
 \begin{equation}
 	K_1 = -\ln{K_{H,0}}
 \end{equation}
-
+%
 In practice, besides the first constant, only 2--3 factors are used.
 
 \subsection{Vacancy solution theory models}\label{pyg:models:vst}
@@ -473,12 +473,12 @@ VST models are defined as follows:
 It is possible to derive expressions for the vacancy chemical
 potential in both the adsorbed phase and the gas phase, which when
 equated give the following equation of state for the adsorbed phase:
-
+%
 \begin{equation}
 	\pi = - \frac{R_g T}{\sigma_v} \ln{y_v x_v}
 \end{equation}
-
-Here \(y_v\) is the activity coefficient and \(x_v\) is the mole
+%
+where \(y_v\) is the activity coefficient and \(x_v\) is the mole
 fraction of the vacancy in the adsorbed phase.
 This can then be introduced into the Gibbs equation (\autoref{pyg:eqn:gibbs})
 to obtain a general isotherm equation for VST-type models
@@ -486,7 +486,7 @@ to obtain a general isotherm equation for VST-type models
 \(f(\theta)\) is a function that describes the non-ideality of the
 system in terms of activity coefficients of the adsorbate and
 vacancy species.
-
+%
 \begin{equation}\label{pyg:eqn:vst}
 	p = \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} f(\theta)
 \end{equation}
@@ -498,7 +498,7 @@ which expresses the activity coefficient in terms
 of the mole fractions of the two species (adsorbate and vacancy) and
 two constants \(\Lambda_{1v}\) and \(\Lambda_{1v}\). The equation
 then for activity coefficients becomes:
-
+%
 \begin{equation}\label{pyg:eqn:wvst}
 	f(\theta) = \Lambda_{1v}
 	\frac{1-(1-\Lambda_{v1})\theta}{\Lambda_{1v}+(1-\Lambda_{1v})\theta}
@@ -512,15 +512,15 @@ A simpler alternative was introduced by
 Cochran~\cite{cochranVacancySolutionTheory1985}. The result is a
 three parameter equation based on the Flory–Huggins equation for the
 activity coefficient. \(f(\theta)\) is represented as
-
+%
 \begin{equation}\label{pyg:eqn:fhvst}
 	f(\theta) =
 	\exp{\frac{\alpha^2_{1v}\theta}{1+\alpha_{1v}\theta}}
 	\quad \text{where} \quad
 	\alpha_{1v} = \frac{\alpha_{1}}{\alpha_{v}} - 1
 \end{equation}
-
-Here \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the
+%
+where \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the
 adsorbate and the vacancy respectively.
 Both the Wilson and Flory–Huggins expressions for the vacancy-adsorbate
 interactions can be directly inserted in the general VST model
