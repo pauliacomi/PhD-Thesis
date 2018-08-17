@@ -27,7 +27,7 @@
 \usepackage[utf8]{inputenc}
 
 % For colour definitions
-\usepackage{color}
+\usepackage{xcolor}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -76,8 +76,17 @@
 \usepackage{graphicx}
 \graphicspath{ {figures/} }
 
+% Wrapping around figures
+\usepackage{wrapfig}
+
 % For better looking captions.
 \usepackage{caption}
+\captionsetup{
+    margin=10pt,
+    font=footnotesize,
+    labelfont=bf,
+    format=plain
+}
 
 % For subfigures
 \usepackage{subcaption}
@@ -172,7 +181,7 @@
 \usepackage{bookmark}
 
 \hypersetup{
-    bookmarks=true,                         %% Acrobat bookmarks (default)
+    % bookmarks=true,                         %% Acrobat bookmarks (default)
     bookmarksnumbered=true,                 %% Add numbers to bookmarks
     bookmarksopen=true,                     %% bookmarks default open
     bookmarksopenlevel=2,                   %% Level 2 bookmarks

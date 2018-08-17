@@ -35,17 +35,51 @@ The weaker complexation strength and the larger size of the molecule
 likely limits the effect seen in the carbon monoxide isotherm.
 As for the underlying reason behind the isotherm divergence, it
 could be that the alumina binder acts as protection against the
-generation of iron(II) during thermal activation.
+generation of iron (II) during thermal activation.
 No other differences are seen between the two forms on either Henry
 constant and initial enthalpy of adsorption.
 
-\begin{figure}[htb]
+\begin{figure}[p!]
+	\centering
+	\begin{subfigure}{\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{shaping:fgr:analysismil127henry}}%
+		\parbox[b]{0.8\linewidth}{%
+			\includegraphics[width=\linewidth]{MIL-127(Fe)-henry-distribution}%
+		}%
+	\end{subfigure}%
+
+	\begin{subfigure}{\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{shaping:fgr:analysismil127enth}}%
+		\parbox[b]{0.8\linewidth}{%
+			\includegraphics[width=\linewidth]{MIL-127(Fe)-enthalpy-distribution}%
+		}%
+	\end{subfigure}%
+
+	\begin{subfigure}{\linewidth}
+		\parbox[c]{0.1\linewidth}{\caption{}%
+			\label{shaping:fgr:analysismil127basis}}%
+		\parbox[b]{0.8\linewidth}{%
+			\includegraphics[width=\linewidth]{MIL-127(Fe)-mass-volume}%
+		}%
+	\end{subfigure}%
+
+	\caption{KPIs extracted from the MIL-127(Fe) adsorption dataset with
+		(a) logarithmic initial Henry constant (b) initial enthalpy of
+        adsorption and (c) change in adsorption maximum capacity from 
+        the powder to the alumina shaped version on a mass and volume 
+        basis in red and grey respectively}%
+	\label{shaping:fgr:analysismil127}
+\end{figure}
+
+\begin{figure}[!htb]
 	\centering
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\linewidth]{calo/MIL-127(Fe)/c4h10-mass-basis-log-iso}
 		\caption{\ce{C4H10} adsorption isotherms}%
 		\label{shaping:fgr:mil127c4h10ads}
-	\end{subfigure}
+	\end{subfigure}%
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\linewidth]{calo/MIL-127(Fe)/co-enth}
 		\caption{CO adsorption isotherms}%
@@ -71,37 +105,3 @@ Overall, MIL-127(Fe) shows excellent performance when undergoing
 alumina shaping, with almost no capacity loss, as long as
 carbon monoxide or butane adsorption are required, where specific effects
 come into play.
-
-\begin{figure}[p!]
-	\centering
-	\begin{subfigure}{\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{shaping:fgr:analysismil127henry}}%
-		\parbox[b]{0.8\linewidth}{%
-			\includegraphics[width=\linewidth]{MIL-127(Fe)-henry-distribution}%
-		}%
-	\end{subfigure}
-
-	\begin{subfigure}{\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{shaping:fgr:analysismil127enth}}%
-		\parbox[b]{0.8\linewidth}{%
-			\includegraphics[width=\linewidth]{MIL-127(Fe)-enthalpy-distribution}%
-		}%
-	\end{subfigure}
-
-	\begin{subfigure}{\linewidth}
-		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{shaping:fgr:analysismil127basis}}%
-		\parbox[b]{0.8\linewidth}{%
-			\includegraphics[width=\linewidth]{MIL-127(Fe)-mass-volume}%
-		}%
-	\end{subfigure}
-
-	\caption{KPIs extracted from the MIL-127(Fe) adsorption dataset with
-		(a) logarithmic initial Henry constant (b) initial enthalpy of
-        adsorption and (c) change in adsorption maximum capacity from 
-        the powder to the alumina shaped version on a mass and volume 
-        basis in red and grey respectively}%
-	\label{shaping:fgr:analysismil127}
-\end{figure}
