@@ -1,6 +1,12 @@
 % !TEX root = ../../main.tex
 
-\subsection{Discovering possible separations}
+\subsection{A study on a novel MOF}
+
+With the methods of characterisation through calorimetry
+outlined on a reference material, a similar study on a 
+MOF sample can be performed. The aim is to screen for 
+potentially interesting features for use in gas 
+storage and separation.
 
 \subsubsection{Material}
 
@@ -62,32 +68,121 @@ applications.
 Adsorption isotherms of nine probe gasses were recorded at 
 \SI{303}{\kelvin} through combined manometry and microcalorimetry
 as described in \autoref{calo:method:calo}. The complete 
-dataset can be seen in \autoref{calo:fgr:zrfum-dataset}.
+dataset can be seen in \autoref{calo:fgr:zrfum-data}.
+The results are remarkably similar to the Takeda 5A carbon, with 
+very similar trends visible. All isotherms are somewhat 
+shifted downwards, which suggest less interaction with the 
+pore walls and a lower total pore volume. The enthalpies of 
+adsorption are on average lower by \SIrange{5}{7}{\kilo\joule\per\mol},
+confirming that the guest-host attraction is overall lower than
+in the carbon. Argon, oxygen and nitrogen isotherms are essentially
+following Henry's law in the measured pressure range, with nearly constant
+enthalpies of adsorption. Carbon dioxide adsorption enthalpy is seen to take
+place on specific sites at the start of the isotherm, then
+decreasing until around \SI{25}{{\kilo\joule\per\mol}}. Cooperative
+interactions take over afterwards, slowly increasing the enthalpy 
+of adsorption.
 
 \begin{figure}[htb]
     \centering
 
-    \begin{subfigure}[b]{0.5\textwidth}
+	\begin{subfigure}[b]{.45\textwidth}
         \centering
-        \includegraphics[width=0.95\linewidth]{zrfum/zrfum-dataset}
+        \includegraphics[width=\linewidth]{zrfum/zrfum-dataset}
         \caption{}%
         \label{calo:fgr:zrfum-dataset}
     \end{subfigure}%
+	\quad
+	\begin{subfigure}[b]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{zrfum/zrfum-enthalpy}
+        \caption{}%
+        \label{calo:fgr:zrfum-enthalpy}
+    \end{subfigure}
+    \caption{(a) The experimental isotherms of all recorded gases and
+    (b) the corresponding enthalpy curves.}%
+    \label{calo:fgr:zrfum-data}
+
+\end{figure}
+
+The propane and propylene isotherms also show a higher total
+loading for propylene at the plateau. However, the enthalpy
+curve suggest a higher adsorption enthalpy of propane at lower
+loading. A similar plot for initial Henry's constant and
+enthalpy of adsorption at zero loading, in \autoref{calo:fgr:zrfum-trends},
+confirms this trend, with propylene showing a decreased value
+in both parameters. As propane still lies on the trendline generated
+by unsaturated hydrocarbons, it does not seem that it possesses any
+increased specific interactions with the MOF surface. Instead, 
+the expected values for propylene are lower than those of its
+saturated counterpart. It should be pointed out that the
+slope of the trendline is lower than that of the Takeda 5A. This slope 
+can be thought of as a measure of the non-specific interaction strength
+of the adsorbate surface.
+
+\begin{figure}[htb]
+    \centering
+    
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=0.8\linewidth]{zrfum/zrfum-enth-henry}
+        \includegraphics[width=\linewidth]{zrfum/zrfum-enth-henry}
         \caption{}%
         \label{calo:fgr:zrfum-trends}
-    \end{subfigure}
-    \caption{(a) The experimental dataset all recorded gases and
-    (b) the calculated trends of initial heat of adsorption (red) and 
-    Henry's constant (blue). The dotted lines are best fit lines to 
-    the series of unsaturated hydrocarbons.}%
+    \end{subfigure}%
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{zrfum/zrfum-close}
+        \caption{}%
+        \label{calo:fgr:zrfum-close}
+    \end{subfigure}%
+    \caption{(a) Calculated trends for initial heat of adsorption (red) and 
+    Henry's constant (blue) as a function of polarizability for 
+    Zr Fumarate. The dotted lines are best fit lines to 
+    the series of unsaturated hydrocarbons. (b) Logarithmic form of the 
+    propane and propylene isotherms.}%
     \label{calo:fgr:zrfum-analysis}
 
 \end{figure}
 
-Values for initial Henry's constant and initial enthalpy of adsorption
-were calculated using the methods available in pyGAPS.
-The same trend as with the Takeda 5A sample was plotted in 
-\autoref{calo:fgr:zrfum-trends}. 
+When examining the low pressure region of the two isotherms 
+(\autoref{calo:fgr:zrfum-close}) a preference for propane over
+propylene can be observed, which is the source of the anomaly
+in the polarizability graph. The isotherms then ``cross over'' 
+at higher pressures.
+This behaviour has been reproduced in when measuring the same 
+isotherms with a commercial apparatus.
+A higher selectivity for propylene adsorption is not uncommon
+in materials with open metal sites which can interact with 
+the \(\pi\) electrons of the 
+molecule~\cite{rubesAdsorptionPropanePropylene2013}.
+Furthermore, MOFs with pore sizes perfectly tuned for kinetically
+selective adsorption of propylene over propane have been shown 
+to exist~\cite{leeKineticSeparationPropene2011}. However,
+the preference for propane in this material is surprising.
+The effect itself is unlikely to arise from simple diffusion
+effects of~\cite{granatoDiffusionPropanePropylene2010}, although
+it has been shown~\cite{combarizaPropanePropyleneDiffusion2009}
+that pore windows can dominate diffusion behaviour. A contribution
+from framework defects is also be likely, as the 
+crystal structure calculated pore volume is 40\% of the total
+volume as determined from the propane adsorption isotherm.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{zrfum/zrfum-iast}
+    \caption{IAST simulation of an equimolar mixture of 
+    propane and propylene on Zr Fumarate}%
+    \label{calo:fgr:zrfum-iast}
+
+\end{figure}
+
+To observe the impact on separation efficiency, the two isotherms 
+are fitted with the best conforming model, in this case
+double site Langmuir, and IAST simulations of an equimolar mixture
+of propane and propylene are carried out as seen in 
+\autoref{calo:fgr:zrfum-iast}. A selectivity of 4--2 for 
+propane is predicted by IAST, which may be of interest in 
+large-scale processes, as even a small separation factor 
+improvement may yield large energy savings.
+
+\todo{should i put water isotherms, tga or any other data?}

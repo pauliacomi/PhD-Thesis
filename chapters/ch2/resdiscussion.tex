@@ -5,7 +5,7 @@
 \subsection{Comparison between enthalpies of adsorption measured
 	through the direct and indirect method}
 
-In order to view the difference that may arise between the isosteric 
+In order to ascertain the strengths and weaknesses of the isosteric 
 and calorimetric method of measuring the enthalpy of adsorption, 
 a sample of UiO-66(Zr) previously used for a study of 
 carbon dioxide~\cite{wiersumEvaluationUiO66GasBased2011} adsorption
@@ -17,8 +17,8 @@ be found in \autoref{calo:fgr:uioisostericiso}.
 The two isotherms measured at \SI{303}{\kelvin} are nearly identical, 
 ensuring that the both adsorption apparatus are working as intended.
 The isosteric enthalpy of adsorption is calculated from the two isotherms
-at different temperature, both using an interpolation method, or through
-first fitting a virial model (\autoref{pyg:model:virial}).
+at different temperature, either using an interpolation method,or through
+initial fitting of a virial model (\autoref{pyg:model:virial}).
 The values are then adjusted according to \autoref{calo:eqn:adj}.
 Calculated and measured values for the enthalpy of adsorption are overlaid
 in \autoref{calo:fgr:uioisostericheat} as a function of amount adsorbed.\todo{is this ok?}
@@ -38,12 +38,13 @@ in \autoref{calo:fgr:uioisostericheat} as a function of amount adsorbed.\todo{is
 		\caption{}%
 		\label{calo:fgr:uioisostericheat}
 	\end{subfigure}
-	\caption{Calculation of enthalpy of adsorption:
-		(\protect\subref{calo:fgr:uioisostericiso})
-		the dataset of isotherms used and
-		(\protect\subref{calo:fgr:uioisostericheat}) the calculated
-		isosteric heat (red line) together with the measured
-		differential enthalpy of adsorption (blue triangles)}%
+	\caption{(\protect\subref{calo:fgr:uioisostericiso})
+		The gravimetric isotherms (red and blue) used for isosteric enthalpy
+		calculation and the manometric isotherm measured in the calorimeter (black).
+		(\protect\subref{calo:fgr:uioisostericheat}) Calculated
+		isosteric enthalpy using an interpolation (blue line) and a
+		virial fit (red line) of the gravimetric isotherms together with
+		the directly measured differential enthalpy of adsorption (blue triangles)}%
 	\label{calo:fgr:uioisosteric}
 
 \end{figure}
@@ -61,72 +62,132 @@ The calorimetric measurement is therefore more suited to the low pressure
 range. At higher loadings, where the isotherm reaches a plateau and
 the change in adsorbed amount is small between each adsorbate
 insertion, errors are introduced in the calorimetric calculation of
-the enthalpy of adsorption.
+the enthalpy of adsorption, as can be seen from the extent of the error
+bars in \autoref{calo:fgr:uioisostericheat}.
 Here, the indirect calculation provides the more accurate results.
 As such, the two techniques can be thought of as complementary.
 
-\subsection{Analysis of a carbon sample for gas separation applications}
+\subsection{An example dataset on a reference material}
 
-A sample of reference carbon Takeda 5A (\autoref{appx:synthesis:takeda})
-is to be investigated for an in-depth characterisation of
-the adsorption behaviour of pure gases, with a focus on describing the pore environment.
-Afterwards, the performance of different binary separations is evaluated,
-such as \ce{CO2}/\ce{N2} and propane/propylene.
+A sample of microporous carbon, Takeda 5A (\autoref{appx:synthesis:takeda})
+was used as a reference material to exemplify the type of information
+that can be obtained through the combined manometric and 
+calorimetric method. Pure gas adsorption data has been recorded at 
+\SI{303}{\kelvin} using \ce{N2}, \ce{CO}, \ce{CO2}, \ce{CH4}, \ce{C2H6},
+\ce{C3H6} and \ce{C3H8} as probes. The complete dataset can be seen 
+in \autoref{calo:fgr:takeda-dataset}, with the corresponding differential 
+enthalpy curves presented in \autoref{calo:fgr:takeda-enthalpy}.
 
-Pure gas adsorption data has been recorded at \SI{303}{\kelvin} in
-conjunction with
-microcalorimetry on \ce{N2}, \ce{CO}, \ce{CO2}, \ce{CH4}, \ce{C2H6},
-\ce{C3H6} and \ce{C3H8}. The complete dataset is plotted with the
-\lstinline{pygaps.plot_iso()} function and can be seen in Figure~\ref{fgr:takedadataset}.
+\begin{figure}[ht]
+
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{takeda/takeda-dataset}
+		\caption{}%
+		\label{calo:fgr:takeda-dataset}
+	\end{subfigure}%
+	\quad
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{takeda/takeda-enthalpy}
+		\caption{}%
+		\label{calo:fgr:takeda-enthalpy}
+	\end{subfigure}
+	\caption{Recorded data on the Takeda 5A sample, 
+		(\protect\subref{calo:fgr:takeda-dataset}) the
+		experimental dataset all recorded gases and 
+		(\protect\subref{calo:fgr:takeda-enthalpy}) 
+		corresponding differential enthalpy.}%
+	\label{calo:fgr:takeda-data}
+
+\end{figure}
+
+It should first be highlighted that the isotherms can be split into 
+two adsorption regimes: subcritical, as is the case for carbon
+dioxide and all hydrocarbons except methane, and supercritical,
+as is the case for nitrogen, carbon monoxide and methane.
+Supercritical gasses do not have any distinction between the 
+gaseous and liquid phase, therefore the density of the adsorbed phase
+cannot be likened to that of a corresponding liquid. The enthalpy
+of vaporisation of such a fluid in this regime is necessarily 0.
 
 Nitrogen and carbon monoxide are similar in their adsorption behaviour,
 with a nearly linear isotherm and low capacities.
-Hydrocarbons are adsorbed with higher loadings, with both propane and propylene
-reaching a plateau at low pressures. Propylene is seen to have a
-higher capacity than propane, with packing effects as a likely cause.
-Carbon dioxide has the highest loading capacity of the entire dataset.
+The enthalpy curves are also an indication of non-specific 
+interactions with the surface, as the enthalpy of adsorption
+is nearly constant throughout the entire loading range.
+Carbon dioxide has the highest loading capacity of the entire dataset, likely
+due to a combination of a small molecule size and interactions with 
+the carbon pore walls. The enthalpy curve shows a higher energy of 
+adsorption at low loading by \SIrange{5}{10}{\kilo\joule\per\mole}, 
+corresponding to adsorption on a slightly heterogeneous surface.
+The adsorption of hydrocarbons takes place in accordance to their size, with
+both the initial slope and the enthalpy of adsorption increasing linearly
+as a function of the carbon number. Each methyl group is seen 
+to contribute, on average, with around \SIrange{10}{15}{\kilo\joule\per\mole}
+to the mean enthalpy of adsorption~\cite{denayerChromatographicStudyAdsorption1998}.
+When it comes to saturated versus unsaturated hydrocarbons, propylene is 
+seen to have a higher capacity than propane. As the enthalpy of 
+adsorption is identical at low loading, specific interactions with the 
+\(\pi\) electrons of the double bond are unlikely, with packing effects 
+from the smaller kinetic diameter of propylene as a more plausible
+explanation.
 
 Two parameters can be useful in characterising the local pore environment
 before guest-guest interactions come into effect: the Henry constant at
-low loadings as well as the initial enthalpy of adsorption. Both can
-be calculated with \texttt{pyGAPS}, with several options in
-regard to the methodology. Here, Henry's constant is calculated using the
-\lstinline{pygaps.initial_henry_virial()} function, which fits a virial model to
-the isotherm and then takes the limit at loading approaching zero. The initial enthalpy of
-adsorption is obtained through the \lstinline{pygaps.initial_enthalpy_comp()} function.
-This fits the enthalpy curve to a compound contribution from
-guest-host interaction, defects, guest-guest attraction and repulsion using a minimization
-algorithm. The results of the calculations are plotted versus the polarizability of the
-gas used, which can be obtained from the respective \texttt{Adsorbate} class.
-Figure~\ref{fgr:takedatrends} shows that both the parameters fall on a linear
-trend, which suggests that the interactions between those guests and the pore walls are
-mostly due to Lennard-Jones interactions. Carbon dioxide has a higher enthalpy
-of adsorption than the baseline due to the contribution from its quadrupole moment.
-There is almost a complete overlap between propane and propylene, which leads to
-the conclusion that the unsaturated double bond does not interact in a specific way
-with the carbon surface.
-The difference between the two isotherms is due exclusively to steric and packing effects.
+low loadings as well as the initial differential enthalpy of adsorption. 
+Here, initial Henry's constant is calculated by fitting a virial model to
+the isotherm, then taking the limit of the function at zero loading. 
+
+The initial enthalpy of adsorption can be determined from calorimetric 
+methods simply by taking the value of the first measured point.
+However, this procedure is susceptible to large errors, particularly
+if the isotherm has no points in the low coverage region. An alternative
+is to take an average of all recorded points, a method which assumes
+a homogenous surface. \citeauthor{myersThermodynamicsAdsorptionPorous2002},
+has suggested that the enthalpy curve follows a polynomial model, similar
+to a virial isotherm~\cite{myersThermodynamicsAdsorptionPorous2002}.
+In this work, an empirical method is used where the enthalpy curve
+is treated as a compound contribution from guest-host interaction,
+guest-guest attraction and repulsion, the factors of which are determined
+using a minimization algorithm. Adsorbate-adsorbate interaction is 
+represented as a logistic function, which can account for both 
+a heterogeneous surface and a micropore filling step. Power functions
+are used for both attraction and repulsion factors. An example of 
+an enthalpy curve fitted with this method can be seen 
+in \autoref{calo:fgr:takeda-enth-fit}
 
 \begin{figure}[ht]
 
 	\centering
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\linewidth]{takeda/takeda-dataset}
+		\includegraphics[width=.95\linewidth]{takeda/takeda-enthalpy-fit}
 		\caption{}%
-		\label{fgr:takedadataset}
+		\label{calo:fgr:takeda-enth-fit}
 	\end{subfigure}%
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{takeda/takeda-enth-henry}
 		\caption{}%
-		\label{fgr:takedatrends}
+		\label{calo:fgr:takeda-trends}
 	\end{subfigure}
-	\caption{Takeda 5A dataset processing: (\protect\subref{fgr:takedadataset}) the
-		experimental dataset all recorded gases and (\protect\subref{fgr:takedatrends}) the calculated
-		trends of initial heat of adsorption and Henry's constant}%
-	\label{fgr:takedaanalysis}
+	\caption{Takeda 5A dataset processing: (\protect\subref{calo:fgr:takeda-enth-fit})
+	 an example of the empirical enthalpy fit model and (\protect\subref{calo:fgr:takeda-trends}) the calculated
+		trends for initial heat of adsorption and Henry's constant}%
+	\label{calo:fgr:takeda-analysis}
 
 \end{figure}
+
+A useful method of displaying the two parameters are by plotting them
+as a function of the polarizability of the probe, as in
+\autoref{calo:fgr:takeda-trends}. Both parameters follow a linear
+trend, which suggests that the interactions between those guests and the pore walls are
+mostly due to specific interactions. Carbon dioxide has a higher enthalpy
+of adsorption than the baseline, which can be ascribed to the contribution 
+from its quadrupole moment. There is almost a complete overlap between 
+propane and propylene, confirming that the unsaturated double bond does not
+interact in a specific way with the carbon surface.
 
 \input{\thisch/rd-zrfum}
