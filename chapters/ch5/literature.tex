@@ -16,23 +16,26 @@ likewise influenced by lack of sufficiently accurate methods for
 characterising and modelling such occurrences.
 
 In recent years, the advent of reference materials, 
-highly sensitive methods such as synchrotron-grade X-rays and computer-aided
-computational techniques such as DFT has put at our disposal the tools 
-required to study these transformations. 
+highly sensitive methods such as synchrotron-grade light sources and
+\textit{in silico} computational techniques such as DFT has put at
+our disposal the tools required to study these transformations. 
 Together with the discovery of their role in natural and industrial 
 processes e.g.\ the swelling of shale during natural gas extraction,
-maturation of concrete and perspectives afforded by novel porous materials,
-these factors have generated renewed scientific interest in material
-compliance.
+maturation of concrete and the perspectives afforded by novel porous
+materials, these factors have generated much scientific interest
+in material compliance. For example, the attractive option
+of combined carbon capture and methane recovery implemented 
+through pumping of carbon dioxide into reservoirs is prohibited
+by swelling-induced loss of porosity and well 
+blocking~\cite{gorAdsorptioninducedDeformationNanoporous2017}. 
 
-The driving process behind the phenomenon is stress-induced framework 
-strain. In-depth studies~\cite{beringAlterationZeoliteGranule1977} 
+In-depth studies~\cite{beringAlterationZeoliteGranule1977} 
 have revealed that most porous materials posses some small
 degree of compliance, with \textit{in-situ} dilatometry going so far as to 
 obtain pore size distributions from accurate volume
 changes~\cite{reichenauerExtractingPoreSize2001}. Most flexible 
 processes can be likened to continuous order processes. It is, however,
-with the discovery of large scale flexibility in MOFs such as 
+the discovery of large scale flexibility in MOFs such as 
 MIL-53 and linker-controlled gate opening like in ZIF-8, 
 where the transformation between the different framework 
 states occurs suddenly at precise points in the loading curve,
@@ -48,25 +51,27 @@ the mobility of the solid phase can no longer be ignored.
 \subsection{Flexibility in metal organic frameworks}
 
 Since the highlight of compliance in porous coordination polymers 
-in the report of~\citet{kitauraPorousCoordinationPolymerCrystals2003},
+in the report of~\citet{kitagawaFunctionalPorousCoordination2004},
 much progress has been made in the synthesis and understanding
-of this phenomena. An exhaustive review of MOF flexibility is 
+of this phenomenon. An exhaustive review of MOF flexibility is 
 outside the scope of this thesis, with the field progressing 
 rapidly enough to generate a wealth of critical
 literature~\cite{schneemannFlexibleMetalOrganic2014, %
 fereyHybridPorousSolids2008, liMetalOrganicFrameworks2012, %
 haldarInterpenetrationCoordinationPolymers2015, %
 stassenUpdatedRoadmapIntegration2017, %
-vanduyfhuysThermodynamicInsightStimuliresponsive2018}.
+vanduyfhuysThermodynamicInsightStimuliresponsive2018, %
+murdockApproachesSynthesizingBreathing2014}.
 Some of the known types of structural flexibility encountered in MOFs
-will be briefly discussed, with a summary evident in \autoref{dut:fgr:flex-types}. 
+will be briefly discussed, with a summary available in 
+\autoref{dut:fgr:flex-types}. 
 
 \begin{figure}[htb]
     \centering
     
     \includegraphics[width=\textwidth]{flexibility-types}%
-    \caption{A visual summary of the types of flexibility
-    which are documented in MOFs, as detailed in 
+    \caption{A (non-exhaustive) visual summary of the types of
+    flexibility documented in MOFs, as detailed in 
     (a)~\citet{liHydrogenBondregulatedMicroporous2001}
     (b)~\citet{kitauraPorousCoordinationPolymerCrystals2003}
     (c)~\citet{kitauraPillaredLayerCoordinationPolymer2002}
@@ -80,71 +85,183 @@ will be briefly discussed, with a summary evident in \autoref{dut:fgr:flex-types
     
 \end{figure}
 
-Layer separation, as is the case in interdigitated 
+Since MOFs, like clays and graphite, can form discrete 
+two-dimensional sheets, bound together by weak Van-der-Waals,
+\( \pi-\pi \) interactions or hydrogen bonds,
+adsorbed molecules may force these layers apart by 
+intercalation. The concept is taken further in the 
+pillared layer approach, where the sheets are connected 
+by tertiary linkers instead of weak attractions. With the 
+judicious choice of linker they can act as springs, allowing
+pore expansion while maintaining structural integrity.
 
-Finally, MOFs can lead to structural flexibility which does not
+As briefly mentioned in \autoref{def}, a large void 
+space in the unit cells allows secondary networks 
+to grow throughout the MOF, effectively creating an 
+intercalated structure~\cite{kepertVersatileFamilyInterconvertible2000,%
+kitauraPorousCoordinationPolymerCrystals2003}. 
+These secondary grids are independent
+of the primary framework and are displaced upon guest 
+adsorption~\cite{majiFlexibleInterpenetratingCoordination2007}. 
+This internal translation may also be associated 
+with a tilting of the 
+linker~\cite{sakataShapeMemoryNanoporesInduced2013},
+combining intercalation with structural-deformation type 
+flexibility.
+
+The origin of flexibility may be purely due to the linker 
+itself. Organic bonds are inherently labile, as seen in 
+polymer chains, unsaturated connections in the linker may
+bend if the strain on the organic strut overcomes its tensile 
+strength. Increasing the linker length often induces this 
+type of flexibility, for example in the IRMOF isoreticular series
+of materials~\cite{nelsonSupercriticalProcessingRoute2009}.
+Even an unsaturated bond may be induced by a photon with a 
+suitable energy to undergo an analogue of a \textit{cis-trans}
+transition. The deformation may also lead to expansion and 
+therefore of framework swelling,
+as encountered in MIL-88 and its
+derivatives~\cite{maIronBasedMetalOrganic2013}.
+
+MOFs can also have structural flexibility which does not
 require any volume changes in the unit cell. The rotation of linkers
 can act as gating for different guests, allowing entry of probes
 larger than the window size would suggest or preferential adsorption
 of a gas which has the right property to act as a ``key'' from 
 a mixture~\cite{seoPillaredLayerCoordinationPolymer2009}. 
-The former effect might lend itself to temperature 
-controlled storage and release of gasses~\cite{bunzenAchievingLargeVolumetric2018}
-and is common in zeolitic imidazole frameworks 
+The former effect is common in zeolitic imidazole frameworks 
 (ZIFs)~\cite{fairen-jimenezOpeningGateFramework2011}.
 
-
-, as they have been shown to undergo massive and 
-reversible structural deflections, while retaining their 
-crystalinity
-
 The discovery of the so-called ``breathing'' type of structural
-deformation in the MIL-53 family of materials has shown that 
+deformation~\cite{loiseauRationaleLargeBreathing2004, %
+bourrellyDifferentAdsorptionBehaviors2005, %
+    serreExplanationVeryLarge2007} in the MIL-53 family of
+materials has revealed step-like transformations in its unit cell
+size and metastable intermediaries with an open pore (\textbf{op}), 
+closed pore (\textbf{cp}) and narrow/intermediate states (\textbf{np/ip}).
+No other family of flexible MOFs has, to date, generated
+more scientific interest. This is likely due to the relative 
+stability of the material, combined with its ability to undergo massive 
+and reversible structural deflections, while retaining its 
+crystalinity. The relatively simple structure and large capability 
+for functionalisation, either through ligand modification or exchange
+of the metal node (with variants of MIL-53 synthesised for Cr, Fe, Al,
+Sc, Ga or In), allowed for its use as an archetypal material 
+for the study of flexible behaviour. More recently, similar 
+materials, like DUT-8(M) (M=Ni, Co, Cu, Zn) which allow the the 
+impact of the 
+metal~\cite{kleinStructuralFlexibilityIntrinsic2012} on
+compliance to be evidenced have emerged.
 
-\subsection{Describing adsorbate compliance}
+\subsection{Describing and inducing MOF compliance}
 
-The induced mechanistic phenomena are a result of several competing
-effects, a sub-monolayer contraction~\cite{daceyVolumeChangesSaran1971} resulting
+The mechanistic phenomena during adsorption can be 
+seen as an overlap~\cite{gorAdsorptionInducedDeformationMesoporous2010}
+of several competing effects: a sub-monolayer
+contraction~\cite{daceyVolumeChangesSaran1971} resulting
 from micropore bridging or surface stresses, followed by a monotonic 
 expansion with the gradual decrease of the solid-fluid interface energy
-also known as the Bangham effect~\cite{banghamExpansionCharcoalAccompanying1928}. 
+also known as the Bangham 
+effect~\cite{banghamExpansionCharcoalAccompanying1928}. 
 Such behaviour is highly dependent of pore size, geometry and anisotropy,
 with condensation in macropores a further complex source of 
-strain~\cite{dolinoAdsorptionStrainsPorous1996, ambergSTUDYADSORPTIONHYSTERESIS1952, %
+strain~\cite{dolinoAdsorptionStrainsPorous1996, %
+ambergSTUDYADSORPTIONHYSTERESIS1952, %
 guntherNovelInsightsNanopore2008}. The degree of adsorption induced
-changes in a structure is generally a function of its porosity, with very high 
+changes in a framework is generally a function of its porosity, 
+with very high 
 surface area materials such as aerogels capable of undergoing up 
 to 30\% deformation~\cite{reichenauerNitrogenSorptionAerogels2001}.
+In MOFs, the adsorption stresses are no different than in other 
+materials. However, the ability of the porous network to undergo
+displacements is much higher, due to its low rigidity, in 
+between that of ``hard'' adsorbents such as zeolites/silica and 
+purely organic polymers (although porous covalent frameworks can
+also achieve self-support and porosity).
 
-The type of
-swelling, contraction and expansion usually follows a second order
-transition.
-
-Finding a suitable model that would predict such structural changes
-has remained a challenge. A successful model for 
-~\cite{neimarkStressBasedModelBreathing2010}
-~\cite{gorAdsorptionInducedDeformationMesoporous2010}
+Finding a suitable model that would predict both the adsorption
+induced stress and the resulting structural changes from strain
+has so far remained a challenge. A thermodynamic-based method which
+has been successfully applied to breathing MOFs is that 
+of~\citet{neimarkStressBasedModelBreathing2010}. This model assumes
+that the deformation strain is fully determined due to surface stress,
+calculated from the grand thermodynamical of a rigid analogue of
+the pore. It has been used to explain the existence 
+domains of MIL-53(Al)~\cite{boutinBehaviorFlexibleMIL532010}, in 
+conjunction with an osmotic thermodynamic description of 
+the framework itself~\cite{coudertThermodynamicsGuestInducedStructural2008}.
+For mesoporous materials, the stress-strain model has been extended 
+by~\citet{gorAdsorptionInducedDeformationMesoporous2010} through
+the Derjaguin–Broekhoff–de Boer (DBdB) 
+theory~\cite{broekhoffStudiesPoreSystems1967} and applied to
+predict the resulting strain in mesoporous silica.
 Nevertheless a complete theory of adsorption-deformation 
 which can fully predict the changes in the measured enthalpy of 
-adsorption and the mechanistic behaviour of theoretical structures
-has remained elusive.
+adsorption and the mechanistic behaviour of MOFs has remained elusive.
 
+The most promising characteristics of flexible MOFs are the ability
+to control the compliance through external means which are 
+detached from guest loading, which would dramatically expand
+their potential applications. 
+Pure mechanical pressure on a flexible material 
+is often enough to induce transitions. First observed on 
+ZIFs, through pressure induced phase 
+change~\cite{chapmanTrappingGuestsNanoporous2011, % 
+tanMechanicalPropertiesHybrid2011} and 
+latter applied to breathing MOFs using
+mercury porosimetry~\cite{yotLargeBreathingMOF2012}, it 
+shows a direct relationship between the bulk modulus of 
+a MOF and its flexible behaviour.
+Entropic control through temperature-induced switching has been
+shown to be possible in MIL-53 
+by~\citet{liuReversibleStructuralTransition2008}, explained 
+as a change in the range of metastability of its 
+pore forms~\cite{boutinBehaviorFlexibleMIL532010}. 
+More precise external control may be possible if molecules which
+have the ability to switch their state when exposed to suitable
+wavelengths are used as linkers. In this case light irradiation 
+may be used to force the 
+transition~\cite{lyndonDynamicPhotoSwitchingMetalOrganic2013}.
+Magnetic field dependent switching can also be theorised, although
+has not been so far encountered.
+One of the least understood factors that changes the flexible
+behaviour of porous crystals is the effect of particle size.
+It is clear that the thermodynamical potential of the crystal surface
+has a a profound influence on its compliance, as shown on 
+the large shift of the gate-opening pressure of 
+ZIF-8~\cite{zhangCrystalSizeDependentStructuralTransitions2014}.
+However, a rigorous model of the contribution of the surface 
+on breathing has yet to be developed in our knowledge.
+Finally, the presence of structural defects likely impacts 
+the framework flexibility, as highlighted 
+by~\citet{bennettInterplayDefectsDisorder2016} in a 
+recent article, although currently few studies have focused
+on this subject.
 
-However, the most promising perspective for such materials come from
+\subsection{Consequences and applications of flexible MOFs}
 
+The study of flexible MOFs is motivated from both a desire 
+for fundamental understanding of compliance and from the potential
+applications of such systems. The use of soft porous crystals
+in sensing and gas storage and separation is evident, although 
+applications in catalysis, electrochemistry and drug delivery 
+have also been alluded to by recent studies.
 
-\subsection{Consequences and applications of compliance}
+The usefulness of adsorption induced flexibility for sensors or
+actuators has been been recognised, initially by nature itself,
+with humidity induced swelling acting to open pine 
+cones~\cite{dawsonHowPineCones1997}.
+More recently, similar sensing devices based on adsorption strain 
+in mesoporous silica have been 
+developed such as a flexing silica-polymer 
+membrane~\cite{boudotConvertingWaterAdsorption2016} or 
+deformation of a nano sized 
+cantilever~\cite{ganserCantileverBendingBased2016} 
+which show promise for use in micromechanical systems. 
 
-The usefulness of such phenomena have been long recognised as potential
-sensors or actuators, initially by nature itself, with humidity induced 
-swelling acting to open pine cones~\cite{dawsonHowPineCones1997}. 
-More recently similar sensing devices based on adsorption induced 
-strain in mesoporous silica have been 
-developed~\cite{boudotConvertingWaterAdsorption2016, %
-ganserCantileverBendingBased2016} which show promise for use 
-in micromechanical systems. From a gas storage and separation 
-point of view, changes in the adsorbent structure may be crucial 
-for process improvement. Pressure swing adsorption (PSA) is heavily 
+From a gas storage and separation point of view, changes in the
+adsorbent structure may yield crucial process improvements. 
+Pressure swing adsorption (PSA) is heavily
 dependent on the working capacity of the adsorbent used, or the
 difference between loading at the operation pressure and at the 
 regeneration pressure. In this case, an S-shaped isotherm, with 
@@ -157,14 +274,38 @@ bed, the key parameter is the integral enthalpy of adsorption, a measure
 of the energy requirements for the process. As a part of the chemical 
 potential of the adsorbed phase is used by the mechanical contraction
 of the material, flexible adsorbents have the potential of
-intrinsic thermal management, reducing the energy cost~\cite{masonMethaneStorageFlexible2015}.
+intrinsic thermal management, reducing the energy 
+cost~\cite{masonMethaneStorageFlexible2015}.
 Both effects are equally applicable to the storage of pure 
-gasses, increasing the storage capacity and work required to
-desorb the gas.
-Finally, swelling of clays upon gas adsorption 
-is quickly becoming a research interest as extraction of shale 
-deposits is becoming common. In particular, the attractive option
-of combined carbon capture and methane recovery implemented 
-through pumping of carbon dioxide into reservoirs leads to swelling-induced
-loss of porosity and well blocking due to the increased strain 
-by \ce{CO2} in comparison to methane. 
+gasses, increasing the storage capacity and minimizing the energetic
+requirement of recovery. Entrapment of guest molecules inside 
+a gated pore might lend itself to temperature controlled storage and 
+release of gasses~\cite{bunzenAchievingLargeVolumetric2018}, or
+``sealing'' of a target gas inside the structure once adsorption
+has taken place.
+It is also possible that by using external mechanical pressure to
+control flexibility, the adsorption behaviour of porous materials
+may be tuned, as suggested by the work 
+of~\citet{chanutUsingExternalFactors2016} on MIL-53. 
+
+Catalytic applications of flexible MOFs could be envisaged where 
+the switching behaviour can bring into contact active sites or 
+hold reactants in place until complete reaction has taken place.
+A recent study by~\citet{soutoBreathingDependentRedoxActivity2018},
+has shown that the redox potential of the sulphur bond in a 
+tetrathiafulvalene breathing MOF is dependent on its dihedral 
+angle in different pore states. This raises the possibility of 
+tunability of the oxidation potential of flexible framework.
+Finally flexible MOFs constructed of biocompatible materials 
+could be used as drug delivery 
+methods~\cite{mckinlayNitricOxideAdsorption2013, %
+horcajadaFlexiblePorousMetalOrganic2008} if release 
+of the encapsulated molecule could be triggered through a 
+structural transition.
+
+
+\subsection{Unique flexible behaviour of DUT-49}
+
+Initially synthesised in \citeyear{stoeckHighlyPorousMetal2012},
+the DUT 
+
