@@ -1,3 +1,137 @@
 % !TEX root = ../../main.tex
 
-\subsection{}
+\subsection{The structural transition or NGA in DUT-49}
+
+In the time-resolved pressure and calorimetry signal observed when
+performing butane adsorption at \SI{303}{\kelvin}, the NGA step 
+is clearly visible as the pressure in the cell suddenly increases 
+after a dosing point. An example can be seen 
+in \autoref{dut:fgr:dut-49-transient}, next to a regular dosing step.
+A short time after the adsorbate is introduced in the measurement
+cell, the material contracts. The calorimeter signal is
+positive, therefore the overall process is still exothermic --- even
+though desorption and a structural transition, both endothermic
+processes, are taking place.
+
+\begin{figure}[htb]
+    \includegraphics[width=\textwidth]{butane/dut-49-transient}%
+    \caption{The pressure and calorimeter signal from butane adsorption
+    on DUT-49, highlighting a typical step (left) and the 
+    observed NGA step (right)}%
+    \label{dut:fgr:dut-49-transient}
+\end{figure}
+
+The signals are then processed to yield the combined isotherm and
+differential heat of adsorption. \autoref{dut:fgr:dut-49-butane} shows
+two isotherms recorded on different DUT-49 samples. 
+Several observations can be made. First, a clear transition takes place
+around \(0.15~p/p_0\). This corresponds to the \textbf{op}/\textbf{cp} 
+transition which \textit{decreases} the amount adsorbed per gram 
+of material. After NGA, the material is in its \textbf{cp} form,
+where it remains throughout the remainder of the measurement. 
+Unlike in the methane experiments performed at 
+\SI{111}{\kelvin}, the structure does not re-open. A secondary 
+transition to the \textbf{op} form is expected at higher pressures,
+close to the saturation pressure of the adsorbate. However, this 
+pressure range could not be reached within the experimental conditions.
+The enthalpy calculated for the desorption curve is essentially the 
+differential enthalpy of adsorption on the \textbf{cp} form. A large 
+difference, in the range of \SIrange{10}{20}{\kilo\joule\per\mol}, exists
+between the enthalpy of adsorption in the two states. This can be 
+attributed to the microporous nature of the \textbf{cp} form, with the
+smaller pore walls increasing the interaction of the framework backbone
+with an adsorbate molecule. The energy required to drive the 
+transition and generate the observed thermal effect can be accounted 
+for by the increased total interactions of remaining adsorbed 
+molecules with the \textbf{cp} state of the framework.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}{0.33\linewidth}
+        \includegraphics[width=\linewidth]{butane/dut-49-butane-reg}%
+        \caption{}\label{dut:fgr:dut-49-butane-reg}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+        \includegraphics[width=\linewidth]{butane/dut-49-butane-log}%
+        \caption{}\label{dut:fgr:dut-49-butane-log}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+        \includegraphics[width=\linewidth]{butane/dut-49-butane-enth}%
+        \caption{}\label{dut:fgr:dut-49-butane-enth}
+    \end{subfigure}%
+    \caption{Butane adsorption experiments on two samples of 
+    DUT-49 shown as (a) regular isotherms (b) logarithmic isotherms 
+    and (c) enthalpy as a function of pressure}%
+    \label{dut:fgr:dut-49-butane}
+\end{figure}
+
+Due to the steep knee in the adsorption/desorption branch of the 
+\textbf{cp} form, a complete desorption branch cannot be obtained,
+with the minimum attained loading of \SI{4}{\milli\mol}. As such,
+framework collapse is not seen in the experiments. Another 
+shortcoming is that the isotherm
+and energy landscape of the \textbf{op} form in its metastable 
+region is inaccessible, since by definition the material will 
+undergo a transition in this pressure range.
+
+
+\subsubsection{Estimated error in the measurements}
+
+In order to assess whether results obtained through calorimetry
+are within acceptable accuracy, uncertainty calculations have been
+carried out. The method used here is laid out by the International 
+Organisation for Standardisation (ISO) in the Guide to the expression
+of Uncertainty in Measurements (GUM). The method is fully detailed 
+in \autoref{appx:errors}, and consists of an identification of 
+all variables used in the calculation of the final result, and 
+estimation of the uncertainty in the final value as a function of
+the uncertainty in each such variable. The final value is multiplied
+by a factor of confidence, which has been chosen as 95\% in the 
+results presented in \autoref{dut:fgr:dut-49-butane-err}.
+
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}{0.33\linewidth}
+        \includegraphics[width=\linewidth]{butane/dut-49-butane-err-iso}%
+        \caption{}\label{dut:fgr:dut-49-butane-err-iso}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+        \includegraphics[width=\linewidth]{butane/dut-49-butane-err-enth}%
+        \caption{}\label{dut:fgr:dut-49-butane-err-enth}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+        \includegraphics[width=\linewidth]{butane/dut-49-butane-err-enthp}%
+        \caption{}\label{dut:fgr:dut-49-butane-err-enthp}
+    \end{subfigure}%
+    \caption{Estimated errors at a 95\% confidence range for 
+    (a) loading as a function of pressure, 
+    (b) differential enthalpy as a function of pressure 
+    (c) differential enthalpy as a function of loading}%
+    \label{dut:fgr:dut-49-butane-err}
+\end{figure}
+
+The use of the manometric method for isotherm measurement entails a 
+cumulative error in the pressure measurement that leads to an increase
+in uncertainty with each measured point. It can be seen in 
+\autoref{dut:fgr:dut-49-butane-err-iso} that in spite of the margin of 
+error, there is perfect overlap between the two measured isotherms
+in the adsorption branch and in the desorption branch. It is reasonable
+to assume that the error is therefore much smaller than the calculation 
+would suggest.
+
+The uncertainty in the differential enthalpy of adsorption 
+(\autoref{dut:fgr:dut-49-butane-err-enth}) is a 
+function of \(\Delta n\), the amount adsorbed in each step, as well
+as pressure, with the same cumulative error applicable. The former 
+variable accounts for the large uncertainty in flat sections of 
+the isotherm where almost no adsorption takes place, while the latter
+results in the spread seen at the end of the desorption curves. 
+However, when observing \(\Delta_{ads} \dot{h}\) as a function of 
+loading in \autoref{dut:fgr:dut-49-butane-err-enthp}, the uncertainty 
+is confined to high values on the x axis, with a clear separation
+of isotherm branches.
+
+As the display of uncertainty ranges clutter the isotherm graphs and 
+makes it hard to distinguish features, the remainder of this chapter 
+will only display them if the error range is significant.
