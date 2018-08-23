@@ -1,8 +1,8 @@
 % !TEX root = ../../main.tex
 
-\subsection{The structural transition or NGA in DUT-49}
+\subsection{The structural transition leading to NGA in DUT-49}
 
-In the time-resolved pressure and calorimetry signal observed when
+In the time-resolved pressure and calorimetry signal recorded when
 performing butane adsorption at \SI{303}{\kelvin}, the NGA step 
 is clearly visible as the pressure in the cell suddenly increases 
 after a dosing point. An example can be seen 
@@ -10,7 +10,7 @@ in \autoref{dut:fgr:dut-49-transient}, next to a regular dosing step.
 A short time after the adsorbate is introduced in the measurement
 cell, the material contracts. The calorimeter signal is
 positive, therefore the overall process is still exothermic --- even
-though desorption and a structural transition, both endothermic
+though desorption and structural transition, both endothermic
 processes, are taking place.
 
 \begin{figure}[htb]
@@ -34,16 +34,6 @@ Unlike in the methane experiments performed at
 transition to the \textbf{op} form is expected at higher pressures,
 close to the saturation pressure of the adsorbate. However, this 
 pressure range could not be reached within the experimental conditions.
-The enthalpy calculated for the desorption curve is essentially the 
-differential enthalpy of adsorption on the \textbf{cp} form. A large 
-difference, in the range of \SIrange{10}{20}{\kilo\joule\per\mol}, exists
-between the enthalpy of adsorption in the two states. This can be 
-attributed to the microporous nature of the \textbf{cp} form, with the
-smaller pore walls increasing the interaction of the framework backbone
-with an adsorbate molecule. The energy required to drive the 
-transition and generate the observed thermal effect can be accounted 
-for by the increased total interactions of remaining adsorbed 
-molecules with the \textbf{cp} state of the framework.
 
 \begin{figure}[htb]
     \centering
@@ -60,8 +50,9 @@ molecules with the \textbf{cp} state of the framework.
         \caption{}\label{dut:fgr:dut-49-butane-enth}
     \end{subfigure}%
     \caption{Butane adsorption experiments on two samples of 
-    DUT-49 shown as (a) regular isotherms (b) logarithmic isotherms 
-    and (c) enthalpy as a function of pressure}%
+    DUT-49, DUT-49(o) and DUT-49(m) shown as (a) regular 
+    isotherms (b) logarithmic isotherms 
+    and (c) enthalpy as a function of pressure.}%
     \label{dut:fgr:dut-49-butane}
 \end{figure}
 
@@ -74,8 +65,60 @@ and energy landscape of the \textbf{op} form in its metastable
 region is inaccessible, since by definition the material will 
 undergo a transition in this pressure range.
 
+Another key feature visible in the two recorded isotherms is that,
+while adsorption on the open pore form fully overlaps between the 
+two experiments, both the location and extent of NGA differ 
+slightly. In the DUT-49(o) isotherm, a smaller NGA step occurs,
+with the resulting structural contraction apparently unable to 
+achieve a complete closing of the pores. Upon desorption, a 
+secondary step occurs in the same \(0.15--0.2\) pressure range,
+after which the material is fully in its \textbf{cp} state,
+as evidenced by the overlap with the DUT-49(m) isotherm. The 
+reason behind the dissimilar behaviour is the contribution
+of crystal size to the energy barrier of transition. A thorough
+analysis can be found in the paper published 
+by \citet{krauseEffectCrystalliteSize2018} where it shown that 
+a high surface to volume ratio has a negative impact on NGA, with 
+smaller crystallites unable to achieve a complete contraction,
+instead accessing an intermediated or \textbf{ip}, with a lattice
+parameter \textit{a} 5--7\% smaller than the \textbf{op} phase
+rather than 24\% in the \textbf{cp} phase.
 
-\subsubsection{Estimated error in the measurements}
+The enthalpy curves in \autoref{dut:fgr:dut-49-butane-enth},
+paint a picture of the energetic landscape of both phases.
+First it should be noted that the differential enthalpy of
+the NGA step itself does not appear on the graph as it is a
+negative value. This is not because the transition step is 
+endothermic, as proven in \autoref{dut:fgr:dut-49-transient}. 
+However, as the net change in adsorbed amount between the two
+points where the transition occurs is negative, the calculated
+enthalpy \textit{per mol of gas adsorbed} takes the same sign.
+
+In the adsorption branch, the initial enthalpy of adsorption 
+can be observed to be around \SIrange{38}{40}{\kilo\joule\per\mol}.
+This value is relatively low for a copper-based 
+MOF~\cite{langeStructuralFlexibilityCopperbased2014} and suggest
+that the interaction of the pore wall with the adsorbate is 
+relatively low. After \SI{2}{\milli\mol\per\gram}, the enthalpy
+curve slopes downwards until a local minima around 
+\SI{30}{\kilo\joule\per\mol} before NGA. 
+This is the multilayer adsorption region,
+where the field gradient of the pore wall decreases and guest-guest 
+interactions dominate.
+The enthalpy calculated for the desorption curve is essentially the 
+differential enthalpy of adsorption on the \textbf{cp} form. A large 
+difference, in the range of \SIrange{10}{20}{\kilo\joule\per\mol}, exists
+between the enthalpy of adsorption in the two states. This can be 
+attributed to the microporous nature of the \textbf{cp} form, with the
+smaller pore walls increasing the interaction of the framework backbone
+with an adsorbate molecule. The energy required to drive the 
+transition and generate the observed thermal effect can be accounted 
+for by the increased total interactions of remaining adsorbed 
+molecules with the \textbf{cp} state of the framework.
+A more in-depth analysis of the NGA energetics will be presented 
+in \autoref{dut:indepth}.
+
+\subsubsection{A brief analysis of measurement uncertainty}
 
 In order to assess whether results obtained through calorimetry
 are within acceptable accuracy, uncertainty calculations have been
@@ -107,7 +150,7 @@ figures presented in \autoref{dut:fgr:dut-49-butane-err}.
     \caption{Estimated errors at a 95\% confidence range for 
     (a) loading as a function of pressure, 
     (b) differential enthalpy as a function of pressure 
-    (c) differential enthalpy as a function of loading}%
+    (c) differential enthalpy as a function of loading.}%
     \label{dut:fgr:dut-49-butane-err}
 \end{figure}
 

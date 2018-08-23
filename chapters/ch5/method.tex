@@ -63,7 +63,7 @@ is presented in \autoref{dut:tab:materials}.
     \centering %
 	\caption{Flexible materials analogous to DUT-49}
     \small
-	\begin{tabular}{c>{\centering\arraybackslash} m{6cm}cc}
+    \begin{tabular}{c >{\centering}m{6cm} c p{4cm}}
 		\toprule
 	    \textbf{Name}
         & \textbf{Linker center}
@@ -72,8 +72,14 @@ is presented in \autoref{dut:tab:materials}.
 		\midrule
         DUT-49  & 
             \includegraphics[width=4cm]{structures/DUT-49}
-            & Original material & Multiple crystal sizes \\
-            \midrule    
+            & Original material & 
+            \makecell[l]{
+            Multiple crystal sizes \\ %
+            \scriptsize\llap{\textbullet}~~DUT-49(o)-\SI{0.8}{\micro\metre}\\%
+            \scriptsize\llap{\textbullet}~~DUT-49(s)-\SI{1.0}{\micro\metre}\\%
+            \scriptsize\llap{\textbullet}~~DUT-49(m)-\SI{4.0}{\micro\metre}\\%
+            \scriptsize\llap{\textbullet}~~DUT-49(l)-\SI{10.0}{\micro\metre}} \\
+        \midrule
         DUT-48  & 
             \includegraphics[width=2.5cm]{structures/DUT-48}
             & Linker size & --- \\
