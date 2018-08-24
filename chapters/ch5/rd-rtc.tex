@@ -43,10 +43,15 @@ may allow for fine-grain influence of framework stiffness.
 
 \subsubsection{Behaviour of isoreticular materials}
 
-Adsorption 
-
-\autoref{dut:fgr:dut-reticular} shows the dataset recorded on the 
-non-interpenetrated versions of the material.
+The series of materials DUT-48, DUT-46, DUT-49, DUT-50 and DUT-151/DUT-152
+was synthesised with the aim of studying the effect of linker 
+elongation on the NGA step. It was found that the tetra-phenyl chain
+in DUT-151 increased the pore size to the threshold 
+where a secondary can form in the intracrystal voids, resulting 
+in two identical interpenetrated nets. An attempt to introduce 
+a bulky side-functionalisation in DUT-152 resulted in a similarly
+interpenetrated material. \autoref{dut:fgr:dut-reticular} shows the
+butane adsorption dataset recorded on the non-interpenetrated versions.
 
 \begin{figure}[htb]
     \centering
@@ -65,24 +70,74 @@ non-interpenetrated versions of the material.
     \caption{(a) Experimental adsorption isotherms for DUT-48, DUT-46, DUT-49 and 
     DUT-50. Enthalpy points are omitted for clarity. (b) A logarithmic plot of 
     isotherms and enthalpy curves, to highlight the low pressure region. 
-    (c) Enthalpy as a function of loading for these materials.}%
+    (c) Enthalpy as a function of loading.}%
     \label{dut:fgr:dut-reticular}
 \end{figure}
 
 
-The isotherms in \autoref{dut:fgr:dut-reticular-reg} show that only DUT-49 
-and DUT-50 undergo NGA, one around \(0.15~p/p_0\) and the other at a higher 
-relative pressure around \(0.25~p/p_0\).
-
-Indeed, the results follow a predictable trend. With an increase of linker 
-size, a higher overall capacity is available from the 
+Indeed, the results follow a predictable trend. First, it is worth 
+noting that, as seen in \autoref{dut:fgr:dut-reticular-reg}, only DUT-49 
+and DUT-50 undergo an \textbf{op/cp} transition. This confirms that 
+a shorter linker imparts the resulting MOF with a more stable backbone,
+raising the strain required in order to collapse the framework.
+The desorption branch of the non-flexible materials completely 
+overlaps the adsorption branch in both isotherm and enthalpy, further
+confirming the small error in measurement (available in 
+\autoref{appx:dut:fgr:dut-46-adsdes}).
+With an increase of linker size, a larger pore volume and consequently
+a higher amount of butane can be adsorbed in the open pore form. 
+The increase in pore size is also responsible for a shift in the pressure 
+of condensation, or pore filling step.
 
 In DUT-50, the structure is seen to re-open around \(0.5~p/p_0\), although 
-the pressure is not high enough to obtain a fully \textbf{op} form.
-The transition to the \textbf{cp} phase is 
+the pressure is not high enough to completely transition to the
+\textbf{op} form. The collapse to the closed phase in the desorption
+branch achieves a lower plateau than in the adsorption branch,
+suggesting an incomplete \textbf{op/cp} transition as seen in one 
+of the isotherms on DUT-49 in the previous section.
 
-\autoref{dut:fgr:dut-reticular-interp} presents isotherms and enthalpy on 
-DUT-151 and DUT-152, both interpenetrated nets.
+One surprising finding is that the enthalpy curves 
+(\autoref{dut:fgr:dut-reticular-enth}) present a near
+identical behaviour and differential enthalpy of adsorption in the 
+low pressure region, characterized by a slight increase up to 
+\SI{40}{\kilo\joule\per\mol} followed by a drop-off. The adsorption
+mechanism and surface characteristics are therefore \textit{common} to 
+all four materials. The shift of the enthalpies of adsorption to lower 
+values at higher loadings from DUT-46 to 50 is expected, with the increase
+in pore size leading to a progressive decrease of the contribution 
+of dispersion interactions with the guest, which could also be 
+referred to as a confinement effect. The the steep uptake in the isotherm
+is indicative of a cooperative adsorption mechanism similar to a fluid
+condensation, accompanied by an increase in the contribution of 
+guest-guest interactions to \(\Delta_{ads} \dot{h}\).
+
+As neither DUT-48 and DUT-46 show any phase transition with
+butane at this temperature, the question arises whether their frameworks
+can still undergo a structural contraction. A combined simulation and 
+mechanical pressure study was performed on DUT-48 in parallel to the 
+microcalorimetry experiments, which can be found in the paper 
+published in collaboration with the TU Dresden, Chimie ParisTech and 
+ICGM groups~\cite{krauseAdsorptionContractionMechanics2018}.
+In brief, DFT optimisations of a single linker molecule under increasing
+stress show that buckling of the molecule is still possible, albeit
+at a much higher stress. Constant volume (N, V, T) molecular dynamics
+simulations of the evolution of the system free energy with decreasing
+unit cell volume have shown that, while a \textbf{cp} phase for DUT-48
+exists, the increased tensile strength of the central backbone leads
+to an increase in both the free energy of this state and the activation
+energy required to enter it compared to DUT-49. To prove that structural
+transition can still take place, mercury intrusion experiments are 
+carried out on both DUT-48 and DUT-49. The intrusion/extrusion 
+curves on both materials show that an \textbf{op/cp} transition takes
+place, although with a much higher external pressure in the case 
+of DUT-48 (\SI{65}{\mega\pascal} vs.\ \SI{35}{\mega\pascal}). A similar 
+approach on all other materials in this series reveals a very clear
+trend in both energy of the \textbf{cp} form and pressure required 
+for the transition.
+
+The interpenetrated materials DUT-151 and DUT-152 show a very different 
+isotherm shape and enthalpy curve, as seen in 
+\autoref{dut:fgr:dut-reticular-interp}.
 
 \begin{figure}[htb]
     \centering
