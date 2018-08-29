@@ -4,12 +4,12 @@
 \label{dut:indepth}
 
 As it has been shown in the previous section, there are 
-several avenues NGA tuning in the DUT-49 framework.
+several avenues to achieve tuning of NGA in the DUT-49 framework.
 However, a fundamental understanding of the factors and 
 energetics of the process itself may
 lend itself to prediction of when the phenomenon occurs without 
 experimental input, and even lead to the rational design of 
-materials.
+similar materials.
 
 To this end, the adsorption of multiple probes was investigated 
 at \SI{77}{\kelvin} with \textit{in situ} continuous low 
@@ -28,18 +28,21 @@ noble gas, has a completely spherical molecule, which does not
 have any specific host-guest or guest-guest interactions. Nitrogen
 is commonly used as the probe in material characterisation, 
 and carries a weak quadrupole. Carbon monoxide has been used 
-as it often forms coordination bonds through electron donation adducts.
-Finally oxygen has an even stronger quadrupolar moment than 
-nitrogen, which can interact with the surface in a similar way.
+as it often forms coordination bonds through electron donation.
+Finally oxygen has a weaker quadrupolar moment than 
+nitrogen, and can interact with the surface in a similar way.
 It is worth noting that both argon and carbon monoxide are below 
-their freezing point at this temperature. \todo{check}
+their freezing point at this temperature.
 
-It should be mentioned that a large dataset was gathered
+\subsubsection{Results and initial observations}
+
+A large dataset was gathered
 on these materials as experiments were performed with different 
 amounts of sample, different gas introduction flowrates, as well as repeats
-in identical conditions on samples which have undergone NGA. A list 
+with identical conditions to ensure that factors such as 
+equilibrium or diffusion do not play a role in the results. A list 
 of experiments, as well as all isotherms and enthalpy curves measured can
-be found in \autoref{appx:dut}.
+be found in \autoref{appx:dut}. \todo{nicer figure}
 
 \begin{figure}[p]
     \centering
@@ -79,72 +82,14 @@ be found in \autoref{appx:dut}.
         % \caption{}\label{dut:fgr:dut-48-prop-enth}
     \end{subfigure}%
 
-    \caption{}%
+    \caption{Nitrogen (top) and carbon monoxide (bottom) isotherms and 
+    enthalpy curves measured on DUT-49 (left) and DUT-149 (right).}
     \label{dut:fgr:dut-ltc-comp1}
 \end{figure}
 
-The isotherms and the corresponding enthalpy curves for both 
-DUT-49 and DUT-149 are shown in \autoref{dut:fgr:dut-ltc-comp1}
-for \ce{N2} and \ce{CO} and in \autoref{dut:fgr:dut-ltc-comp2}
-for \ce{Ar} and \ce{O2}. A cursory observation of the isotherms
-reveals that the DUT-149 framework is not as stiff as 
-previously assumed. A clear NGA step can be found in the 
-oxygen isotherm, suggesting that adsorption of this probe is capable 
-of overcoming the higher energy barrier of linker buckling in 
-this methyl functionalised version.
-If comparing the isotherms measured on the two materials, they
-are seen to be nearly identical until structural contraction.
-The total amount adsorbed after pore re-opening is also in a 
-2\% range with all probes. The assumption that the mechanism 
-of adsorption in DUT-49 can be likened to its functionalised
-version holds in this case.
-
-Another surprising behaviour
-can be seen in the nitrogen isotherm on DUT-49. While an NGA
-discontinuity is still present, structural re-opening takes
-place in several distinct steps. This behaviour in in
-agreement with the study published by
- \citet{krauseEffectCrystalliteSize2018}
-on the evolution of the contraction step with variation of 
-crystallite size. In their paper, the increase of average 
-crystal dimensions is seen to evolve the structure from non-flexible 
-to a progressively better defined NGA transition. \textit{In situ} 
-PXRD shows that between complete structural stiffness and a 
-purely \textbf{op/cp} phase transition, several intermediate 
-pore forms can be accessed. It can therefore be theorised that 
-nitrogen adsorption takes place near the lower limit of 
-favourable transition energetics, where particulate surface 
-effects can have a high influence on the stability domain of
-each phase.
-
-If focusing on the pore filling behaviour of DUT-149, two types
-of steps can be seen. While the initial part of the isotherm 
-(below \(0.1~p/p_0\)) is typical of BET-type multilayer adsorption
-with a possible micropore filling step at very low pressure,
-the large framework pores are seen to be filled in either a single or
-two-step process.
-Both nitrogen and carbon monoxide have two distinct filling
-steps, corresponding to the octahedral and tetrahedral pores,
-respectively. The two steps are accompanied by identical 
-peaks in the enthalpy curve. This points to a highly similar 
-filling process for both pores, with cooperative adsorption
-dominating the pore filling mechanism, rather than guest-host 
-effects. The argon isotherm, similar to the behaviour of 
-butane at \SI{303}{\kelvin}, shows a very sharp single-step process,
-which can be likened to condensation in a mesopore. As the 
-two pores in the DUT-49/149 framework are interconnected through 
-windows of \(\approx\)\SI{1}{\nano\metre}, pore filling 
-in one type of pore can induce filling in the adjacent pore of 
-a larger size. The sudden transition to the fluid phase can further
-be understood if considering the MOF pores are nearly mesoscale in 
-length. Adsorption in such pores can be characterised through 
-the formation of a vapour-like spinodal if the pore size is within
-a ``critical hysteresis radius''~\cite{hiratsukaCriticalEnergyBarrier2016}.
-\todo{window size}
-
 \begin{figure}[p]
     \centering
-
+    
     \begin{subfigure}{0.43\linewidth}
         \includegraphics[width=\linewidth]{ltc/dut-49-Ar-log}%
         % \caption{}\label{dut:fgr:dut-48-prop-log}
@@ -171,7 +116,7 @@ a ``critical hysteresis radius''~\cite{hiratsukaCriticalEnergyBarrier2016}.
         \includegraphics[width=\linewidth]{ltc/dut-149-O2-log}%
         % \caption{}\label{dut:fgr:dut-48-prop-enth}
     \end{subfigure}%
-
+    
     \begin{subfigure}{0.43\linewidth}
         \includegraphics[width=\linewidth]{ltc/dut-49-O2-enth}%
         % \caption{}\label{dut:fgr:dut-48-prop-log}
@@ -180,40 +125,289 @@ a ``critical hysteresis radius''~\cite{hiratsukaCriticalEnergyBarrier2016}.
         \includegraphics[width=\linewidth]{ltc/dut-149-O2-enth}%
         % \caption{}\label{dut:fgr:dut-48-prop-enth}
     \end{subfigure}%
-
-    \caption{}%
+    
+    \caption{Argon (top) and oxygen (bottom) isotherms and 
+    enthalpy curves measured on DUT-49 (left) and DUT-149 (right).}%
     \label{dut:fgr:dut-ltc-comp2}
 \end{figure}
 
-A common feature to almost all measured isotherms is the identical
-adsorption mechanism before pore size effects come into play.
-Indeed if enthalpy curves recorded with different adsorbates, at different
-temperatures and even on different DUT analogues are compared at low 
-loading, they may be mistaken for the same data.
-This typical enthalpy curve starts at relatively low values compared 
-to adsorption in the same conditions on a similar paddlewheel based 
-MOF such as HKUST-1, then increases to a local maxima followed
-by a gentle downward slope.
-This feature is typical of cooperative adsorption, and suggests that
-the interactions with the framework are generally low. The only 
-exception to this case are adsorbates which can act with the 
-Cu paddlewheel in some way, either through adduct formation, 
-electron donation or \(\pi\) backbonding interactions. 
+Selected isotherms and corresponding enthalpy curves for both 
+DUT-49 and DUT-149 are shown in \autoref{dut:fgr:dut-ltc-comp1}
+for \ce{N2} and \ce{CO} and in \autoref{dut:fgr:dut-ltc-comp2}
+for \ce{Ar} and \ce{O2}. A cursory observation of the isotherms
+reveals that the DUT-149 framework is not as stiff as 
+previously assumed. A clear NGA step can be found in the 
+oxygen isotherm, suggesting that adsorption of this probe is capable 
+of overcoming the higher energy barrier of linker buckling in 
+this methyl functionalised version.
+If comparing the isotherms measured on the two materials, they
+are seen to be nearly identical until structural contraction.
+The total amount adsorbed after pore re-opening is also in a 
+2\% range with all probes. The assumption that the mechanism 
+of adsorption in DUT-49 can be likened to its functionalised
+version holds in this case.
+\todo{Talk about CO}
 
+Another surprising behaviour
+can be seen in the nitrogen isotherm on DUT-49. While an NGA
+discontinuity is still present, structural re-opening takes
+place in several distinct steps, each accompanied by a sharp 
+peak in the enthalpy curve. This behaviour in in
+agreement with the study published by 
+ \citet{krauseEffectCrystalliteSize2018}
+on the evolution of the contraction step with variation of 
+crystallite size. In their paper, the increase of average 
+crystal dimensions is seen to change the material from non-flexible 
+to a progressively better defined NGA transition. \textit{In situ} 
+PXRD shows that between complete structural stiffness and a 
+purely \textbf{op/cp} phase transition, several intermediate 
+pore forms can be accessed. It can therefore be theorised that 
+nitrogen adsorption takes place near the lower limit of 
+favourable transition energetics, where particulate surface 
+effects can have a high influence on the stability domain of
+the open pore form.
+
+\subsubsection{Phase of the adsorbate in the material pores}
+
+As two of the four gas probes are below their respective freezing point
+at experimental conditions, a question arises about the state of
+the adsorbate in the pores of the material. While a structuring of
+the fluid similar to a solid phase is possible inside the 
+pores of various adsorbents~\cite{llewellynAdsorptionMFItypeZeolites1993a},
+it is often that the adsorbed phase is more similar to a liquid,
+even at low temperatures.
 
 \begin{figure}[htb]
     \centering
-    \begin{subfigure}{0.5\linewidth}
-        \includegraphics[width=\linewidth]{butane/dut-48-prop-log}%
-        \caption{}\label{dut:fgr:dut-48-prop-log}
-    \end{subfigure}%
-    \begin{subfigure}{0.5\linewidth}
-        \includegraphics[width=\linewidth]{butane/dut-48-prop-enth}%
+    \includegraphics[width=0.5\linewidth]{ltc/DUT-149-volume}%
+    \caption{Volumetric adsorption isotherms of all probe gasses
+    on DUT-149. The density of the adsorbate was obtained assuming
+    from the liquid density at the corresponding temperature.
+    It is assumed that the structure re-opening after oxygen
+    adsorption is complete.}%
+    \label{dut:fgr:dut-volume}
+\end{figure}
+
+A simple method to check whether the phase of all measured probes
+is close to a liquid state, assuming that the accessible void space 
+is identical with all probes, is to convert measured isotherms 
+to a fluid volume basis and compare the total pore volume as determined
+with each fluid. The density used for this conversion is the 
+liquid density of the saturated liquid as calculated using the 
+REFPROP equation of state at the isotherm temperature.
+\autoref{dut:fgr:dut-volume} plots isotherms measured on DUT-149
+transformed using this method. All isotherms reach a plateau at around 
+\SI{2.5}{\centi\metre^3\per\gram}, confirming that the fluid in 
+the pores can be considered in a liquid state.
+
+\subsubsection{Effect of framework on differential adsorption enthalpy}
+
+A common feature to almost all measured isotherms is the equivalent
+adsorption mechanism before structural transition takes place.
+Indeed if enthalpy curves recorded with different adsorbates, at different
+temperatures and even on different DUT analogues are compared at low 
+loading, they may be mistaken for the same datapoints shifted to
+various enthalpy values.
+This ``typical'' enthalpy curve first increases to a local maxima, followed
+by a gentle downward slope. It is also seen on most DUT-49 analogues 
+in \autoref{dut:comparison}, suggesting that it is a consequence of 
+the topology of this structure.
+These features are typical of cooperative adsorption, and suggest that
+specific interactions with the framework are generally low. The only 
+exception to this case are adsorbates which can interact with the 
+Cu paddlewheel, either through adduct formation, 
+electron donation or \(\pi\) backbonding interactions. 
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[c]{0.5\linewidth}
+        \includegraphics[width=\linewidth]{rtc/dut-48-prop-enth}%
         \caption{}\label{dut:fgr:dut-48-prop-enth}
     \end{subfigure}%
-    \caption{The (a) isotherms and (b) enthalpy curves of propane 
-    and propylene adsorption on DUT-48, highlighting the high energy
-    of \ce{C3H6} on specific sites at low pressure, likely to be 
-    \(\pi\)-Cu interactions.}%
+    \begin{subfigure}[h]{0.5\linewidth}
+        \centering
+        \(\vcenter{\hbox{{\includegraphics[width=0.9\linewidth]{dut-co}}}}\)%
+        \caption{}\label{dut:fgr:dut-co}
+    \end{subfigure}%
+    \caption{(a) Enthalpy curves of propane and propylene on DUT-48 as 
+    a function of fractional loading, with higher enthalpy of 
+    adsorption of the unsaturated hydrocarbon at low loading as an 
+    indication of \(\pi\)-Cu interactions. (b) Photo of DUT-149 cells
+    filled with CO and \ce{N2} at \SI{77}{\kelvin}. Note the 
+    colour change of the CO-filled cell as evidence of the formation of 
+    \ce{Cu(II)\bond{...}CO} adducts.}%
     \label{dut:fgr:dut-48-prop}
 \end{figure}
+
+Such effects are noticeable in the CO adsorption isotherms, 
+as the initial measured differential enthalpy of adsorption is around 
+\SI{40}{\kilo\joule\per\mol}, consistent with the formation of 
+\ce{Cu(II)\bond{...}CO} adducts as seen in similar paddlewheel based 
+MOF such as HKUST-1~\cite{prestipinoLocalStructureFramework2006}. 
+Indeed, a visual examination of the carbon monoxide saturated 
+DUT-149 at \SI{77}{\kelvin} 
+(\autoref{dut:fgr:dut-co}) shows a pronounced colour change and 
+suggests a change in the coordination sphere of the copper 
+atoms. As the sample is brought to ambient temperature, the 
+cyan colour disappears, attesting that there is no permanent 
+coordination, such as is typical in more stable \ce{Cu(I)\bond{...}CO}
+adducts.
+
+A separate study on the possible interaction of 
+\(\pi\) bond containing unsaturated hydrocarbons was performed
+using ambient temperature calorimetry. Propane and propylene 
+isotherms and enthalpy curves were recorded on the shorter 
+linker, non-flexible DUT-48. \autoref{dut:fgr:dut-48-prop-enth}
+reveals that there is indeed a larger enthalpy of adsorption
+at low loadings when propylene is used as the probe gas, with 
+the curves overlapping after the initial region. The difference 
+of around \SI{20}{\kilo\joule\per\mol} between the two initial
+enthalpies of adsorption is consistent to what has been predicted
+and recorded on the copper center in 
+HKUST-1~\cite{rubesAdsorptionPropanePropylene2013}, and can
+be explained through the formation of a partial dative bond
+between the propylene \(\pi\) orbital and the \ce{Cu^{2+}}
+cation. 
+
+In both the case of CO and \ce{C3H6}, the 
+stronger interactions occur only at fractional loadings lower
+than 0.1, before the occurrence of NGA. The enthalpy of 
+adsorption after this region take values which are close to
+those of similar probes (\ce{CO}-\ce{N2}, \ce{C3H6}-\ce{C3H8}).
+This is further evidence that, while specific guest-host interactions
+may exist, they play little to no role in the mechanism of contraction.
+
+\subsubsection{Pore filling mechanism of the \textbf{op} phase}
+
+If focusing on the pore filling behaviour of DUT-149, two types
+of mechanisms can be seen. While the initial part of the isotherm 
+(below \(0.1~p/p_0\)) is typical of BET-type multilayer adsorption
+with a possible micropore filling step at very low pressure,
+the large framework pores are seen to be filled in either a single or
+two-step process.
+\begin{wrapfigure}{h}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.27\textwidth]{pore-filling}%
+    \caption{A dissection of the \ce{CD4} isotherm
+    at \SI{111}{\kelvin} 
+    in components of adsorption in each type of pore.}%
+	\label{dut:fgr:pore-filling}
+\end{wrapfigure}
+Both nitrogen and carbon monoxide have two distinct filling
+steps, corresponding to the octahedral and tetrahedral pores,
+respectively. The two steps are accompanied by identical 
+peaks in the enthalpy curve. This points to a highly similar 
+filling process for both pores, with cooperative adsorption
+dominating the pore filling mechanism rather than guest-host 
+effects. The argon isotherm, similar to the behaviour of 
+butane at \SI{303}{\kelvin}, shows a very sharp single-step process,
+which can be likened to condensation in a mesopore. As the 
+two pores in the DUT-49/149 framework are interconnected through 
+windows of \(\approx\)\SI{1}{\nano\metre}, pore filling 
+in one type of pore can induce filling in the adjacent pore of 
+a larger size. The sudden transition to the fluid phase can further
+be understood if considering the MOF pores are nearly in the mesoscale 
+range. Adsorption in such pores can be characterised through 
+the formation of a vapour-like spinodal if the pore size is within
+a ``critical hysteresis radius''~\cite{hiratsukaCriticalEnergyBarrier2016},
+a metastable state which subsequently undergoes a phase change when
+nucleation occurs. Unfortunately, the presence of a hysteresis curve
+cannot be confirmed, as no desorption isotherms can be obtained 
+through the continuous method.
+
+For a better understanding of the pore filling mechanism, adsorption
+in DUT-49 was studied through \textit{in situ} neutron powder diffraction
+(NPD) during adsorption of deuterated methane \ce{CD4} at \SI{111}{\kelvin},
+and complemented through grand canonical monte carlo (GCMC) simulations
+of the same system. Refinement of the NPD patterns allowed the distribution
+of the adsorbed \ce{CD4} in a structural unit cell to be obtained, which
+was further analysed using a radial distribution function to determine
+how the filling of each pore as a function of pressure occurs. 
+Results show that adsorption first takes place inside the SBU,
+on the copper open metal sites. 
+\autoref{dut:fgr:pore-filling} reveals how
+the filling of each pore contributes to the overall isotherm.
+As expected, the SBU pore is completely filled at very low pressures
+and corresponds to the initial ``knee'' in the adsorption isotherm. Gradual
+pore filling then takes place until a condensation step which 
+leads to complete filling of all pores. This step coincides with 
+the structural transition associated with NGA and is likely a driver 
+for the contraction.
+\todo{need data from Simon for figure...}
+
+\subsubsection{Relating adsorption conditions to structural contraction}
+
+As continuous adsorption introduction is a time-resolved technique, 
+the signal obtained during the structural contraction step can 
+be examined for clues about the energetics of NGA. 
+
+
+
+\subsubsection{Effect of cycling on DUT-49 transition}
+
+By increasing the partial pressure of any of the low temperature 
+calorimetry probes over \(\approx 0.8~p/p_0\), a re-opening
+of the structure can be observed. If the sample is exposed to 
+vacuum while at \SI{77}{\kelvin}, it collapses to the \textbf{cp}
+phase during desorption and undergoes a structural breakdown 
+due to the instability of this form. However, if the temperature 
+is raised above the adsorbate critical point while maintaining the
+sample at saturation pressure, the material can be kept in the 
+\textbf{op} phase. No NGA has been observed with supercritical 
+adsorbates, which is why the material is normally activated through
+this method. 
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[c]{0.5\linewidth}
+        \includegraphics[width=\linewidth]{ltc/DUT-49-N2-cycled-reg}%
+        \caption{}\label{dut:fgr:dut-49-cycle-reg}
+    \end{subfigure}%
+    \begin{subfigure}[h]{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{ltc/DUT-49-N2-cycled-enth}%
+        \caption{}\label{dut:fgr:dut-49-cycle-enth}
+    \end{subfigure}%
+    \caption{Isotherms (a) and (b) enthalpy curves of nitrogen on
+    cycled DUT-49. The first cycle is in black and the second 
+    cycle is in blue.}%
+    \label{dut:fgr:dut-49-cycle}
+\end{figure}
+
+Repeating nitrogen adsorption on a DUT-49 sample which has been
+cycled in this manner reveals a different kind of isotherm, 
+as seen in \autoref{dut:fgr:dut-49-cycle}. While the initial 
+part of the isotherms is fully overlapped,
+the second experiment does not have an NGA step. 
+A structural transition still occurs, 
+signalled by the small peak in the enthalpy curve at the end of the 
+peak corresponding to the filling of the medium pore. However, instead
+of a sudden contraction, the transition becomes a continuous 
+process. The two progressive smaller re-opening steps still exist,
+at similar partial pressure and with comparable differential enthalpy
+of adsorption. Further cycling of this cell has shown only isotherms
+of this kind. This effect is not seen on cycling with other 
+adsorbents, with the NGA transition fully developed in each cycle. 
+
+A possible explanation can be found if recalling the effect 
+of crystal size on nitrogen induced 
+NGA~\cite{krauseEffectCrystalliteSize2018}. It is likely 
+that the sample exists as a mixture of different crystallite
+sizes, some large enough to be capable of an NGA-type transition 
+while smaller ones only contract to an intermediate pore state
+(or even remain in the \textbf{op} state).
+The cycling may introduce large scale defects such as dislocations
+or grain boundaries, effectively reducing the average crystal size
+and increasing the percentage of material which cannot undergo 
+complete contraction. 
+Experimental evidence for the coexistence of both the \textbf{cp} and 
+\textbf{op} phases after the transition pressure can be found in the 
+\ce{^{129}Xe} NMR study performed 
+by \citet{schaberSituMonitoringUnique2017}. In their paper,
+the chemical shift of \ce{^{129}Xe} is monitored during
+adsorption at \SI{200}{\kelvin}. The resulting peaks can be attributed
+to the two phases of the material and a small
+open pore signal is seen to be present concomitantly with the 
+closed pore form.
+This kind of behaviour further stresses the 
+contribution of surface potentials on the occurrence of NGA.
