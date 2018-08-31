@@ -9,7 +9,7 @@
 
     \KOMAoptions{
         paper=a4,
-        fontsize=12pt,
+        fontsize=11pt,
         DIV=12,
         BCOR=0mm,
         twoside=off,
@@ -20,6 +20,10 @@
 %%%%%%%%%%%%%%%%%%%%%% Encodings, fonts and colours
 
 % Font encodings
+% \usepackage{palatino}
+\usepackage{utopia}
+% \usepackage[utopia]{mathdesign}
+% \usepackage{fourier}
 \usepackage[TS1,T1]{fontenc}
 
 % UNICODE recognition:
@@ -62,6 +66,9 @@
     amsthm,
     amssymb
 }
+
+% In-line fractions
+\usepackage{xfrac}
 
 % The SIunitx package enables the \SI{}{} command.
 \usepackage{siunitx}
