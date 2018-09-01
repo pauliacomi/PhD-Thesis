@@ -5,19 +5,20 @@
 Historically, the processing of isotherms was done by hand, with large
 worksheets being used for the calculations. As an example,
 we point out that one of the initial limitations of the
-Barrett-Joyner and Halenda method of determining pore size distribution
+Barrett-Joyner and Halenda method for determining pore size distribution
 was that each point had to be estimated with an approximation of critical
-pore radius, due to the tedious work involved in the
+pore radius, resulting in tedious work involved in the
 calculation~\cite{barrettDeterminationPoreVolume1951}.
 
-The advent of computers meant that the calculations could be performed
-quickly and reliably and led to the introduction of more computationally
-demanding methods for isotherm processing, such as the DFT kernel fitting
-method for pore size distribution~\cite{seatonNewAnalysisMethod1989,%
+The advent of computers meant that calculations could be performed
+quickly and reliably and led to the development of more computationally
+demanding methods for adsorption modelling and isotherm processing, such as the 
+density functional theory (DFT) and grand canonical monte carlo (GCMC) kernel fitting
+methods for pore size distribution~\cite{seatonNewAnalysisMethod1989,%
 	tarazonaPhaseEquilibriaFluid1987}.
 Commercial adsorption equipment which offers the users
 a complete software solution for any isotherm calculations is now
-commonplace and makes obtaining reports of desired properties
+commonplace, and makes obtaining reports of desired properties
 for measured materials a matter of seconds.
 
 Given the current ubiquitousness of adsorption as a characterisation method,
@@ -32,7 +33,7 @@ desired properties for a particular application.
 
 The abundance of data reflects a trend in recent years where, due
 to the prevalence of digital records and cheap storage, more
-datapoints are available than ever before. As such, challenges
+information is available than ever before. As such, challenges
 now lie in making sense of the so called ``big data''.
 Key performance indicators (KPI) such as specific surface area, working
 capacity and pore volume are commonly reported in scientific literature
@@ -74,6 +75,8 @@ on MOFs.
 Paul Iacomi wrote the python code for the pyGAPS framework and is
 responsible for its publication and maintenance as an open source
 package. The IAST functionality is a modified version of
-the pyIAST code, published by Corey Simon. The data used in this chapter
-is available from the NIST Adsorption Database, maintained by Dan Siderius.
-\todo{isotherms recoded by emily}
+the pyIAST code, published by Cory Simon. Example data on reference 
+materials was recorded by Paul Iacomi for Takeda 5A and UiO-66(Zr) 
+and by Emily Bloch on MCM-41 and porous silica. The bulk processing
+example data comes from the NIST Adsorption Database, 
+maintained by Dan Siderius.

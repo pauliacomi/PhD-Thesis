@@ -123,7 +123,9 @@ same isotherm. This is a consequence of the Langmuir model
 assuming adsorption up to a single monolayer with other
 characteristic phenomena such as multilayer adsorption,
 pore condensation or multiple types of adsorption types
-unable to be accounted for.
+unable to be accounted for. It is for this reason that the 
+Langmuir \textit{should not be used} in adsorption regimes 
+such as nitrogen at \SI{77}{\kelvin}.
 
 If the partial pressure range is narrowed, by only using
 points up to 0.15 \(p/p_0\), the correlation improves
@@ -170,6 +172,16 @@ Before a deeper dive into attempting to relate adsorption isotherm
 derived parameters to structural properties, an analysis of the
 reliability of the data from the NIST ISODB should be performed.
 
+\begin{wrapfigure}{h}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.47\textwidth]{nist/nist-area-cubtc}%
+	\caption{A histogram and estimate of the probability density
+		function for (top) BET surface area and (bottom) loading
+		at half saturation pressure for CuBTC. The black dotted line
+		is the simulated surface area of this MOF.}%
+	\label{pyg:fgr:nist-area-cubtc}
+\end{wrapfigure}
+
 The material with the most recorded isotherms is CuBTC, with
 122 datapoints. A spread of the calculated BET surface areas,
 together with the ``ideal'' area of this MOF as obtained
@@ -184,16 +196,6 @@ inherent uncertainty in the dataset. The results not only
 have a large standard deviation, but also do not have a
 typical normal distribution one would expect from repeated
 sampling of a physical property.
-
-\begin{wrapfigure}{h}{0.5\textwidth}
-	\centering
-	\includegraphics[width=0.47\textwidth]{nist/nist-area-cubtc}%
-	\caption{A histogram and estimate of the probability density
-		function for (top) BET surface area and (bottom) loading
-		at half saturation pressure for CuBTC. The black dotted line
-		is the simulated surface area of this MOF.}%
-	\label{pyg:fgr:nist-area-cubtc}
-\end{wrapfigure}
 
 Instead, three normal distributions appear to emerge, one with a
 median around \SI{500}{\metre^2\per\gram}, a second around \SI{1300}{\metre^2\per\gram}
@@ -229,7 +231,6 @@ between \SIrange{200}{5000}{\metre^2\per\gram}. Other materials,
 such as ZIF-8, the MIL-53 family
 and MIL-100(Fe) have less variability in their surface areas,
 although can still be shifted by 200 to \SI{500}{\metre^2\per\gram}.
-\todo{IRMOF is flexible (Nelson)}
 
 \begin{figure}[tb]
 	\centering
@@ -290,9 +291,17 @@ corrections, reference cells for saturation pressure determination
 and many other sanity checks are implemented in these machines.
 
 However, it is often the case that the most important factor
-in the repeatability MOF and porous material adsorption isotherms
+in the repeatability of MOF adsorption isotherms
 is not the measurement procedure, but rather the material itself.
 As evidenced by the closer look at the CuBTC dataset, synthesis
 method, crystalinity, material form, particle size and contribution
 of defects all have an impact on the resulting adsorption behaviour
-of the material.
+of the material. Furthermore, IRMOF-3, the sample with the 
+highest variability in the dataset is known to possess structural
+flexibility, with the activation procedure responsible for 
+any number of states from a completely open to a completely closed
+framework~\cite{nelsonSupercriticalProcessingRoute2009}. In this 
+sense, such an analysis of a large MOF dataset can point out 
+which materials tend to be resistant (or susceptible) to the 
+aforementioned sources of variability 
+and can lend themselves to use as standard or reference materials.

@@ -10,9 +10,9 @@
 \label{appx:dut:probes}
 
 \begin{table}[htbp]
-	\centering\small
+	\centering
     \caption{Properties of probe gasses used at \SI{77}{\kelvin}.}
-	\begin{tabular}{lcccc}
+	\begin{tabular}{cSSSS}
 		\toprule
 	    \textbf{Probe}
         & \textbf{\ce{Ar}}
@@ -20,14 +20,18 @@
         & \textbf{\ce{N2}}
         & \textbf{\ce{O2}} \\
 		\midrule
-        molar mass                  & 39.948    & 28.010    & 28.0134   & 31.999    \\
-        cross-sectional area        & 0.138     & 0.168     & 0.162     & 0.141     \\
-        dipole moment               & 0.0       & 0.39      & 0.0       & 0.0       \\
-        quadrupole moment           & 0.0       & -12.3     & -5.0      & 1.3       \\
-        enthalpy of vaporisation    &           & x         & x         & x         \\
-        liquid density              &           & x         & x         & x         \\
-        solid density               & 1.623     & 0.924     & 0.945     & 1.300     \\
+        \makecell[c]{molar mass \\ \si{\gram\per\mol}}                      & 39.948    & 28.010    & 28.0134   & 31.999    \\
+        \makecell[c]{cross-sectional area \\ \si{\nano\metre}}              & 0.138     & 0.168     & 0.162     & 0.141     \\
+        \makecell[c]{polarizability \\ \SI{d-3}{\nano\metre^3}}             & 1.63      & 1.95      & 1.76      & 1.59      \\
+        \makecell[c]{dipole moment \\ \SI{d-30}{\coulomb\metre}}            & 0.0       & 0.39      & 0.0       & 0.0       \\
+        \makecell[c]{quadrupole moment \\ \SI{d-40}{\coulomb\metre^2}}      & 0.0       & -12.3     & -5.0      & 1.3       \\
+        \makecell[c]{enthalpy of vaporisation* \\ \si{\kilo\joule\per\mol}}  & 6.49      & 6.03      & 5.58      & 7.18      \\
+        \makecell[c]{liquid density \\ \si{\gram\per\centi\metre^3}}        & 1.393     & 0.811     & 0.806     & 1.203     \\
+        \makecell[c]{solid density \\ \si{\gram\per\centi\metre^3}}         & 1.623     & 0.924     & 0.945     & 1.300     \\
+        \makecell[c]{critical point T \\ \si{\kelvin}}                      & 150.86    & 132.91    & 126.20    & 154.57    \\
+        \makecell[c]{triple point point T \\ \si{\kelvin}}                  & 83.78     & 68.14     & 63.15     & 54.35     \\
         \bottomrule
+        * from a liquid state
 	\end{tabular}%
 	\label{appx:dut:tab:rtc-exp}
 \end{table}%

@@ -66,77 +66,6 @@ viewpoint to a macroscale bulk fluid representation of
 adsorption, the a thermodynamic description of the adsorbed
 phase of the process must be performed.
 
-\subsubsection{The Gibbs surface excess approach}
-
-A description of the adsorbed phase can be made through
-expressing the change in density or concentration of fluid
-from the adsorbent surface to the bulk phase. The density
-has a maxima in the immediate zone close to the surface, and then
-decreases until it reaches the density of the bulk fluid.
-However, when defined as such, the boundary between the
-two phases is difficult to pinpoint.
-Therefore, in most cases it is useful to employ the concept
-of the Gibbs dividing surface.
-
-\begin{figure}[htb]
-	\centering
-
-	\includegraphics[width=\linewidth]{gibbs-surface}
-	\caption{
-		Representation of the adsorbed and bulk phases according to
-		the (left) layer model and the (right) Gibbs dividing surface
-		approach. Adapted from \citeauthor{rouquerolAdsorptionPowdersPorous2013}%
-		\cite{rouquerolAdsorptionPowdersPorous2013}.
-	}%
-	\label{calo:fig:gibbs-surface}
-
-\end{figure}
-
-This approach describes the adsorbed phase only in terms
-of an \textit{excess} from the properties of the bulk phase.
-As represented in \autoref{calo:fig:gibbs-surface}, the total
-amount adsorbed can be defined as:
-
-\begin{equation}
-	n_{ads}^{a} = A \int_0^r c\ dz
-\end{equation}
-
-The imaginary Gibbs dividing surface is usually placed parallel to
-the real surface of the adsorbent and in the resulting system, the
-concentration of the adsorbent in the adsorbed phase are
-expressed as an excess from the concentration of the bulk fluid.
-The relationship between the total amount adsorbed and the
-excess amount adsorbed is then:
-
-\begin{equation}\label{calo:eqn:total-excess}
-	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
-\end{equation}
-
-As long as the volume of the adsorbed layer \(V_{ads}\) can be
-considered negligible and the concentration of adsorbate in the bulk
-phase \(c_{bulk}\) is low, the total amount adsorbed and the surface
-excess amount may be considered as approximately equal.
-This is usually the case for experiments such as nitrogen
-adsorption at \SI{77}{\kelvin}, or ambient temperature adsorption
-below \SI{1}{\bar}.
-At high pressures, or when the difference in concentration between
-the adsorbed and the bulk phase is low, the total amount adsorbed
-begins to diverge significantly from the surface excess.
-
-In most cases, isotherms are reported in terms of excess surface 
-amount. From an engineering viewpoint, this representation
-is often more useful. However, any modelling and simulations of 
-isotherms refers to the total amount adsorbed.
-If \(n_t\) is to be calculated, a value
-for the volume of the adsorbed phase and the sample is required, for a 
-correction using \autoref{calo:eqn:total-excess}.
-In the case of adsorption in porous materials, the volume of the
-adsorbed phase may be taken as total pore volume. This approach
-assumes that the volume enclosed by the Gibbs dividing surface is
-the same as the volume of the sample, which may not be the case 
-if it is determined with a blank measurement of a 
-non-adsorbing gas.
-
 \subsubsection{Thermodynamic quantities of the adsorbed phase}
 
 A complete thermodynamic theory can be developed for a surface 
@@ -155,8 +84,9 @@ of an infinitesimal amount of adsorbate from the bulk phase
 to the surface excess phase. It can be measured directly, through
 calorimetry.
 
-Adsorption can be considered as a closed system of constant volume
-V and temperature T. No mass of material crosses the system boundary,
+In an adsorption process, a closed system of constant volume
+V and temperature T can be considered. 
+No mass of material crosses the system boundary,
 therefore the total change in chemical potential is also
 zero \(d\mu = 0\). Through
 a derivation~\cite{rouquerolAdsorptionPowdersPorous2013} of the

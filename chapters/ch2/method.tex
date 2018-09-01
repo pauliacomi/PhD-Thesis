@@ -12,11 +12,11 @@ during adsorption using calorimetry.
 A value for the enthalpy of adsorption in a particular system
 may also be obtained from computer simulation methods.
 The accuracy of these procedures depends on the accuracy of
-the chosen model of interaction between simulated molecules.
+the chosen model of interaction between simulated species.
 
 \subsection{Isosteric enthalpy of adsorption}
 
-If the differential enthalpy of adsorption is assumed be independent
+If the differential enthalpy of adsorption is assumed to be independent
 of temperature, \autoref{calo:eqn:enthalpy} can be differentiated
 with respect to temperature keeping the surface adsorbed amount constant
 to obtain an equation analogous to the Clausius-Clapeyron equation:
@@ -35,7 +35,10 @@ where \(\Delta_{ads}\dot{h}_{T, \Gamma}\) is the often termed the
 isosteric enthalpy of adsorption.
 
 In order to approximate the partial differential, two or more
-isotherms are measured at different temperatures.
+isotherms are measured at different temperatures. The temperature
+range chosen is usually small, to maintain the assumption of invariance
+of isosteric enthalpy with temperature while still obtaining good 
+separation between the two isotherms.
 Afterwards the isosteric enthalpy of adsorption can be calculated
 by using the pressures at which the loading is identical using the
 rearranged equation. By plotting the values of \(\ln p\) against
@@ -52,12 +55,14 @@ the two isotherms. If the isotherms measured are too close together,
 the error margin will increase. The method also assumes that isosteric
 enthalpy does not vary with temperature. If the
 variation is large for the system in question, the calculation will
-lead to unrealistic values. The isosteric method is less suited
-if applied to soft materials, where the structural changes are
-often temperature dependent themselves.
+lead to unrealistic values. Another requirement is that no phase 
+changes in either guest or host occur during adsorption. Thus,
+the isosteric method is not suited to soft materials, where the
+structural changes are often in themselves temperature dependent.
 
-Even with carefully measured experimental data, there are two
-assumptions used in deriving \autoref{calo:eqn:claus-clap}:
+Even with carefully measured experimental data, there are several
+assumptions used in applying \autoref{calo:eqn:claus-clap} to
+a real system: 
 an ideal bulk gas phase and a negligible adsorbed phase
 molar volume. These have a significant effect on the calculated
 isosteric enthalpy of adsorption, especially at high relative pressures
@@ -72,7 +77,7 @@ to best approximate a reversible exchange of heat between the
 system under investigation and the surrounding
 heat sink. To allow for a complete integration of evolved heat,
 with minimal losses, a 3D Tian-Calvet thermopile~\cite{calvetRecentProgressMicrocalorimetry1963}
-can be used. In order to cancel out variations in environment,
+can be used. In order to limit variations in environment,
 differential mounting is employed, in which the signal
 is the difference in voltage between a reference and experimental
 thermopile. In order to ensure the ``isothermicity'' of the calorimeter, a
@@ -82,7 +87,8 @@ maintain the internal temperature, while utilising the environment
 as its heat sink. At low temperature, the
 environment acts as a heat source and therefore the heat sink must
 be provided, often in the form of a constant-temperature bath
-undergoing a phase change or through a cryostat. Sketches of
+undergoing a phase change (e.g.\ liquid \ce{N2}, \ce{Ar}) 
+or through a cryostat. Sketches of
 an ambient and a low temperature differential Tian-Calvet calorimeter
 can be seen in \autoref{calo:fig:calo-types}.
 
@@ -119,7 +125,7 @@ is done through steps that are small enough to consider a reversible
 process~\cite{rouquerolGasSolidInteractions1980}.
 The accepted convention is that the adsorbate itself is inert and
 therefore does not contribute to the variation of any state function.
-In these conditions,
+Under these conditions,
 the change in internal energy of the adsorbate can be written as:
 %
 \begin{equation}
@@ -157,7 +163,7 @@ to give the total energy released during this adsorption step.
 
 In the other method, the flow of adsorbate is continuous, usually kept
 constant by a restriction in the pipe diameter which is severe enough
-to allow the gas to enter sonic flow regimes. At this point, the
+to allow the gas to enter via sonic flow regimes. At this point, the
 flowrate is no longer influenced by a pressure differential,
 instead becoming a function only of upstream pressure and environment
 temperature.
@@ -189,8 +195,9 @@ for each method presented in \autoref{calo:fig:calo-measure}.
 
 \end{figure}
 
-The point-by-point method is less accurate than a continuous introduction,
-as the measured heat is necessarily a cumulative value of instantaneous
+The point-by-point method has a lower resolution than
+continuous introduction, as the measured heat is necessarily a 
+cumulative value of instantaneous
 differential enthalpy for the coverage range of each adsorbed point.
 However, it has the advantage of ensuring complete equilibrium at
 each step, by observing the return to the baseline of the calorimetry
@@ -221,20 +228,23 @@ the point-by-point method is preferred, as it is guaranteed
 to achieve equilibrium between the material and the adsorbate
 removing the influence of diffusion effects.
 For each injection of gas, equilibrium was assumed to have
-been reached after \SIrange{90}{150}{\minute} depending on the
+been reached after \SIrange{90}{250}{\minute}, depending on the
 sample and adsorbate used. This was confirmed by the return
 of the calorimetric signal to its baseline (<\SI{5}{\micro\watt}).
 For the continuous method, a sonic nozzle was used to 
 maintain the flowrate between \SIrange{0.5}{2}{\micro\mol\per\minute},
-low enough that the system can be considered at equilibrium.
+low enough that the system can be considered at equilibrium. 
+The assumption of equilibrium is routinely verified by multiple
+experiments at different upstream pressures.
 
 As the isotherms are recorded through the manometric method,
 the accuracy in the adsorbed amount depends on the reliability
 of measuring individual state variables (temperature,
-pressure, volume) and the equation of state relating them to adsorbate loading.
+pressure, volume) and the equation of state relating them 
+to adsorbate loading.
 Characteristic to this method, the pressure recorded for 
 a point is measured in relation to the previous one. Therefore,
-the error is compounded with each successive measurement point,
+the error is cumulative with each successive measurement point,
 and is the largest contribution to the total error. The 
 uncertainty can be lowered dramatically by increasing 
 the available surface area inside the calorimeter.
@@ -258,7 +268,7 @@ As the value obtained from integration of the signal peaks
 must be divided by the change in adsorbed amount \(\Delta n\),
 the error is largest in flat sections of the isotherm, where 
 the amount adsorbed is low. Thus, uncertainty varies from 
-0.5--5\% in the beginnings of the isotherm to over 100\% when
+0.5--5\% in the beginning of the isotherm to over 100\% when
 an isotherm plateau is reached.
 
 A complete error analysis for the resulting isotherms and enthalpy

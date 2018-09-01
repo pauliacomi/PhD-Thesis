@@ -26,6 +26,9 @@
 % Set the chapter relative path
 \newcommand*{\thisch}{chapters}
 
+\renewcommand*{\thisch}{chapters/ch0-intro}
+\include{\thisch/ch-main}
+
 \renewcommand*{\thisch}{chapters/ch1}
 \include{\thisch/ch-main}
 
@@ -41,6 +44,9 @@
 \renewcommand*{\thisch}{chapters/ch5}
 \include{\thisch/ch-main}
 
+\renewcommand*{\thisch}{chapters/chz-conc}
+\include{\thisch/ch-main}
+
 \appendix{}
 
 \newcommand*{\thisappx}{backmatter}
@@ -52,6 +58,10 @@
 \include{\thisappx/appx-main}
 
 \renewcommand*{\thisappx}{backmatter/a-uncert}
+\include{\thisappx/appx-main}
+
+\renewcommand*{\thisappx}{backmatter/a-ch2}
+\renewcommand*{\thisch}{chapters/ch2}
 \include{\thisappx/appx-main}
 
 \renewcommand*{\thisappx}{backmatter/a-ch3}

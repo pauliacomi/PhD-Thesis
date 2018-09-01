@@ -8,14 +8,25 @@
 \documentclass[fleqn]{scrbook}
 
     \KOMAoptions{
-        paper=a4,
-        fontsize=11pt,
-        DIV=12,
-        BCOR=0mm,
-        twoside=off,
-        index=totoc,
-        listof=totoc,
+        paper=a4,               % A4 paper size
+        fontsize=11pt,          % font size
+        DIV=12,                 % calculate page dividers
+        BCOR=0mm,               % binding correction, none
+        twoside=off,            % print on single side paper
+        listof=totoc,           % put lists of figures/tables in TOC
+        footlines=2,            % number of lines in the footer
     }
+
+% Customize headers and footers
+\usepackage[
+    headsepline,            % header line
+    footsepline             % footer line
+]{scrlayer-scrpage}
+
+\automark{chapter}
+\ihead{\headmark}       % inner header value
+\chead{}                % center header value
+\ohead{Paul Iacomi}     % outer header value
 
 %%%%%%%%%%%%%%%%%%%%%% Encodings, fonts and colours
 
@@ -61,7 +72,7 @@
     amsmath,
     amsfonts,
     amsthm,
-    amssymb
+    % amssymb
 }
 
 % In-line fractions

@@ -4,45 +4,50 @@
 \label{pyg:models}
 
 As the process of characterisation of porous materials
-relies on mathematical models of how adsorption
-takes place inside the pores, this section details
-several such concepts.
+relies on mathematical models of adsorption, this section 
+details several concepts essential to the description of the 
+adsorbed phase, as well as several guest-host system archetypes.
 
-A lot of effort was put into attempting to describe
-the phenomenon of adsorption. Through a well-defined
-model, the underlying mechanisms of adsorption can be
-understood. Unfortunately, the plethora of isotherm
-features and shapes can only be truly recreated
-by molecular simulation, which requires an exact
-knowledge of the adsorbent structure and its interaction
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{iupac-isotherms}
+	\caption{
+		IUPAC isotherm types. 
+		Adapted from \citet{rouquerolAdsorptionPowdersPorous2013}.
+	}\label{pyg:fig:iupac-isotherms}
+\end{figure}
+
+Adsorption isotherms can have highly different shapes and features,
+depending on the system involved. 
+Much effort was put into attempting to describe and categorize
+the phenomenon of adsorption, with IUPAC recommendations suggesting
+six types of isotherms, as seen in \autoref{pyg:fig:iupac-isotherms}. 
+While these isotherm types can be useful for fast classification, 
+there is no ``one size fits all'' approach. Indeed, the only 
+certain behaviour is that the amount adsorbed is zero at
+the isotherm start and that the loading increases with increasing 
+pressure, with the latter shown in \autoref{dut} to not be 
+always true. However, through careful assumptions and a well-defined
+model, the underlying mechanisms of adsorption can be understood.
+Unfortunately, the plethora of isotherm features and shapes can only
+be truly recreated by molecular simulation, a method which requires an
+exact knowledge of the adsorbent structure and its interaction
 with the guest molecules.
-Nevertheless, simple models derived from a kinetic or thermodynamic
+
+Nevertheless, models derived from a kinetic or thermodynamic
 view of adsorption can be useful for obtaining simple parameters
 which are representative of physical factors such as
 guest-host interaction, surface area, pore size,
-and total capacity.
-
-Isotherm models which have a thermodynamical basis are derived
-from the Gibbs equation (\autoref{pyg:eqn:gibbs}). This approach
-describes adsorption in terms of a surface excess with respect
-to the bulk gas phase. The pressure and volume concepts of the bulk phase
-are replaced by the 2-dimensional analogues of spreading pressure 
-(\( \pi \)) and surface area.
-
-\begin{equation}\label{pyg:eqn:gibbs}
-	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n}{A} R_g T
-\end{equation}
-
-By substituting spreading pressure with an equation
-of state for the adsorbed phase, an expression for the amount
-adsorbed can be obtained as a function of bulk phase pressure.
-Models which are derived from this equation include
+and total capacity. Thermodynamical models require a coherent
+definition of the adsorbed phase, often done through the 
+Gibbs surface excess approach. This description allows for an equation 
+relating the bulk and adsorbed phase to be obtained, called
+the Gibbs isotherm. Models which are derived from this equation include
 Henry's law, the virial model and vacancy solution theory.
-
-Adsorption can also be described a kinetic standpoint, where
+Adsorption can also be described from a kinetic standpoint, where
 the rate of adsorption and desorption of molecules on
 available sites is mathematically modelled. Equations based
-on kinetics include the Langmuir model, the BET model
+on kinetics include the Langmuir model, the BET model,
 the Temkin model and empirical or semi-empirical derivatives
 such as the Toth, Quadratic or the Jensen-Seaton model
 A page of figures for different models and how the
@@ -56,75 +61,135 @@ applicability.
 	\centering
 
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Henry}%
-			\label{pyg:fgr:henryex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/henry}}
+		\caption{Henry}\label{pyg:fgr:henryex}%
+		\includegraphics[width=\linewidth]{models/henry}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Langmuir}%
-			\label{pyg:fgr:langmuirex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/langmuir}}
+		\caption{Langmuir}\label{pyg:fgr:langmuirex}%
+		\includegraphics[width=\linewidth]{models/langmuir}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{BET}%
-			\label{pyg:fgr:betex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/bet}}
+		\caption{BET}\label{pyg:fgr:betex}%
+		\includegraphics[width=\linewidth]{models/bet}
 	\end{subfigure}%
 	\\
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Toth}%
-			\label{pyg:fgr:tothex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/toth}}
+		\caption{Toth}\label{pyg:fgr:tothex}%
+		\includegraphics[width=\linewidth]{models/toth}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Quadratic}%
-			\label{pyg:fgr:quadraticex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/quadratic}}
+		\caption{Quadratic}\label{pyg:fgr:quadraticex}%
+		\includegraphics[width=\linewidth]{models/quadratic}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Jensen Seaton}%
-			\label{pyg:fgr:jseatonex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/jseaton}}
+		\caption{Jensen Seaton}\label{pyg:fgr:jseatonex}%
+		\includegraphics[width=\linewidth]{models/jseaton}
 	\end{subfigure}%
 	\\
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Temkin}%
-			\label{pyg:fgr:temkinex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/temkin}}
+		\caption{Temkin}\label{pyg:fgr:temkinex}
+		\includegraphics[width=\linewidth]{models/temkin}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{Virial}%
-			\label{pyg:fgr:virialex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/virial}}
+		\caption{Virial}\label{pyg:fgr:virialex}%
+		\includegraphics[width=\linewidth]{models/virial}
 	\end{subfigure}%
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{W-VST}%
-			\label{pyg:fgr:wsvstex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/wvst}}
+		\caption{W-VST}\label{pyg:fgr:wsvstex}%
+		\includegraphics[width=\linewidth]{models/wvst}
 	\end{subfigure}%
 	\\
 	\begin{subfigure}{0.3\linewidth}
-		\parbox[c]{1.0\linewidth}{\caption{FH-VST}%
-			\label{pyg:fgr:fhvstex}}
-		\parbox[b]{1.0\linewidth}{%
-			\includegraphics[width=\linewidth]{models/fhvst}}
+		\caption{FH-VST}\label{pyg:fgr:fhvstex}%
+		\includegraphics[width=\linewidth]{models/fhvst}
 	\end{subfigure}%
 
 	\caption{The various adsorption models
 		discussed in this chapter, alongside the influence
 		of their parameters on the resulting isotherm.
-	}%
-	\label{pyg:fgr:modelex}
+	}\label{pyg:fgr:modelex}
 \end{figure}
+
+\subsection{The Gibbs surface excess approach}
+
+A description of the adsorbed phase can be made through
+expressing the change in density or concentration of fluid
+from the adsorbent surface to the bulk phase. The density
+has a maxima in the immediate zone close to the surface, and then
+decreases until it reaches the density of the bulk fluid.
+However, when defined as such, the boundary between the
+two phases is difficult to pinpoint.
+Therefore, in most cases it is useful to employ the concept
+of the Gibbs dividing surface.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{gibbs-surface}
+	\caption{
+		Representation of the adsorbed and bulk phases according to
+		the (left) layer model and the (right) Gibbs dividing surface
+		approach. Adapted from \citet{rouquerolAdsorptionPowdersPorous2013}.
+	}\label{pyg:fig:gibbs-surface}
+\end{figure}
+
+This approach describes the adsorbed phase only in terms
+of an \textit{excess} from the properties of the bulk phase.
+As represented in \autoref{pyg:fig:gibbs-surface}, the total
+amount adsorbed can be defined as:
+%
+\begin{equation}
+	n_{ads}^{a} = A \int_0^r c\ dz
+\end{equation}
+%
+The imaginary Gibbs dividing surface is usually envisaged parallel to
+the real surface of the adsorbent and in the resulting system, the
+concentration of the adsorbent in the adsorbed phase are
+expressed as an excess from the concentration of the bulk fluid.
+The relationship between the total amount adsorbed and the
+excess amount adsorbed is then:
+%
+\begin{equation}\label{pyg:eqn:total-excess}
+	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
+\end{equation}
+
+As long as the volume of the adsorbed layer \(V_{ads}\) can be
+considered negligible and the concentration of adsorbate in the bulk
+phase \(c_{bulk}\) is low, the total amount adsorbed and the surface
+excess amount may be considered as approximately equal.
+This is usually the case for experiments such as nitrogen
+adsorption at \SI{77}{\kelvin}, or ambient temperature adsorption
+below \SI{1}{\bar}.
+At high pressures, or when the difference in concentration between
+the adsorbed and the bulk phase is low, the total amount adsorbed
+begins to diverge significantly from the surface excess.
+
+In most cases, isotherms are reported in terms of excess surface 
+amount. From an engineering viewpoint, this representation
+is often more useful. However, any modelling and simulations of 
+isotherms refers to the total amount adsorbed.
+If \(n_t\) is to be calculated, a value
+for the volume of the adsorbed phase and the sample is required, for a 
+correction using \autoref{pyg:eqn:total-excess}.
+In the case of adsorption in porous materials, the volume of the
+adsorbed phase may be taken as the total pore volume. This approach
+assumes that the volume enclosed by the Gibbs dividing surface is
+the same as the volume of the sample, which may not be the case 
+if it is determined with a blank measurement of a 
+non-adsorbing gas.
+
+Isotherm models which have a thermodynamical basis are derived
+from the Gibbs equation (\autoref{pyg:eqn:gibbs}). 
+The pressure and volume concepts of the bulk phase
+are replaced by the 2-dimensional analogues of spreading pressure 
+(\( \pi \)) and surface area.
+%
+\begin{equation}\label{pyg:eqn:gibbs}
+	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n}{A} R_g T
+\end{equation}
+%
+By substituting spreading pressure with an equation
+of state for the adsorbed phase, an expression for the amount
+adsorbed can be obtained as a function of bulk phase pressure.
 
 \subsection{The Henry model}\label{pyg:models:henry}
 
@@ -145,7 +210,7 @@ will saturate at higher pressures. However, the constant \(K_H\),
 or Henry’s constant, can be thought of as a measure of the strength
 of the interaction of the probe gas with the surface. At very
 low concentrations of gas there is a
-theoretical requirement for the applicability of Henry's law.
+thermodynamic requirement for the applicability of Henry's law.
 Therefore, most models reduce to \autoref{pyg:eqn:henry}
 as \(\lim_{p \to 0} n(p)\).
 
@@ -156,7 +221,7 @@ The Langmuir theory~\cite{langmuirAdsorptionGasesPlane1918},
 proposed at the start of the 20th century, states that
 adsorption takes place on specific sites on a surface, until
 all sites are occupied.
-It is derived from a kinetic model of gas adsorption and
+It was originally derived from a kinetic model of gas adsorption and
 is based on several assumptions.
 
 \begin{itemize}
@@ -180,11 +245,9 @@ pressure.
 The desorption rate, on the other hand, will be proportional to the
 number of occupied sites and the energy of adsorption
 (\autoref{pyg:eqn:langmuir_des}).
-It is also useful to define \(\theta = n_a/n_a^m\) as the surface
-coverage,
-the number of sites occupied divided by the total sites. At
-equilibrium,
-the rate of adsorption and the rate of
+It is also useful to define \(\theta = n_a/n_a^m\) as the fractional
+surface coverage, the number of sites occupied divided by the total 
+sites. At equilibrium, the rate of adsorption and the rate of
 desorption are equal, therefore the two equations can be combined.
 The equation can then be arranged to obtain an expression for the
 loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
@@ -222,19 +285,22 @@ considered.
 
 \subsection{BET model}\label{pyg:models:bet}
 
-Like the Langmuir mode, The BET model~\cite{brunauerAdsorptionGasesMultimolecular1938}
+Like the Langmuir model, The BET model~\cite{brunauerAdsorptionGasesMultimolecular1938}
 assumes that adsorption is kinetically driven and takes place on adsorption
 sites at the material surface. However, each adsorbed molecule becomes,
-in itself a secondary adsorption site, such that incremental layers
+in itself, a secondary adsorption site, such that incremental layers
 are formed. The conditions imagined by the BET model are:
 
 \begin{itemize}
 	\item The surface adsorption sites are equivalent, and therefore the
-	      surface is considered heterogeneous.
+	      surface is considered homogeneous.
 	\item There are no lateral interactions between adsorbed
 	      molecules.
 	\item The adsorption occurs in layers, with adsorbed
 	      molecules acting as sites for the next layer.
+	\item The energy of adsorption on subsequent layers after 
+		  the initial monolayer is equal to the liquefaction energy
+		  of the adsorbate.
 \end{itemize}
 
 A percentage of the surface \(\theta_x\) is occupied with
@@ -299,19 +365,21 @@ A constant C may be defined such that:
 	\theta_i & = C x^i \theta_0
 \end{align}
 %
-For all the layers, the equations can be summed:
+For all layers \(N\), the equations can be summed:
 %
 \begin{align}
-	\frac{n}{n_m} & = \sum_{i=1}^{\infty} i \theta^i = C
-	\sum_{i=1}^{\infty} i x^i \theta_0
+	\frac{n}{n_m} & = \sum_{i=1}^{N} i \theta^i = C
+	\sum_{i=1}^{N} i x^i \theta_0
 	%
 	\intertext{and since}
 	%
-	\theta_0      & = 1 - \sum_{1}^{\infty} \theta_i
-	\sum_{i=1}^{\infty} i x^i = \frac{x}{{(1-x)}^2}
+	\theta_0      & = 1 - \sum_{1}^{N} \theta_i
+	\sum_{i=1}^{N} i x^i = \frac{x}{{(1-x)}^2}
 \end{align}
 %
-Then we obtain the BET equation:
+It is usually assumed that the number of layers tends to infinity 
+\(N = \infty\) as the partial pressure increases to 1. 
+In this case, we obtain the BET equation as:
 %
 \begin{equation}\label{pyg:eqn:bet}
 	n_a(p) = n_a^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
@@ -437,7 +505,7 @@ usually empirical, although some relationship with physical
 properties can be determined:
 the first constant is related to the Henry constant at
 zero loading, while the second constant is a measure of the
-interaction strength with the surface.
+adsorbate-adsorbate interactions.
 %
 \begin{equation}
 	K_1 = -\ln{K_{H,0}}
@@ -463,7 +531,7 @@ VST models are defined as follows:
 	      a dividing surface.
 	\item The entire system, including the adsorbent, is at
 	      thermal equilibrium. However, only the gas and the adsorbed
-	      phases are in thermodynamic equilibrium.
+	      phases are at thermodynamic equilibrium.
 	\item The equilibrium of the system is maintained by the
 	      spreading pressure which arises from a potential field
 	      at the surface.

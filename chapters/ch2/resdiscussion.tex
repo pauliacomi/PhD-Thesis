@@ -17,11 +17,11 @@ be found in \autoref{calo:fgr:uioisostericiso}.
 The two isotherms measured at \SI{303}{\kelvin} are nearly identical, 
 ensuring that the both adsorption apparatus are working as intended.
 The isosteric enthalpy of adsorption is calculated from the two isotherms
-at different temperature, either using an interpolation method,or through
-initial fitting of a virial model (\autoref{pyg:model:virial}).
+at different temperatures, either using an interpolation method, or through
+initial fitting of a virial model (\autoref{pyg:models:virial}).
 The values are then adjusted according to \autoref{calo:eqn:adj}.
 Calculated and measured values for the enthalpy of adsorption are overlaid
-in \autoref{calo:fgr:uioisostericheat} as a function of amount adsorbed.\todo{is this ok?}
+in \autoref{calo:fgr:uioisostericheat} as a function of amount adsorbed.
 
 \begin{figure}[htb]
 	\centering
@@ -61,9 +61,9 @@ MOF, as seen in the discrepancy of the first adsorption point.
 The calorimetric measurement is therefore more suited to the low pressure
 range. At higher loadings, where the isotherm reaches a plateau and
 the change in adsorbed amount is small between each adsorbate
-insertion, errors are introduced in the calorimetric calculation of
-the enthalpy of adsorption, as can be seen from the extent of the error
-bars in \autoref{calo:fgr:uioisostericheat}.
+insertion, errors are introduced in the enthalpy of adsorption 
+calculation from the small adsorbed amounts, as can be seen from the
+extent of the error bars in \autoref{calo:fgr:uioisostericheat}.
 Here, the indirect calculation provides the more accurate results.
 As such, the two techniques can be thought of as complementary.
 
@@ -137,8 +137,8 @@ explanation.
 Two parameters can be useful in characterising the local pore environment
 before guest-guest interactions come into effect: the Henry constant at
 low loadings as well as the initial differential enthalpy of adsorption. 
-Here, initial Henry's constant is calculated by fitting a virial model to
-the isotherm, then taking the limit of the function at zero loading. 
+Here, the initial Henry's constant is calculated by fitting a virial model 
+to the isotherm, then taking the limit of the function at zero loading. 
 
 The initial enthalpy of adsorption can be determined from calorimetric 
 methods simply by taking the value of the first measured point.
@@ -180,11 +180,12 @@ in \autoref{calo:fgr:takeda-enth-fit}
 
 \end{figure}
 
-A useful method of displaying the two parameters are by plotting them
+A useful method of displaying the two parameters can be to plot them
 as a function of the polarizability of the probe, as in
 \autoref{calo:fgr:takeda-trends}. Both parameters follow a linear
-trend, which suggests that the interactions between those guests and the pore walls are
-mostly due to specific interactions. Carbon dioxide has a higher enthalpy
+trend, which suggests that the interactions between those guests and the
+pore walls are mostly due to non-specific interactions with the field
+gradient of the pore. Carbon dioxide has a higher enthalpy
 of adsorption than the baseline, which can be ascribed to the contribution 
 from its quadrupole moment. There is almost a complete overlap between 
 propane and propylene, confirming that the unsaturated double bond does not
