@@ -7,7 +7,7 @@ trends in missing linker defects as calculated through
 the TGA plateau at \SI{420}{\degreeCelsius}. The DMF leached samples,
 due to the multiple datapoints with different acid concentrations
 show the clearest influence of this variable on defect
-generation. Even small amounts of modulator leads to the decrease of 
+generation. Even small amounts of modulator lead to the decrease of 
 the linker-to-node ratio, but the increase in concentration stops 
 having an effect at around 20:1 equivalents. It is likely that
 the trends are similar with other solvents, even if less 
@@ -16,25 +16,34 @@ datapoints are available.
 \begin{figure}[htb]
     \centering
 
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{tga/DMF-def-overview}%
-        \caption{}%
-        \label{def:fgr:tga-dmf-linkers}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:tga-dmf-linkers}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{tga/DMF-def-overview}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{tga/H2O-def-overview}%
-        \caption{}%
-        \label{def:fgr:tga-h2o-linkers}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:tga-h2o-linkers}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{tga/H2O-def-overview}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{tga/MeOH-def-overview}%
-        \caption{}%
-        \label{def:fgr:tga-meoh-linkers}
+    \\
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:tga-meoh-linkers}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{tga/MeOH-def-overview}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{tga/DMSO-def-overview}%
-        \caption{}%
-        \label{def:fgr:tga-dmso-linkers}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:tga-dmso-linkers}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{tga/DMSO-def-overview}%
+		}%
     \end{subfigure}%
 
     \caption{Calculated linker-to-node ratio from the TGA curve 
@@ -54,7 +63,7 @@ high boiling point and similarity to the terephtalate linker
 make the removal of benzoic acid capping open metal sites harder, and
 as such, the plateau is not an accurate indication of defectivity.
 Indeed, the calculated linker ratio is seen to actually increase in 
-the case of methanol and DMSO. We propose that in benzoic acid 
+the case of methanol and DMSO. It is here proposed that in benzoic acid 
 leached samples defect generation occurs through the coordination
 of two benzoic molecules (or one, in the case of a ``dangling'' linker), 
 as seen in \autoref{def:fgr:benzoic-defect},
@@ -77,7 +86,7 @@ through the initial slope method, with a linear section found below
 \(10^{-4}~p/p_0\). Total pore volume is taken as the liquid density
 of the amount adsorbed at \(0.8~p/p_0\), assuming that 
 nitrogen is in a liquid-like state in the MOF pores. The pore
-size distribution was calculated through the Horvatz-Kawazoe
+size distribution was calculated through the Horvath-Kawazoe
 method for micropores, the Dollimore-Heal method for mesopores
 and DFT kernel fitting for a multiscale distribution. While 
 the applicability of these methods for determination of absolute
@@ -92,70 +101,95 @@ walls is changed as well, with more defective samples likely
 to have a more pronounced interaction, either through the introduction
 of CUS or modification of pore environment.
 
-\begin{figure}[htb]
+\begin{figure}[p]
     \centering
 
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmf-area}%
-        \caption{}%
-        \label{def:fgr:n2phys-dmf-area}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-dmf-area}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmf-area}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/h2o-area}%
-        \caption{}%
-        \label{def:fgr:n2phys-h2o-area}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-dmf-henry}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmf-henry}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/meoh-area}%
-        \caption{}%
-        \label{def:fgr:n2phys-meoh-area}
-    \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-area}%
-        \caption{}%
-        \label{def:fgr:n2phys-dmso-area}
-    \end{subfigure}%
-
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmf-henry}%
-        \caption{}%
-        \label{def:fgr:n2phys-dmf-henry}
-    \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/h2o-henry}%
-        \caption{}%
-        \label{def:fgr:n2phys-h2o-henry}
-    \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/meoh-henry}%
-        \caption{}%
-        \label{def:fgr:n2phys-meoh-henry}
-    \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-henry}%
-        \caption{}%
-        \label{def:fgr:n2phys-dmso-henry}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-dmf-porevol}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmf-porevol}%
+		}%
     \end{subfigure}%
 
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmf-porevol}%
-        \caption{}%
-        \label{def:fgr:n2phys-dmf-porevol}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-h2o-area}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/h2o-area}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/h2o-porevol}%
-        \caption{}%
-        \label{def:fgr:n2phys-h2o-porevol}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-h2o-henry}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/h2o-henry}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/meoh-porevol}%
-        \caption{}%
-        \label{def:fgr:n2phys-meoh-porevol}
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-h2o-porevol}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/h2o-porevol}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-porevol}%
-        \caption{}%
-        \label{def:fgr:n2phys-dmso-porevol}
+
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-meoh-area}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/meoh-area}%
+		}%
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-meoh-henry}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/meoh-henry}%
+		}%
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-meoh-porevol}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/meoh-porevol}%
+		}%
+    \end{subfigure}%
+
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-dmso-henry}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-henry}%
+		}%
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-dmso-area}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-area}%
+		}%
+    \end{subfigure}%
+    \begin{subfigure}{0.33\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:n2phys-dmso-porevol}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-porevol}%
+		}%
     \end{subfigure}%
 
     \caption{Characterisation of all samples through predictors
@@ -181,14 +215,14 @@ defectivity of the resulting material~\cite{shearerDefectEngineeringTuning2016}.
 When examining the influence of the solvent, another trend appears
 to emerge, with samples leached in DMSO having the largest propensity
 for defect generation, followed by DMF, water and methanol. In fact,
-a sample with high concentration of TFA cannot be obtained, as the 
+a sample with a high concentration of TFA cannot be obtained, as the 
 framework simply dissolves in the solution.
 The contribution of the of the solvent is not as easy to determine due
 to the complex interplay of multiple factors.
 The polarity of the solvent molecule has been linked to 
-the speed of post synthetic ligand exchange from
+the rate of post synthetic ligand exchange from
 pristine UiO-66(Zr)~\cite{kimPostsyntheticLigandExchange2012}. The leaching
-results do not, however, conform to the same trend, as water with a 
+results do not, however, conform to the same trend, as water having a 
 relative polarity of 1.0 introduces more defects than methanol 
 (0.7) while DMF (0.38) is less effective than 
 DMSO (0.44). The solubility of terephtalic acid in the solvent 
@@ -205,31 +239,39 @@ The viscosity of the
 solvent may also play a role in the mass transport of compounds 
 through the porous media. However, the liquid with the highest 
 kinematic viscosity, DMSO is actually the top performer during leaching,
-indicating that mass transfer is not a factor.
+indicating that mass transfer may not be a factor.
 
-
-\begin{figure}[!h]
+\begin{figure}[p]
     \centering
 
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-fa-psd-complete}%
-        \caption{}%
-        \label{def:fgr:psd-dmso-fa}
+    \begin{subfigure}{0.4\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:psd-dmso-fa}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-fa-psd-complete}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-aa-psd-complete}%
-        \caption{}%
-        \label{def:fgr:psd-dmso-aa}
+    \begin{subfigure}{0.4\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:psd-dmso-aa}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-aa-psd-complete}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-tfa-psd-complete}%
-        \caption{}%
-        \label{def:fgr:psd-dmso-tfa}
+    \\
+    \begin{subfigure}{0.4\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:psd-dmso-tfa}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-tfa-psd-complete}%
+		}%
     \end{subfigure}%
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\textwidth]{n2phys/dmso-ba-psd-complete}%
-        \caption{}%
-        \label{def:fgr:psd-dmso-ba}
+    \begin{subfigure}{0.4\linewidth}
+		\parbox[c]{0.12\linewidth}{\caption{}%
+			\label{def:fgr:psd-dmso-ba}}%
+		\parbox[b]{0.88\linewidth}{%
+			\includegraphics[width=\linewidth]{n2phys/dmso-ba-psd-complete}%
+		}%
     \end{subfigure}%
 
     \caption{Pore size distribution for the DMSO-leached
@@ -254,7 +296,7 @@ defects. The calculated diameter of this tertiary pore is
 inversely proportional to the molecular size of the 
 leaching compound used, which is a clear indication of the presence of 
 the acid molecules in the structure as capping agents. On the samples
-which have been activated at \SI{320}{\degreeCelsius}, the pore width
+which have been activated to \SI{320}{\degreeCelsius}, the pore width
 shifts to a single value as the coordinated acids are evacuated.
 
 The pore size distribution calculated in the benzoic acid leached
@@ -270,7 +312,7 @@ lowering the available pore volume. The effect is corroborated
 by trends in the linker-to-node ratio, surface area and total 
 pore volume in both methanol, DMSO and to a lesser extent DMF.
 
-\begin{wrapfigure}[15]{r}{0.3\textwidth}
+\begin{wrapfigure}[13]{r}{0.3\textwidth}
     \centering
     \captionsetup{format=plain}
     \fbox{\includegraphics[width=0.28\textwidth]{n2phys/dmso-tfa-hysteresis}}

@@ -7,23 +7,25 @@
 From a classical molecular point of view, we can define the
 guest-host and guest-guest interactions as a sum of several
 components with distinct physical meaning.
-
+%
 \begin{equation}\label{calo:eqn:interactions}
 	\Phi_t = \Phi_{R} + \Phi_{D} + \Phi_{C} + \Phi_{I}
 \end{equation}
-
+%
 The first two types of interaction, namely short range
 electrostatic repulsion between the electron clouds of
-neighbouring atoms \(\Phi_{R}\) and long range dispersion \(\Phi_{D}\) arising from
+neighbouring atoms \(\Phi_{R}\) and long range 
+dispersion \(\Phi_{D}\) arising from
 incidental short-lived partial charges are common to all
-atoms, and can therefore be called ``non-specific''. Such
+atoms, and can therefore be called \textit{``non-specific''}. Such
 interactions are commonly modelled through the use of a
-Lennard-Jones type potential function.
-
+Lennard-Jones type potential 
+function~\cite{jonesDeterminationMolecularFields1924}.
+%
 \begin{equation}\label{calo:eqn:lennard-jones}
 	V_\text{LJ} = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6 \right]
 \end{equation}
-
+%
 The latter two types, Coulombic interactions \(\Phi_{C}\) and induction
 interactions \(\Phi_{R}\) arise from permanent charges and multipoles in the
 system. Coulombic interactions are attraction and repulsion
@@ -31,9 +33,21 @@ interactions between charges such as molecular ions, permanent
 dipoles and quadrupoles.
 Induction, also known as polarization or Debye forces, is the interaction
 between a charged particle or a multipole with the induced multipole
-in a non-charged system. The ease with which a charge can induce such an 
-interaction in a molecule is termed polarizability. These interactions
-can be referred to as ``specific''.
+in a non-charged system. These interactions can be referred to as
+\textit{``specific''}. 
+
+The ease with which a charge can induce such an interaction in a
+molecule is termed polarizability. The polarisation of the adsorbate
+by the pore wall is, in particular, a type of interaction which has 
+historically been sometimes included in the 
+non-specific~\cite{barrerZeolitesClayMinerals1978} and other
+times in specific 
+category~\cite{coudertComputationalCharacterizationPrediction2016}. 
+They can be regarded as specific, as they 
+are influenced by the charge distribution on the surface. However,
+all surfaces possess an electric field due to bond orientation and
+random fluctuations, therefore they could be rationalised to occur
+in all host guest systems.
 
 In the standard definition of adsorption, only
 Van-der-Waals forces are said to account for the interactions between
@@ -51,7 +65,7 @@ The guest-host interaction can be assumed constant for a homogeneous
 surface or a function of coverage, in the case of a
 heterogeneous surface.
 
-\subsection{Adsorption thermodynamics}
+\subsection{Thermodynamic quantities of the adsorbed phase}
 
 As mentioned in the previous section, adsorption
 is a consequence of intermolecular attraction between the
@@ -63,15 +77,15 @@ overall exothermic phenomenon.
 
 However, in order to make the transition from a molecular
 viewpoint to a macroscale bulk fluid representation of
-adsorption, the a thermodynamic description of the adsorbed
-phase of the process must be performed.
-
-\subsubsection{Thermodynamic quantities of the adsorbed phase}
-
-A complete thermodynamic theory can be developed for a surface 
+adsorption, a thermodynamic description of the adsorbed
+phase of the process must be performed. This is usually 
+done in terms of the surface excess quantities, which 
+have been first introduced in \autoref{pyg:models:gibbs}.
+A complete thermodynamic theory can then developed for a surface 
 excess phase which is in equilibrium with a gas 
 phase~\cite{rouquerolAdsorptionPowdersPorous2013}, with only
 a brief summary to be presented here.
+
 The surface excess may be considered a distinct thermodynamic phase, 
 characterised by an area \(A\), a two-dimensional analogue of 
 pressure named spreading pressure \(\pi\) and a surface excess 
@@ -82,7 +96,7 @@ The differential energy of adsorption can be described as the
 change in the internal energy of the system upon the transition
 of an infinitesimal amount of adsorbate from the bulk phase
 to the surface excess phase. It can be measured directly, through
-calorimetry.
+calorimetric methods.
 
 In an adsorption process, a closed system of constant volume
 V and temperature T can be considered. 
@@ -116,11 +130,11 @@ of the adsorbed phase is therefore given by:
 \begin{equation}\label{calo:eqn:adj}
 	\Delta_{ads} \dot{h}_{T, \Gamma} = \Delta_{ads} \dot{u}_{T, \Gamma} - RT
 \end{equation}
-
+%
 The differential enthalpy of adsorption is the quantity which
 can be calculated indirectly through the isosteric method.
 
-\subsubsection{Application of differential enthalpy of adsorption to the characterisation of materials}
+\subsection{Application of differential enthalpy of adsorption to the characterisation of materials}
 
 As the differential enthalpy of adsorption is a measure
 of the interaction taking place during adsorption, it is often
@@ -195,8 +209,7 @@ changes at completion of each layer~\cite{llewellynAdsorptionMFItypeZeolites1993
 		Generalized curves of differential enthalpy of adsorption with
 		respect to coverage corresponding to different
 		IUPAC-defined isotherm types.
-		Adapted from \citeauthor{llewellynGasAdsorptionMicrocalorimetry2005}%
-		\cite{llewellynGasAdsorptionMicrocalorimetry2005}.
+		Adapted from \citet{llewellynGasAdsorptionMicrocalorimetry2005}.
 	}%
 	\label{calo:fig:enthalpy-iupac-iso}
 
