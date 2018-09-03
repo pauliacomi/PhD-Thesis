@@ -54,7 +54,7 @@ the following sorting was performed.
 The process of data collation reduced the number of isotherms
 to \(\approx \! 15800\). A distribution of the isotherms as a
 function of adsorbate and temperature can be found
-in \autoref{pyg:fgr:nist-dataset}.
+in \autoref{pyg:fig:nist-dataset}.
 We can see that most isotherms are recorded at either
 \SI{77}{\kelvin}, \SI{273}{\kelvin} or \SI{298}{\kelvin} as
 these temperatures are readily available through immersion
@@ -70,12 +70,12 @@ up to a carbon number of four.
 	\begin{subfigure}[b]{0.5\linewidth}
 		\includegraphics[width=\linewidth]{nist/nist-dataset}%
 		\caption{}%
-		\label{pyg:fgr:nist-dataset}
+		\label{pyg:fig:nist-dataset}
 	\end{subfigure}%
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{nist/nist-bet-area}%
 		\caption{}%
-		\label{pyg:fgr:nist-dataset-area}
+		\label{pyg:fig:nist-dataset-area}
 	\end{subfigure}%
 
 	\caption{A graphical description of the NIST ISODB dataset.
@@ -83,7 +83,7 @@ up to a carbon number of four.
 		and temperature at which the measurement took place.
 		(b) Calculated BET surface area with nitrogen at \SI{77}{\kelvin}
 		for all available isotherms. }%
-	\label{pyg:fgr:nist-set}
+	\label{pyg:fig:nist-set}
 \end{figure}
 
 For an initial round of data processing with pyGAPS,
@@ -91,7 +91,7 @@ only isotherms recorded with nitrogen at \SI{77}{\kelvin}
 were selected. These make up \(\approx \! 3500\) datapoints,
 recorded on more than 2200 materials. The BET surface area
 was then computed for each isotherm, with a distribution
-as seen in \autoref{pyg:fgr:nist-dataset-area}.
+as seen in \autoref{pyg:fig:nist-dataset-area}.
 Unfortunately, as many isotherms do not have enough points
 in the low pressure region, computing a well-defined
 BET surface area is impossible. In total, only around a
@@ -116,7 +116,7 @@ obtained with the two methods.
 If the Langmuir area is calculated with implicit parameters,
 by taking the entire available isotherm for the fitting
 routine, the correlation between the two methods looks
-like \autoref{pyg:fgr:nist-bet-langmuir}. The two results
+like \autoref{pyg:fig:nist-bet-langmuir}. The two results
 do not agree well, with the Langmuir surface
 area usually higher than the BET value for the
 same isotherm. This is a consequence of the Langmuir model
@@ -140,18 +140,18 @@ before the statistical monolayer is filled.
 	\begin{subfigure}{0.42\linewidth}
 		\includegraphics[width=\linewidth]{nist/nist-bet-langmuir}
 		\caption{Full range}%
-		\label{pyg:fgr:nist-bet-langmuir}
+		\label{pyg:fig:nist-bet-langmuir}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\linewidth}
 		\includegraphics[width=\linewidth]{nist/nist-bet-langmuir-2}
 		\caption{0--0.15 \(p/p_0\) range}%
-		\label{pyg:fgr:nist-bet-langmuir-adj}
+		\label{pyg:fig:nist-bet-langmuir-adj}
 	\end{subfigure}%
 
 	\caption{Correlation between Langmuir-calculated and
 		BET-calculated surface areas. The black line is a guide
 		for the eye at \(S_{Lang} = S_{BET}\).}%
-	\label{pyg:fgr:nist-area-cmp}
+	\label{pyg:fig:nist-area-cmp}
 \end{figure}
 
 In truth, the choice of neither model is strictly
@@ -179,14 +179,14 @@ reliability of the data from the NIST ISODB should be performed.
 		function for (top) BET surface area and (bottom) loading
 		at half saturation pressure for CuBTC. The black dotted line
 		is the simulated surface area of this MOF.}%
-	\label{pyg:fgr:nist-area-cubtc}
+	\label{pyg:fig:nist-area-cubtc}
 \end{wrapfigure}
 
 The material with the most recorded isotherms is CuBTC, with
 122 datapoints. A spread of the calculated BET surface areas,
 together with the ``ideal'' area of this MOF as obtained
 through simulations~\cite{parkHowReproducibleAre2017} is
-presented in \autoref{pyg:fgr:nist-area-cubtc}.
+presented in \autoref{pyg:fig:nist-area-cubtc}.
 To verify if the variability is due to uncertainty in the
 surface area calculation a secondary metric, namely the
 capacity at 0.5 \(p/p_0\) has been calculated and its
@@ -220,7 +220,7 @@ or structural defects (\SI{2050}{\metre^2\per\gram})~\cite{barinDefectCreationLi
 To extend the analysis to other materials, MOFs with
 at least 8 recorded nitrogen isotherms were selected, resulting in
 16 materials. A violin plot with the results of the calculation for
-these datapoints is presented in \autoref{pyg:fgr:nist-area-repr}.
+these datapoints is presented in \autoref{pyg:fig:nist-area-repr}.
 The blue points mark the surface area of the material as
 obtained from literature of simulated values or, if not available,
 the original synthesis paper of the MOF in question.
@@ -244,7 +244,7 @@ although can still be shifted by 200 to \SI{500}{\metre^2\per\gram}.
 		between the two limits. Finally, the round blue point is the
 		BET surface area of the material as reported in literature through
 		simulation or optimised synthesis.}%
-	\label{pyg:fgr:nist-area-repr}
+	\label{pyg:fig:nist-area-repr}
 \end{figure}
 
 Similar concerns have been

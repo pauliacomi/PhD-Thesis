@@ -31,14 +31,14 @@ under other types of data files.
 
 In order to offer a clear structuring of functionality, 
 \texttt{pyGAPS} introduces several classes which abstract data and
-concepts for facile interaction (\autoref{pyg:fgr:pygaps}). The classes are
+concepts for facile interaction (\autoref{pyg:fig:pygaps}). The classes are
 intuitively named: \texttt{Isotherm}, \texttt{Sample} and \texttt{Adsorbent}.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\linewidth]{pygaps}%
 	\caption{An overview of the package structure}%
-\label{pyg:fgr:pygaps}
+\label{pyg:fig:pygaps}
 \end{figure}
 
 \subsubsection{The \texttt{Isotherm} class}
@@ -273,7 +273,7 @@ The framework automatically applies the methodology described in
 \autoref{pyg:charac:betarea} to find the optimum pressure range. 
 The \inline{verbose=True} option prints a short
 text with all the calculation variables as well as graphing the
-BET and Rouquerol plots (\autoref{pyg:fgr:betarea}).
+BET and Rouquerol plots (\autoref{pyg:fig:betarea}).
 The user can override automatic pressure range selection by using the
 range parameter (\inline{limits=(0.05, 0.3)}).
 
@@ -296,13 +296,13 @@ Amount for a monolayer: 		n = 0.01309 mol/g
 
 	\begin{subfigure}{0.45\linewidth}
 		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:betarea-plt}}
+			\label{pyg:fig:betarea-plt}}
 		\parbox[b]{0.85\linewidth}{%
 			\includegraphics[width=\linewidth]{characterization/bet-plt}}
 	\end{subfigure}%
 	\begin{subfigure}{0.45\linewidth}
 		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:betarea-roq}}
+			\label{pyg:fig:betarea-roq}}
 		\parbox[b]{0.85\linewidth}{%
 			\includegraphics[width=\linewidth]{characterization/bet-roq}}
 	\end{subfigure}%
@@ -311,7 +311,7 @@ Amount for a monolayer: 		n = 0.01309 mol/g
 		the selected points for fitting the equation, as well as the location
 		of the statistical monolayer and (b) the Rouquerol plot for this
 		calculation.}%
-	\label{pyg:fgr:betarea}
+	\label{pyg:fig:betarea}
 
 \end{figure}
 
@@ -322,7 +322,7 @@ In this example, the surface area of a nitrogen isotherm measured
 on a MCM-41 sample is calculated.
 Here the \inline{verbose=True} option prints a short
 text with all the calculation results, as well as generating the
-Langmuir plot as seen in \autoref{pyg:fgr:langmuirarea-auto}.
+Langmuir plot as seen in \autoref{pyg:fig:langmuirarea-auto}.
 If desired the user can override automatic pressure range selection
 as seen in the second example in \autoref{pyg:lst:langmuirarea}.
 
@@ -353,13 +353,13 @@ Amount for a monolayer: 				n = 0.00426 mol/g
 
 	\begin{subfigure}{0.45\linewidth}
 		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:langmuirarea-auto}}
+			\label{pyg:fig:langmuirarea-auto}}
 		\parbox[b]{0.85\linewidth}{%
 			\includegraphics[width=\linewidth]{characterization/langmuir-auto}}
 	\end{subfigure}%
 	\begin{subfigure}{0.45\linewidth}
 		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:langmuirarea-manual}}
+			\label{pyg:fig:langmuirarea-manual}}
 		\parbox[b]{0.85\linewidth}{%
 			\includegraphics[width=\linewidth]{characterization/langmuir-manual}}
 	\end{subfigure}%
@@ -367,7 +367,7 @@ Amount for a monolayer: 				n = 0.00426 mol/g
 	\caption{Output from the Langmuir area function (a) the Langmuir plot
 		showing the automatic fitting attempt which generates a warning and (b) a manually
 		selected pressure range for the Langmuir plot.}%
-	\label{pyg:fgr:langmuirarea}
+	\label{pyg:fig:langmuirarea}
 
 \end{figure}
 
@@ -388,7 +388,7 @@ with the slope, intercept, calculated pore volume and specific area
 for each linear region found. 
 The same MCM-41 nitrogen isotherm analysed in the previous section is
 used in \autoref{pyg:lst:tplot}. The first command will generate the
-graph in \autoref{pyg:fgr:tplot-auto}. 
+graph in \autoref{pyg:fig:tplot-auto}. 
 
 \begin{python}[float=htb, caption={Generating a t-plot},%
     label={pyg:lst:tplot}]
@@ -413,13 +413,13 @@ pygaps.t_plot(isotherm, thickness_model=carbon_model, verbose=True)
 
 	\begin{subfigure}{0.45\linewidth}
 		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:tplot-auto}}
+			\label{pyg:fig:tplot-auto}}
 		\parbox[b]{0.85\linewidth}{%
 			\includegraphics[width=\linewidth]{characterization/tplot-auto}}
 	\end{subfigure}%
 	\begin{subfigure}{0.45\linewidth}
 		\parbox[c]{0.1\linewidth}{\caption{}%
-			\label{pyg:fgr:tplot-manual}}
+			\label{pyg:fig:tplot-manual}}
 		\parbox[b]{0.85\linewidth}{%
 			\includegraphics[width=\linewidth]{characterization/tplot-manual}}
 	\end{subfigure}%
@@ -427,11 +427,11 @@ pygaps.t_plot(isotherm, thickness_model=carbon_model, verbose=True)
 	\caption{Output from the t-plot method function (a) an automatically
 		obtained t-plot with the calculated fit regions and (b) a manually
 		selected range for the t-plot.}%
-	\label{pyg:fgr:tplot}
+	\label{pyg:fig:tplot}
 
 \end{figure}
 
-The first linear region in \autoref{pyg:fgr:tplot-auto} can be attributed
+The first linear region in \autoref{pyg:fig:tplot-auto} can be attributed
 to adsorption on the mesopore surface,
 while the second one represents adsorption on the available surface
 after mesopore filling. Therefore, the surface area values calculated 
@@ -470,7 +470,7 @@ pygaps.alpha_s(isotherm,
 	\includegraphics[width=0.45\linewidth]{characterization/alphas-auto}
 	\caption{Output from the \(\alpha_s\)-plot function showing two
 		automatically fit regions.}%
-	\label{pyg:fgr:alphasplot}
+	\label{pyg:fig:alphasplot}
 
 \end{figure}
 
@@ -505,10 +505,10 @@ result_dict = pygaps.mesopore_size_distribution(
 	\centering
 	\includegraphics[width=\linewidth]{psd/bjh-des}
 	\caption{BJH pore size distribution}%
-	\label{pyg:fgr:bjhplot}
+	\label{pyg:fig:bjhplot}
 \end{figure}
 
-The resulting pore size distribution in \autoref{pyg:fgr:bjhplot},
+The resulting pore size distribution in \autoref{pyg:fig:bjhplot},
 confirms the analysis, with a single sharp pore distribution 
 at \SI{3}{\nano\metre}.
 
