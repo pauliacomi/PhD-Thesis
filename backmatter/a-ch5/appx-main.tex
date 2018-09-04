@@ -12,7 +12,7 @@
 \begin{table}[H]
 	\centering
     \caption{Properties of probe gasses used at \SI{77}{\kelvin}.}
-	\begin{tabular}{cSSSS}
+	\begin{tabular}{c|S|S|S|S|}
 		\toprule
 	    \textbf{Probe}
         & \textbf{\ce{Ar}}
@@ -20,20 +20,20 @@
         & \textbf{\ce{N2}}
         & \textbf{\ce{O2}} \\
 		\midrule
-        \makecell[c]{molar mass \\ \si{\gram\per\mol}}                      & 39.948    & 28.010    & 28.0134   & 31.999    \\
-        \makecell[c]{cross-sectional area \\ \si{\nano\metre}}              & 0.138     & 0.168     & 0.162     & 0.141     \\
-        \makecell[c]{polarizability \\ \SI{d-3}{\nano\metre^3}}             & 1.63      & 1.95      & 1.76      & 1.59      \\
-        \makecell[c]{dipole moment \\ \SI{d-30}{\coulomb\metre}}            & 0.0       & 0.39      & 0.0       & 0.0       \\
-        \makecell[c]{quadrupole moment \\ \SI{d-40}{\coulomb\metre^2}}      & 0.0       & -12.3     & -5.0      & 1.3       \\
-        \makecell[c]{enthalpy of vaporisation* \\ \si{\kilo\joule\per\mol}}  & 6.49      & 6.03      & 5.58      & 7.18      \\
-        \makecell[c]{liquid density \\ \si{\gram\per\centi\metre^3}}        & 1.393     & 0.811     & 0.806     & 1.203     \\
-        \makecell[c]{solid density \\ \si{\gram\per\centi\metre^3}}         & 1.623     & 0.924     & 0.945     & 1.300     \\
-        \makecell[c]{critical point T \\ \si{\kelvin}}                      & 150.86    & 132.91    & 126.20    & 154.57    \\
-        \makecell[c]{triple point point T \\ \si{\kelvin}}                  & 83.78     & 68.14     & 63.15     & 54.35     \\
+        \makecell[c]{molar mass \\ \footnotesize{\si{\gram\per\mol}}}                      & 39.948    & 28.010    & 28.0134   & 31.999    \\
+        \makecell[c]{cross-sectional area \\ \footnotesize{\si{\nano\metre}}}              & 0.138     & 0.168     & 0.162     & 0.141     \\
+        \makecell[c]{polarizability \\ \footnotesize{\SI{d-3}{\nano\metre^3}}}             & 1.63      & 1.95      & 1.76      & 1.59      \\
+        \makecell[c]{dipole moment \\ \footnotesize{\SI{d-30}{\coulomb\metre}}}            & 0.0       & 0.39      & 0.0       & 0.0       \\
+        \makecell[c]{quadrupole moment \\ \footnotesize{\SI{d-40}{\coulomb\metre^2}}}      & 0.0       & -12.3     & -5.0      & 1.3       \\
+        \makecell[c]{enthalpy of vaporisation* \\ \footnotesize{\si{\kilo\joule\per\mol}}} & 6.49      & 6.03      & 5.58      & 7.18      \\
+        \makecell[c]{liquid density \\ \footnotesize{\si{\gram\per\centi\metre^3}}}        & 1.393     & 0.811     & 0.806     & 1.203     \\
+        \makecell[c]{solid density \\ \footnotesize{\si{\gram\per\centi\metre^3}}}         & 1.623     & 0.924     & 0.945     & 1.300     \\
+        \makecell[c]{critical point T \\ \footnotesize{\si{\kelvin}}}                      & 150.86    & 132.91    & 126.20    & 154.57    \\
+        \makecell[c]{triple point point T \\ \footnotesize{\si{\kelvin}}}                  & 83.78     & 68.14     & 63.15     & 54.35     \\
         \bottomrule
         * from a liquid state
 	\end{tabular}%
-	\label{appx:dut:tab:probes}
+	\label{appx:dut:tbl:probes}
 \end{table}%
 
 \pagebreak
@@ -43,44 +43,44 @@
 \begin{table}[H]
 	\centering\small
     \caption{Summary of ambient temperature calorimetry experiments
-    performed at \SI{303}{\kelvin}. Probe used is butane unless 
-    explicitly stated.}
-	\begin{tabular}{lll}
+    performed at \SI{303}{\kelvin}.}
+	\begin{tabular}{lcll}
 		\toprule
 	    \textbf{Material}
+        & \textbf{Probe}
         & \textbf{Conditions}
         & \textbf{Observations} \\
-        \multicolumn{3}{c}{\scriptsize{\textit{C = cell, E = experiment, m = mass (mg)}}}\\
+        \multicolumn{4}{c}{\scriptsize{\textit{C = cell, E = experiment, m = mass (mg)}}}\\
 		\midrule
-        DUT-46    & C1, E1, \(m\approx35\) & non-flexible \\
-        DUT-46    & C1, E2 & non-flexible \\
-        DUT-48    & C1, E1, \(m\approx10\)  & non-flexible \\
-        DUT-48    & C1, E2 & non-flexible \\
-        DUT-48    & \textbf{\ce{C3H8}}, C1, E3 & no observed interactions \\
-        DUT-48    & \textbf{\ce{C3H6}}, C1, E4 & increased enthalpy at low loading \\
-        DUT-48    & \textbf{\ce{CO}}, C1, E5 & no observed interactions \\
-        DUT-49(o) & C1, E1, \(m\approx97\)  & NGA \\
-        DUT-49(o) & C1, E2  & sample decomposed \\
-        DUT-49(m) & C2, E1, \(m\approx42\)  & NGA \\
-        DUT-49(m) & C3, E1, \(m\approx38\)  & NGA \\
-        DUT-49(m) & C4, E1, \(m\approx18\)  & NGA \\
-        DUT-50    & C1, E1, \(m\approx24\)  & NGA \\
-        DUT-50    & C1, E2 & sample decomposed \\
-        DUT-50    & C2, E1, \(m\approx6\)  & NGA \\
-        DUT-147   & C1, E1, \(m\approx18\)  & non-flexible \\
-        DUT-148   & C1, E1, \(m\approx10\)  & NGA \\
-        DUT-149   & C1, E1, \(m\approx45\)  & non-flexible \\
-        DUT-149   & C1, E2, \(m\approx45\)  & non-flexible \\
-        DUT-151   & C1, E1, \(m\approx15\)  & complex transitions \\
-        DUT-151   & C1, E2 & complex transitions \\
-        DUT-152   & C1, E1, \(m\approx30\)  & complex transitions \\
-        DUT-160   & C1, E1, \(m\approx22\)  & NGA \\
-        DUT-170   & C1, E1, \(m\approx23\)  & non-flexible, low sensitivity \\
-        DUT-170   & C1, E2 & non-flexible \\
-        DUT-171   & C1, E1, \(m\approx35\)  & continuous transition \\
+        DUT-46    & \ce{C4H10}  & C1, E1, \(m\approx35\) & non-flexible \\
+        DUT-46    & \ce{C4H10}  & C1, E2 & non-flexible \\
+        DUT-48    & \ce{C4H10}  & C1, E1, \(m\approx10\)  & non-flexible \\
+        DUT-48    & \ce{C4H10}  & C1, E2 & non-flexible \\
+        DUT-48    & \ce{C3H8}   & C1, E3 & no observed interactions \\
+        DUT-48    & \ce{C3H6}   & C1, E4 & increased enthalpy at low loading \\
+        DUT-48    & \ce{CO}     & C1, E5 & no observed interactions \\
+        DUT-49(o) & \ce{C4H10}  & C1, E1, \(m\approx97\)  & NGA \\
+        DUT-49(o) & \ce{C4H10}  & C1, E2  & sample decomposed \\
+        DUT-49(m) & \ce{C4H10}  & C2, E1, \(m\approx42\)  & NGA \\
+        DUT-49(m) & \ce{C4H10}  & C3, E1, \(m\approx38\)  & NGA \\
+        DUT-49(m) & \ce{C4H10}  & C4, E1, \(m\approx18\)  & NGA \\
+        DUT-50    & \ce{C4H10}  & C1, E1, \(m\approx24\)  & NGA \\
+        DUT-50    & \ce{C4H10}  & C1, E2 & sample decomposed \\
+        DUT-50    & \ce{C4H10}  & C2, E1, \(m\approx6\)  & NGA \\
+        DUT-147   & \ce{C4H10}  & C1, E1, \(m\approx18\)  & non-flexible \\
+        DUT-148   & \ce{C4H10}  & C1, E1, \(m\approx10\)  & NGA \\
+        DUT-149   & \ce{C4H10}  & C1, E1, \(m\approx45\)  & non-flexible \\
+        DUT-149   & \ce{C4H10}  & C1, E2, \(m\approx45\)  & non-flexible \\
+        DUT-151   & \ce{C4H10}  & C1, E1, \(m\approx15\)  & complex transitions \\
+        DUT-151   & \ce{C4H10}  & C1, E2 & complex transitions \\
+        DUT-152   & \ce{C4H10}  & C1, E1, \(m\approx30\)  & complex transitions \\
+        DUT-160   & \ce{C4H10}  & C1, E1, \(m\approx22\)  & NGA \\
+        DUT-170   & \ce{C4H10}  & C1, E1, \(m\approx23\)  & non-flexible, low sensitivity \\
+        DUT-170   & \ce{C4H10}  & C1, E2 & non-flexible \\
+        DUT-171   & \ce{C4H10}  & C1, E1, \(m\approx35\)  & continuous transition \\
         \bottomrule
 	\end{tabular}%
-	\label{appx:dut:tab:rtc-exp}
+	\label{appx:dut:tbl:rtc-exp}
 \end{table}%
 
 \begin{figure}[H]
@@ -283,26 +283,24 @@
         DUT-49(m)  & \ce{Ar}   & C7, E2, HF & NGA \\
 
         DUT-149    & \ce{N2}   & C1, E1, LF, \(m\approx10\)  & no NGA \\
-        DUT-149    & \ce{N2}   & E2, HF & no NGA \\
-        DUT-149    & \ce{Ar}   & E3, LF & no NGA \\
-        DUT-149    & \ce{Ar}   & E4, HF & no NGA \\
-        DUT-149    & \ce{CO}   & E5, LF & no NGA \\
-        DUT-149    & \ce{CO}   & E6, LF & no NGA \\
-        DUT-149    & \ce{CO}   & E7, HF & no NGA \\
-        DUT-149    & \ce{O2}   & E8, LF & NGA \\
-        DUT-149    & \ce{O2}   & E9, HF & NGA \\
-        
+        DUT-149    & \ce{N2}   & C1, E2, HF & no NGA \\
+        DUT-149    & \ce{Ar}   & C1, E3, LF & no NGA \\
+        DUT-149    & \ce{Ar}   & C1, E4, HF & no NGA \\
+        DUT-149    & \ce{CO}   & C1, E5, LF & no NGA \\
+        DUT-149    & \ce{CO}   & C1, E6, LF & no NGA \\
+        DUT-149    & \ce{CO}   & C1, E7, HF & no NGA \\
+        DUT-149    & \ce{O2}   & C1, E8, LF & NGA \\
+        DUT-149    & \ce{O2}   & C1, E9, HF & NGA \\
         DUT-48     & \ce{Ar}   & C1, E1, LF, \(m\approx5\)     & no NGA \\
-        DUT-48     & \ce{Ar}   & E2, LF & no NGA \\
-        DUT-48     & \ce{CH4}  & E3, LF & no NGA, low sensitivity \\
-
+        DUT-48     & \ce{Ar}   & C1, E2, LF & no NGA \\
+        DUT-48     & \ce{CH4}  & C1, E3, LF & no NGA, low sensitivity \\
         DUT-148    & \ce{O2}   & C1, E1, HF, \(m\approx10\) & NGA \\
-        DUT-148    & \ce{O2}   & E2, LF & NGA \\
-        DUT-148    & \ce{N2}   & E3, HF & no NGA \\
-        DUT-148    & \ce{N2}   & E4, LF & no NGA \\
+        DUT-148    & \ce{O2}   & C1, E2, LF & NGA \\
+        DUT-148    & \ce{N2}   & C1, E3, HF & no NGA \\
+        DUT-148    & \ce{N2}   & C1, E4, LF & no NGA \\
         \bottomrule
 	\end{tabular}%
-	\label{appx:dut:tab:ltc-exp}
+	\label{appx:dut:tbl:ltc-exp}
 \end{table}%
 
 

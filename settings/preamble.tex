@@ -20,7 +20,10 @@
 
 \usepackage{scrhack}        % better interactions with other packages of KOMA script
 
-\usepackage[bottom=10em]{geometry}% Size of page
+\usepackage[
+    bottom=9em,
+    footskip=3em
+]{geometry}                 % page sizes
 
 % Customize headers and footers
 \usepackage[
@@ -148,7 +151,7 @@
     showspaces=false,                       % highlight spaces in code
     showstringspaces=false,                 % highlight spaces in strings
     showtabs=false,                         % highlight tabs in code
-    tabsize=4                               % spaces inserted for each tab
+    tabsize=4                               % spaces inserted for each tbl
 }
 
 \lstdefinestyle{pythonoutputstyle}{
@@ -166,7 +169,7 @@
     showspaces=false,                       % highlight spaces in code
     showstringspaces=false,                 % highlight spaces in strings
     showtabs=false,                         % highlight tabs in code
-    tabsize=4                               % spaces inserted for each tab
+    tabsize=4                               % spaces inserted for each tbl
 }
 
 \lstnewenvironment{python}[1][]
