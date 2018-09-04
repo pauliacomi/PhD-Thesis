@@ -7,15 +7,20 @@
 % Select document class first
 \documentclass[fleqn]{scrbook}
 
-    \KOMAoptions{
-        paper=a4,               % A4 paper size
-        fontsize=11pt,          % font size
-        DIV=12,                 % calculate page dividers
-        BCOR=0mm,               % binding correction, none
-        twoside=off,            % print on single side paper
-        listof=totoc,           % put lists of figures/tables in TOC
-        footlines=2,            % number of lines in the footer
-    }
+\KOMAoptions{
+    paper=a4,               % A4 paper size
+    fontsize=11pt,          % font size
+    DIV=12,                 % calculate page dividers
+    BCOR=0mm,               % binding correction, none
+    twoside=off,            % print on single side paper
+    listof=totoc,           % put lists of figures/tables in TOC
+    footlines=2,            % number of lines in the footer
+    usegeometry             % using geometry package
+}
+
+\usepackage{scrhack}        % better interactions with other packages of KOMA script
+
+\usepackage[bottom=10em]{geometry}% Size of page
 
 % Customize headers and footers
 \usepackage[
@@ -27,6 +32,8 @@
 \ihead{\headmark}       % inner header value
 \chead{}                % center header value
 \ohead{Paul Iacomi}     % outer header value
+
+\setcounter{tocdepth}{2}    % depth of TOC
 
 %%%%%%%%%%%%%%%%%%%%%% Encodings, fonts and colours
 
@@ -63,12 +70,6 @@
 \renewcommand*{\natmovechars}{.}
 % Adds bibliography to TOC
 \usepackage[nottoc]{tocbibind}
-
-
-%%%%%%%%%%%%%%%%%%%%%% Nomenclature
-
-\usepackage[intoc]{nomencl}
-\makenomenclature
 
 %%%%%%%%%%%%%%%%%%%%%% Science-related packages
 
@@ -218,3 +219,17 @@
     linktocpage=false,                      %% pagenumber link in TOC
     pdfborder={0 0 0}                       %% pdf border settings
 }
+
+
+%%%%%%%%%%%%%%%%%%%%%% Nomenclature and other glossaries
+
+%%% glossaires
+\usepackage[
+    acronym,                                        % list of acronyms
+    xindy,                                          % xindy compiler
+    toc,                                            % display in TOC
+    style=altlist                                   % display entries
+]{glossaries}                                       % glossaries (must be loaded after hyperref)
+\newglossary[nlg]{notation}{not}{ntn}{Nomenclature} % create new type of glossary for nomenclature
+\makeglossaries{}                                   % generate glossaries
+\loadglsentries{frontmatter/glossaries}             % glossary source file

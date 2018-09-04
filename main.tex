@@ -23,7 +23,10 @@
 \input{frontmatter/abstract}
 \input{frontmatter/acknowledgements}
 \input{frontmatter/toc}
-\input{frontmatter/nomenclature}
+
+% Nomenclature and acronyms
+\printglossary[type=\acronymtype, title={List of acronyms}, toctitle={List of acronyms}]
+\printglossary[type=notation,title={Nomenclature}, toctitle={Nomenclature}]
 
 % Chapters
 \mainmatter{}
