@@ -453,7 +453,14 @@ this method.
 \begin{figure}[htb]
     \centering
     \begin{subfigure}[c]{0.5\linewidth}
-        \includegraphics[width=\linewidth]{ltc/DUT-49-N2-cycled-reg}%
+        \begin{overpic}[width=\linewidth]{ltc/DUT-49-N2-cycled-reg}
+            \put(23,65){\line(0,-1){30}}
+            \put(28,65){\line(0,-1){30}}
+            \put(37,65){\line(0,-1){30}}
+            \put(12,62){\( p_{nga} \)}
+            \put(29,37){\( p_1 \)}
+            \put(37,37){\( p_2 \)}
+        \end{overpic}%
         \caption{}\label{dut:fig:dut-49-cycle-reg}
     \end{subfigure}%
     \begin{subfigure}[h]{0.5\linewidth}
@@ -462,25 +469,31 @@ this method.
         \caption{}\label{dut:fig:dut-49-cycle-enth}
     \end{subfigure}%
     \caption{Isotherms (a) and (b) enthalpy curves of nitrogen on
-    cycled DUT-49. The first cycle is in black and the second 
-    cycle is in blue.}%
-    \label{dut:fig:dut-49-cycle}
+    cycled DUT-49. The lines are guides for the eye.
+    }\label{dut:fig:dut-49-cycle}
 \end{figure}
 
 Repeating nitrogen adsorption on a DUT-49 sample which has been
 cycled in this manner reveals a different kind of isotherm, 
 as seen in \autoref{dut:fig:dut-49-cycle}. While the initial 
 part of the isotherms overlaps fully,
-the second experiment does not show an NGA step.
-A structural transition still occurs, 
+the second experiment does not show an NGA step. Further cycling 
+on this cell shows only isotherm of this type.
+Other repeat experiments with different cells
+(\autoref{appx:dut:fig:dut-49-N2-ltc}) show a progressive 
+suppression of the NGA step accompanied by an upwards shift
+of the plateau at \(0.3~p/p_0\). It is likely that a structural 
+transition still occurs in the second cycle in \autoref{dut:fig:dut-49-cycle},
 signalled by the small peak in the enthalpy curve at the end of the 
-peak corresponding to the filling of the medium pore. However, instead
-of a sudden contraction, the transition becomes a continuous 
-process. The two progressive smaller re-opening steps still exist,
-at similar partial pressure and with comparable differential enthalpy
-of adsorption. Further cycling of this cell has shown only isotherms
-of this kind. This effect is not seen on cycling with other 
-adsorbents, with the NGA transition fully developed in each cycle. 
+peak corresponding to the filling of the medium pore.
+Two progressive smaller steps can be seen in both isotherms. These
+may be associated with structural re-opening, but can also be due to
+pore filling steps in partly contracted pores. The differential enthalpy 
+peaks corresponding to the secondary steps in the isotherm are 
+of higher magnitude in the cycled isotherm suggesting a higher 
+contribution from the intermediate pore phase.
+This effect is not seen on cycling with other 
+adsorbents, as the NGA transition is fully developed in each cycle. 
 
 A possible explanation can be found if recalling the effect 
 of crystal size on nitrogen induced 
