@@ -2,34 +2,54 @@
 
 \chapter{Abstract}
 
-\gls{MOF} are a class of hybrid porous materials
+\gls{MOF}s are a class of hybrid porous materials
 which has been the focus of much scientific interest since their
 discovery in the late 20\textsuperscript{th} century. These
 coordination polymers consist of three-dimensional networks of 
-metal nodes interlinked by polytopic organic molecules. The 
-interest in these materials stems from the possible rational design
-of MOFs for highly efficient or unique applications. 
+metal nodes interlinked by polytopic organic molecules. Their 
+potential stems from the possible rational design
+of \gls{MOF}s for highly efficient or unique applications. 
 With judicious choice of building blocks, the framework can be used for
 carbon dioxide capture from air, hydrogen storage or regioselective 
-catalysis. Taking advantage of specific properties of porous 
-coordination polymers such as flexibility, magnetism or photoelectrics
-may even result in their use in drug delivery, micro mechanical devices,
-sensors or optoelectronics.
+catalysis. Furthermore, taking advantage of specific properties such 
+as flexibility, magnetism or photoelectrics may even result in 
+their use in drug delivery, micro mechanical devices,
+sensors and optoelectronics.
 
-However, their unique properties also introduce significant difficulty
-in \gls{MOF} characterisation through gas adsorption. 
+However, their properties also introduce significant difficulty
+in \gls{MOF} adsorption characterisation.
 Structural defects, crystal size, shaping procedure
-and the aforementioned flexible behaviour can lead to variability in
-adsorption results. In this thesis large scale processing of 
-isotherms is first used to explore the scale of uncertainty 
-present in porous material adsorption data. The high throughput
-methodology is then extended through the use of \textit{in situ} calorimetry
-as an avenue to gain further insight into the contribution of material, 
+and the aforementioned flexible behaviour can lead to irreproducibility 
+in isotherms. The first step to ensuring consistent results
+is to ensure that a common framework of processing methods is 
+established. In this thesis, the creation of an open-source codebase
+is detailed, which is intended to standardize the processing of 
+isotherms. Using this framework, high throughput processing of more
+than 18 000 isotherms is used to explore the scale of uncertainty 
+present in published adsorption data.
+The focus turns towards using complementary methods to extend the
+high throughput methodology through advanced characterisation.
+Direct measurement of the differential enthalpy of adsorption
+using \textit{in situ} microcalorimetry is shown to be an excellent
+avenue of obtaining further insight into the contribution of material, 
 guest-host and host-host interactions to the overall energetics of
-adsorption. Together, these two methods can be used to quantify the effect
-of structural defects in MOFs, material shaping with different binders 
-and even yield fundamental know-how of how adsorption induces compliance
-in flexible materials.
+adsorption.
+
+Together, these methods are used to study some of the sources 
+of the variability of \gls{MOF}s, and quantify their effect.
+First, the impact of structural defects is investigated, through an
+alternative post-synthetic method of missing linker/cluster generation
+in the prototypical UiO-66(Zr) \gls{MOF}. The processing of 
+materials for their use in an industrial environment through 
+shaping is another potential source of performance modification,
+which is here studied as the effect of wet granulation on
+three topical \gls{MOF}s (UiO-66(Zr), MIL-100(Fe) and MIL-127(Fe)). 
+Finally, counterintuitive behaviours intrinsic to
+``soft'' porous crystals are detailed, where the structure itself 
+is responsible for fluctuation in adsorption isotherms. Here,
+a fundamental study on a copper paddlewheel based material, DUT-49(Cu)
+yields know-how on the source of adsorption induced compliance
+and its tunability through structural modification.
 
 \pagebreak
 
@@ -41,27 +61,39 @@ découverte à la fin du 20ème siècle. Ces polymères de coordination sont
 constitués de réseaux tridimensionnels de nœuds métalliques interconnectés 
 par des molécules organiques polytopiques. L'intérêt pour ces matériaux 
 provient de la conception rationnelle possible des MOF pour des 
-applications hautement efficaces ou uniques. Avec un choix judicieux des 
-blocs de construction, le cadre peut être utilisé pour la capture du 
-dioxyde de carbone dans l'air, le stockage de l'hydrogène ou la catalyse 
-régiosélective. Tirer parti des propriétés spécifiques des polymères de 
-coordination poreux tels que la flexibilité, le magnétisme ou la 
-photoélectrique peut même conduire à leur utilisation dans la délivrance de 
-médicaments, des dispositifs micro-mécaniques, des capteurs ou en 
-optoélectronique.
+applications hautement efficaces ou uniques.
+Leur flexibilité, magnétisme ou effet photoélectrique
+peut même conduire à leur utilisation dans l'adsorption et stockage du
+gas, catalyse, délivrance de médicaments, des dispositifs micro-mécaniques
+ou des capteurs.
 
-Cependant, leurs propriétés uniques introduisent également des difficultés 
-importantes dans la caractérisation des MOF par adsorption de gaz. Les 
-défauts structurels, la taille des cristaux, la procédure de mise en forme 
-et le comportement flexible susmentionné peuvent entraîner une variabilité 
-des résultats de l'adsorption. Dans cette thèse, le traitement à grande 
-échelle des isothermes est d'abord utilisé pour explorer l'échelle 
-d'incertitude présente dans les données d'adsorption des matériaux poreux. 
-La méthodologie à haut débit est ensuite étendue à l’utilisation de la 
-calorimétrie in situ comme moyen de mieux comprendre la contribution des 
-interactions matériau-matériau, matériau-hôte et hôte-hôte à l’énergie 
-globale de l’adsorption. Ensemble, ces deux méthodes peuvent être utilisées 
-pour quantifier l'effet des défauts structurels dans les MOF, la mise en 
-forme des matériaux avec différents liants et même un savoir-faire 
-fondamental sur la manière dont l'adsorption induit la conformité dans les 
-matériaux flexibles.
+Cependant, leurs propriétés uniques introduisent également des difficultés
+significatives dans la caractérisation par adsorption de gaz, avec les 
+défauts structurels, la taille des cristaux, la procédure de mise en forme et le 
+comportement flexible susmentionné comme un example. 
+La première étape pour obtenir des résultats reproductibles consiste à s'assurer
+qu'un cadre commun de méthodes de traitement 
+est établi. Dans cette thèse, la création d'un code source libre est détaillé, 
+pour standardiser le traitement des isothermes. En utilisant, un traitement à 
+haut débit de plus de 18 000 isothermes est 
+utilisé pour explorer l'échelle d'incertitude présente dans les données publiées 
+sur l'adsorption des matériaux poreux.
+Apres, l'accent est mis sur l'utilisation de méthodes complémentaires pour étendre la 
+méthodologie à haut débit. La mesure directe de l'enthalpie différentielle de
+l'adsorption en utilisant la microcalorimétrie \textit{in situ} s'avère être
+un excellent moyen d'obtenir des informations supplémentaires sur la contribution
+des interactions particuliers sur l'énergétique de l'adsorption.
+
+Ensemble, ces méthodes peuvent être utilisées pour étudier les sources 
+de la variabilité des MOF. On étudie d’abord l’impact des défauts
+structurels au moyen d’une méthode post-synthétique alternative de
+génération de linker/cluster manquant dans UF-66(Zr). 
+Le traitement des matériaux pour leur utilisation dans 
+un environnement industriel par façonnage est une autre source potentielle de 
+modification des performances, étudiée ici sous l’effet de la granulation par 
+voie humide sur trois MOF topiques (UiO-66(Zr), MIL-100(Fe) et MIL-127(Fe)). 
+Enfin, les comportements contre-intuitifs intrinsèques aux cristaux poreux 
+«souples» sont étudiés, où la structure elle-même est responsable de la 
+fluctuation dans les isothermes d'adsorption. Ici, une étude fondamentale sur un 
+matériau flexible DUT-49 (Cu), apporte un savoir-faire sur la source de
+flexibilité induite par adsorption et son accordabilité par modification structurelle.
