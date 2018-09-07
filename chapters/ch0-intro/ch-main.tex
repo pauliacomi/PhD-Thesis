@@ -7,26 +7,29 @@
 \addcontentsline{toc}{chapter}{Introduction to this thesis}
 
 There's no doubt that the major advances of humanity in the last 
-century have been defined by \textit{big thinking about tiny entities}.
+century have been defined by \textit{big thinking about tiny things}.
 As Richard Feynman famously stated in his 1959 lecture, 
-``there's plenty of room at the bottom'', this concept 
+``there's plenty of room at the bottom'', the pursuit
 of miniaturisation led to the development of nanotechnology and
-the ever-increasing computational density of transistors. 
-While no small feat, it stands to reason that the next century of 
-discoveries ought to lie not only in furthering the understanding 
-of the nanoscale, but also in the extension of the microscopic
-world to the macroscopic one. This link can be established through
-either a top-down (using specialised tools to modify existing 
-structures) of a bottom-up approach (self assembly of small 
-components into more complex configurations), with the two 
-methods intersecting as smaller tools are required for the 
-former and larger structures for the latter. The most complex machine
-currently known to mankind, the human body itself, relies 
-exclusively on the assembly of simple aminoacids into proteins 
-to perform all its functions.
+the ever-increasing computational density of transistors. But we are
+still a long way from mastery of this field.
+The most intricate machine currently known to mankind, the human body
+itself, which relies exclusively on the assembly of simple aminoacids into proteins 
+to perform all its functions, is orders of magnitude away
+from currently achievable complexity. There are two schools of thought
+regarding the fabrication of nanoscale materials:
+the top-down approach (using specialised tools to modify existing 
+structures) or the bottom-up approach (self assembly of small 
+components into more complex configurations).
+The two methods intersect as more precise tools are required for the 
+former and larger structures for the latter. 
+While current advancements are no small feat, it stands to reason
+that the next century of discoveries ought to lie not only in
+furthering the understanding of the nanoscale, but also in the
+extension of the microscopic world to the macroscopic one. 
 
 A special class of materials whose properties are an interplay 
-of multiple legthscales are porous media. Characterised by
+of multiple length scales are porous media. Characterised by
 a network of voids through a solid matrix, they are 
 commonly found in both natural (rocks, bone, wood) and man made 
 (cement, ceramic) settings. The substantial interface between the
@@ -37,51 +40,116 @@ have been extensively used in industry for over 70 years.
 Metal organic frameworks (MOFs) are relative newcomers to the 
 family of porous materials, having only been named and 
 recognised as an independent class of adsorbents at the end of
-the 20\textsuperscript{th} century.
-They have quickly generated scientific interest, due to their
+the 20\textsuperscript{th} century and
+have quickly generated scientific interest, due to their
 potential applications as hyper-specific adsorbents and catalysts.
 Their promise lies in the capability of rational design of 
 porous crystal structures, starting from relatively simple building
-blocks of metal nodes and organic ``struts''. Their synthesis can often
+blocks of metal nodes and organic ``struts''. MOF synthesis can often
 be as facile as dissolution of a metal salt and corresponding
-polydentate organic linker in a solvent, followed by precipitation of 
-crystals\footnote{method not guaranteed} from solution.
+polydentate organic linker in a solvent, followed by the slow 
+growth of crystals as they precipitate out of solution.
+Their highly tunable nature may allow previously unattainable
+targets to be achieved. The energy-efficient capture of \ce{CO2} from
+waste streams and at low partial pressures is of crucial interest 
+from an environmental point of view, as \ce{CO2} is considered the 
+main contributor to global warming. Improvements may be made in other parts 
+of the energy cycle, like the storage of low energy density 
+potential fuels such as hydrogen and methane, serving as an 
+alternative to energetically intensive compression and liquefaction.
 
 However, their transition towards large scale application has not been
 as smooth as originally envisaged. The first materials
 were mired by poor thermal and chemical stability, and the structures 
 often took the form of two-dimensional sheets or chains rather than
-true crystal analogues. It was not until the second generation of MOFs 
-when the factors contributing to the strength of the metal-linker
-bond were better understood that significantly more stable 
+true crystal analogues. Furthermore, removal of the solvent was likely
+to cause structural collapse and loss of crystalinity. It was not until
+the second generation of MOFs when the factors contributing to the strength
+of the metal-linker bond were better understood that significantly more stable 
 three-dimensional networks could be synthesised.
-Part of this family are the widely known HKUST-1, MOF-5, UiO-66, MIL-100
-and the ZIF zeolite analogues, some which are now available from chemical
+Part of this generation are the widely known 
+HKUST-1~\cite{chuiChemicallyFunctionalizableNanoporous1999}, 
+MOF-5~\cite{rosiHydrogenStorageMicroporous2003},
+UiO-66~\cite{cavkaNewZirconiumInorganic2008},
+MIL-100~\cite{fereyChromiumTerephthalateBasedSolid2005}
+and the ZIF~\cite{huangLigandDirectedStrategyZeoliteType2006} 
+family of zeolite analogues, some which are now available from chemical
 suppliers.
 
 More recently, the unique capabilities of metal organic frameworks
 have begun to be the focus of research, leading to the so-called third 
-generation of materials. The defining trait of such 
+generation of materials in the classification of 
+Kitagawa~\cite{kondoMicroporousMaterialsConstructed2000}.
 Previously detrimental properties, such as low bulk modulus
 can be turned into advantages, using framework motility to 
 work at the interface between ``soft'' and ``hard'' matter.
+The defining trait of such frameworks is their ability to 
+undergo well defined structural changes upon adsorption,
+compression or other stimuli.
+It was also found~\cite{valenzanoDisclosingComplexStructure2011} 
+that the properties of the material are highly influenced
+through defects in the crystal structure. These defects 
+can be exploited as another parameter in the design of 
+porous coordination compounds, leading to control over 
+accessible surface area and selectivity towards certain molecules
+as well as generation of Lewis sites for catalytic applications.
+
+The extensive building blocks available for the construction 
+of MOFs lead to an unexpected conundrum, as hundreds of thousands
+of potential structures can be generated even when using 
+a restricted set of vertices and 
+edges~\cite{wilmerLargescaleScreeningHypothetical2012}.
+The question arises whether the required properties
+for a specific application can be predicted from a hypothetical 
+structure or found amongst the thousands of possibilities? 
+If so, would the desired topology and connectivity be
+obtained synthetically? And finally, in the resulting material,
+what is the influence of factors beyond the ideal unit cell 
+structure such as defects, crystal size, linker mobility, 
+external stimuli, shaping and many others?
+The answers to the first question may be found through a 
+computational approach, with several efforts already underway 
+to generate a database of existing crystal 
+structures~\cite{chungComputationReadyExperimentalMetal2014, %
+moghadamDevelopmentCambridgeStructural2017}
+or predict the generation of new 
+ones~\cite{raccugliaMachinelearningassistedMaterialsDiscovery2016}.
+Rational and high throughput synthesis
+methods~\cite{stockSynthesisMetalOrganicFrameworks2012} can 
+evaluate the feasibility of predicted materials and discover 
+new structures. However, it is the latter question which is
+the subject of this thesis, as it pertains to the transition
+and scale-up of MOFs from a laboratory environment to 
+large scale applications.
+As such, the main objective of this work is to 
+\textit{explore the sources of variability in metal organic 
+frameworks and the use of advanced characterisation methods
+to elucidate contribution of extrinsic or intrinsic factors}. 
 
 \subsection*{Outline}
 
-This work initially started as an attempt to characterise and discover 
-new structure-property relationships in porous materials. 
-
 This thesis is split into a total of five chapters, each
 connected through the common theme of characterisation 
-using gas adsorption in metal organic frameworks. 
+using gas adsorption of metal organic frameworks. 
 Each chapter is mostly 
 self-contained and takes a similar form to a publication,
 loosely based around an introduction, description of the 
 relevant concepts, explanation of experimental methods and
-a discussion of the obtained results. The topic of the chapters 
+a discussion of the obtained results. 
+The topic of the chapters 
 shifts subtly from large scale processing to fundamental
-studies between \autoref{pyg} and \autoref{dut}. It was felt 
-that this provides a good overview of the source of 
+science between \autoref{pyg} and \autoref{dut}.
+The work initially started as an attempt to characterise and
+discover new structure-property relationships in MOFs.
+As it will be shown in \autoref{pyg}, inherent variability
+in available adsorption data means that accurate laboratory
+obtained data is crucial for such a purpose. A pure adsorption
+methodology is not enough to fully understand the material,
+with \autoref{calo} introducing \textit{in situ} calorimetry
+as a complementary method for adsorbent characterisation.
+The following chapters take an in-depth look at the effect of 
+various factors on the ideal MOF structure.
+It was felt that this approach provides a good overview of the source of 
 variability in MOFs, starting from their synthesis
 (\autoref{def}), the post-processing required for industrial
 adaptation (\autoref{shaping}) and culminating with 
@@ -98,13 +166,53 @@ An example of its capabilities is outlined in the processing of
 a large dataset from the NIST adsorption database, which reveals 
 interesting patterns in the repeatability and reproducibility of 
 adsorption isotherms on MOFs. The chapter also serves as an in-depth
-introduction of both the common and state of the art adsorption methodology.
+introduction of both the commonplace and state of the art adsorption methodology.
 
-After the 
+Chapter~\ref{calo} extends the analysis of porous materials through
+the direct measurement of the enthalpy of adsorption through 
+\textit{in situ} microcalorimetry. After a brief description 
+of the energetic components of adsorption on surfaces
+and in pores, the methods for determining the enthalpy of 
+adsorption and the insights it provides into the contribution
+of different interaction types to the overall energetics are 
+discussed. Two datasets are then presented, one on a 
+Takeda 5A microporous carbon and the other on Zr Fumarate,
+an isoreticular analogue of UiO-66. The combined approach
+highlights the potential of Zr Fumarate for propane/propylene separation.
+
+In \autoref{def}, the presence and consequences of structural defects
+in MOFs is studied. An alternative method for post-synthesis generation
+of missing linker and missing cluster defects in the 
+UiO-66(Zr) framework through leaching in an acid solution is presented.
+Four solvents (DMF, \ce{H2O}, methanol and DMSO) are used in 
+conjunction with different acids (formic, acetic, trifluoroacetic and
+benzoic acid) at various concentrations, to obtain a map of 
+the influence of factors such as solvent polarity and \(pK_a\)
+on the defective nature of the resulting material.
+
+Chapter~\ref{shaping} looks further downstream the path of 
+MOF industrialization, analysing the impact of shaping on the
+original properties of the sample. Three topical MOFs, chosen
+due to their stability and well-studied adsorption behaviour
+are shaped using a wet granulation method. Multiple gas probes 
+in conjunction with microcalorimetry are used to highlight the 
+changes in physical and chemical nature. Adsorption of water and 
+methanol vapour are also performed in order to assess the impact on 
+the hydrophobicity of the resulting pellets.
+
+Finally, \autoref{dut} is dedicated to an in-depth characterisation
+of DUT-49 a flexible MOF with a counterintuitive adsorption behaviour.
+In this material, structural contraction upon adsorption leads 
+to a sudden expulsion of gas from within the shrinking pores.
+Ambient and low temperature calorimetry is used to obtain 
+insight into the temperature and adsorbate dependence of 
+the transition mechanics, as well as to evaluate
+the influence of framework modification on the capability of 
+compliance.
 
 \subsection*{Overarching project goal, location and funding}
 
-This thesis and the work leading to these results 
+This thesis and the work leading to the presented results 
 was funded by the European union through Horizon 2020 Marie Curie
 Actions Initial Training Network (H2020-MSCA-ITN-2014)
 project DEFNET, Grant Agreement Number 641887.
@@ -128,9 +236,14 @@ The second and fourth workpackages, relating to characterisation and
 applications of defective MOFs had as beneficiary the MADIREL 
 laboratory in Marseille, France, which is incorporated in the
 Aix-Marseille University, and part of the Centre
-National de la Recherce Scientifique (CNRS). The MADIREL 
+National de la Recherche Scientifique (CNRS). The MADIREL 
 laboratory is focused on areas of work involving high surface
 areas and large interfaces between phases of the materials in 
 study: the capture and separation of gas using metal-organic 
 frameworks, adsorption at the liquid-solid interface,
 the study of transport within condensed matter and electrochemistry.
+
+\pagebreak
+
+\bibliographystyle{unsrtnat}
+\bibliography{\thisch/biblio/bib}
