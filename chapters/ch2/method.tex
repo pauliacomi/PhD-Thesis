@@ -78,7 +78,7 @@ system under investigation and the surrounding
 heat sink. To allow for a complete integration of evolved heat,
 with minimal losses, a 3D Tian-Calvet thermopile~\cite{calvetRecentProgressMicrocalorimetry1963}
 can be used. In order to limit variations in environment,
-differential mounting is employed, in which the signal
+differential mounting is employed, in which the signal recorded
 is the difference in voltage between a reference and experimental
 thermopile. In order to ensure the ``isothermicity'' of the calorimeter, a
 suitable heat sink must be used, leading to two types of design.
@@ -169,8 +169,8 @@ instead becoming a function only of upstream pressure and environment
 temperature.
 The heat evolved during adsorption (or required during desorption)
 is therefore measured either as discrete peaks, corresponding to
-each introduction event or as a continuous heat curve. An example of such a signal
-for each method presented in \autoref{calo:fig:calo-measure}.
+each introduction event or as a continuous heat curve. An example of 
+such a signal for each method is shown in \autoref{calo:fig:calo-measure}.
 
 \begin{figure}[htb]
 
@@ -220,22 +220,99 @@ microcalorimeter coupled with a home-made manometric gas dosing
 system~\cite{llewellynGasAdsorptionMicrocalorimetry2005}.
 Two calorimeter designs were used, one for ambient temperature
 and one for low temperature adsorption, as displayed in
-\autoref{calo:fig:calo-types}. 
+\autoref{calo:fig:calo-types}.
+
+\subsubsection{Ambient temperature calorimetry}\label{calo:rtc}
+
+An example Tian-Calvet microcalorimeter for ambient temperature 
+calorimetry is presented in \autoref{calo:fig:ltc-setup}. The 
+adsorbate is placed in a stainless steel cell, to ensure a rapid 
+heat transfer to the thermopile. The use of metal also allows for 
+high pressure measurements up to \SI{50}{\bar} to be carried out.
+The connection to the gas dosing system is made through a 
+Swagelock VCR \(\sfrac{1}{4}''\)
+stainless steel connection. High leak resistance and gas purity 
+is assured by metal-to-metal interlock with a single use copper joint.
+A \SI{50}{\micro\metre} filter is located between the adsorbate cell 
+and the rest of the system, to prevent sample dispersal.
+
+The dosing system itself is a homemade apparatus, controlled through 
+a programmable logic controller. The automated system also records 
+the following raw data at specified intervals:
+\begin{itemize}
+	\item pressure in \si{bar};
+	\item the temperature of the calorimeter, apparatus enclosure and room in \si{\degreeCelsius};
+	\item the calorimeter signal in \si{\milli\watt}.
+\end{itemize}
+Pressure is measured through the use of a double gauge assembly,
+a sensitive low pressure gauge (\SIrange{0.02}{1}{\bar},
+depending on the system) and a high pressure gauge (\SIrange{1}{60}{\bar}),
+in order to increase the accuracy in each range. Temperature is
+recorded through the use of several K-type thermocouples.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.97\textwidth]{rtc-setup}%
+    \caption{The ambient temperature calorimetry setup}%
+    \label{calo:fig:ltc-setup}
+\end{figure}
+
+In order to determine the dead volume of the cell, as well 
+as the volume of the system which is located inside the thermopile,
+a blank experiment with helium is performed for each cell.
+In this case, \ce{He} is considered a non-adsorbing probe, with the 
+two volumes determined by assuming that \(\Delta n_{ads} = 0\)
+and the recorded calorimeter signal
+is exclusively due to the expansion work of the gas, respectively.
+
+\subsubsection{Low temperature calorimetry}\label{calo:ltc}
+
+For microcalorimetry at temperatures below ambient, a home-made calorimeter
+in a diving-bell configuration is used, first described in the work 
+of~\citet{rouquerolCalorimetricEvidenceBidimensional1977}. In short,
+the adsorbate is placed in a J-shaped custom designed glass cell which is
+then sealed with an oxybutane torch prior to evacuation and sample 
+activation. Borosilicate glass is selected as
+the material of choice to prevent any thermal expansion induced leaks.
+The cell is then introduced into a \ce{LN2}-filled dewar, through 
+the bottom of the differential calorimeter. Good thermal equilibrium
+between the cell and surrounding thermopile is ensured using by 
+using a helium blanket in the calorimetric enclosure, kept under a small
+positive pressure through a continuous low flow. The gas dosing system
+and configuration is identical to the system used in ambient temperature
+calorimetry. A picture of the different components of the 
+setup can be seen in \autoref{calo:fig:ltc-setup}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ltc-setup}%
+    \caption{The low temperature calorimetry setup}%
+    \label{calo:fig:ltc-setup}
+\end{figure}
+
+\subsubsection{Adsorbate introduction}\label{calo:ltc}
 
 The method of adsorbate introduction can be chosen either as
 continuous or discontinuous. For routine measurements,
 the point-by-point method is preferred, as it is guaranteed
 to achieve equilibrium between the material and the adsorbate
 removing the influence of diffusion effects.
-For each injection of gas, equilibrium was assumed to have
+For each injection of gas, equilibrium is assumed to have
 been reached after \SIrange{90}{250}{\minute}, depending on the
-sample and adsorbate used. This was confirmed by the return
+sample and adsorbate used. This is confirmed by the return
 of the calorimetric signal to its baseline (<\SI{5}{\micro\watt}).
-For the continuous method, a sonic nozzle was used to 
+
+For the continuous method, a sonic nozzle is used to 
 maintain the flowrate between \SIrange{0.5}{2}{\micro\mol\per\minute},
-low enough that the system can be considered at equilibrium. 
+low enough that the system can be considered at equilibrium.
 The assumption of equilibrium is routinely verified by multiple
 experiments at different upstream pressures.
+A separate calibration step is performed at the start of each
+experiment to determine the adsorbate flowrate and the dead volume
+before the entrance to the cell. An experiment takes between 1--4 
+days depending on the flowrate used. 
+
+\subsubsection{Accuracy considerations}\label{calo:ltc}
 
 As the isotherms are recorded through the manometric method,
 the accuracy in the adsorbed amount depends on the reliability
@@ -271,7 +348,8 @@ the amount adsorbed is low. Thus, uncertainty varies from
 0.5--5\% in the beginning of the isotherm to over 100\% when
 an isotherm plateau is reached.
 
-A complete error analysis for the resulting isotherms and enthalpy
-curves can be found in \autoref{appx:errors}. Also, a direct comparison
+The method applied for error analysis in the resulting isotherms and
+enthalpy curves can be found in \autoref{appx:errors}. 
+Also, a direct comparison
 between calorimetry and gravimetry isotherms is presented in the 
 following section.
