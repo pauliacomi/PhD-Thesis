@@ -2,10 +2,10 @@
 
 \subsection{Specific surface area and pore volume calculation}
 
-\subsubsection{BET surface area}\label{pyg:charac:betarea}
+\subsubsection{\gls{BET} surface area}\label{pyg:charac:betarea}
 
-The BET method~\cite{brunauerAdsorptionGasesMultimolecular1938}
-for determining surface area is the recommended IUPAC
+The \gls{BET} method~\cite{brunauerAdsorptionGasesMultimolecular1938}
+for determining surface area is the recommended \gls{IUPAC}
 method~\cite{thommesPhysisorptionGasesSpecial2015}
 to calculate the surface area of a porous material.
 It is generally applied on isotherms obtained through \ce{N2}
@@ -13,10 +13,10 @@ adsorption at \SI{77}{\kelvin}, although other adsorbates
 (\ce{Ar} at \SI{77}{\kelvin} or \SI{87}{\kelvin},
 \ce{Kr} at \SI{77}{\kelvin}, \ce{CO2} at \SI{293}{\kelvin})
 have been used. In principle, any probe with an adsorption isotherm
-which can be described through the BET equation in the low pressure regime
+which can be described through the \gls{BET} equation in the low pressure regime
 can be used.
 
-As previously mentioned, \autoref{pyg:models:bet} the BET model assumes
+As previously mentioned, \autoref{pyg:models:bet} the \gls{BET} model assumes
 that adsorption takes place in incremental layers on the material
 surface. Even if the adsorbent is porous, the initial amount adsorbed
 (usually between 0.05--0.4 \(p/p_0\)) can be
@@ -30,13 +30,13 @@ If a plot of the isotherm points as \({(p/p_0)}/{n_{ads}(1-p/p_0)}\)
 versus \(p/p_0\) is generated, a linear region
 can usually be found. The slope and intercept of this line
 can then be used to calculate \(n_{m}\), the amount adsorbed at the
-statistical monolayer, as well as \(C\), the BET constant.
+statistical monolayer, as well as \(C\), the \gls{BET} constant.
 %
 \begin{align}
 	n_{m} & = \frac{1}{s+i} & C & = \frac{s}{i} + 1
 \end{align}
 
-From the BET monolayer capacity, the specific surface area can be
+From the \gls{BET} monolayer capacity, the specific surface area can be
 calculated if the area taken up by one of the adsorbate molecules
 on the surface is known. The calculation uses the following equation
 together with Avogadro's number:
@@ -45,24 +45,24 @@ together with Avogadro's number:
 	a_{BET} = n_m A_N \sigma
 \end{equation}
 
-While commonly used for surface area determination, the BET area
+While commonly used for surface area determination, the \gls{BET} area
 should be used with care, as the assumptions made in
-its calculation may not hold. To augment the validity of the BET
+its calculation may not hold. To augment the validity of the \gls{BET}
 method, Rouquerol~\cite{rouquerolAdsorptionPowdersPorous2013} proposed
-several checks to ensure that the selected BET region is valid:
+several checks to ensure that the selected \gls{BET} region is valid:
 
 \begin{itemize}
 
-	\item The BET (\(C\)) obtained should be positive;
+	\item The \gls{BET} (\(C\)) obtained should be positive;
 	\item In the corresponding Rouquerol plot where \(n_{ads}(1-p/p_0)\)
-	      is plotted with respect to \(p/p_0\), the points chosen for BET
+	      is plotted with respect to \(p/p_0\), the points chosen for \gls{BET}
 	      analysis should be strictly increasing;
 	\item The loading at the statistical monolayer should be
-	      situated within the limits of the BET region.
+	      situated within the limits of the \gls{BET} region.
 
 \end{itemize}
 
-Regardless, the BET surface area should still be interpreted carefully.
+Regardless, the \gls{BET} surface area should still be interpreted carefully.
 Since adsorption takes place on the pore surface, microporous materials
 which have pores of similar or smaller size as the probe molecule used
 will not give a realistic surface area. In the micropore range
@@ -94,7 +94,7 @@ as \(K\), the Langmuir constant.
 \end{align}
 %
 The surface area can then be calculated by using the monolayer
-capacity in a manner analogous to the BET surface area method.
+capacity in a manner analogous to the \gls{BET} surface area method.
 %
 \begin{equation}
 	a_{Langmuir} = n_m A_N \sigma
@@ -114,7 +114,7 @@ area as an estimate.
 The initial part of an isotherm (the Henry regime) can be seen to
 be very dependent on the interactions between the adsorbate and the
 surface. However, subsequent layers are less influenced by the
-material and can often be assumed, like in the BET model,
+material and can often be assumed, like in the \gls{BET} model,
 to have an energy of adsorption identical to the enthalpy of liquefaction
 of the bulk liquid. Therefore, their formation will essentially depend
 only on partial pressure.

@@ -14,14 +14,14 @@ in these environments is likely to be processing a small batch of
 results at a time, and is interested in obtaining the results in
 graphical form. For this type of application, the framework should
 provide an unobtrusive way of importing the user data, as well as
-present an API which does not require extensive knowledge of 
+present an \gls{API} which does not require extensive knowledge of 
 processing methods. Finally, a graphing environment is
 required which will allow the user to visualise their
 dataset and results.
 
 The second envisaged application is related to bulk data processing.
 Requirements here shift towards parameter control, scripting and
-extensibility. The framework API should offer the option to change 
+extensibility. The framework \gls{API} should offer the option to change 
 implicit parameters, select calculation limits and return the results
 in a numerical form for further processing. This type of application 
 is also likely to require storage of isotherms in a database or
@@ -92,7 +92,7 @@ which is connected to an \texttt{Isotherm} class in an identical manner
 as the \texttt{Sample} class. The physical properties are calculated 
 automatically through an equation of state,
 either the open source CoolProp library~\cite{bellPurePseudopureFluid2014} 
-or the NIST-made REFPROP~\cite{lemmonNISTReferenceFluid1989}, if available
+or the \gls{NIST}-made REFPROP~\cite{lemmonNISTReferenceFluid1989}, if available
 on the user's computer. The properties can also be retrieved 
 from the internal database or specified by the user.
 
@@ -168,7 +168,7 @@ loading as a function of \si{\bar}. Both the units and the basis
 can be specified, as it is explained in a latter section.
 
 Finally, the data is saved in the newly created class or used to
-generate parameters for a model such as BET, Langmuir, etc.,
+generate parameters for a model such as \gls{BET}, Langmuir, etc.,
 in the case of a \texttt{PointIsotherm} and
 \texttt{ModelIsotherm} respectively. The creation of
 \texttt{Sample} and \texttt{Adsorbate} instances is similar.
@@ -240,40 +240,40 @@ of the internal model in the \texttt{ModelIsotherm}. For an isotherm with
 datapoints, these can also be converted into different units or modes.
 
 Characterisation functions take an isotherm object as their
-first parameter. This is the case for the BET area, Langmuir area, 
+first parameter. This is the case for the \gls{BET} area, Langmuir area, 
 t-plot, \(\alpha_s\) plot, and pore size distribution methods.
 These characterisation functions attempt to automate as much
-of the process as possible. For example, the BET area limits are
+of the process as possible. For example, the \gls{BET} area limits are
 automatically calculated using the 
 Rouquerol~\cite{rouquerolAdsorptionPowdersPorous2013} method, 
 with all the checks implemented into the code. In another example
 the straight line sections of the t-plot are determined automatically
 through a calculation of the second derivative of the transformed isotherm.
 For detailed control, there are available options for each individual 
-method, such as manual BET limits, different thickness functions for
+method, such as manual \gls{BET} limits, different thickness functions for
 the t-plot or Kelvin-based mesoporous pore distribution methods, 
 custom parameters for the Horvath-Kawazoe microporous pore
-distribution, custom DFT or NLDFT kernels and more. The results are
+distribution, custom \gls{DFT} or \gls{NLDFT} kernels and more. The results are
 returned in a numerical form for further processing, or can be directly
 displayed if the \texttt{verbose} parameter is passed.
 
 \subsection{Characterisation using pyGAPS}
 
-\subsubsection{BET and Langmuir surface area}
+\subsubsection{\gls{BET} and Langmuir surface area}
 
 \texttt{pyGAPS} comes with several common methods used to
 determine surface area, some with theoretical basis like
-the IUPAC-recommended BET method and some empirical, such
+the \gls{IUPAC}-recommended \gls{BET} method and some empirical, such
 as the t-plot method.
 
 Starting from an isotherm object, it is easy to
-calculate the nitrogen BET area of a sample of UiO-66(Zr) MOF
+calculate the nitrogen \gls{BET} area of a sample of UiO-66(Zr) \gls{MOF}
 by using the code in \autoref{pyg:lst:betarea}.
 The framework automatically applies the methodology described in
 \autoref{pyg:charac:betarea} to find the optimum pressure range. 
 The \inline{verbose=True} option prints a short
 text with all the calculation variables as well as graphing the
-BET and Rouquerol plots (\autoref{pyg:fig:betarea}).
+\gls{BET} and Rouquerol plots (\autoref{pyg:fig:betarea}).
 The user can override automatic pressure range selection by using the
 range parameter (\inline{limits=(0.05, 0.3)}).
 
@@ -307,7 +307,7 @@ Amount for a monolayer: 		n = 0.01309 mol/g
 			\includegraphics[width=\linewidth]{characterization/bet-roq}}
 	\end{subfigure}%
 
-	\caption{Output from the BET area function (a) the BET plot showing
+	\caption{Output from the \gls{BET} area function (a) the \gls{BET} plot showing
 		the selected points for fitting the equation, as well as the location
 		of the statistical monolayer and (b) the Rouquerol plot for this
 		calculation.}%
@@ -315,7 +315,7 @@ Amount for a monolayer: 		n = 0.01309 mol/g
 
 \end{figure}
 
-Similarly to the BET area, the Langmuir area is calculated by using
+Similarly to the \gls{BET} area, the Langmuir area is calculated by using
 the code in \autoref{pyg:lst:langmuirarea}. The framework will alert
 the user if the correlation is not linear in the selected range.
 In this example, the surface area of a nitrogen isotherm measured 
@@ -455,7 +455,7 @@ as for the t-plot.
 In this example, the reference isotherm is measured on non-porous 
 silica. The reference material area can be specified by using 
 the \inline{reference_area} parameter. If not specified, it 
-is automatically calculated by applying the BET
+is automatically calculated by applying the \gls{BET}
 method to the reference isotherm.
 
 \begin{python}[caption={Generating an \(\alpha_s\)-plot},label={pyg:lst:alphasplot}]
@@ -477,16 +477,16 @@ pygaps.alpha_s(isotherm,
 
 \subsubsection{Pore size distribution calculations}
 
-Both mesoporous, microporous and DFT fitting routines can be
+Both mesoporous, microporous and \gls{DFT} fitting routines can be
 used to calculate a pore size distribution in \texttt{pyGAPS}. 
-While the generation of DFT kernels is outside the scope of the
+While the generation of \gls{DFT} kernels is outside the scope of the
 framework, it is able to use user-provided kernels to fit adsorption 
 isotherms, and comes with a basic kernel applicable for \ce{N2} 
 adsorption at \SI{77}{\kelvin} on carbon slit pores.
 
 The MCM-41 sample is a mesoporous material, which is expected
 to have a well-defined pore size in the range of 
-\SIrange{2.5}{5}{\nano\metre}. The BJH method can be readily
+\SIrange{2.5}{5}{\nano\metre}. The \gls{BJH} method can be readily
 applied on the desorption branch of the measured isotherm, through
 the code in \autoref{pyg:lst:bjh}. The Harkins and Jura thickness
 function is automatically selected, while the default cylindrical pore 
@@ -515,9 +515,9 @@ at \SI{3}{\nano\metre}.
 A microporous analysis cannot be performed on MCM-41, since 
 it does not contain any pores under \SI{2.5}{\nano\metre}, 
 where such methods are applicable. Instead, the UiO-66(Zr)
-isotherm is used. This MOF has two micropores, a tetrahedral
+isotherm is used. This \gls{MOF} has two micropores, a tetrahedral
 and octahedral one which are accessible through an \SI{0.8}{\nano\metre}
-window. The HK method is used for calculating the pore size 
+window. The \gls{HK} method is used for calculating the pore size 
 distribution, as displayed in \autoref{pyg:lst:hkpsd}.
 
 \begin{python}[float=htb, caption={Using the HK method for PSD},%
@@ -564,10 +564,10 @@ The user can also provide a custom dictionary for these parameters
 when calling the function as can be seen in the second example
 in \autoref{pyg:lst:hkpsd}.
 
-Finally, to determine a pore size distribution using DFT kernel fitting,
+Finally, to determine a pore size distribution using \gls{DFT} kernel fitting,
 the \inline{dft_size_distribution} function is used. 
 The function takes an \texttt{Isotherm} object and a path
-to a CSV representation of the DFT kernel. The code then
+to a CSV representation of the \gls{DFT} kernel. The code then
 loads the kernel either from disk or memory and 
 applies a minimization function on the sum of squared differences
 of the sum of all individual kernel isotherms to generate 
@@ -583,7 +583,7 @@ is only applicable on \ce{N2} adsorption at \SI{77}{\kelvin} on
 carbon slit-like pores in the range of \SIrange{0.4}{10}{\nano\meter}.
 
 The isotherm measured on the microporous carbon Takeda 5A is used as 
-an input for the DFT fitting routine (\autoref{pyg:lst:dft}), using the
+an input for the \gls{DFT} fitting routine (\autoref{pyg:lst:dft}), using the
 available internal kernel. The resulting PSD shows that the material
 is not completely microporous, with a wide mesopore component
 present.
@@ -598,7 +598,7 @@ result_dict = pygaps.dft_size_distribution(
 \end{python}
 \begin{figure}[!htb]
 	\includegraphics[width=\textwidth]{psd/dft-plt}
-	\caption{Pore size distribution calculated through the DFT fitting on the Takeda 5A carbon}%
+	\caption{Pore size distribution calculated through the \gls{DFT} fitting on the Takeda 5A carbon}%
 	\label{fig:pyg:fig:dft}
 \end{figure}
 
@@ -608,7 +608,7 @@ The \texttt{pyGAPS} framework includes a modified version of
 the pyIAST code~\cite{simonPyIASTIdealAdsorbed2016} which has 
 been adapted to work with the \texttt{Isotherm} 
 classes. Both model isotherms and real data can be used for 
-IAST, with spreading pressure being calculated through the 
+\gls{IAST}, with spreading pressure being calculated through the 
 underlying isotherm model or through interpolation, respectively
 as detailed in \autoref{pyg:iast}.
 

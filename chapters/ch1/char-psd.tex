@@ -19,21 +19,20 @@ used, which are based on the application of Kelvin's equation
 pertaining to capillary condensation. This equation calculates the
 critical pressure at which the fluid completely files a pore of a
 specific diameter. It is applicable to a range of geometries
-is used in multiple approaches such as the Barrett-Joyner-Halenda
-(BJH) method or the Dollimore-Heal (DH) method.
+is used in multiple approaches such as the \gls{BJH} method 
+or the \gls{DH} method.
 
 For microporous materials, the Kelvin equation, with its assumption
 of continuous fluid properties and comparable density of the adsorbed
 state to bulk liquid density breaks down. An atomistic approach
 is required, addressing the interaction between solid-fluid
-and fluid-fluid through potential functions. The Horvath-Kawazoe or
-HK method is often used, alongside the older Dubinin-Radushkevich
+and fluid-fluid through potential functions. The \gls{HK} method 
+is often used, alongside the older Dubinin-Radushkevich
 model.
 
-Finally, computational methods based on Grand Canonical Monte Carlo
-(GCMC) and density functional theory (DFT) together with its
-derivations such as non-local DFT (NLDFT) and quenched solid state DFT
-(QSDFT) should be mentioned, as they can be used for multiscale
+Finally, computational methods based on \gls{GCMC} and \gls{DFT} 
+together with derivatives such as \gls{NLDFT} and \gls{QSDFT} 
+should be mentioned, as they can be used for multiscale
 (micropore and mesopore) characterisation. These methods rely on
 \textit{in-silico} simulation of isotherms on a range of pore sizes,
 which can then be collated in a so-called \textit{kernel}, able to
@@ -51,7 +50,7 @@ used in these models merely approximate.
 \paragraph{The Kelvin equation}
 
 Since the Kelvin equation is the basis of most mesoporous PSD
-calculations, such as the BJH and DH methods, it will be described
+calculations, such as the \gls{BJH} and \gls{DH} methods, it will be described
 first. The original form of the equation (\autoref{pyg:eqn:kelvin})
 gives the dependence of pressure on the radius of curvature of a
 meniscus in a pore \(r\) by means of surface tension \( \gamma \),
@@ -127,7 +126,7 @@ in adopting this approach, it is assumed that:
 
 \paragraph{The Barrett, Joyner and Halenda (BJH) method}
 
-The BJH method for calculating pore size distribution
+The \gls{BJH} method for calculating pore size distribution
 is based on a classical description of the adsorbate behaviour
 in the adsorbent pores~\cite{barrettDeterminationPoreVolume1951}.
 Under this method, the guest is adsorbing on the pore walls
@@ -158,7 +157,7 @@ adsorbed in a pore for each point using the following equation:
 	A   & = 2 \Delta V_p / r_p
 \end{align}
 %
-In the BJH equation:
+In the \gls{BJH} equation:
 
 \begin{itemize}
 
@@ -181,11 +180,11 @@ can be obtained.
 
 \paragraph{The Dollimore-Heal (DH) method}
 
-The DH or Dollimore-Heal
+The \gls{DH} or Dollimore-Heal
 method~\cite{dollimorePoresizeDistributionTypical1970}
-is an extension of the BJH method which takes into account the
+is an extension of the \gls{BJH} method which takes into account the
 geometry of the pores by introducing a length component.
-Like the BJH method, it is based on a classical description of
+Like the \gls{BJH} method, it is based on a classical description of
 the adsorbate behaviour in the adsorbent pores and uses the
 same assumptions. The modified equation becomes:
 %
@@ -199,7 +198,7 @@ same assumptions. The modified equation becomes:
 	L   & = \Delta A_p / 2 \pi r_p
 \end{align}
 
-The meaning of each symbol is the same as in the BJH equation.
+The meaning of each symbol is the same as in the \gls{BJH} equation.
 As before, a plot of \(\Delta V/(2*\Delta r_p)\) versus the width of
 the pores calculated for each point yields the pore size distribution.
 The Dollimore-Heal method is used on the desorption branch,
@@ -217,7 +216,7 @@ both solid-fluid and fluid-fluid potential functions is required.
 
 \paragraph{The Horvath-Kawazoe (HK) method}
 
-The H-K method attempts to describe the adsorption within pores
+The \gls{HK} method attempts to describe the adsorption within pores
 by calculation of the average potential energy for a
 pore~\cite{horvathMethodCalculationEffective1983}.
 The method starts by assuming the relationship between the gas
@@ -268,13 +267,13 @@ the polarizability of the adsorbate and adsorbate molecule
 and \(\varkappa_a\) and \(\varkappa_A\) the magnetic susceptibility of
 the adsorbate molecule and adsorbent molecule, respectively.
 
-The HK method is applicable to slit pores, and it can be extended
+The \gls{HK} method is applicable to slit pores, and it can be extended
 through modification to cylindrical and spherical pores. It is worth noting
 that there are several assumptions which limit its applicability.
 
 \begin{itemize}
 
-	\item The HK method is reliant on knowledge of the properties of
+	\item The \gls{HK} method is reliant on knowledge of the properties of
 	      the surface atoms. This assumption is true only if the
 	      material surface is homogenous. Furthermore,
 	      longer range interactions with multiple surface layers are
@@ -297,17 +296,16 @@ that there are several assumptions which limit its applicability.
 
 \subsubsection{Multiscale computational methods}
 
-DFT theory emerged as a rigorous description of molecular
+\gls{DFT} theory emerged as a rigorous description of molecular
 adsorption in pores~\cite{seatonNewAnalysisMethod1989}.
 It calculates the properties of the fluid
 directly from the forces acting between constituent molecules
 through a statistical mechanical approach. Latter developments,
-like non-local DFT (NLDFT)~\cite{tarazonaPhaseEquilibriaFluid1987},
+like \gls{NLDFT}~\cite{tarazonaPhaseEquilibriaFluid1987},
 which makes an account for short range molecule correlation
 and therefore for the changes in the density profile
-around the pore walls, and quenched solid state DFT
-(QSDFT)~\cite{neimarkQuenchedSolidDensity2009}, which allows for
-heterogeneity of pore walls to be incorporated in the model,
+around the pore walls, and \gls{QSDFT}~\cite{neimarkQuenchedSolidDensity2009}, 
+which allows for heterogeneity of pore walls to be incorporated in the model,
 have improved the accuracy of the method.
 
 The density functional theory approach can therefore simulate
@@ -319,8 +317,8 @@ adsorption isotherms in different size pores, then it stands
 to reason that the preponderence of those pores can be calculated
 through deconvolution.
 
-Since the DFT method can model adsorbate condensation behaviour,
+Since the \gls{DFT} method can model adsorbate condensation behaviour,
 as well as micropore filling and multilayer adsorption, it can
 be used for multiscale pore size distribution. The downside is
-that DFT kernels are temperature, probe, pore-geometry and
+that \gls{DFT} kernels are temperature, probe, pore-geometry and
 adsorbent specific and as such are not universally applicable.

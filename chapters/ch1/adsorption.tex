@@ -12,7 +12,7 @@ adsorbed phase, as well as several guest-host system archetypes.
 	\centering
 	\includegraphics[width=0.9\linewidth]{iupac-isotherms}
 	\caption{
-		IUPAC classified isotherm types. 
+		\gls{IUPAC} classified isotherm types. 
 		Adapted from \citet{thommesPhysisorptionGasesSpecial2015}.
 	}\label{pyg:fig:iupac-isotherms}
 \end{figure}
@@ -47,7 +47,7 @@ Henry's law, the virial model and vacancy solution theory.
 Adsorption can also be described from a kinetic standpoint, where
 the rate of adsorption and desorption of molecules on
 available sites is mathematically modelled. Equations based
-on kinetics include the Langmuir model, the BET model,
+on kinetics include the Langmuir model, the \gls{BET} model,
 the Temkin model and empirical or semi-empirical derivatives
 such as the Toth, Quadratic or the Jensen-Seaton model
 A page of figures for different models and how the
@@ -274,7 +274,7 @@ equation is used for each. This is particularly
 applicable in cases where the structure of the adsorbent
 suggests that different types of sites are present,
 such as in crystalline materials of variable chemistry like
-zeolites and MOFs. The resulting isotherm equation becomes:
+zeolites and \glspl{MOF}. The resulting isotherm equation becomes:
 %
 \begin{equation}\label{pyg:eqn:langmulti}
 	n_a(p) = \sum_i n_{a,i}^m\frac{K_i p}{1+K_i p}
@@ -285,11 +285,11 @@ considered.
 
 \subsection{The Brunauer-Emmett-Teller model}\label{pyg:models:bet}
 
-Like the Langmuir model, The BET model~\cite{brunauerAdsorptionGasesMultimolecular1938}
+Like the Langmuir model, The \gls{BET} model~\cite{brunauerAdsorptionGasesMultimolecular1938}
 assumes that adsorption is kinetically driven and takes place on adsorption
 sites at the material surface. However, each adsorbed molecule becomes,
 in itself, a secondary adsorption site, such that incremental layers
-are formed. The conditions imagined by the BET model are:
+are formed. The conditions imagined by the \gls{BET} model are:
 
 \begin{itemize}
 	\item The surface adsorption sites are equivalent, and therefore the
@@ -317,7 +317,7 @@ we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
 
 \begin{table}[h]
 	\centering
-	\caption{Derivation of the BET method from each adsorbed layer}%
+	\caption{Derivation of the \gls{BET} method from each adsorbed layer}%
 	\label{pyg:tbl:bet-deriv}
 	\begin{tabular}{cc}
 		\toprule
@@ -379,16 +379,16 @@ For all layers \(N\), the equations can be summed:
 %
 It is usually assumed that the number of layers tends to infinity 
 \(N = \infty\) as the partial pressure increases to 1. 
-In this case, we obtain the BET equation as:
+In this case, we obtain the \gls{BET} equation as:
 %
 \begin{equation}\label{pyg:eqn:bet}
 	n_a(p) = n_a^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
 \end{equation}
 
-The BET constant \gls{C} is exponentially proportional to the
+The \gls{BET} constant \gls{C} is exponentially proportional to the
 difference between the surface adsorption energy and the
 intermolecular attraction and can be seen to influence the ``knee''
-a BET-type isotherm has at low pressure, before statistical
+a \gls{BET}-type isotherm has at low pressure, before statistical
 monolayer formation.
 
 \subsection{Toth model}\label{pyg:models:toth}
