@@ -104,6 +104,8 @@ acs-*.bib
 *.acr
 *.glg
 *.glo
+*.not
+*.ntn
 *.gls
 *.glsdefs
 
