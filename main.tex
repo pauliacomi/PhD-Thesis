@@ -23,8 +23,18 @@
 \input{frontmatter/toc}
 
 % Nomenclature and acronyms
-\printglossary[type=\acronymtype, title={List of acronyms}, toctitle={List of acronyms}]
-\printglossary[type=notation,title={Nomenclature}, toctitle={Nomenclature}]
+\printglossary[
+    type=\acronymtype, 
+    style=long-booktabs,
+    title={List of acronyms}, 
+    toctitle={List of acronyms}
+]
+\printglossary[
+    type=notation,
+    style=nomenclatureunit,
+    title={Nomenclature},
+    toctitle={Nomenclature}
+]
 
 % Chapters
 \mainmatter{}
