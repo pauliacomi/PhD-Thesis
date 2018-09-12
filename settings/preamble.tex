@@ -266,8 +266,8 @@
             lp{0.6\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
     {\end{longtable}}%
     %
-    {%  Change the table header
-    \toprule 
+    \renewcommand*{\glossaryheader}{%  Change the table header
+    \toprule
     \bfseries \entryname & \bfseries \descriptionname & \bfseries Unit 
     \tabularnewline
     \midrule\endhead
