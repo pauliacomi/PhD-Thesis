@@ -23,17 +23,17 @@ surface. Even if the adsorbent is porous, the initial amount adsorbed
 described through the equation written in its linear form:
 %
 \begin{equation}
-	\frac{p/p_0}{n_{ads} (1-p/p_0)} = \frac{1}{n_{m} C} + \frac{C - 1}{n_{m} C}(p/p_0)
+	\frac{p/p_0}{n_{ads} (1-p/p_0)} = \frac{1}{n_{ads}^m C} + \frac{C - 1}{n_{ads}^m C}(p/p_0)
 \end{equation}
 
 If a plot of the isotherm points as \({(p/p_0)}/{n_{ads}(1-p/p_0)}\)
 versus \(p/p_0\) is generated, a linear region
 can usually be found. The slope and intercept of this line
-can then be used to calculate \(n_{m}\), the amount adsorbed at the
-statistical monolayer, as well as \(C\), the \gls{BET} constant.
+can then be used to calculate \gls{namon}, the amount adsorbed at the
+statistical monolayer, as well as \gls{C}, the \gls{BET} constant.
 %
 \begin{align}
-	n_{m} & = \frac{1}{s+i} & C & = \frac{s}{i} + 1
+	n_{ads}^{m} & = \frac{1}{s+i} & C & = \frac{s}{i} + 1
 \end{align}
 
 From the \gls{BET} monolayer capacity, the specific surface area can be
@@ -42,7 +42,7 @@ on the surface is known. The calculation uses the following equation
 together with Avogadro's number:
 %
 \begin{equation}
-	a_{BET} = n_m A_N \sigma
+	A_{BET} = n_{ads}^m N_A \sigma
 \end{equation}
 
 While commonly used for surface area determination, the \gls{BET} area
@@ -53,7 +53,7 @@ several checks to ensure that the selected \gls{BET} region is valid:
 
 \begin{itemize}
 
-	\item The \gls{BET} (\(C\)) obtained should be positive;
+	\item The \gls{BET} (\gls{C}) obtained should be positive;
 	\item In the corresponding Rouquerol plot where \(n_{ads}(1-p/p_0)\)
 	      is plotted with respect to \(p/p_0\), the points chosen for \gls{BET}
 	      analysis should be strictly increasing;
@@ -80,24 +80,24 @@ The Langmuir equation (\autoref{pyg:eqn:langmuir}) can be also
 be expressed in a linear form by rearranging it as:
 %
 \begin{equation}
-	\frac{p}{n} = \frac{1}{K n_m} + \frac{p}{n_m}
+	\frac{p}{n_{ads}} = \frac{1}{K n_{ads}^m} + \frac{p}{n_{ads}^m}
 \end{equation}
 %
 Assuming the data can be fitted with a Langmuir model, by plotting
-\({p}/{n}\) against pressure, a straight line will be obtained.
+\({p}/{n_{ads}}\) against pressure, a straight line will be obtained.
 The slope and intercept of this line can then be used to calculate
-\(n_{m}\), the amount adsorbed at the monolayer capacity, as well
+\gls{namon}, the amount adsorbed at the monolayer capacity, as well
 as \(K\), the Langmuir constant.
 %
 \begin{align}
-	n_m & = \frac{1}{s} & K & = \frac{1}{i * n_m}
+	n_{ads}^m & = \frac{1}{s} & K & = \frac{1}{i \times n_{ads}^m}
 \end{align}
 %
 The surface area can then be calculated by using the monolayer
 capacity in a manner analogous to the \gls{BET} surface area method.
 %
 \begin{equation}
-	a_{Langmuir} = n_m A_N \sigma
+	A_{Langmuir} = n_{ads}^m N_A \sigma
 \end{equation}
 
 The Langmuir method for determining surface area assumes that
@@ -173,7 +173,7 @@ where \(\rho_{l}\) is the liquid density of the adsorbate at experimental
 conditions.
 %
 \begin{equation}\label{pyg:fig:areatplot}
-	a_{surface} = \frac{s M_m}{\rho_{l}}
+	A_{surface} = \frac{s M_m}{\rho_{l}}
 \end{equation}
 
 If the linear region selected is after a vertical deviation,
@@ -209,7 +209,7 @@ pressure, usually taken as \(p/p_0=0.4\) since nitrogen hysteresis loops
 theoretically close at this point.
 %
 \begin{equation}
-	\alpha_s = \frac{n_a}{n_{0.4}}
+	\alpha_s = \frac{n_{ads}}{n_{ads}^{0.4}}
 \end{equation}
 
 The analysis then proceeds as in the t-plot method, with the
@@ -218,7 +218,7 @@ that the surface area calculation from linear regions observed
 uses the known specific area of the reference material.
 %
 \begin{equation}
-	A = \frac{s A_{ref}}{{(n_{ref})}_{0.4}}
+	A_{\alpha_s} = \frac{s A_{ref}}{{(n_{ads, ref}^{0.4}}
 \end{equation}
 
 The reference isotherm chosen for the \(\alpha_s\) method must

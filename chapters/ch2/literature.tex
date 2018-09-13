@@ -115,9 +115,9 @@ from which the Gibbs adsorption isotherm (\autoref{pyg:eqn:gibbs}) may
 be derived, as well as
 %
 \begin{equation}\label{calo:eqn:enthalpy}
-	\ln p = \frac{\dot{u}_{T, \Gamma}^{\sigma} - u_T^g - RT}{RT} %
-	- \frac{\dot{s}_{T, \Gamma}^{\sigma} - s^{g}_{0}}{R} %
-	= \frac{\Delta_{ads} \dot{h}_{T, \Gamma}}{RT} - \frac{\Delta_{ads} \dot{s}_{T, \Gamma}}{R}
+	\ln p = \frac{\dot{u}_{T, \Gamma}^{\sigma} - u_T^g - R_gT}{R_gT} %
+	- \frac{\dot{s}_{T, \Gamma}^{\sigma} - s^{g}_{0}}{R_g} %
+	= \frac{\Delta_{ads} \dot{h}_{T, \Gamma}}{R_gT} - \frac{\Delta_{ads} \dot{s}_{T, \Gamma}}{R_g}
 \end{equation}
 %
 an expression relating the differential enthalpy of adsorption
@@ -128,7 +128,7 @@ The relationship between the differential enthalpy and the differential energy
 of the adsorbed phase is therefore given by:
 %
 \begin{equation}\label{calo:eqn:adj}
-	\Delta_{ads} \dot{h}_{T, \Gamma} = \Delta_{ads} \dot{u}_{T, \Gamma} - RT
+	\Delta_{ads} \dot{h}_{T, \Gamma} = \Delta_{ads} \dot{u}_{T, \Gamma} - R_gT
 \end{equation}
 %
 The differential enthalpy of adsorption is the quantity which

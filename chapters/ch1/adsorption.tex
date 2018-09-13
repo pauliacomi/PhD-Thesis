@@ -13,7 +13,7 @@ adsorbed phase, as well as several guest-host system archetypes.
 	\includegraphics[width=0.9\linewidth]{iupac-isotherms}
 	\caption{
 		\gls{IUPAC} classified isotherm types. 
-		Adapted from \citet{thommesPhysisorptionGasesSpecial2015}.
+		Recreated from \citet{thommesPhysisorptionGasesSpecial2015}.
 	}\label{pyg:fig:iupac-isotherms}
 \end{figure}
 
@@ -26,8 +26,8 @@ While these isotherm types can be useful for fast classification,
 there is no ``one size fits all'' approach. Indeed, the only 
 certain behaviour is that the amount adsorbed is zero at
 the isotherm start and that the loading increases with increasing 
-pressure, with the latter shown in \autoref{dut} to not be 
-always true. However, through careful assumptions and a well-defined
+pressure, with the latter shown in \autoref{dut} to not always 
+hold true. However, through careful assumptions and a well-defined
 model, the underlying mechanisms of adsorption can be understood.
 Unfortunately, the plethora of isotherm features and shapes can only
 be truly recreated by molecular simulation, a method which requires an
@@ -49,7 +49,7 @@ the rate of adsorption and desorption of molecules on
 available sites is mathematically modelled. Equations based
 on kinetics include the Langmuir model, the \gls{BET} model,
 the Temkin model and empirical or semi-empirical derivatives
-such as the Toth, Quadratic or the Jensen-Seaton model
+such as the Toth, Quadratic or the Jensen-Seaton model.
 A page of figures for different models and how the
 described isotherm varies with different values of
 their parameters can be seen in
@@ -152,9 +152,9 @@ excess amount adsorbed is then:
 	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
 \end{equation}
 
-As long as the volume of the adsorbed layer \(V_{ads}\) can be
+As long as the volume of the adsorbed layer \gls{Vads} can be
 considered negligible and the concentration of adsorbate in the bulk
-phase \(c_{bulk}\) is low, the total amount adsorbed and the surface
+phase \gls{cbulk} is low, the total amount adsorbed and the surface
 excess amount may be considered as approximately equal.
 This is usually the case for experiments such as nitrogen
 adsorption at \SI{77}{\kelvin}, or ambient temperature adsorption
@@ -167,7 +167,7 @@ In most cases, isotherms are reported in terms of excess surface
 amount. From an engineering viewpoint, this representation
 is often more useful. However, any modelling and simulations of 
 isotherms refers to the total amount adsorbed.
-If \(n_t\) is to be calculated, a value
+If \gls{ntot} is to be calculated, a value
 for the volume of the adsorbed phase and the sample is required, for a 
 correction using \autoref{pyg:eqn:total-excess}.
 In the case of adsorption in porous materials, the volume of the
@@ -181,7 +181,7 @@ Isotherm models which have a thermodynamical basis are derived
 from the Gibbs equation (\autoref{pyg:eqn:gibbs}). 
 The pressure and volume concepts of the bulk phase
 are replaced by the 2-dimensional analogues of spreading pressure 
-(\( \pi \)) and surface area.
+(\gls{sp}) and surface area.
 %
 \begin{equation}\label{pyg:eqn:gibbs}
 	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n}{A} R_g T
@@ -200,13 +200,13 @@ linear dependence of adsorbed amount with
 increasing pressure.
 %
 \begin{equation}\label{pyg:eqn:henry}
-	n_a(p) = K_H p
+	n_{ads}(p) = K_H p
 \end{equation}
 %
 It is derived from the Gibbs isotherm, by substituting a
 a two dimensional analogue to the ideal gas law.
 From a physical standpoint, Henry's law is unrealistic as adsorption sites
-will saturate at higher pressures. However, the constant \(K_H\),
+will saturate at higher pressures. However, the constant \gls{kH},
 or Henry’s constant, can be thought of as a measure of the strength
 of the interaction of the probe gas with the surface. At very
 low concentrations of gas there is a
@@ -245,7 +245,7 @@ pressure.
 The desorption rate, on the other hand, will be proportional to the
 number of occupied sites and the energy of adsorption
 (\autoref{pyg:eqn:langmuir_des}).
-It is also useful to define \(\theta = n_a/n_a^m\) as the fractional
+It is also useful to define \(\theta = n_{ads}/n_{ads}^m\) as the fractional
 surface coverage, the number of sites occupied divided by the total 
 sites. At equilibrium, the rate of adsorption and the rate of
 desorption are equal, therefore the two equations can be combined.
@@ -254,16 +254,16 @@ loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
 %
 \begin{align}
 	v_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
-	v_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{RT}\Big)}
+	v_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}
 	\label{pyg:eqn:langmuir_des}                                           \\
 	v_a                & = v_d                                             \\
-	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{RT}\Big)}  \\
-	n_a(p)             & = n_a^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
+	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}  \\
+	n_{ads}(p)             & = n_{ads}^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
 \end{align}
 %
 The Langmuir constant \(K\) is the product of the individual
 desorption and adsorption constants \(k_a\) and \(k_d\) and exponentially
-related to the energy of adsorption \(E_{ads}\).
+related to the energy of adsorption \gls{Eads}.
 
 A common extension to the Langmuir model is to consider
 the experimental isotherm to be the sum of several Langmuir-type
@@ -277,7 +277,7 @@ such as in crystalline materials of variable chemistry like
 zeolites and \glspl{MOF}. The resulting isotherm equation becomes:
 %
 \begin{equation}\label{pyg:eqn:langmulti}
-	n_a(p) = \sum_i n_{a,i}^m\frac{K_i p}{1+K_i p}
+	n_{ads}(p) = \sum_i n_{ads,i}^m\frac{K_i p}{1+K_i p}
 \end{equation}
 %
 In practice, only up to three adsorption sites are usually
@@ -325,25 +325,25 @@ we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
 		\midrule
 		\parbox{0.4\textwidth}{\begin{align*}
 				k_{a_1} p \theta_0     & = k_{d_1} \theta_1
-				\exp{\Big(-\frac{E_1}{RT}\Big)}             \\
+				\exp{\Big(-\frac{E_1}{R_gT}\Big)}             \\
 				k_{a_2} p \theta_1     & = k_{d_2} \theta_2
-				\exp{\Big(-\frac{E_2}{RT}\Big)}             \\
+				\exp{\Big(-\frac{E_2}{R_gT}\Big)}             \\
 				k_{a_2} p \theta_2     & = k_{d_3} \theta_3
-				\exp{\Big(-\frac{E_3}{RT}\Big)}             \\
+				\exp{\Big(-\frac{E_3}{R_gT}\Big)}             \\
 				\vdots                                      \\
 				k_{a_i} p \theta_{i-1} & = k_{d_i} \theta_i
-				\exp{\Big(-\frac{E_i}{RT}\Big)}
+				\exp{\Big(-\frac{E_i}{R_gT}\Big)}
 			\end{align*}} &
 		\parbox{0.4\textwidth}{ \begin{align*}
 				p \theta_0     & = \frac{k_{d_1}}{k_{a_1}} \theta_1
-				\exp{\Big(-\frac{E_1}{RT}\Big)}                     \\
+				\exp{\Big(-\frac{E_1}{R_gT}\Big)}                     \\
 				p \theta_1     & = g \theta_2
-				\exp{\Big(-\frac{E_L}{RT}\Big)}                     \\
+				\exp{\Big(-\frac{E_L}{R_gT}\Big)}                     \\
 				p \theta_2     & = g \theta_3
-				\exp{\Big(-\frac{E_L}{RT}\Big)}                     \\
+				\exp{\Big(-\frac{E_L}{R_gT}\Big)}                     \\
 				\vdots                                              \\
 				p \theta_{i-1} & = g \theta_i
-				\exp{\Big(-\frac{E_L}{RT}\Big)}
+				\exp{\Big(-\frac{E_L}{R_gT}\Big)}
 			\end{align*}}              \\
 		\bottomrule
 	\end{tabular}
@@ -353,15 +353,15 @@ The coverage for each layer \( \theta \) can now be
 expressed in terms of \(\theta_0\).
 %
 \begin{align}
-	\theta_i & = \Big[p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{RT}\Big)}\Big] x^{i-1} \theta_0
+	\theta_i & = \Big[p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{R_gT}\Big)}\Big] x^{i-1} \theta_0
 	\intertext{where}
-	x        & = \frac{p}{g} \exp{\Big(-\frac{E_L}{RT}\Big)}
+	x        & = \frac{p}{g} \exp{\Big(-\frac{E_L}{R_gT}\Big)}
 \end{align}
 %
 A constant C may be defined such that:
 %
 \begin{align}
-	C        & = \frac{k_{a_1}}{k_{d_1}} g \exp{\Big(\frac{E_1 - E_L}{RT}\Big)} \\
+	C        & = \frac{k_{a_1}}{k_{d_1}} g \exp{\Big(\frac{E_1 - E_L}{R_gT}\Big)} \\
 	\theta_i & = C x^i \theta_0
 \end{align}
 %
@@ -382,7 +382,7 @@ It is usually assumed that the number of layers tends to infinity
 In this case, we obtain the \gls{BET} equation as:
 %
 \begin{equation}\label{pyg:eqn:bet}
-	n_a(p) = n_a^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
+	n_{ads}(p) = n_{ads}^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
 \end{equation}
 
 The \gls{BET} constant \gls{C} is exponentially proportional to the
@@ -399,7 +399,7 @@ which introduces a power parameter for the denominator leading to
 the following equation:
 %
 \begin{equation}\label{pyg:eqn:toth}
-	n_a(p) = n_a^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
+	n_{ads}(p) = n_{ads}^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
 \end{equation}
 %
 The parameter \(t\) is a measure of the system heterogeneity.
@@ -415,7 +415,7 @@ and alcohols on activated carbons and zeolites.
 The Temkin adsorption
 isotherm~\cite{temkinKineticsAmmoniaSynthesis1940},
 like the Langmuir model, considers
-a surface with \(n_a^m\) identical adsorption sites, but takes into
+a surface with \(n_{ads}^m\) identical adsorption sites, but takes into
 account adsorbate-adsorbate interactions by assuming that the
 heat of adsorption is a linear function of  coverage.
 The formula in \autoref{pyg:eqn:temkin} is derived
@@ -424,15 +424,15 @@ to obtain an explicit equation for the
 loading~\cite{simonOptimizingNanoporousMaterials2014}.
 %
 \begin{equation}\label{pyg:eqn:temkin}
-	n_a(p) = n_a^m \frac{Kp}{1+Kp} + n_a^m \theta
+	n_{ads}(p) = n_{ads}^m \frac{Kp}{1+Kp} + n_{ads}^m \Phi_{gg}
 	{\Big(\frac{Kp}{1+Kp}\Big)}^2 \Big(\frac{Kp}{1+Kp} -1\Big)
 \end{equation}
 %
-Here, \(n_a^m\) and K have the same physical meaning as in the
+Here, \(n_{ads}^m\) and K have the same physical meaning as in the
 Langmuir model.
-The additional parameter \( \theta \) describes the strength of the
+The additional parameter \gls{adsint} describes the strength of the
 adsorbate-adsorbate
-interactions (\(\theta < 0\) for attractions).
+interactions (\(\Phi_{gg} < 0\) for attractions).
 
 \subsection{Jensen-Seaton model}\label{pyg:models:jseaton}
 
@@ -449,7 +449,7 @@ low pressure and an asymptote reflecting the compressibility of
 the adsorbate at high pressure.
 %
 \begin{equation}\label{pyg:eqn:jseaton}
-	n(p) = K_H p \Big{(1 + \frac{K_H p}{{[a {(1 + b
+	n_{ads}(p) = K_H p \Big{(1 + \frac{K_H p}{{[a {(1 + b
 									p)}]}^c}\Big)}^{(-1/c)}
 \end{equation}
 %
@@ -478,7 +478,7 @@ effect of adsorbate-adsorbate attractions aiding in the recruitment
 of additional adsorbate molecules.
 %
 \begin{equation}\label{pyg:eqn:quad}
-	n(p) = n_a^m \frac{(K_a + 2 K_b p)p}{1+K_{ap} + K_{bp}^2}
+	n_{ads}(p) = n_{ads}^m \frac{(K_a + 2 K_b p)p}{1+K_{a} p + K_{b} p^2}
 \end{equation}
 %
 The parameter \(K_a\) can be interpreted as the Langmuir constant;
@@ -495,8 +495,8 @@ factorized exponent relationship between loading and
 pressure~\cite{myersThermodynamicsAdsorptionPorous2002}.
 %
 \begin{equation}\label{pyg:eqn:virial}
-	p = n \exp{(K_1n^0 + K_2n^1 + K_3n^2 + K_4n^3 + \cdots + K_i
-		n^{i-1})}
+	p = n_{ads} \exp{\big(K_1n_{ads}^0 + K_2n_{ads}^1 + K_3n_{ads}^2 + K_4n_{ads}^3 + 
+	\cdots + K_i n_{ads}^{i-1}\big)}
 \end{equation}
 
 It has been applied with success to describe the behaviour of
@@ -515,11 +515,11 @@ In practice, besides the first constant, only 2--3 factors are used.
 
 \subsection{Vacancy solution theory models}\label{pyg:models:vst}
 
-The vacancy solution theory (VST) family of models,
+The \gls{VST} family of models,
 are based on the concept of a “vacancy” species and
 assume that the adsorbed phase is analogous to a mixture of
 vacancies and the adsorbate. The main assumptions in the
-VST models are defined as follows:
+\gls{VST} models are defined as follows:
 
 \begin{itemize}
 
@@ -549,7 +549,7 @@ equated give the following equation of state for the adsorbed phase:
 where \(y_v\) is the activity coefficient and \(x_v\) is the mole
 fraction of the vacancy in the adsorbed phase.
 This can then be introduced into the Gibbs equation (\autoref{pyg:eqn:gibbs})
-to obtain a general isotherm equation for VST-type models
+to obtain a general isotherm equation for \gls{VST}-type models
 (\autoref{pyg:eqn:vst}) where \(K_H\) is the Henry’s constant and
 \(f(\theta)\) is a function that describes the non-ideality of the
 system in terms of activity coefficients of the adsorbate and
@@ -559,7 +559,7 @@ vacancy species.
 	p = \frac{n_{ads}}{K_H} \frac{\theta}{1-\theta} f(\theta)
 \end{equation}
 
-The general VST equation requires an expression for the activity
+The general \gls{VST} equation requires an expression for the activity
 coefficients \(f(\theta)\). One option is to use the
 Wilson~\cite{suwanayuenGasAdsorptionIsotherm1980} approach,
 which expresses the activity coefficient in terms
@@ -591,5 +591,5 @@ activity coefficient. \(f(\theta)\) is represented as
 where \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the
 adsorbate and the vacancy respectively.
 Both the Wilson and Flory–Huggins expressions for the vacancy-adsorbate
-interactions can be directly inserted in the general VST model
+interactions can be directly inserted in the general \gls{VST} model
 (\autoref{pyg:eqn:vst}).

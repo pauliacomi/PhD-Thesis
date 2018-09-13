@@ -60,7 +60,7 @@ fluid contact angle with the surface
 \(\theta=0\) and \(\cos\theta=1\).
 %
 \begin{equation}\label{pyg:eqn:kelvin}
-	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l RT}\frac{2 \cos\theta}{r}
+	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l R_gT}\frac{2 \cos\theta}{r}
 \end{equation}
 %
 To apply the Kelvin equation to different types of pore systems, the
@@ -69,7 +69,7 @@ is used. It replaces the meniscus radius by a mean radius of curvature
 \(r_m\).
 %
 \begin{equation}\label{pyg:eqn:kelvin-general}
-	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l RT}\frac{2}{r_m}
+	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l R_gT}\frac{2}{r_m}
 \end{equation}
 %
 The mean radius of curvature is defined through the two principal
@@ -238,7 +238,7 @@ molecules, then the two contributions to the total potential can be
 replaced by the extended function in \autoref{pyg:eqn:hk}.
 %
 \begin{multline}\label{pyg:eqn:hk}
-	RTln(p/p_0) =   N_A\frac{n_a A_a + n_A A_A}{2 \sigma^{4}(l-d)}
+	R_g T ln(p/p_0) =   N_A\frac{n_{ads} A_a + n_A A_A}{2 \sigma^{4}(l-d)}
 	\times \int_{d/_2}^{1-d/_2}
 	\Big[
 	- {\Big(\frac{\sigma}{r}\Big)}^{4}
@@ -250,19 +250,19 @@ replaced by the extended function in \autoref{pyg:eqn:hk}.
 %
 Here \(l\) is the width of the pore, \(d\) defined as \(d=d_a+d_A\) is
 the sum of the diameters of the adsorbate and adsorbent molecules,
-\(n_a\) is number of molecules of adsorbent
+\(n_{ads}\) is number of molecules of adsorbent
 and \(A_a\) and \(A_A\) the Lennard-Jones potential constant of the
 fluid molecule and solid molecule respectively. They are defined as:
 %
 \begin{align}
-	A_a & = \frac{6mc^2\alpha_a\alpha_A}{\alpha_a/\varkappa_a + \alpha_A/\varkappa_A}
+	A_a & = \frac{6m_{e^-}c^2\alpha_a\alpha_A}{\alpha_a/\varkappa_a + \alpha_A/\varkappa_A}
 	%
 	\intertext{and}
 	%
-	A_a & = \frac{3mc^2\alpha_A\varkappa_A}{2}
+	A_a & = \frac{3m_{e^-}c^2\alpha_A\varkappa_A}{2}
 \end{align}
 %
-where \(m\) is the mass of an electron, \(\alpha_a\) and \(\alpha_A\) are
+where \(m_{e^-}\) is the mass of an electron, \(\alpha_a\) and \(\alpha_A\) are
 the polarizability of the adsorbate and adsorbate molecule
 and \(\varkappa_a\) and \(\varkappa_A\) the magnetic susceptibility of
 the adsorbate molecule and adsorbent molecule, respectively.

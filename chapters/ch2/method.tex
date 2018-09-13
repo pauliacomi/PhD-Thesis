@@ -22,13 +22,13 @@ with respect to temperature keeping the surface adsorbed amount constant
 to obtain an equation analogous to the Clausius-Clapeyron equation:
 %
 \begin{equation}
-	\Big( \frac{\partial \ln p}{\partial T} \Big)_{n_a} = -\frac{\Delta_{ads}\dot{h}_{T, \Gamma}}{R T^2}
+	\Big( \frac{\partial \ln p}{\partial T} \Big)_{n_{ads}} = -\frac{\Delta_{ads}\dot{h}_{T, \Gamma}}{R_g T^2}
 \end{equation}
 %
 The equation can be rearranged to calculate the differential enthalpy:
 %
 \begin{equation}\label{calo:eqn:claus-clap}
-	\Delta_{ads}\dot{h}_{T, \Gamma} = R \Big( \frac{\partial \ln p}{\partial 1 / T} \Big)_{\Gamma}
+	\Delta_{ads}\dot{h}_{T, \Gamma} = R_g \Big( \frac{\partial \ln p}{\partial 1 / T} \Big)_{\Gamma}
 \end{equation}
 %
 where \(\Delta_{ads}\dot{h}_{T, \Gamma}\) is the often termed the
@@ -43,7 +43,7 @@ Afterwards the isosteric enthalpy of adsorption can be calculated
 by using the pressures at which the loading is identical using the
 rearranged equation. By plotting the values of \(\ln p\) against
 \(1 / T\) we should obtain a straight line with a slope
-of \(- \Delta_{ads}\dot{h}_{T, \Gamma} / R\).
+of \(- \Delta_{ads}\dot{h}_{T, \Gamma} / R_g\).
 
 As experimental isotherms do not necessarily have points spaced
 at equal loading intervals, interpolation is usually used to obtain
@@ -138,16 +138,16 @@ done by the gas against the external pressure. In the cell volume measured
 by the calorimeter (\(V_C\)), this work may be expressed as
 %
 \begin{equation}
-	dW_{rev} = RT dn^{\sigma} + V_C dp
+	dW_{rev} = R_g T dn_{ads}^{\sigma} + V_C dp
 \end{equation}
 %
 If the previous two equations are combined and differentiated with
-respect to the amount adsorbed \(n^{\sigma}\), then we obtain
+respect to the amount adsorbed \(n_{ads}^{\sigma}\), then we obtain
 the equation for the differential heat of adsorption.
 %
 \begin{equation}
-	\frac{dQ_{rev}}{dn^{\sigma}} + V_C \frac{dp}{dn^{\sigma}} = %
-	\frac{dU^{\sigma}}{dn^{\sigma}} - u^g - RT = \Delta_{ads}\dot{h}_{T, \Gamma}
+	\frac{dQ_{rev}}{dn_{ads}^{\sigma}} + V_C \frac{dp}{dn_{ads}^{\sigma}} = %
+	\frac{dU^{\sigma}}{dn_{ads}^{\sigma}} - u^g - R_g T = \Delta_{ads}\dot{h}_{T, \Gamma}
 \end{equation}
 
 Two options exist regarding the method of introduction of adsorbate:
