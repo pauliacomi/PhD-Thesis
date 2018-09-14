@@ -135,7 +135,7 @@ of the Gibbs dividing surface.
 This approach describes the adsorbed phase only in terms
 of an \textit{excess} from the properties of the bulk phase.
 As represented in \autoref{pyg:fig:gibbs-surface}, the total
-amount adsorbed can be defined as:
+amount adsorbed (\gls{ntot}) can be defined as:
 %
 \begin{equation}
 	n_{ads}^{a} = A \int_0^r c\ dz
@@ -146,7 +146,7 @@ the real surface of the adsorbent and in the resulting system, the
 concentration of the adsorbent in the adsorbed phase are
 expressed as an excess from the concentration of the bulk fluid.
 The relationship between the total amount adsorbed and the
-excess amount adsorbed is then:
+excess amount (\gls{nex}) adsorbed is then:
 %
 \begin{equation}\label{pyg:eqn:total-excess}
 	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
@@ -181,7 +181,7 @@ Isotherm models which have a thermodynamical basis are derived
 from the Gibbs equation (\autoref{pyg:eqn:gibbs}). 
 The pressure and volume concepts of the bulk phase
 are replaced by the 2-dimensional analogues of spreading pressure 
-(\gls{sp}) and surface area.
+(\gls{sp}) and surface area (\gls{A}).
 %
 \begin{equation}\label{pyg:eqn:gibbs}
 	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n}{A} R_g T
@@ -349,7 +349,7 @@ we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
 	\end{tabular}
 \end{table}
 %
-The coverage for each layer \( \theta \) can now be
+The coverage for each layer \gls{cov} can now be
 expressed in terms of \(\theta_0\).
 %
 \begin{align}
@@ -358,7 +358,7 @@ expressed in terms of \(\theta_0\).
 	x        & = \frac{p}{g} \exp{\Big(-\frac{E_L}{R_gT}\Big)}
 \end{align}
 %
-A constant C may be defined such that:
+A constant \gls{C} may be defined such that:
 %
 \begin{align}
 	C        & = \frac{k_{a_1}}{k_{d_1}} g \exp{\Big(\frac{E_1 - E_L}{R_gT}\Big)} \\
@@ -415,7 +415,7 @@ and alcohols on activated carbons and zeolites.
 The Temkin adsorption
 isotherm~\cite{temkinKineticsAmmoniaSynthesis1940},
 like the Langmuir model, considers
-a surface with \(n_{ads}^m\) identical adsorption sites, but takes into
+a surface with \gls{namon} identical adsorption sites, but takes into
 account adsorbate-adsorbate interactions by assuming that the
 heat of adsorption is a linear function of  coverage.
 The formula in \autoref{pyg:eqn:temkin} is derived
@@ -428,7 +428,7 @@ loading~\cite{simonOptimizingNanoporousMaterials2014}.
 	{\Big(\frac{Kp}{1+Kp}\Big)}^2 \Big(\frac{Kp}{1+Kp} -1\Big)
 \end{equation}
 %
-Here, \(n_{ads}^m\) and K have the same physical meaning as in the
+Here, \gls{namon} and \(K\) have the same physical meaning as in the
 Langmuir model.
 The additional parameter \gls{adsint} describes the strength of the
 adsorbate-adsorbate
@@ -453,7 +453,7 @@ the adsorbate at high pressure.
 									p)}]}^c}\Big)}^{(-1/c)}
 \end{equation}
 %
-where \(K_H\) is the Henry constant, \(b\) is the compressibility of
+where (\gls{kH}) is the Henry constant, \(b\) is the compressibility of
 the adsorbed phase and \(c\) an empirical constant.
 
 The equation can be used to model both absolute and excess adsorption
@@ -547,10 +547,13 @@ equated give the following equation of state for the adsorbed phase:
 \end{equation}
 %
 where \(y_v\) is the activity coefficient and \(x_v\) is the mole
-fraction of the vacancy in the adsorbed phase.
-This can then be introduced into the Gibbs equation (\autoref{pyg:eqn:gibbs})
+fraction of the vacancy in the adsorbed phase, while \gls{pmola}
+is the partial molar area of the adsorbate following the 
+convention of \citet{lucassen-reyndersSurfaceEquationState1972}. 
+This can then be introduced into the Gibbs equation 
+(\autoref{pyg:eqn:gibbs})
 to obtain a general isotherm equation for \gls{VST}-type models
-(\autoref{pyg:eqn:vst}) where \(K_H\) is the Henry’s constant and
+(\autoref{pyg:eqn:vst}) where \gls{kH} is the Henry’s constant and
 \(f(\theta)\) is a function that describes the non-ideality of the
 system in terms of activity coefficients of the adsorbate and
 vacancy species.

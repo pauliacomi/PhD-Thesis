@@ -39,10 +39,11 @@ statistical monolayer, as well as \gls{C}, the \gls{BET} constant.
 From the \gls{BET} monolayer capacity, the specific surface area can be
 calculated if the area taken up by one of the adsorbate molecules
 on the surface is known. The calculation uses the following equation
-together with Avogadro's number:
+together with Avogadro's number (\gls{NA}) and the molecular cross-section 
+of the probe (\gls{crossa}):
 %
 \begin{equation}
-	A_{BET} = n_{ads}^m N_A \sigma
+	A_{BET} = n_{ads}^m N_A \sigma_p
 \end{equation}
 
 While commonly used for surface area determination, the \gls{BET} area
@@ -97,7 +98,7 @@ The surface area can then be calculated by using the monolayer
 capacity in a manner analogous to the \gls{BET} surface area method.
 %
 \begin{equation}
-	A_{Langmuir} = n_{ads}^m N_A \sigma
+	A_{Langmuir} = n_{ads}^m N_A \sigma_p
 \end{equation}
 
 The Langmuir method for determining surface area assumes that
@@ -170,10 +171,10 @@ If at the end of the curve, it will instead represent adsorption on
 external surface area. The formula to calculate an area starting
 from the t-plot slope is presented in \autoref{pyg:fig:areatplot},
 where \(\rho_{l}\) is the liquid density of the adsorbate at experimental
-conditions.
+conditions and \gls{mm} the molecular mass of the probe.
 %
 \begin{equation}\label{pyg:fig:areatplot}
-	A_{surface} = \frac{s M_m}{\rho_{l}}
+	A_{t-plot} = \frac{s M_m}{\rho_{l}}
 \end{equation}
 
 If the linear region selected is after a vertical deviation,
@@ -218,7 +219,7 @@ that the surface area calculation from linear regions observed
 uses the known specific area of the reference material.
 %
 \begin{equation}
-	A_{\alpha_s} = \frac{s A_{ref}}{{(n_{ads, ref}^{0.4}}
+	A_{\alpha_s} = \frac{s A_{ref}}{{(n_{ads, ref}^{0.4})}}
 \end{equation}
 
 The reference isotherm chosen for the \(\alpha_s\) method must

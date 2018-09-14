@@ -63,6 +63,12 @@
   unit=\si{\bar},
   description={fluid vapour pressure (at respective temperature)}
 }
+\newglossaryentry{prel}{
+  type=notation,
+  name={\(p/p_0\)},
+  unit=---,
+  description={relative pressure}
+}
 \newglossaryentry{T}{
   type=notation,
   name={\(T\)},
@@ -72,8 +78,8 @@
 \newglossaryentry{Rg}{
   type=notation,
   name={\(R_g\)},
-  unit=\si{\metre^3\pascal\per\kelvin\mol},
-  description={temperature}
+  unit=\SI{8.314}{\metre^3\pascal\kelvin^{-1}\mol^{-1}},
+  description={universal gas constant}
 }
 \newglossaryentry{El}{
   type=notation,
@@ -89,7 +95,7 @@
 }
 \newglossaryentry{crossa}{
   type=notation,
-  name={\( \sigma \)},
+  name={\( \sigma_p \)},
   unit=\si{\nano\metre^2},
   description={molecule cross-sectional area}
 }
@@ -99,13 +105,48 @@
   unit=\si{\kilo\gram\per\metre^3},
   description={density}
 }
+\newglossaryentry{stension}{
+  type=notation,
+  name={\( \gamma \)},
+  unit=\si{newton\per\metre},
+  description={surface tension}
+}
 \newglossaryentry{mm}{
   type=notation,
   name={\( M_m \)},
   unit=\si{\gram\per\mol},
   description={molar mass}
 }
-
+\newglossaryentry{cangle}{
+  type=notation,
+  name={\( \theta_c \)},
+  unit=\si{\degree},
+  description={contact angle}
+}
+\newglossaryentry{melec}{
+  type=notation,
+  name={\( m_{e^{-}} \)},
+  unit=\si{\gram},
+  description={mass of an electron}
+}
+\newglossaryentry{polariz}{
+  type=notation,
+  name={\( \psi \)},
+  unit=\si{\gram},
+  description={molecular polarizability}
+}
+\newglossaryentry{suscept}{
+  type=notation,
+  name={\( \varkappa \)},
+  unit=\si{\gram},
+  description={molecular magnetic susceptibility}
+}
+\newglossaryentry{lightsp}{
+  type=notation,
+  name={\( c \)},
+  unit=\(2.99 \times 10^9 ms^{-1}\),
+  description={speed of light in vacuum}
+}
 
 % adsorption basics 
 
@@ -168,8 +209,14 @@
 \newglossaryentry{kH}{
   type=notation,
   name={\(K_H\)},
-  unit=,
+  unit=\si{\milli\mol\gram^{-1}\bar^{-1}},
   description={Henry constant}
+}
+\newglossaryentry{kH0}{
+  type=notation,
+  name={\(K_{H_0}\)},
+  unit=\si{\milli\mol\gram^{-1}\bar^{-1}},
+  description={Henry constant at zero loading}
 }
 \newglossaryentry{Eads}{
   type=notation,
@@ -185,8 +232,8 @@
 }
 \newglossaryentry{sa}{
   type=notation,
-  name={\(s_A\)},
-  unit=,
+  name={\(A_s\)},
+  unit=\si{\metre^2\per\gram},
   description={specific surface area}
 }
 
@@ -196,7 +243,12 @@
   unit=---,
   description={BET constant}
 }
-
+\newglossaryentry{pmola}{
+  type=notation,
+  name={\( \sigma_v \)},
+  unit=\si{\nano\metre^2},
+  description={partial vacancy molar area for VST}
+}
 % calorimetry 
 
 \newglossaryentry{dh}{

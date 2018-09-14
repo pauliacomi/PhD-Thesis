@@ -53,14 +53,14 @@ Since the Kelvin equation is the basis of most mesoporous PSD
 calculations, such as the \gls{BJH} and \gls{DH} methods, it will be described
 first. The original form of the equation (\autoref{pyg:eqn:kelvin})
 gives the dependence of pressure on the radius of curvature of a
-meniscus in a pore \(r\) by means of surface tension \( \gamma \),
+meniscus in a pore \(r\) by means of surface tension \gls{stension},
 molar liquid volume, here expressed as \(v_l=M_m/\rho_l\) and the
-fluid contact angle with the surface
-\( \theta \). The fluid is often assumed to be fully wetting, with
-\(\theta=0\) and \(\cos\theta=1\).
+fluid contact angle with the surface \gls{cangle}
+The fluid is often assumed to be fully wetting, with
+\(\theta_c=0\) and \(\cos\theta_c=1\).
 %
 \begin{equation}\label{pyg:eqn:kelvin}
-	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l R_gT}\frac{2 \cos\theta}{r}
+	\ln\Big(\frac{p}{p_0}\Big) = -\frac{\gamma M_m}{\rho_l R_gT}\frac{2 \cos\theta_c}{r}
 \end{equation}
 %
 To apply the Kelvin equation to different types of pore systems, the
@@ -174,7 +174,7 @@ In the \gls{BJH} equation:
 
 \end{itemize}
 
-Then, by plotting \(\Delta V / (2*\Delta r_p)\) versus the width
+Then, by plotting \(\Delta V / (2\Delta r_p)\) versus the width
 of the pores calculated for each point, the pore size distribution
 can be obtained.
 
@@ -199,7 +199,7 @@ same assumptions. The modified equation becomes:
 \end{align}
 
 The meaning of each symbol is the same as in the \gls{BJH} equation.
-As before, a plot of \(\Delta V/(2*\Delta r_p)\) versus the width of
+As before, a plot of \(\Delta V/(2\Delta r_p)\) versus the width of
 the pores calculated for each point yields the pore size distribution.
 The Dollimore-Heal method is used on the desorption branch,
 of the isotherm but often also applied on the adsorption branch.
@@ -238,7 +238,7 @@ molecules, then the two contributions to the total potential can be
 replaced by the extended function in \autoref{pyg:eqn:hk}.
 %
 \begin{multline}\label{pyg:eqn:hk}
-	R_g T ln(p/p_0) =   N_A\frac{n_{ads} A_a + n_A A_A}{2 \sigma^{4}(l-d)}
+	R_g T \ln{p/p_0} =   N_A\frac{n_{ads} P_a + n_A P_A}{2 \sigma^{4}(l-d)}
 	\times \int_{d/_2}^{1-d/_2}
 	\Big[
 	- {\Big(\frac{\sigma}{r}\Big)}^{4}
@@ -251,18 +251,18 @@ replaced by the extended function in \autoref{pyg:eqn:hk}.
 Here \(l\) is the width of the pore, \(d\) defined as \(d=d_a+d_A\) is
 the sum of the diameters of the adsorbate and adsorbent molecules,
 \(n_{ads}\) is number of molecules of adsorbent
-and \(A_a\) and \(A_A\) the Lennard-Jones potential constant of the
+and \(P_a\) and \(P_A\) the Lennard-Jones potential constant of the
 fluid molecule and solid molecule respectively. They are defined as:
 %
 \begin{align}
-	A_a & = \frac{6m_{e^-}c^2\alpha_a\alpha_A}{\alpha_a/\varkappa_a + \alpha_A/\varkappa_A}
+	P_a & = \frac{6m_{e^-}c^2\psi_a\psi_A}{\psi_a/\varkappa_a + \psi_A/\varkappa_A}
 	%
 	\intertext{and}
 	%
-	A_a & = \frac{3m_{e^-}c^2\alpha_A\varkappa_A}{2}
+	P_a & = \frac{3m_{e^-}c^2\psi_A\varkappa_A}{2}
 \end{align}
 %
-where \(m_{e^-}\) is the mass of an electron, \(\alpha_a\) and \(\alpha_A\) are
+where \gls{melec} is the mass of an electron, \(\psi_a\) and \(\psi_A\) are
 the polarizability of the adsorbate and adsorbate molecule
 and \(\varkappa_a\) and \(\varkappa_A\) the magnetic susceptibility of
 the adsorbate molecule and adsorbent molecule, respectively.
