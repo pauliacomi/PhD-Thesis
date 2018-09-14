@@ -17,17 +17,26 @@ adsorbed phase, as well as several guest-host system archetypes.
 	}\label{pyg:fig:iupac-isotherms}
 \end{figure}
 
-Adsorption isotherms can have highly different shapes and features,
-depending on the system involved. 
+Adsorption isotherms can have highly distinct shapes and features,
+mainly dependent on the interaction between the adsorbate and the surface
+and the pore size distribution of the material.
 Much effort was put into attempting to describe and categorize
-the phenomenon of adsorption, with the \gls{IUPAC} recommendations suggesting
-six types of isotherms, as seen in \autoref{pyg:fig:iupac-isotherms}. 
+adsorption behaviour, with the \gls{IUPAC} recommendations suggesting
+six types of isotherms, as seen in \autoref{pyg:fig:iupac-isotherms}.
+They represent typical microporous isotherms (Ia, Ib), surface adsorption
+(II and III), isotherms in mesoporous systems (IVa, IVb, V) and 
+multilayer surface adsorption or sequential pore filling (VI)
+at different strengths of guest-host and host-host interactions.
 While these isotherm types can be useful for fast classification, 
 there is no ``one size fits all'' approach. Indeed, the only 
 certain behaviour is that the amount adsorbed is zero at
-the isotherm start and that the loading increases with increasing 
-pressure, with the latter shown in \autoref{dut} to not always 
-hold true. However, through careful assumptions and a well-defined
+the isotherm start and that the loading increases with increasing
+pressure (\autoref{pyg:eqn:ads-ass}), with the latter shown in 
+\autoref{dut} to not always hold true. 
+\begin{align}\label{pyg:eqn:ads-ass}
+	\lim_{p \to 0} n_{ads} & = 0 & \frac{dn_{ads}}{dp} & \geqslant 0
+\end{align}
+However, through careful assumptions and a well-defined
 model, the underlying mechanisms of adsorption can be understood.
 Unfortunately, the plethora of isotherm features and shapes can only
 be truly recreated by molecular simulation, a method which requires an
@@ -112,15 +121,15 @@ applicability.
 
 \subsection{The Gibbs surface excess approach}\label{pyg:models:gibbs}
 
-A description of the adsorbed phase can be made through
-expressing the change in density or concentration of fluid
-from the adsorbent surface to the bulk phase. The density
+In order to describe the adsorbed fluid phase on a surface, 
+an expression for the change in density or concentration of fluid
+from the adsorbent surface to the bulk phase is required. The density
 has a maxima in the immediate zone close to the surface, and then
 decreases until it reaches the density of the bulk fluid.
 However, when defined as such, the boundary between the
 two phases is difficult to pinpoint.
 Therefore, in most cases it is useful to employ the concept
-of the Gibbs dividing surface.
+of a Gibbs dividing surface.
 
 \begin{figure}[htb]
 	\centering
@@ -143,7 +152,7 @@ amount adsorbed (\gls{ntot}) can be defined as:
 %
 The imaginary Gibbs dividing surface is usually envisaged parallel to
 the real surface of the adsorbent and in the resulting system, the
-concentration of the adsorbent in the adsorbed phase are
+concentration of the adsorptive in the adsorbed phase is
 expressed as an excess from the concentration of the bulk fluid.
 The relationship between the total amount adsorbed and the
 excess amount (\gls{nex}) adsorbed is then:
@@ -151,7 +160,7 @@ excess amount (\gls{nex}) adsorbed is then:
 \begin{equation}\label{pyg:eqn:total-excess}
 	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
 \end{equation}
-
+%
 As long as the volume of the adsorbed layer \gls{Vads} can be
 considered negligible and the concentration of adsorbate in the bulk
 phase \gls{cbulk} is low, the total amount adsorbed and the surface
@@ -165,11 +174,11 @@ begins to diverge significantly from the surface excess.
 
 In most cases, isotherms are reported in terms of excess surface 
 amount. From an engineering viewpoint, this representation
-is often more useful. However, any modelling and simulations of 
-isotherms refers to the total amount adsorbed.
+is often more useful. It should be noted that most model and simulated
+isotherms refer to the total amount adsorbed instead.
 If \gls{ntot} is to be calculated, a value
-for the volume of the adsorbed phase and the sample is required, for a 
-correction using \autoref{pyg:eqn:total-excess}.
+for the volume of the adsorbed phase and the sample is required, 
+serving as inputs to \autoref{pyg:eqn:total-excess}.
 In the case of adsorption in porous materials, the volume of the
 adsorbed phase may be taken as the total pore volume. This approach
 assumes that the volume enclosed by the Gibbs dividing surface is
@@ -203,7 +212,7 @@ increasing pressure.
 	n_{ads}(p) = K_H p
 \end{equation}
 %
-It is derived from the Gibbs isotherm, by substituting a
+It is derived from the Gibbs isotherm, by substituting
 a two dimensional analogue to the ideal gas law.
 From a physical standpoint, Henry's law is unrealistic as adsorption sites
 will saturate at higher pressures. However, the constant \gls{kH},
@@ -238,11 +247,11 @@ is based on several assumptions.
 \end{itemize}
 
 Using these assumptions we can define rates for both adsorption and
-desorption. The adsorption rate (\autoref{pyg:eqn:langmuir_ads})
+desorption. The adsorption rate \(r_a\) (\autoref{pyg:eqn:langmuir_ads})
 will be proportional to the number of sites available on the surface,
 as well as the number of molecules in the gas, which is given by
 pressure.
-The desorption rate, on the other hand, will be proportional to the
+The desorption rate \(r_d\), on the other hand, will be proportional to the
 number of occupied sites and the energy of adsorption
 (\autoref{pyg:eqn:langmuir_des}).
 It is also useful to define \(\theta = n_{ads}/n_{ads}^m\) as the fractional
@@ -253,10 +262,10 @@ The equation can then be arranged to obtain an expression for the
 loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
 %
 \begin{align}
-	v_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
-	v_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}
+	r_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
+	r_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}
 	\label{pyg:eqn:langmuir_des}                                           \\
-	v_a                & = v_d                                             \\
+	r_a                & = r_d                                             \\
 	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}  \\
 	n_{ads}(p)             & = n_{ads}^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
 \end{align}
@@ -267,10 +276,9 @@ related to the energy of adsorption \gls{Eads}.
 
 A common extension to the Langmuir model is to consider
 the experimental isotherm to be the sum of several Langmuir-type
-isotherms, each with specific maximum coverage and affinities.
-The underlying assumption is that the adsorbent has several distinct
-types of homogeneous adsorption sites and a Langmuir
-equation is used for each. This is particularly
+isotherms. The underlying assumption is that the adsorbent has 
+several distinct types of non-interacting homogeneous adsorption 
+sites, with a Langmuir equation used for each. This is particularly
 applicable in cases where the structure of the adsorbent
 suggests that different types of sites are present,
 such as in crystalline materials of variable chemistry like
@@ -304,8 +312,8 @@ are formed. The conditions imagined by the \gls{BET} model are:
 \end{itemize}
 
 A percentage of the surface \(\theta_x\) is occupied with
-x layers. For each layer at equilibrium, the adsorption and
-desorption rates must be equal.
+x layers. For each layer at equilibrium, the adsorption 
+\(k_{a_x}\) and desorption \(k_{d_x}\) rates must be equal.
 The Langmuir model is then applied for each of layer
 as shown in \autoref{pyg:tbl:bet-deriv}. It is assumed
 that the adsorption energy of a molecule on the second
@@ -371,7 +379,7 @@ For all layers \(N\), the equations can be summed:
 	\frac{n}{n_m} & = \sum_{i=1}^{N} i \theta^i = C
 	\sum_{i=1}^{N} i x^i \theta_0
 	%
-	\intertext{and since}
+	\intertext{and therefore}
 	%
 	\theta_0      & = 1 - \sum_{1}^{N} \theta_i
 	\sum_{i=1}^{N} i x^i = \frac{x}{{(1-x)}^2}
@@ -387,7 +395,7 @@ In this case, we obtain the \gls{BET} equation as:
 
 The \gls{BET} constant \gls{C} is exponentially proportional to the
 difference between the surface adsorption energy and the
-intermolecular attraction and can be seen to influence the ``knee''
+intermolecular attraction, and can be seen to influence the ``knee''
 a \gls{BET}-type isotherm has at low pressure, before statistical
 monolayer formation.
 
@@ -396,7 +404,7 @@ monolayer formation.
 The Toth model is an empirical modification to the Langmuir equation
 (\autoref{pyg:eqn:langmuir})
 which introduces a power parameter for the denominator leading to
-the following equation:
+the following expression:
 %
 \begin{equation}\label{pyg:eqn:toth}
 	n_{ads}(p) = n_{ads}^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
@@ -405,8 +413,8 @@ the following equation:
 The parameter \(t\) is a measure of the system heterogeneity.
 Thanks to this additional parameter, the Toth equation can
 accurately describe a large number of adsorbent/adsorbate systems
-and, due to its correct behaviour in both the low and high pressure
-limits, is recommended as the fitting isotherms of many
+and, due to its correct behaviour when approaching both the low and high
+pressure limits, is recommended as the fitting isotherms of many
 adsorbents such as hydrocarbons, carbon oxides, hydrogen sulphide
 and alcohols on activated carbons and zeolites.
 
@@ -417,14 +425,14 @@ isotherm~\cite{temkinKineticsAmmoniaSynthesis1940},
 like the Langmuir model, considers
 a surface with \gls{namon} identical adsorption sites, but takes into
 account adsorbate-adsorbate interactions by assuming that the
-heat of adsorption is a linear function of  coverage.
+enthalpy of adsorption is a linear function of coverage.
 The formula in \autoref{pyg:eqn:temkin} is derived
 using a mean-field argument and uses an asymptotic approximation
 to obtain an explicit equation for the
 loading~\cite{simonOptimizingNanoporousMaterials2014}.
 %
 \begin{equation}\label{pyg:eqn:temkin}
-	n_{ads}(p) = n_{ads}^m \frac{Kp}{1+Kp} + n_{ads}^m \Phi_{gg}
+	n_{ads}(p) = n_{ads}^m \frac{Kp}{1+Kp} + n_{ads}^m \Phi_{aa}
 	{\Big(\frac{Kp}{1+Kp}\Big)}^2 \Big(\frac{Kp}{1+Kp} -1\Big)
 \end{equation}
 %
@@ -432,7 +440,7 @@ Here, \gls{namon} and \(K\) have the same physical meaning as in the
 Langmuir model.
 The additional parameter \gls{adsint} describes the strength of the
 adsorbate-adsorbate
-interactions (\(\Phi_{gg} < 0\) for attractions).
+interactions (\(\Phi_{aa} < 0\) for attractions).
 
 \subsection{Jensen-Seaton model}\label{pyg:models:jseaton}
 
@@ -441,7 +449,7 @@ highlighted by
 Jensen and Seaton in 1996~\cite{jensenIsothermEquationAdsorption1996}
 that at sufficiently high pressures the adsorption
 isotherm should not reach a horizontal plateau corresponding to
-saturation but that this asymptote should continue to rise due to
+saturation, but that this asymptote should continue to rise due to
 the compression of the adsorbate in the pores. They developed a
 semi-empirical equation to describe this phenomenon based on a function
 that interpolates between two asymptotes: the Henry’s law asymptote at
@@ -461,7 +469,7 @@ as the pore volume can be incorporated into the definition of \(b\),
 although this can lead to negative adsorption slopes for the
 compressibility asymptote. This equation has been found to provide a
 better fit for experimental data from microporous solids than the
-Langmuir or Toth equation, in particular for
+Langmuir or Toth equations, in particular for
 adsorbent/adsorbate systems with high Henry’s constants where the
 amount adsorbed increases rapidly at relatively low pressures and
 then slows down dramatically.

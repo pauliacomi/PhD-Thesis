@@ -45,7 +45,7 @@ intuitively named: \texttt{Isotherm}, \texttt{Sample} and \texttt{Adsorbent}.
 
 The \texttt{Isotherm} class is a representation of an adsorption 
 isotherm i.e.\ a function of the amount adsorbed, or loading, 
-with pressure at a fixed temperature. The class also contains
+versus pressure at a fixed temperature. The class also contains
 other information relating to the isotherm, such as the material
 name and batch it describes, the adsorbate used and other 
 user-defined properties.
@@ -55,13 +55,14 @@ This relationship can be defined in two ways:
 \begin{itemize}
     \item individual pressure-loading pairs of points which have 
     been recorded as part of a measurement or
-    \item as a mathematical function describing the relationship 
+    \item a mathematical function describing the relationship 
     between the two properties. 
 \end{itemize}
 
 As such, the Isotherm class is used as a parent class for two subclasses: 
 the \texttt{PointIsotherm} which contains datapoints and the
-\texttt{ModelIsotherm}, containing a model such as Henry, Langmuir etc. 
+\texttt{ModelIsotherm}, containing a model such as Henry, Langmuir etc.
+(see \autoref{pyg:models} for the implemented models).
 The two classes are interchangeable 
 as they share most methods and properties. Once an instance of 
 an \texttt{Isotherm} class is created, it can then be used for the 
@@ -78,7 +79,7 @@ For this case, \texttt{pyGAPS} provides the \texttt{Sample} class.
 The framework uses the string values
 in the isotherm to connect an \texttt{Isotherm} instance to a 
 specific \texttt{Sample}. If sample-related properties are 
-needed for processing, such as conversion of an isotherm
+needed when processing an isotherms, such as conversion of loading
 from a mass basis to a volume basis, this class will be 
 checked for the required data.
 
@@ -98,8 +99,8 @@ from the internal database or specified by the user.
 
 \subsection{Creation of an Isotherm}
 
-An \texttt{Isotherm} can be created either from the command line 
-directly or through an import from a supported format. For direct
+An \texttt{Isotherm} can be created either directly from the command 
+line or through an import from a supported format. For direct
 creation, the code takes
 two kinds of inputs: the data itself, in the form of a 
 \texttt{pandas.DataFrame}, and the isotherm parameters describing it.
@@ -108,17 +109,6 @@ the material name, the material batch, the adsorbate used and the
 experimental temperature. Other parameters can be passed as well 
 and will be stored in the isotherm class. An example code can 
 be seen in \autoref{pyg:lst:isocreation}.
-
-The \texttt{DataFrame} must contain a column containing the pressure
-points and one containing the corresponding loading points of the 
-isotherm. Other columns can also be passed, when
-secondary data such as enthalpy of adsorption is present at 
-each measurement point. These columns will be saved in the case of
-the \texttt{PointIsotherm} class and can be
-plotted afterwards. The framework can automatically attempt to 
-determine the adsorption and desorption branches, by analysing the
-input data. Alternatively, the user can manually specify which
-points belong to each branch.
 
 \begin{python}[float=htbp, caption=Creating the \texttt{PointIsotherm},
     label={pyg:lst:isocreation}]
@@ -152,15 +142,26 @@ point_isotherm = pygaps.PointIsotherm(
     # Finally the isotherm description
     # parameters are passed.
 
-    'sample_name' : 'carbon',       # Required
-    'sample_batch' : 'X1',          # Required
-    'adsorbate' : 'nitrogen',       # Required
-    't_exp' : 77,                   # Required
-    't_act' : 150,                  # Recognised / named
-    'user'  : 'Username',           # Recognised / named
-    'DOI'   : '10.000/mydoi',       # Unknown / user specific
-)
+    sample_name='carbon',           # Required
+    sample_batch='X1',              # Required
+    adsorbate='nitrogen',           # Required
+    t_exp=77,                       # Required
+    t_act=150,                      # Recognised / named
+    user='Username',                # Recognised / named
+    DOI='10.000/mydoi',             # Unknown / user specific
+}
 \end{python}
+
+The \texttt{DataFrame} must contain a column with the pressure
+points and one with the corresponding loading points of the 
+isotherm. Other columns can also be passed, when
+secondary data such as enthalpy of adsorption is present at 
+each measurement point. These columns will be saved in the case of
+the \texttt{PointIsotherm} class and can be
+plotted afterwards. The framework can automatically attempt to 
+determine the adsorption and desorption branches, by analysing the
+input data. Alternatively, the user can manually specify which
+points belong to each branch.
 
 If no unit data is specified in the constructor, the framework will
 assume that the isotherm is in units of \si{\milli\mole\per\gram} 
@@ -179,7 +180,7 @@ suitably structured JSON, CSV and Excel files is supported.
 
 Both \texttt{PointIsotherm}s and \texttt{ModelIsotherm} can
 be created from an instance of the other, by using the 
-available functions. As an example, a model is automatically
+available functions. As an example, a \texttt{ModelIsotherm} is automatically
 generated from the previous isotherm using the function in
 \autoref{lst:model}, which fits all available models and selects
 the one with the lowest residuals between the fitted function
@@ -200,8 +201,8 @@ Best model fit is Quadratic
 \subsection{Units}
 
 When computers work with physical data, units are often a matter 
-that introduces confusion. Here we explain how \texttt{pyGAPS} 
-handles units and other physical world concepts such as relative
+that introduces confusion. Therefore \texttt{pyGAPS} should
+carefully handle units and other physical world concepts such as relative
 pressure and mass or volume basis.
 
 The following dimensions can be specified for an Isotherm: 
@@ -238,15 +239,18 @@ loading can be calculated, either through interpolation in the
 case of a \texttt{PointIsotherm} or by evaluation
 of the internal model in the \texttt{ModelIsotherm}. For an isotherm with
 datapoints, these can also be converted into different units or modes.
+A common first step is to display the created isotherm using the 
+\inline{.print_info()} function, which displays all information in a
+class, as exemplified in \autoref{appx:pyg:print_info}.
 
-Characterisation functions take an isotherm object as their
+Characterisation functions take an \texttt{Isotherm} object as their
 first parameter. This is the case for the \gls{BET} area, Langmuir area, 
 t-plot, \(\alpha_s\) plot, and pore size distribution methods.
 These characterisation functions attempt to automate as much
 of the process as possible. For example, the \gls{BET} area limits are
 automatically calculated using the 
 Rouquerol~\cite{rouquerolAdsorptionPowdersPorous2013} method, 
-with all the checks implemented into the code. In another example
+with all the checks implemented into the code. As another example,
 the straight line sections of the t-plot are determined automatically
 through a calculation of the second derivative of the transformed isotherm.
 For detailed control, there are available options for each individual 
@@ -480,7 +484,7 @@ pygaps.alpha_s(isotherm,
 Both mesoporous, microporous and \gls{DFT} fitting routines can be
 used to calculate a pore size distribution in \texttt{pyGAPS}. 
 While the generation of \gls{DFT} kernels is outside the scope of the
-framework, it is able to use user-provided kernels to fit adsorption 
+framework, the code able to use user-provided kernels to fit adsorption 
 isotherms, and comes with a basic kernel applicable for \ce{N2} 
 adsorption at \SI{77}{\kelvin} on carbon slit pores.
 
@@ -516,7 +520,7 @@ A microporous analysis cannot be performed on MCM-41, since
 it does not contain any pores under \SI{2.5}{\nano\metre}, 
 where such methods are applicable. Instead, the UiO-66(Zr)
 isotherm is used. This \gls{MOF} has two micropores, a tetrahedral
-and octahedral one which are accessible through an \SI{0.8}{\nano\metre}
+and an octahedral one, which are accessible through an \SI{0.8}{\nano\metre}
 window. The \gls{HK} method is used for calculating the pore size 
 distribution, as displayed in \autoref{pyg:lst:hkpsd}.
 

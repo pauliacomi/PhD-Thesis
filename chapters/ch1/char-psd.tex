@@ -4,27 +4,27 @@
 
 Characterization of pore sizes and their distribution in a porous material
 is often the main goal when performing adsorption experiments.
-When it comes to such materials, three kinds of pore sizes can be
-defined, based on their lengthscale: micropores (\SI{< 2}{\nano\metre}),
+When it comes to such materials, three kinds of pore sizes are
+defined by IUPAC, based on their lengthscale: micropores (\SI{< 2}{\nano\metre}),
 mesopores (\SIrange{2}{50}{\nano\metre}), and macropores (\SI{> 50}{\nano\metre}).
 
-Macropores are generally unable to be characterised through adsorption,
-with methods such as mercury intrusion porosimetry as the standard for pore
+Macropores are generally unable to be characterised through adsorption.
+Methods such as mercury intrusion porosimetry are the standard for pore
 size determination at this lengthscale, although other alternatives have
 been suggested~\cite{rouquerolCharacterizationMacroporousSolids2012} due
-to the high toxicity of mercury.
+to the high toxicity of mercury and the destructive nature of the technique.
 
 In the mesopore range, \textit{``classical''} methods are often
 used, which are based on the application of Kelvin's equation
 pertaining to capillary condensation. This equation calculates the
 critical pressure at which the fluid completely files a pore of a
-specific diameter. It is applicable to a range of geometries
+specific diameter. It is applicable to a range of geometries and
 is used in multiple approaches such as the \gls{BJH} method 
 or the \gls{DH} method.
 
 For microporous materials, the Kelvin equation, with its assumption
 of continuous fluid properties and comparable density of the adsorbed
-state to bulk liquid density breaks down. An atomistic approach
+state to bulk liquid density, breaks down. An atomistic approach
 is required, addressing the interaction between solid-fluid
 and fluid-fluid through potential functions. The \gls{HK} method 
 is often used, alongside the older Dubinin-Radushkevich
@@ -39,11 +39,11 @@ which can then be collated in a so-called \textit{kernel}, able to
 be used to deconvolute an experimental isotherm to obtain a
 pore size distribution.
 
-It should be noted that all methods here described require knowledge of
+It should be noted that all methods here presented require knowledge of
 the pore geometry and depend on the material having pores which
 conform to a well-defined shape. Real adsorbents usually have
 interconnected networks of irregular pores, which the ideal pores
-used in these models merely approximate.
+described in these models merely approximate.
 
 \subsubsection{Mesoporous size distribution}
 
@@ -120,7 +120,7 @@ in adopting this approach, it is assumed that:
 	      considered to be invariant across the entire adsorbate.
 	\item The filling/emptying of each pore does not depend on its location.
 	\item Adsorption on the pore walls is not different from
-	      surface adsorption.
+	      external surface adsorption.
 
 \end{itemize}
 
@@ -130,13 +130,13 @@ The \gls{BJH} method for calculating pore size distribution
 is based on a classical description of the adsorbate behaviour
 in the adsorbent pores~\cite{barrettDeterminationPoreVolume1951}.
 Under this method, the guest is adsorbing on the pore walls
-following an ideal model, and decreasing the apparent pore volume until
+following an ideal model, and decreases the apparent pore volume until
 condensation takes place, filling the entire pore. The critical radius
-is a sum of two radii, the adsorbed layer thickness, which can be
+\(r_p\) is a sum of two radii: the adsorbed layer thickness \(t\), which can be
 modelled by a thickness model (such as Halsey, Harkins \& Jura or similar
 as presented in \autoref{pyg:charac:tcurve})
-and a critical radius model for condensation/evaporation,
-based on a form of the Kelvin equation.
+and a critical radius \(r_k\) obtained through a model for 
+condensation/evaporation, based on a form of the Kelvin equation.
 %
 \begin{equation}\label{pyg:eqn:condensradius}
 	r_p = t + r_k
@@ -201,8 +201,8 @@ same assumptions. The modified equation becomes:
 The meaning of each symbol is the same as in the \gls{BJH} equation.
 As before, a plot of \(\Delta V/(2\Delta r_p)\) versus the width of
 the pores calculated for each point yields the pore size distribution.
-The Dollimore-Heal method is used on the desorption branch,
-of the isotherm but often also applied on the adsorption branch.
+The Dollimore-Heal method is used on the desorption branch
+of the isotherm, but is often also applied to the adsorption branch.
 
 \subsubsection{Microporous size distribution}
 
@@ -217,20 +217,21 @@ both solid-fluid and fluid-fluid potential functions is required.
 \paragraph{The Horvath-Kawazoe (HK) method}
 
 The \gls{HK} method attempts to describe the adsorption within pores
-by calculation of the average potential energy for a
+by calculating the average potential energy for a
 pore~\cite{horvathMethodCalculationEffective1983}.
-The method starts by assuming the relationship between the gas
-phase as being:
+The method starts by assuming the relationship between the 
+molecules in the gas phase and the surface as being:
 %
 \begin{equation}
-	R_g T \ln\Big(\frac{p}{p_0}\Big) = U_0 + P_a
+	R_g T \ln\Big(\frac{p}{p_0}\Big) = \Phi_{aA} + \Phi_{aa}
 \end{equation}
 %
-Here \(U_0\) is the potential function describing the surface to adsorbent
-interactions and \(P_a\) is the potential function describing
+Here \(\Phi_{aA}\) is the potential function describing the surface to adsorbent
+interactions and \(\Phi_{aa}\) is the potential function describing
 guest-guest interactions. This equation is derived from the
 equation of the free energy of adsorption at constant temperature where
-the term \(T \Delta S^{tr}(w/w_{\infty})\) is assumed to be negligible.
+the entropy of translation \(T \Delta S^{tr}(n_{ads}/n_{ads}^{\infty})\) 
+is assumed to be negligible.
 
 If it is assumed that a Lennard-Jones-type potential function can
 accurately describe the interactions between adsorbate and surface
@@ -238,19 +239,20 @@ molecules, then the two contributions to the total potential can be
 replaced by the extended function in \autoref{pyg:eqn:hk}.
 %
 \begin{multline}\label{pyg:eqn:hk}
-	R_g T \ln{p/p_0} =   N_A\frac{n_{ads} P_a + n_A P_A}{2 \sigma^{4}(l-d)}
+	R_g T \ln\Big(\frac{p}{p_0}\Big) = N_A\frac{n_{ads} P_a + n_A P_A}{2 l_\sigma^{4}(l-d)}
 	\times \int_{d/_2}^{1-d/_2}
 	\Big[
-	- {\Big(\frac{\sigma}{r}\Big)}^{4}
-	+ {\Big(\frac{\sigma}{r}\Big)}^{10}
-	- {\Big(\frac{\sigma}{l-r}\Big)}^{4}
-	+ {\Big(\frac{\sigma}{l-r}\Big)}^{4}
+	- {\Big(\frac{l_\sigma}{r}\Big)}^{4}
+	+ {\Big(\frac{l_\sigma}{r}\Big)}^{10}
+	- {\Big(\frac{l_\sigma}{l-r}\Big)}^{4}
+	+ {\Big(\frac{l_\sigma}{l-r}\Big)}^{4}
 	\Big] \mathrm{d}x
 \end{multline}
 %
-Here \(l\) is the width of the pore, \(d\) defined as \(d=d_a+d_A\) is
-the sum of the diameters of the adsorbate and adsorbent molecules,
-\(n_{ads}\) is number of molecules of adsorbent
+Here \(l_\sigma\) is the distance between a gas atom and the nuclei of the surface
+at zero interaction energy, \(l\) is the width of the pore, \(d\) defined 
+as \(d=d_a+d_A\) is the sum of the diameters of the adsorbate and
+adsorbent molecules, \(n_{ads}\) is number of molecules of adsorbent
 and \(P_a\) and \(P_A\) the Lennard-Jones potential constant of the
 fluid molecule and solid molecule respectively. They are defined as:
 %
@@ -289,8 +291,8 @@ that there are several assumptions which limit its applicability.
 	      an accurate description.
 	\item The model does not have a description of capillary condensation.
 	      This means that the pore size distribution can only
-	      be considered accurate up to a maximum of
-	      \SIrange{3}{5}{\nano\metre}.
+	      be considered accurate up to a maximum of around
+	      \SI{3}{\nano\metre}.
 
 \end{itemize}
 

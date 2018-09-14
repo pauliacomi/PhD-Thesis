@@ -2,7 +2,7 @@
 
 \subsection{Specific surface area and pore volume calculation}
 
-\subsubsection{\gls{BET} surface area}\label{pyg:charac:betarea}
+\subsubsection{BET surface area}\label{pyg:charac:betarea}
 
 The \gls{BET} method~\cite{brunauerAdsorptionGasesMultimolecular1938}
 for determining surface area is the recommended \gls{IUPAC}
@@ -14,9 +14,9 @@ adsorption at \SI{77}{\kelvin}, although other adsorbates
 \ce{Kr} at \SI{77}{\kelvin}, \ce{CO2} at \SI{293}{\kelvin})
 have been used. In principle, any probe with an adsorption isotherm
 which can be described through the \gls{BET} equation in the low pressure regime
-can be used.
+is suitable for this method.
 
-As previously mentioned, \autoref{pyg:models:bet} the \gls{BET} model assumes
+As previously mentioned in \autoref{pyg:models:bet} the \gls{BET} model assumes
 that adsorption takes place in incremental layers on the material
 surface. Even if the adsorbent is porous, the initial amount adsorbed
 (usually between 0.05--0.4 \(p/p_0\)) can be
@@ -26,7 +26,7 @@ described through the equation written in its linear form:
 	\frac{p/p_0}{n_{ads} (1-p/p_0)} = \frac{1}{n_{ads}^m C} + \frac{C - 1}{n_{ads}^m C}(p/p_0)
 \end{equation}
 
-If a plot of the isotherm points as \({(p/p_0)}/{n_{ads}(1-p/p_0)}\)
+If a plot of the isotherm points transformed as \({(p/p_0)}/{n_{ads}(1-p/p_0)}\)
 versus \(p/p_0\) is generated, a linear region
 can usually be found. The slope and intercept of this line
 can then be used to calculate \gls{namon}, the amount adsorbed at the
@@ -54,7 +54,7 @@ several checks to ensure that the selected \gls{BET} region is valid:
 
 \begin{itemize}
 
-	\item The \gls{BET} (\gls{C}) obtained should be positive;
+	\item The \gls{BET} \gls{C} constant obtained should be positive;
 	\item In the corresponding Rouquerol plot where \(n_{ads}(1-p/p_0)\)
 	      is plotted with respect to \(p/p_0\), the points chosen for \gls{BET}
 	      analysis should be strictly increasing;
@@ -91,7 +91,7 @@ The slope and intercept of this line can then be used to calculate
 as \(K\), the Langmuir constant.
 %
 \begin{align}
-	n_{ads}^m & = \frac{1}{s} & K & = \frac{1}{i \times n_{ads}^m}
+	n_{ads}^m & = \frac{1}{s} & K & = \frac{1}{i n_{ads}^m}
 \end{align}
 %
 The surface area can then be calculated by using the monolayer
@@ -106,7 +106,7 @@ adsorption takes place until all active sites on the material
 surface are occupied, or until monolayer formation in the
 case of complete surface coverage. Most adsorption processes
 (except chemisorption) don't follow this behaviour, although 
-high temperature isotherms can often be estimated through this 
+high temperature isotherms can often be approximated through this 
 model. Therefore it is important to regard the Langmuir surface 
 area as an estimate.
 
@@ -180,7 +180,7 @@ conditions and \gls{mm} the molecular mass of the probe.
 If the linear region selected is after a vertical deviation,
 the intercept of the calculated line will no longer pass through
 the origin. This intercept can be used to calculate the volume of
-the filled pore through the following equation:
+the filled pores through the following equation:
 %
 \begin{equation}
 	V_{ads} = \frac{i M_m}{\rho_{l}}
@@ -191,7 +191,7 @@ with an ideal model, care must be taken to ensure that the t-curve
 is an accurate representation of the thickness of the adsorbate layer.
 Since there is no such thing as a universal thickness curve,
 a reliable model which is applicable to both material and adsorbate
-should be chosen. It should also be noted that, features on the t-plot
+should be chosen. It should also be noted that features on the t-plot
 found at loadings lower than the monolayer thickness may not have any
 physical meaning.
 
@@ -225,6 +225,6 @@ uses the known specific area of the reference material.
 The reference isotherm chosen for the \(\alpha_s\) method must
 be a description of adsorption on a completely non-porous sample
 of the same material. It is often impossible to obtain such
-a version. Furthermore, an adsorption isotherm on a non-porous
+a sample. Furthermore, an adsorption isotherm on a non-porous
 solid may be a challenging endeavour, due to the small ratio
 of surface area to volume.

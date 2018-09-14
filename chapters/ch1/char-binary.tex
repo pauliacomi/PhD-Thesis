@@ -12,8 +12,8 @@ in order to rapidly screen for potentially interesting separations
 starting from pure component data.
 
 To this end, several methods have been devised, with perhaps
-the most common approach as considering the adsorbed phase as
-an analogue to a fluid mixture, in a manner analogous to the
+the most common approach the assumption of the adsorbed phase as
+an analogue to a fluid mixture, in a similar manner to the
 vacancy solution theory presented in \autoref{pyg:models:vst}.
 This method, also known as \gls{IAST}
 will be presented here. Other multicomponent theories
@@ -27,11 +27,11 @@ prediction of multicomponent adsorption even when considering
 adsorption in microporous materials such as \glspl{MOF}.
 
 Originally derived by \citet{myersThermodynamicsMixedgasAdsorption1965},
-the \gls{IAST} model is based on three main assumptions. First, that the
+the \gls{IAST} model is based on three main assumptions. The first is that the
 same surface area is available for all components. Then it is
 assumed that the mixture behaves like an ideal solution at constant
-spreading pressure and temperature. This means the spreading pressure of
-each component is the same as the surface potential of the mixture \(\pi\)
+spreading pressure and temperature. This means the spreading pressure \(\pi\) of
+each component is the same as the surface potential of the mixture
 and therefore the mean strength of interaction is equal between all
 molecules of solution. Finally the surface adsorbed phase is assumed
 to be at equilibrium with the gas phase. \autoref{pyg:eqn:iast}
@@ -55,10 +55,10 @@ surface and \(x_i\) is its fraction in the adsorbed phase.
 In order to account for non-ideality of the gas phase
 fugacity can be used instead of pressure,
 with a suitable equation of state required to relate it to bulk pressure.
-The pressure and spreading pressure are then related through
+The pressure and spreading pressure are then calculated through
 the integrated Gibbs isotherm (\autoref{pyg:eqn:iast-2}). As the sum of all
 fractions in the adsorbed phase is equal to unity (\autoref{pyg:eqn:iast-3}),
-the equations can be solved for a given pressure and gas composition to give
+the equations can be solved for a given pressure and gas composition to obtain
 the fractions of each component in the adsorbed phase at the hypothetical
 pressure \(P_{i}^{0}\). The total amount adsorbed can then be calculated.
 %
@@ -76,7 +76,7 @@ component.
 
 In order to calculate the spreading pressure, an adsorption model
 such as the ones presented in \autoref{pyg:models} is required.
-By substituting the amount adsorbed (\gls{nads}) in \autoref{pyg:eqn:iast}
+By substituting the amount adsorbed (\gls{nads}) in \autoref{pyg:eqn:iast-2}
 and calculation of the resulting integral, an expression for
 spreading pressure can be determined. The integral can only be
 evaluated analytically in the case of a few models, for example in
