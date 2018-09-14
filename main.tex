@@ -67,6 +67,19 @@
 
 \appendix{}
 
+\vspace*{\fill}
+\begin{center}
+    {\Huge\bfseries\sffamily Appendix}
+    \addchaptertocentry{}{Appendix}
+\end{center}
+\vspace*{\fill}
+
+\KOMAoptions{chapterprefix=false}
+\addtocontents{toc}{
+\protect\setkomafont{chapterentry}{\protect\normalfont\protect\normalcolor}
+\protect\KOMAoptions{chapterentrydots}
+\RedeclareSectionCommand{chapter}
+}
 \newcommand*{\thisappx}{backmatter}
 
 \renewcommand*{\thisappx}{backmatter/a-charac}

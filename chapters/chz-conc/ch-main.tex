@@ -170,5 +170,8 @@ but many questions still remain to be answered, trials for future
 scientists and engineers alike.
 
 \pagebreak
+\let\oldaddcontentsline\addcontentsline% Store \addcontentsline
+\renewcommand{\addcontentsline}[3]{}% Make \addcontentsline a no-op
 \bibliographystyle{unsrtnat}
 \bibliography{\thisch/biblio/bib}
+\let\addcontentsline\oldaddcontentsline% Restore \addcontentsline

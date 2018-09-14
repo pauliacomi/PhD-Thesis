@@ -57,6 +57,12 @@
   unit=\si{\bar},
   description={pressure}
 }
+\newglossaryentry{V}{
+  type=notation,
+  name={\(V\)},
+  unit=\si{\metre^3},
+  description={volume}
+}
 \newglossaryentry{p0}{
   type=notation,
   name={\(p_0\)},
@@ -236,11 +242,11 @@
   unit=\si{\kilo\joule\per\mol},
   description={energy of adsorption}
 }
-\newglossaryentry{adsint}{
+\newglossaryentry{inter}{
   type=notation,
-  name={\(\Phi_{aa}\)},
+  name={\(\Phi_{x}\)},
   unit=---,
-  description={adsorbate-adsorbate interactions}
+  description={types of intermolecular interactions}
 }
 \newglossaryentry{sa}{
   type=notation,
@@ -261,8 +267,26 @@
   description={partial vacancy molar area for VST}
 }
 
-% calorimetry 
+% calorimetry
 
+\newglossaryentry{sexcess}{
+  type=notation,
+  name={\( \Gamma \)},
+  unit=\si{\milli\mol\per\metre^2},
+  description={surface excess concentration}
+}
+\newglossaryentry{potential}{
+  type=notation,
+  name={\( \mu \)},
+  unit=\si{\kilo\joule\per\mol^2},
+  description={chemical potential}
+}
+\newglossaryentry{pwell}{
+  type=notation,
+  name={\( \varepsilon \)},
+  unit=\si{\kilo\joule},
+  description={depth of a potential well}
+}
 \newglossaryentry{dh}{
   type=notation,
   name={\(\Delta_{ads} \dot{h}\)},
@@ -274,6 +298,60 @@
   name={\(\Delta_{ads} H\)},
   unit=\si{\kilo\joule\per\mol},
   description={integral enthalpy of adsorption}
+}
+\newglossaryentry{U}{
+  type=notation,
+  name={\(dU\)},
+  unit=\si{\kilo\joule},
+  description={change in system internal energy}
+}
+\newglossaryentry{Qrev}{
+  type=notation,
+  name={\(dQ_{rev}\)},
+  unit=\si{\kilo\joule},
+  description={reversible heat}
+}
+\newglossaryentry{Wrev}{
+  type=notation,
+  name={\(dW_{rev}\)},
+  unit=\si{\kilo\joule},
+  description={reversible work}
+}
+\newglossaryentry{du}{
+  type=notation,
+  name={\(\Delta_{ads} \dot{u}\)},
+  unit=\si{\kilo\joule\per\mol},
+  description={differential internal energy of adsorption}
+}
+\newglossaryentry{udot}{
+  type=notation,
+  name={\( \dot{u}^\sigma \)},
+  unit=\si{\kilo\joule\per\mol},
+  description={internal energy of the adsorbed phase}
+}
+\newglossaryentry{ugas}{
+  type=notation,
+  name={\( u^g \)},
+  unit=\si{\kilo\joule\per\mol},
+  description={internal energy of the gas phase}
+}
+\newglossaryentry{ds}{
+  type=notation,
+  name={\(\Delta_{ads} \dot{s}\)},
+  unit=\si{\kilo\joule\mol^{-1}\kelvin^{-1}},
+  description={differential entropy of adsorption}
+}
+\newglossaryentry{sdot}{
+  type=notation,
+  name={\( \dot{s}^\sigma \)},
+  unit=\si{\kilo\joule\mol^{-1}\kelvin^{-1}},
+  description={entropy of the adsorbed phase}
+}
+\newglossaryentry{sgas}{
+  type=notation,
+  name={\( s^g \)},
+  unit=\si{\kilo\joule\mol^{-1}\kelvin^{-1}},
+  description={entropy of the gas phase}
 }
 \newglossaryentry{dStr}{
   type=notation,

@@ -12,20 +12,20 @@ assessing the reliability of the available data.
 
 \subsection{The NIST ISODB dataset}
 
-The \gls{NIST}/ARPA-E database of adsorbent materials (ISODB) is a comprehensive
-set of adsorption isotherms which have been systematically
+The \gls{NIST}/ARPA-E database of adsorbent materials (ISODB) is a 
+comprehensive set of adsorption isotherms which have been systematically
 collected from peer-reviewed literature. The data includes
 measurements on a wide range of materials, from carbon, zeolite,
-and silica to \glspl{MOF} and other such \glspl{PCP}. This resource is a useful
-tool for reference purposes, as it contains isotherms with many probes
-at various temperatures. Furthermore, due to the availability of an
-\gls{API}, isotherm data can be easily
-accessed. As such, this database is a great
-source of data for the kind of large-scale processing which pyGAPS
-is designed for.
+and silica to \glspl{MOF} and other such \glspl{PCP}. This resource is
+a useful tool for reference purposes, as it contains isotherms with
+many probes at various temperatures. Furthermore, due to the
+availability of an \gls{API}, isotherm data can be easily
+accessed. As such, this database is a great source for the kind of
+large-scale processing which pyGAPS is designed for.
 
-The entire dataset in the \gls{NIST} adsorption database was downloaded using the
-publicly available \gls{API}. This yielded \(\approx \! 26000\) isotherms.
+The entire dataset in the \gls{NIST} adsorption database was 
+downloaded using the publicly available \gls{API}. This yielded 
+\(\approx \! 26000\) isotherms.
 In order to narrow down the dataset and ensure comparability
 the following sorting was performed.
 
@@ -42,7 +42,7 @@ the following sorting was performed.
 	      \si{\milli\mol\per\gram} using the pyGAPS conversion
 	      functionality to ensure a consistent unit set.
 	\item No isotherms with less than 6 measurement points were
-	      considered, as it was considered to be the bare
+	      selected, as it was considered to be the bare
 	      minimum required for characterisation.
 	\item Possible outliers were removed from the data by selecting
 	      only isotherms recorded under \SI{100}{\bar}, with maximum capacities
@@ -59,7 +59,7 @@ We can see that most isotherms are recorded at either
 \SI{77}{\kelvin}, \SI{273}{\kelvin} or \SI{298}{\kelvin} as
 these temperatures are readily available through immersion
 in liquid nitrogen, water-ice mixture, or a thermally controlled
-water bath respectively. In total, isotherms measured with all 20
+water bath, respectively. In total, isotherms measured with all 20
 probe gasses available in pyGAPS are found in the database,
 including four common vapours and all linear saturated hydrocarbons
 up to a carbon number of four.
@@ -88,14 +88,14 @@ up to a carbon number of four.
 
 For an initial round of data processing with pyGAPS,
 only isotherms recorded with nitrogen at \SI{77}{\kelvin}
-were selected. These make up \(\approx \! 3500\) datapoints,
+are selected. These make up \(\approx \! 3500\) datapoints,
 recorded on more than 2200 materials. The \gls{BET} surface area
-was then computed for each isotherm, with a distribution
+is then computed for each isotherm, with a distribution
 as seen in \autoref{pyg:fig:nist-dataset-area}.
 Unfortunately, as many isotherms do not have enough points
 in the low pressure region, computing a well-defined
 \gls{BET} surface area is impossible. In total, only around a
-third of the isotherms had enough data for this purpose.
+third of the isotherms have enough data for this purpose.
 Several materials are seen to be essentially non-porous
 with around 80 isotherms recorded having a \gls{BET} area of less
 than \SI{100}{\metre^2\per\gram}. As expected, a decrease in
@@ -109,7 +109,7 @@ of the ISODB dataset.
 \subsection{A comparison between surface area calculation methods}
 
 The Langmuir surface area is an often-reported alternative
-to the, now standard, \gls{BET} method area.
+to the IUPAC-recommended \gls{BET} area.
 With such a large dataset at our disposal, we can take
 the opportunity to observe the differences between results
 obtained with the two methods.
@@ -124,8 +124,8 @@ assuming adsorption up to a single monolayer with other
 characteristic phenomena such as multilayer adsorption,
 pore condensation or multiple types of adsorption types
 unable to be accounted for. It is for this reason that the 
-Langmuir \textit{should not be used} in adsorption regimes 
-such as nitrogen at \SI{77}{\kelvin}.
+Langmuir area \textit{should not be used} for
+nitrogen at \SI{77}{\kelvin}.
 
 If the partial pressure range is narrowed, by only using
 points up to 0.15 \(p/p_0\), the correlation improves
@@ -160,9 +160,10 @@ materials, due to adsorption in such samples being dominated
 by pore filling mechanisms rather than monolayer formation.
 However, as detailed by
 \citet{rouquerolBetEquationApplicable2007}
-and then also shown through comparing simulated and
-experimental data by
-\citet{waltonApplicabilityBETMethod2007}, the results
+and then also demonstrated by
+\citet{waltonApplicabilityBETMethod2007}
+through a comparison of simulated and
+experimental data, the results
 produced by judicious application of such models can relate
 well to the actual surface areas of \glspl{MOF}.
 
@@ -172,14 +173,15 @@ Before a deeper dive into attempting to relate adsorption isotherm
 derived parameters to structural properties, an analysis of the
 reliability of the data from the \gls{NIST} ISODB should be performed.
 
-The material with the most recorded isotherms is CuBTC, with
-122 datapoints. A spread of the calculated \gls{BET} surface areas,
+The material with the most recorded \ce{N2} isotherms at \SI{77}{\kelvin}
+is CuBTC, with a total of 122 datapoints. 
+A spread of the calculated \gls{BET} surface areas,
 together with the ``ideal'' area of this \gls{MOF} as obtained
 through simulations~\cite{parkHowReproducibleAre2017} is
 presented in \autoref{pyg:fig:nist-area-cubtc}
-To verify if the variability is due to uncertainty in the
-surface area calculation a secondary metric, namely the
-capacity at 0.5 \(p/p_0\) has been calculated and its
+To check if the variability is due to uncertainty in the
+surface area calculation, a secondary metric, namely the
+volumetric capacity at 0.5 \(p/p_0\) has been calculated and its
 distribution plotted alongside that of the \gls{BET} area. The
 identical trends in both parameters show that there is an
 inherent uncertainty in the dataset. The results not only
@@ -187,45 +189,51 @@ have a large standard deviation, but also do not have a
 typical normal distribution one would expect from repeated
 sampling of a physical property.
 
-Instead, three normal distributions appear to emerge, one with a
-median around \SI{500}{\metre^2\per\gram}, a second around \SI{1300}{\metre^2\per\gram}
-and a third with a median around \SI{1900}{\metre^2\per\gram} which also
-corresponds to the nitrogen accessible surface area determined through
-simulation. As the \gls{NIST} data also records the DOI for each isotherm, each
-\begin{wrapfigure}{h}{0.5\textwidth}
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.47\textwidth]{nist/nist-area-cubtc}%
+	\includegraphics[width=0.8\textwidth]{nist/nist-area-cubtc}%
 	\caption{A histogram and estimate of the probability density
 		function for (top) \gls{BET} surface area and (bottom) loading
 		at half saturation pressure for CuBTC. The black dotted line
-		is the simulated surface area of this \gls{MOF}.}%
-	\label{pyg:fig:nist-area-cubtc}
-\end{wrapfigure}
-measurement can be traced to the publication it originated in.
+		is the simulated surface area of this \gls{MOF}.
+	}\label{pyg:fig:nist-area-cubtc}
+\end{figure}
+
+Instead, three normal distributions appear to emerge, one with a
+median around \SI{500}{\metre^2\per\gram}, a second around 
+\SI{1300}{\metre^2\per\gram}
+and a third with a median around \SI{1900}{\metre^2\per\gram} which also
+corresponds to the nitrogen accessible surface area determined through
+simulation. As the \gls{NIST} data also records the DOI for each isotherm, 
+each measurement can be traced to the publication it originated in.
 By cherry-picking several studies from each normal distribution
-we can find that the low surface areas correspond to data
+we can attempt to find the cause of the large differences in \gls{KPI}.
+It emerges that some of the low surface areas correspond to data
 measured on modified versions of CuBTC, such as shaped
-samples (\SI{640}{\metre^2\per\gram})~\cite{liSeparationCO2CH42014}, hollow
-nanoparticles (\SI{450}{\metre^2\per\gram})~\cite{liControllableSynthesisMetal2013}
+samples (\SI{640}{\metre^2\per\gram})~\cite{liSeparationCO2CH42014}, 
+hollow nanoparticles 
+(\SI{450}{\metre^2\per\gram})~\cite{liControllableSynthesisMetal2013}
 or nanoplates
 (\SI{803}{\metre^2\per\gram})~\cite{pengSurfactantdirectedAssemblyMesoporous2012}.
 Studies selected from materials with higher surface area
 showed no consistent underlying cause for the variability,
-although some can be accounted for through synthesis method
-such as mechanosynthesis
+although some can be accounted for through the use of
+mechanosynthesis as a synthesis method
 (\SI{1700}{\metre^2\per\gram})~\cite{klimakowMechanochemicalSynthesisMetal2010},
-or structural defects (\SI{2050}{\metre^2\per\gram})~\cite{barinDefectCreationLinker2014}.
+or through the introduction of structural defects 
+(\SI{2050}{\metre^2\per\gram})~\cite{barinDefectCreationLinker2014}.
 
 To extend the analysis to other materials, \glspl{MOF} with
 at least 8 recorded nitrogen isotherms were selected, resulting in
-16 materials. A violin plot with the results of the calculation for
+16 chosen materials. A violin plot with the results of the calculation for
 these datapoints is presented in \autoref{pyg:fig:nist-area-repr}.
 The blue points mark the surface area of the material as
-obtained from literature of simulated values or, if not available,
-the original synthesis paper of the \gls{MOF} in question
-(numerical values and sources in \autoref{appx:pyg:tbl:materials}).
+obtained from simulation methods in literature or, if not available,
+what was considered as a reliable synthesis paper of the \gls{MOF} 
+in question (numerical values and sources can be found in 
+\autoref{appx:pyg:tbl:materials}).
 It is obvious that, in most cases, there is a large spread in
-the calculated values, with some samples such as IRMOF-1,
+the calculated surface areas, with some samples such as IRMOF-1,
 IRMOF-3 and MIL-101(Cr) having a surface area anywhere
 between \SIrange{200}{5000}{\metre^2\per\gram}. Other materials,
 such as ZIF-8, the MIL-53 family
@@ -242,8 +250,8 @@ although can still be shifted by 200 to \SI{500}{\metre^2\per\gram}.
 		of the probability density function using Gaussian kernels.
 		The median of each dataset is displayed as the horizontal line
 		between the two limits. Finally, the round blue point is the
-		\gls{BET} surface area of the material as reported in literature through
-		simulation or optimised synthesis.
+		\gls{BET} surface area of the material as reported in literature
+		through simulation or optimised synthesis.
 	}\label{pyg:fig:nist-area-repr}
 \end{figure}
 
@@ -253,7 +261,7 @@ and \ce{CO2}~\cite{espinalMeasurementStandardsData2013} measurements.
 Recently, Sholl and co-workers~\cite{parkHowReproducibleAre2017}
 have published a report putting into question the reproducibility
 or adsorption isotherms, using \ce{CO2} adsorption data from the
-\gls{NIST} adsorption database. Their findings highlight a large
+same \gls{NIST} database. Their findings highlight a large
 variability inherent
 to reported isotherms as on average \textit{``one in five \ce{CO2}
 	isotherms [\ldots] cannot be used to provide information that
@@ -265,7 +273,7 @@ The underlying cause for the poor reproducibility of adsorption
 isotherms, particularly those measured on metal organic frameworks,
 is not easy to pinpoint. A large contribution to this divergence
 is likely accounted for through the variation introduced by the
-sample preparation method and adsorption apparatus.
+sample preparation method and adsorption methodology.
 For example, a recent \gls{NIST} interlaboratory study in which \ce{CO2}
 isotherms were recorded on a reference
 material~\cite{nguyenReferenceHighpressureCO22018}, received six
@@ -275,12 +283,12 @@ insufficient activation conditions or improper choice of an
 equation of state. Other method-specific sources of error exist,
 such as the lack of a buoyancy correction when using a
 gravimetric system or a void volume correction when using
-a volumetric system, both of which can made if an accurate
+a manometric system, both of which can accounted for if an accurate
 determination of sample skeletal density is performed. Finally,
 small differences in thermal gradients, pressure transducer
 readings, and even the altitude at which the measurement takes place
 (if a phase change bath is used to control temperature)
-can also impact the final isotherm.
+can also impact the adsorption results.
 
 Such variation is likely minimised when using state-of-the-art
 adsorption equipment, which eliminates many of the concerns
@@ -288,7 +296,8 @@ associated with adsorption methodology. \textit{In situ}
 activation, internal consistency checks for pressure transducers,
 automatic measurement of skeletal density and associated
 corrections, reference cells for saturation pressure determination
-and many other sanity checks are implemented in these machines.
+and many other sanity checks are implemented automatically in these 
+machines.
 
 However, it is often the case that the most important factor
 in the repeatability of \gls{MOF} adsorption isotherms
@@ -300,10 +309,12 @@ of the material. Furthermore, IRMOF-3, the sample with the
 highest variability in the dataset is known to possess structural
 flexibility, with the activation procedure responsible for 
 any number of states from a completely open to a completely closed
-framework~\cite{nelsonSupercriticalProcessingRoute2009}, while its
+framework~\cite{nelsonSupercriticalProcessingRoute2009}. Its
 isoreticular analogue, IRMOF-8, is often synthesised with various 
 degrees of network
-interpenetration~\cite{feldblyumNoninterpenetratedIRMOF8Synthesis2012}. 
+interpenetration~\cite{feldblyumNoninterpenetratedIRMOF8Synthesis2012},
+which explains why the ideal surface area lies beyond the edges of the
+available experimental dataset. 
 In this sense, such an analysis of a large \gls{MOF} dataset can point out 
 which materials tend to be resistant (or susceptible) to the 
 aforementioned sources of variability 

@@ -23,7 +23,7 @@ Lennard-Jones type potential
 function~\cite{jonesDeterminationMolecularFields1924}.
 %
 \begin{equation}\label{calo:eqn:lennard-jones}
-	V_\text{LJ} = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6 \right]
+	P_\text{LJ} = 4\varepsilon \left[ \left(\frac{l_\sigma}{r}\right)^{12} - \left(\frac{l_\sigma}{r}\right)^6 \right]
 \end{equation}
 %
 The latter two types, Coulombic interactions \(\Phi_{C}\) and induction
@@ -37,9 +37,9 @@ in a non-charged system. These interactions can be referred to as
 \textit{``specific''}. 
 
 The ease with which a charge can induce such an interaction in a
-molecule is termed polarizability. The polarisation of the adsorbate
-by the pore wall is, in particular, a type of interaction which has 
-historically been sometimes included in the 
+adjacent molecule is termed polarizability. The polarisation of 
+the adsorbate by the pore wall is, in particular, a type of
+interaction which has historically been sometimes included in the 
 non-specific~\cite{barrerZeolitesClayMinerals1978} and other
 times in specific 
 category~\cite{coudertComputationalCharacterizationPrediction2016}. 
@@ -58,9 +58,11 @@ may also play a role in the overall strength of the guest-host
 attraction.
 
 The total interactions can also be broken down as contributions
-from adsorbate-adsorbent interactions and guest-guest interactions.
+from adsorbate-adsorbent interactions \(\Phi_{aA}\) and 
+guest-guest interactions \(\Phi_{aa}\).
 If changes in the adsorbent occur as a result of adsorption,
-a host-host or self-potential interaction should be considered.
+a host-host or self-potential interaction (\(\Phi_{AA}\) or 
+\(\Phi_{SP}\)) should be considered.
 The guest-host interaction can be assumed constant for a homogeneous
 surface or a function of coverage, in the case of a
 heterogeneous surface.
@@ -90,7 +92,7 @@ The surface excess may be considered a distinct thermodynamic phase,
 characterised by an area \(A\), a two-dimensional analogue of 
 pressure named spreading pressure \(\pi\) and a surface excess 
 concentration corresponding to the amount adsorbed per unit
-area or \(\Gamma = n^{\sigma}/A\).
+area or \(\Gamma = n_{ads}^{\sigma}/A\).
 
 The differential energy of adsorption can be described as the 
 change in the internal energy of the system upon the transition
@@ -108,7 +110,7 @@ gas and adsorbed phase/adsorbent energies we may obtain a
 Gibbs-Duhem type equation:
 %
 \begin{equation}
-	d \mu^{\sigma} = - \frac{S^{\sigma}}{n^{\sigma}} dT + \frac{A}{n^{\sigma}} d \pi
+	d \mu^{\sigma} = - \frac{S^{\sigma}}{n_{ads}^{\sigma}} dT + \frac{A}{n_{ads}^{\sigma}} d \pi
 \end{equation}
 %
 from which the Gibbs adsorption isotherm (\autoref{pyg:eqn:gibbs}) may
@@ -166,7 +168,7 @@ The contribution of non-specific effects such as \( \pi \)
 backbonding in porous coordination compounds~\cite{rubesAdsorptionPropanePropylene2013}
 can be examined by the choice of a suitable probe pair, such as a saturated
 and unsaturated version of a hydrocarbon (ethane/ethylene/acetylene).
-Guest-guest interactions during adsorption may also be monitored
+Guest-guest interactions during adsorption may also be monitored,
 with cooperative effects such as 2-dimensional analogues of phase
 changes~\cite{rouquerolCalorimetricEvidenceBidimensional1977}
 visible as peaks in the enthalpy curve.
@@ -176,25 +178,24 @@ adsorption can be a clear indication of such
 changes~\cite{bourrellyDifferentAdsorptionBehaviors2005}.
 The net enthalpy of adsorption is such a system is often
 lowered through the energetic contribution of the state
-change of the adsorbate, and may be of use for a reduction in
-the thermal load to be dissipated for adsorption or required to
-recover the adsorbed material~\cite{masonMethaneStorageFlexible2015}.
+change of the adsorbate.
 
 The differential enthalpy of adsorption is often represented as a
 function of partial coverage. In \autoref{calo:fig:enthalpy-iupac-iso},
 isotherm types as defined by \gls{IUPAC}~\cite{thommesPhysisorptionGasesSpecial2015}
 are presented together with a typical differential enthalpy
-curve~\cite{llewellynGasAdsorptionMicrocalorimetry2005}. Type I isotherms often
+curve~\cite{llewellynGasAdsorptionMicrocalorimetry2005}. 
+Type I isotherms often
 have an initial plateau, corresponding to adsorption in micropores
 until a sharp decrease at complete pore filling occurs. If the surface
 of the pores is heterogeneous, higher energy sites will be occupied
 first, resulting in a sharp slope at low loadings. Multilayer
 adsorption in non-porous or mesoporous materials (II and IV) yields
 a slowly decreasing enthalpy curve, as the solid-guest interactions
-drop off with increasing layers adsorbed. Finally, cooperative adsorption
+drop off with increasing layers adsorbed. Cooperative adsorption
 on non-interacting surfaces (such as water adsorption in hydrophobic porous
-materials) as seen in a type III isotherm, often gives rise to initial enthalpies
-of adsorption which are below the enthalpy of vaporisation.
+materials) as seen in a type III isotherm, often gives rise to initial 
+enthalpies of adsorption which are below the enthalpy of vaporisation.
 Finally, distinct peaks often accompany multilayer adsorption (Type VI)
 which are an indication of epitaxial phase
 changes at completion of each layer~\cite{llewellynAdsorptionMFItypeZeolites1993, %

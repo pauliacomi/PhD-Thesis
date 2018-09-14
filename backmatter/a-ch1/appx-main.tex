@@ -17,11 +17,34 @@ The PyPi distribution of the latest stable version can be found at
 \url{https://pypi.org/project/pygaps}
 or installed automatically through pip using \lstinline{pip install pygaps}.
 
-\section{Further pyGAPS examples0}\label{appx:pyg:examples}
+\section{Further pyGAPS examples}\label{appx:pyg:examples}
 
+\subsection{The generic isotherm print function}
+
+\begin{python}[caption={Generic info function},label={appx:lst:print_info}]
+isotherm.print_info()
+\end{python}
+\begin{pythonout}
+Experimental isotherm
+Material:               MCM-41
+Batch:                  Test
+Adsorbate used:         N2
+Isotherm temperature:   77.35 K
+Isotherm type:          standard N2 characterisation
+Machine:                Triflex
+User:                   PI
+Activation temperature: 150.0 C
+Source:                 MADIREL
+Units: 
+    Unit for loading:   mmol/g
+    Relative pressure
+Other properties:
+    id: 6b2804468823119a410c848a74debb38
+\end{pythonout}
 \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{printinfo}
     \caption{Resulting graph}\label{appx:pyg:print_info}
-
 \end{figure}
 
 \section{Information about materials chosen for reproducibility study}

@@ -259,5 +259,8 @@ processing methodology herein developed.
 
 \pagebreak
 
+\let\oldaddcontentsline\addcontentsline% Store \addcontentsline
+\renewcommand{\addcontentsline}[3]{}% Make \addcontentsline a no-op
 \bibliographystyle{unsrtnat}
 \bibliography{\thisch/biblio/bib}
+\let\addcontentsline\oldaddcontentsline% Restore \addcontentsline

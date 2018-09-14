@@ -37,18 +37,24 @@ isosteric enthalpy of adsorption.
 In order to approximate the partial differential, two or more
 isotherms are measured at different temperatures. The temperature
 range chosen is usually small, to maintain the assumption of invariance
-of isosteric enthalpy with temperature while still obtaining good 
+of isosteric enthalpy with temperature, while still obtaining good 
 separation between the two isotherms.
 Afterwards the isosteric enthalpy of adsorption can be calculated
-by using the pressures at which the loading is identical using the
-rearranged equation. By plotting the values of \(\ln p\) against
-\(1 / T\) we should obtain a straight line with a slope
+by using the pressures at which the loading is identical and the
+rearranged \autoref{calo:eqn:claus-clap}. 
+By plotting the values of \(\ln p\) against
+\(1 / T\) a straight line should be obtained, with a slope
 of \(- \Delta_{ads}\dot{h}_{T, \Gamma} / R_g\).
 
 As experimental isotherms do not necessarily have points spaced
-at equal loading intervals, interpolation is usually used to obtain
-data at the desired points. Alternatively, a model may be used
-to first fit the isotherm, which is then used for the calculation.
+at equal loading intervals, interpolation is often used to obtain
+data at the desired points. Alternatively, a model such as the 
+ones detailed in \autoref{pyg:models} may be first
+fitted to the isotherm, which is then used for the calculation.
+Both methods have merits: interpolation often yields errors 
+in the low pressure region, a factor mitigated when using a model.
+On the other hand, the results obtained are only as accurate as the
+model fit.
 
 The isosteric enthalpy is sensitive to differences in pressure between
 the two isotherms. If the isotherms measured are too close together,
@@ -84,7 +90,7 @@ thermopile. In order to ensure the ``isothermicity'' of the calorimeter, a
 suitable heat sink must be used, leading to two types of design.
 Ambient temperature calorimeters use resistance heating to
 maintain the internal temperature, while utilising the environment
-as its heat sink. At low temperature, the
+as their heat sink. At low temperature, the
 environment acts as a heat source and therefore the heat sink must
 be provided, often in the form of a constant-temperature bath
 undergoing a phase change (e.g.\ liquid \ce{N2}, \ce{Ar}) 
@@ -157,7 +163,7 @@ A reference volume is filled with gas at a pressure \(p\), which
 is allowed to equilibrate before a valve between the reference volume
 and the cell containing the adsorbate is opened, letting the
 gas adsorb onto the material. With small enough steps, the
-assumption of a reversible system can be approximated.
+assumption of a reversible system can be maintained.
 The peak in the calorimetric signal is integrated over time
 to give the total energy released during this adsorption step.
 
@@ -203,8 +209,8 @@ However, it has the advantage of ensuring complete equilibrium at
 each step, by observing the return to the baseline of the calorimetry
 signal or a stable pressure signal. On the other hand, the
 continuous method allows for subtle changes in the differential enthalpy of
-adsorption, such as those corresponding to adsorbed phase changes,
-to be seen experimentally. Additionally, the time-resolved data
+adsorption to be observed experimentally, such as those corresponding to
+adsorbed phase changes. Additionally, the time-resolved data
 can be used to investigate transient phenomena. Equilibrium between
 the adsorbed phase and gas phase is no longer guaranteed, and must be
 tested for by performing multiple experiments at different adsorbate
@@ -215,10 +221,10 @@ from the dead time of the calorimeter.
 \subsection{Experimental apparatus and accuracy}
 
 In this thesis, combined isotherms and enthalpy of adsorption
-measurements were made experimentally using a Tian-Calvet type
+measurements were performed experimentally using a Tian-Calvet type
 microcalorimeter coupled with a home-made manometric gas dosing
 system~\cite{llewellynGasAdsorptionMicrocalorimetry2005}.
-Two calorimeter designs were used, one for ambient temperature
+Two calorimeter designs are used, one for ambient temperature
 and one for low temperature adsorption, as displayed in
 \autoref{calo:fig:calo-types}.
 
@@ -244,7 +250,7 @@ the following raw data at specified intervals:
 	\item the temperature of the calorimeter, apparatus enclosure and room in \si{\degreeCelsius};
 	\item the calorimeter signal in \si{\milli\watt}.
 \end{itemize}
-Pressure is measured through the use of a double gauge assembly,
+Pressure is measured through the use of a double gauge assembly:
 a sensitive low pressure gauge (\SIrange{0.02}{1}{\bar},
 depending on the system) and a high pressure gauge (\SIrange{1}{60}{\bar}),
 in order to increase the accuracy in each range. Temperature is
@@ -262,7 +268,7 @@ as the volume of the system which is located inside the thermopile,
 a blank experiment with helium is performed for each cell.
 In this case, \ce{He} is considered a non-adsorbing probe, with the 
 two volumes determined by assuming that \(\Delta n_{ads} = 0\)
-and the recorded calorimeter signal
+and that the recorded calorimeter signal
 is exclusively due to the expansion work of the gas, respectively.
 
 \subsubsection{Low temperature calorimetry}\label{calo:ltc}
@@ -276,11 +282,11 @@ activation. Borosilicate glass is selected as
 the material of choice to prevent any thermal expansion induced leaks.
 The cell is then introduced into a \ce{LN2}-filled dewar, through 
 the bottom of the differential calorimeter. Good thermal equilibrium
-between the cell and surrounding thermopile is ensured using by 
-using a helium blanket in the calorimetric enclosure, kept under a small
-positive pressure through a continuous low flow. The gas dosing system
-and configuration is identical to the system used in ambient temperature
-calorimetry. A picture of the different components of the 
+between the cell and surrounding thermopile is ensured using through 
+the use of a helium blanket in the calorimetric enclosure, kept under a
+small positive pressure through a continuous low flow. The gas dosing 
+system and configuration is identical to the system used in ambient
+temperature calorimetry. A picture of the different components of the 
 setup can be seen in \autoref{calo:fig:ltc-setup}.
 
 \begin{figure}[htb]
@@ -304,7 +310,7 @@ of the calorimetric signal to its baseline (<\SI{5}{\micro\watt}).
 
 For the continuous method, a sonic nozzle is used to 
 maintain the flowrate between \SIrange{0.5}{2}{\micro\mol\per\minute},
-low enough that the system can be considered at equilibrium.
+low enough that the system can be considered at quasiequilibrium.
 The assumption of equilibrium is routinely verified by multiple
 experiments at different upstream pressures.
 A separate calibration step is performed at the start of each
@@ -324,10 +330,10 @@ a point is measured in relation to the previous one. Therefore,
 the error is cumulative with each successive measurement point,
 and is the largest contribution to the total error. The 
 uncertainty can be lowered dramatically by increasing 
-the available surface area inside the calorimeter.
+the material surface area inside the calorimeter.
 Between \SIrange{50}{200}{\milli\gram}
 of sample is used in each experiment, such that the specific
-surface area inside the calorimeter cell is larger than
+surface area in the cell is larger than
 \SI{50}{\metre^2\per\gram}. Finally, the REFPROP equation
 of state is used~\cite{lemmonNISTReferenceFluid1989}, 
 currently the most accurate available.
