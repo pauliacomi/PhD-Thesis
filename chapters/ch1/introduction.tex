@@ -7,14 +7,15 @@ worksheets being used for the calculations. As an example,
 it can be pointed out that one of the initial limitations of the
 Barrett-Joyner and Halenda method for determining pore size distribution
 was that each point had to be estimated with an approximation of critical
-pore radius, resulting in tedious work involved in the
-calculation~\cite{barrettDeterminationPoreVolume1951}.
+pore radius, resulting in tedious 
+work~\cite{barrettDeterminationPoreVolume1951}.
 
 The advent of computers meant that calculations could be performed
 quickly and reliably and led to the development of more computationally
-demanding methods for adsorption modelling and isotherm processing, such as the 
-density functional theory (DFT) and grand canonical monte carlo (GCMC) kernel fitting
-methods for pore size distribution~\cite{seatonNewAnalysisMethod1989,%
+demanding methods for adsorption modelling and isotherm processing, such 
+as the density functional theory (DFT) and grand canonical monte carlo 
+(GCMC) kernel fitting methods for pore size 
+distribution~\cite{seatonNewAnalysisMethod1989,%
 	tarazonaPhaseEquilibriaFluid1987}.
 Commercial adsorption equipment which offers the users
 a complete software solution for any isotherm calculations is now
@@ -27,9 +28,9 @@ there is a large pool of data published in the scientific community.
 Recent efforts have focused on building a database of adsorption
 isotherms~\cite{sideriusNISTARPAEDatabase2015}, to offer a searchable
 pool of standardised behaviours on different materials. This serves as
-both a useful reference for comparing synthesised compounds, as well as a
-method for quickly finding suitable materials which have the
-desired properties for a particular application.
+both a useful reference for comparing newly synthesised compounds, 
+as well as a method for scoping materials which have the
+required properties for a desired application.
 
 The abundance of data reflects a trend in recent years where, due
 to the prevalence of digital records and cheap storage, more
@@ -46,15 +47,16 @@ application~\cite{regeSimpleParameterSelecting2001, %
 adsorption.
 
 However, we feel that a critical step in the process has yet
-to be fully addressed. Transitioning from isotherms published in
-literature to the calculation of such \gls{KPI} requires individual
-implementation of previously mentioned techniques. As such,
-not only can errors arise in such implementations, but
-a critical survey of the results is tedious and time consuming.
-In conclusion, a standardised method of high throughput processing
-of such data would be invaluable not only for reference purposes,
+to be fully addressed. Transitioning from measured isotherms
+to the calculation of such \gls{KPI} requires individual
+implementation of previously mentioned techniques or the use of 
+``black box'' apparatus. As such,
+not only can errors arise in the implementation, but
+a critical survey of a large body of results is between time consuming
+and impossible. In conclusion, a standardised method of high throughput
+processing of such data would be invaluable not only for reference purposes,
 but also for in-depth studies of data reliability,
-structure-property relationships and effect of variables on
+structure-property relationships and effect of different variables on
 the adsorption properties of a material.
 
 \subsection*{Chapter summary}
@@ -63,10 +65,10 @@ In this chapter an open-source software package is presented, which
 is released under an MIT licence and written in Python, intended to be
 used for manipulation, storage, visualisation and processing of
 adsorption isotherms. The software is aimed to give users a powerful
-yet easy to use package that can perform the kind of processing
-common to adsorption methodology, but using large datasets of hundreds
+yet easy to use package that can determine the kind of \gls{KPI}
+common to adsorption methodology, while using large datasets of hundreds
 or thousands of isotherms. The code is then used to process a
-dataset of 26000 isotherms from the \gls{NIST} adsorption database in order
+dataset of 26 000 isotherms from the \gls{NIST} adsorption database in order
 to highlight the variability of adsorption data reported in literature
 on \glspl{MOF}.
 
@@ -75,7 +77,8 @@ on \glspl{MOF}.
 Paul Iacomi wrote the python code for the pyGAPS framework and is
 responsible for its publication and maintenance as an open source
 package. The \gls{IAST} functionality is a modified version of
-the pyIAST code, published by Cory Simon. Example data on reference 
+the pyIAST code, published by Cory 
+Simon~\cite{simonPyIASTIdealAdsorbed2016}. Example data on reference 
 materials was recorded by Paul Iacomi for Takeda 5A and UiO-66(Zr) 
 and by Emily Bloch on MCM-41 and porous silica. The bulk processing
 example data comes from the \gls{NIST} Adsorption Database, 
