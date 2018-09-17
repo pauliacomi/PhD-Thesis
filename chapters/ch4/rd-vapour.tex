@@ -59,9 +59,9 @@ can lead to hydrogen bonding.
     \label{shaping:fig:wateradsorption}
 \end{figure}
 
-Two indicators may highlight changes in material hydrophilicity: 
+Two visual indicators may highlight changes in material hydrophilicity: 
 the slope of the isotherm in the low relative pressure region 
-(\(p/p^0 < 0.3\)) and condensation steps in the isotherm. 
+(\(p/p_0 < 0.3\)) and condensation steps in the isotherm. 
 Adsorption at low pressures is representative of the initial
 interactions with the surface, as discussed in the previous section.
 The pressure at which condensation occurs in the pores of the material, 
@@ -73,7 +73,7 @@ isotherm may also be an indication of the nature of pores.
 The measured isotherms on water and methanol can be found
 in \autoref{shaping:fig:wateradsorption} 
 and \autoref{shaping:fig:methanoladsorption} respectively.
-Initial Henry constants have been calculated for the isotherms
+Initial Henry constants \gls{kH0} have been calculated for the isotherms
 using the initial point method, and are displayed in
 \autoref{shaping:fig:vapourkh}.
 
@@ -124,11 +124,11 @@ using the initial point method, and are displayed in
 
 On the parent UiO-66(Zr), the water isotherm shows a slow uptake 
 at the start, indicating a hydrophobic surface, and then shows 
-a small step at \(p/p^0 = 0.3\). While little is 
+a small step at \(p/p_0 = 0.3\). While little is 
 adsorbed on the \gls{MOF} before this step, its presence 
 at a low relative humidity is indicative of intrinsic defects
 in the framework~\cite{ghoshWaterAdsorptionUiO662014}.
-Complete saturation takes place around \(p/p^0 = 0.9\). 
+Complete saturation takes place around \(p/p_0 = 0.9\). 
 A wide hysteresis curve can be seen, which 
 does not fully close, even at low pressures. Both the
 saturation step and the condensation may be attributed 
@@ -136,7 +136,7 @@ to agglomeration of crystals and interparticle voids.
 
 The methanol isotherm has the same features as the water
 one, with the condensation step shifted at a much lower 
-partial pressure (\(10^{-1} p/p^0\)). It is likely that
+partial pressure (\(10^{-1} p/p_0\)). It is likely that
 the organic component of methanol interacts with the
 hydrophobic surface, thus permitting pore filling at
 lower pressures. This is also evidenced through the higher
@@ -163,35 +163,55 @@ on the polymer chains or has another underlying cause.
 
 \subsubsection{MIL-100(Fe)}
 
-The water isotherm on the powder MIL-100(Fe) material show a more 
-hydrophilic environment, with a higher initial uptake, and two 
-condensation steps at \(p/p^0 = 0.3\) and \(p/p^0 = 0.5\).
-At low pressures, adsorption takes place on metal sites in the 
-large cages, with clusters formed around these hydrophilic
-sites. The two steps correspond to the successive filling of the 
-\SI{2.5}{\nano\metre} and the \SI{2.9}{\nano\metre} pores. The
-adsorption and desorption branches show a hysteresis loop 
-formation, associated with the condensation in the largest 
-mesoporous spherical pore.
-
-The methanol isotherm on the same parent \gls{MOF} still presents 
-two condensation steps, which have been shifted at to 
+The methanol isotherm (\autoref{shaping:fig:methanolmil100}) on 
+the same parent \gls{MOF} still shows 
+two condensation steps, which have been shifted at a much
 lower pressure. There is no longer any hysteresis present,
 an indication that the critical pore radius for its formation
 is not attained when using methanol.
 
-If comparing the powder isotherms with their shaped counterparts,
-no differences in features are visible. Initial Henry's constant 
-is similar with all  
+When comparing the powder isotherms with their shaped counterparts,
+while the general features of the isotherm remain the same, 
+large shifts are seen in the capacity at different pressures.
+Adsorption of \ce{H2O} proceeds in an identical fashion
+on all forms until the condensation step at \(0.3~p/p^0\), where
+the alumina binder variant diverges to reach a plateau about
+\SI{5}{\milli\mol\per\gram} smaller than the \gls{PVA} and powder
+isotherms. The shape of the hysteresis loop also changes slightly,
+with a sharper slope on the adsorption branch that closes 
+before \(0.5~p/p^0\). Some changes can also be seen on the methanol
+adsorption isotherm, where the condensation steps are shifted 
+towards lower pressures. These features are a likely sign of 
+the pore filling of the alumina binder.
+However, no influence is seen on the initial filling behaviour
+as the Henry's constant confirms that low pressure 
+interactions do not change. 
+
+In terms of the pore volume, the \gls{MRA} isotherms 
+show the most drastic loss, consistent with the values 
+obtained with nitrogen at \SI{77}{\kelvin} and room temperature
+calorimetry experiments. On the other hand, polymer pellets differ 
+between the two vapours, with almost no capacity loss on water 
+and a large drop with methanol. A possible explanation is 
+pore occlusion, with the small cage windows being covered by 
+polymer chains. As the size of the water molecule is smaller 
+than methanol, more porosity is accessible through this probe.
+
+It is also interesting to note that the
+``gating'' effect seen with butane adsorption on the \gls{PVA} pellets
+in the original study~\cite{chanutObservingEffectsShaping2016}
+is not seen in the measured vapour isotherms, likely due to the 
+small kinetic radius of both probes.
 
 \subsubsection{MIL-127(Fe)}
 
-On the last \gls{MOF} powder, the water isotherm shows a hydrophilic
+On the last \gls{MOF} powder, the water isotherm 
+(\autoref{shaping:fig:watermil127}) shows a hydrophilic
 surface, with a highest initial slope out of the three 
 materials studied. The isotherm has two condensation steps,
-a low relative humidity one at \(0.15~p/p^0\), which corresponds
+a low relative humidity one at \(0.15~p/p_0\), which corresponds
 to the filling of the hydrophilic pore, and a condensation 
-step situated at \(0.5~p/p^0\) inside the more hydrophobic micropore.
+step situated at \(0.5~p/p_0\) inside the more hydrophobic micropore.
 No hysteresis is observed.
 
 As a striking difference from water behaviour, methanol adsorption
@@ -209,4 +229,6 @@ The similarities between the both variants of shaped pellets
 and the original powder confirms the previously observed 
 suitability of this \gls{MOF} towards the shaping process. The isotherms
 overlap almost fully, with a slight difference in maximum uptake
-in the order of powder > \gls{PVA} > alumina.
+in the order of powder > \gls{PVA} > alumina. The binder has not affected
+the interaction with the guest, as evidenced by the near-identical
+initial Henry constant.

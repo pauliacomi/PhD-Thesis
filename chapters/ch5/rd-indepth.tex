@@ -27,7 +27,7 @@ have a non-trivial saturation pressure at this temperature: Ar,
 noble gas, has a completely spherical molecule, which does not 
 induce any specific host-guest or guest-guest interactions. Nitrogen
 is commonly used as the probe in material characterisation, 
-and carries a weak quadrupole. Carbon monoxide has been used 
+and carries a weak quadrupole. Carbon monoxide is herein used 
 as it often forms coordination bonds through electron donation,
 as well as being a weak dipole and quadrupole.
 Finally oxygen has a weaker quadrupolar moment than 
@@ -139,7 +139,7 @@ be found in \autoref{appx:dut}.
 \end{figure}
 
 Selected isotherms and corresponding enthalpy curves for both 
-DUT-49 and DUT-149 are shown in \autoref{dut:fig:dut-ltc-comp1}
+DUT-49(o) and DUT-149 are shown in \autoref{dut:fig:dut-ltc-comp1}
 for \ce{N2} and \ce{CO} and in \autoref{dut:fig:dut-ltc-comp2}
 for \ce{Ar} and \ce{O2}. A cursory observation of the isotherms
 reveals that the DUT-149 framework is not as stiff as 
@@ -171,8 +171,8 @@ pore forms can be accessed~\cite{krauseEffectCrystalliteSize2018}.
 It can therefore be theorised that 
 nitrogen adsorption takes place near the lower limit of 
 favourable transition energetics, where particulate surface 
-effects can have a high influence on the stability domain of
-the open pore form.
+effects can have a high influence on the energy barrier of transition 
+from the open pore form.
 
 \subsubsection{Physical state of the adsorbate in the material pores}
 
@@ -234,23 +234,24 @@ electron donation or \(\pi\) backbonding interactions.
 
 \begin{figure}[htb]
     \centering
-    \begin{subfigure}[c]{0.5\linewidth}
-        \includegraphics[width=\linewidth]{rtc/dut-48-prop-enth}%
-        \caption{}\label{dut:fig:dut-48-prop-enth}
-    \end{subfigure}%
     \begin{subfigure}[h]{0.5\linewidth}
         \centering
         \(\vcenter{\hbox{{\includegraphics[width=0.9\linewidth]{dut-co}}}}\)%
         \caption{}\label{dut:fig:dut-co}
     \end{subfigure}%
-    \caption{(a) Enthalpy curves of propane and propylene on DUT-48 as 
-    a function of fractional loading, with higher enthalpy of 
-    adsorption of the unsaturated hydrocarbon at low loading as an 
-    indication of \(\pi\)-Cu interactions. (b) Photo of DUT-149 cells
+    \begin{subfigure}[c]{0.5\linewidth}
+        \includegraphics[width=\linewidth]{rtc/dut-48-prop-enth}%
+        \caption{}\label{dut:fig:dut-48-prop-enth}
+    \end{subfigure}%
+    \caption{(a) Photo of DUT-149 cells
     filled with CO and \ce{N2} at \SI{77}{\kelvin}. Note the 
     colour change of the CO-filled cell as evidence of the formation of 
-    \ce{Cu(II)\bond{...}CO} adducts.}%
-    \label{dut:fig:dut-48-prop}
+    \ce{Cu(II)\bond{...}CO} adducts.
+    (b) Enthalpy curves of propane and propylene on DUT-48 as 
+    a function of fractional loading, with higher enthalpy of 
+    adsorption of the unsaturated hydrocarbon at low loading as an 
+    indication of \( \pi \)-Cu interactions.
+    }\label{dut:fig:dut-48-prop}
 \end{figure}
 
 Such effects are noticeable in the CO adsorption isotherms, 
@@ -286,10 +287,10 @@ cation.
 In both the case of CO and \ce{C3H6}, the 
 stronger interactions occur only at fractional loadings below 0.1, 
 before the occurrence of \gls{NGA}. The enthalpy of 
-adsorption after this region take values which are close to
+adsorption after this region takes values which are close to
 those of similar probes (\ce{CO}-\ce{N2}, \ce{C3H6}-\ce{C3H8}).
 This is further evidence that, while specific guest-host interactions
-may exist, they play a negligible role in the mechanism of contraction.
+may exist, they seem to play a negligible role in the mechanism of contraction.
 
 \subsubsection{Pore filling mechanism of the \textit{op} phase}
 
@@ -321,6 +322,21 @@ nucleation occurs. Unfortunately, the presence of a hysteresis loop
 cannot be confirmed, as no desorption isotherms can be obtained 
 through the continuous method.
 
+\begin{figure}[b]
+	\centering
+	\includegraphics[width=\textwidth]{pore-filling}%
+    \caption{
+        (a) Experimental and simulated \ce{CD4} isotherms at 
+        \SI{111}{\kelvin} for \textit{op} and \textit{cp}. 
+        (b) Stacked simulated isotherms of different pores and 
+        experimentally obtained isotherm.
+        (c) Comparison of simulated (dashed lines) and experimental
+        (solid lines) for the three pores.
+        Vertical dashed black line indicates the region of \gls{NGA}.
+        All images reproduced with permission from Krause and collaborators.
+    }\label{dut:fig:pore-filling}
+\end{figure}
+
 For a better understanding of the pore filling mechanism, adsorption
 in DUT-49 was studied by Krause and collaborators 
 through \textit{in situ} \gls{NPD} during adsorption of
@@ -341,20 +357,6 @@ pore filling then takes place until a condensation step which
 leads to complete filling of all pores. This step coincides with 
 the structural transition associated with \gls{NGA} and is likely a driver 
 for the contraction.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{pore-filling}%
-    \caption{
-        (a) Experimental and simulated \ce{CD4} isotherms at 
-        \SI{111}{\kelvin} for \textit{op} and \textit{cp}. 
-        (b) Stacked simulated isotherms of different pores and 
-        experimentally obtained isotherm.
-        (c) Comparison of simulated (dashed lines) and experimental
-        (solid lines) for the three pores.
-        Vertical dashed black line indicates the region of \gls{NGA}.
-    }\label{dut:fig:pore-filling}
-\end{figure}
 
 \subsubsection{Relating adsorption conditions to structural contraction}
 
@@ -381,7 +383,7 @@ As the system contraction is responsible for a pressure increase
 in the unit cell, transition of any crystallite is likely to be a
 trigger of a cascade effect, where local increases in guest partial 
 pressure induce collapse of neighbouring particles. As such,
-deconvolution of the calorimeter peaks during the \gls{NGA} is a nearly 
+deconvolution of the calorimeter peaks during \gls{NGA} is a nearly 
 impossible task, since minute factors such as diffusion effects,
 cell geometry, sample amount or flowrate can drastically change 
 the shape of the evolved signal. However, integrating the heat 
@@ -390,13 +392,21 @@ substeps as it represents the total heat of the transition.
 The average values of the observed energetics of 
 \gls{NGA} presented in \autoref{dut:fig:ltc-peaks} paints an interesting
 picture regarding the influence of the adsorbate.
-The stress induced by the probe gas differs with its physical
-nature. A good indication of guest-guest interactions at 
+It appears as the total energy made available 
+for overcoming the structural transition barrier
+through the adsorption of guest differs with its physical
+nature, and therefore changes the surplus which can be recorded
+through calorimetry. In the case of \ce{N2}, it seems that energy 
+is instead \textit{required} for structural contraction to occur.
+This further highlights how nitrogen adsorption at \SI{77}{\kelvin}
+takes place at the edge of favourable transition energetics.
+
+A good indication of guest-guest interactions at 
 a particular temperature is the enthalpy of vaporisation 
 (\gls{dHvap}) of a saturated liquid. Indeed, the magnitude
 of the transition energy appears to be related to this value, as
 oxygen which has the highest \gls{dHvap} out of all probes 
-used also capable of inducing transition in stiffer frameworks. By
+used, is also capable of inducing transition in stiffer frameworks. By
 plotting the enthalpy of vaporisation for different adsorbates
 and adjusting it by assuming the energetic barrier is purely 
 entropic, a remarkable correlation with the existence windows
@@ -429,15 +439,20 @@ between the exothermicity of the transition step and the
 amount of fluid ejected from the structure pores during the \gls{NGA} 
 step, with nitrogen experiments generating the highest \(\Delta n_{NGA}\)
 even if the transition to a \textit{cp} state is incomplete.
+This reflects how the contraction barrier is, in this case, large enough 
+to allow for a high loading of the metastable \textit{op} form
+before being overcome.
 As the energy required for the expulsion of the material from the 
 pores can be thought of as the enthalpy of desorption of the same amount
 from the closed pore, this component should be considered if 
 attempting to calculate the energy difference between the two states.
+
 Repeating continuous microcalorimetry experiments at a different 
 temperature, such as in an argon bath at \SI{87}{\kelvin}, would 
 allow for the temperature dependence of the adsorbate influence 
-to be recorded. It is highly likely that \gls{NGA} would be completely 
-suppressed in the case of nitrogen and perhaps argon on DUT-49.
+to be recorded. It is highly likely that in such conditions 
+\gls{NGA} would be completely suppressed in the case of nitrogen 
+and perhaps argon on DUT-49.
 
 \subsubsection{Effect of cycling on DUT-49 transition}
 
@@ -452,6 +467,28 @@ sample at saturation pressure, the material can be kept in the
 \textit{op} phase. No \gls{NGA} has been observed with supercritical 
 adsorbates, which is why the material is normally activated via
 this method. 
+
+Repeating nitrogen adsorption on a DUT-49 sample which has been
+cycled in this manner reveals a different kind of isotherm, 
+as seen in \autoref{dut:fig:dut-49-cycle}. While the initial 
+part of the isotherms overlaps fully,
+the second experiment does not show an \gls{NGA} step. Further cycling 
+on this cell shows only isotherm of this type.
+Other repeat experiments with different cells
+(\autoref{appx:dut:fig:dut-49-N2-ltc}) show a progressive 
+suppression of the \gls{NGA} step accompanied by an upwards shift
+of the plateau at \(0.3~p/p_0\). It is likely that a structural 
+transition still occurs in the second cycle in \autoref{dut:fig:dut-49-cycle},
+signalled by the small peak in the enthalpy curve at the end of the 
+peak corresponding to the filling of the medium pore.
+Two progressive smaller steps can be seen in both isotherms. These
+may be associated with structural re-opening, but can also be due to
+pore filling steps in partly contracted pores. The differential enthalpy 
+peaks corresponding to the secondary steps in the isotherm are 
+of higher magnitude in the cycled isotherm suggesting a higher 
+contribution from the intermediate pore phase.
+This effect is not seen on cycling with other 
+adsorbents, as the \gls{NGA} transition is fully developed in each cycle. 
 
 \begin{figure}[htb]
     \centering
@@ -475,28 +512,6 @@ this method.
     cycled DUT-49. The lines are guides for the eye.
     }\label{dut:fig:dut-49-cycle}
 \end{figure}
-
-Repeating nitrogen adsorption on a DUT-49 sample which has been
-cycled in this manner reveals a different kind of isotherm, 
-as seen in \autoref{dut:fig:dut-49-cycle}. While the initial 
-part of the isotherms overlaps fully,
-the second experiment does not show an \gls{NGA} step. Further cycling 
-on this cell shows only isotherm of this type.
-Other repeat experiments with different cells
-(\autoref{appx:dut:fig:dut-49-N2-ltc}) show a progressive 
-suppression of the \gls{NGA} step accompanied by an upwards shift
-of the plateau at \(0.3~p/p_0\). It is likely that a structural 
-transition still occurs in the second cycle in \autoref{dut:fig:dut-49-cycle},
-signalled by the small peak in the enthalpy curve at the end of the 
-peak corresponding to the filling of the medium pore.
-Two progressive smaller steps can be seen in both isotherms. These
-may be associated with structural re-opening, but can also be due to
-pore filling steps in partly contracted pores. The differential enthalpy 
-peaks corresponding to the secondary steps in the isotherm are 
-of higher magnitude in the cycled isotherm suggesting a higher 
-contribution from the intermediate pore phase.
-This effect is not seen on cycling with other 
-adsorbents, as the \gls{NGA} transition is fully developed in each cycle. 
 
 A possible explanation can be found if recalling the effect 
 of crystal size on nitrogen induced 
@@ -537,7 +552,7 @@ kinetically controlled. The stability of the two phases
 depends on the combined contribution of the framework together
 with the stabilisation effect of the adsorbed molecules,
 which can also be represented as the
-difference in \textit{integral} enthalpy of adsorption between the 
+difference in \textit{integral} enthalpy of adsorption \gls{dH} between the 
 \textit{op} and \textit{cp} states. On the other hand, the 
 energy barrier between the two states can be traced to the 
 buckling limit of the linker.
