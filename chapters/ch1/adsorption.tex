@@ -144,10 +144,10 @@ of a Gibbs dividing surface.
 This approach describes the adsorbed phase only in terms
 of an \textit{excess} from the properties of the bulk phase.
 As represented in \autoref{pyg:fig:gibbs-surface}, the total
-amount adsorbed (\gls{ntot}) can be defined as:
+or \textit{absolute} amount adsorbed (\gls{ntot}) can be defined as:
 %
 \begin{equation}
-	n_{ads}^{a} = A \int_0^r c\ dz
+	n_{ads}^{a} = A \int_0^r c_{ads}\ dz
 \end{equation}
 %
 The imaginary Gibbs dividing surface is usually envisaged parallel to
@@ -161,9 +161,9 @@ excess amount (\gls{nex}) adsorbed is then:
 	n_{ads}^{\sigma} = n_{ads}^{a} +  c_{bulk} \cdot V_{ads}
 \end{equation}
 %
-As long as the volume of the adsorbed layer \gls{Vads} can be
+As long as the volume of the adsorbed layer (\gls{Vads}) can be
 considered negligible and the concentration of adsorbate in the bulk
-phase \gls{cbulk} is low, the total amount adsorbed and the surface
+phase (\gls{cbulk}) is low, the total amount adsorbed and the surface
 excess amount may be considered as approximately equal.
 This is usually the case for experiments such as nitrogen
 adsorption at \SI{77}{\kelvin}, or ambient temperature adsorption
@@ -193,7 +193,7 @@ are replaced by the 2-dimensional analogues of spreading pressure
 (\gls{sp}) and surface area (\gls{A}).
 %
 \begin{equation}\label{pyg:eqn:gibbs}
-	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n}{A} R_g T
+	\Big(\frac{d\pi}{d\ln{p}}\Big) = \frac{n_{ads}^{\sigma}}{A} R_g T
 \end{equation}
 %
 By substituting spreading pressure with an equation
@@ -263,10 +263,9 @@ loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
 %
 \begin{align}
 	r_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
-	r_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}
-	\label{pyg:eqn:langmuir_des}                                           \\
+	r_d                & = k_d \theta \label{pyg:eqn:langmuir_des} \\
 	r_a                & = r_d                                             \\
-	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}  \\
+	k_a p (1 - \theta) & = k_d \theta \\
 	n_{ads}(p)             & = n_{ads}^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
 \end{align}
 %
@@ -313,14 +312,14 @@ are formed. The conditions imagined by the \gls{BET} model are:
 
 A percentage of the surface \(\theta_x\) is occupied with
 x layers. For each layer at equilibrium, the adsorption 
-\(k_{a_x}\) and desorption \(k_{d_x}\) rates must be equal.
+\(k_{a_x}\) and desorption \(k_{d_x}\) constants must be equal.
 The Langmuir model is then applied for each of layer
 as shown in \autoref{pyg:tbl:bet-deriv}. It is assumed
 that the adsorption energy of a molecule on the second
 and higher layers is just the condensation energy of the
 adsorbent \(E_{i>1} = E_L\). Since it follows that
 all layers beside the first have the same properties,
-we can also define \(g= {k_{d_2}}{k_{a_2}} = {k_{d_3}}{k_{a_3}} =
+we can also define \(g= {k_{d_2}}/{k_{a_2}} = {k_{d_3}}/{k_{a_3}} =
 \cdots \).
 
 \begin{table}[h]
@@ -376,7 +375,7 @@ A constant \gls{C} may be defined such that:
 For all layers \(N\), the equations can be summed:
 %
 \begin{align}
-	\frac{n}{n_m} & = \sum_{i=1}^{N} i \theta^i = C
+	\frac{n}{n_m} & = \sum_{i=1}^{N} i \theta_i = C
 	\sum_{i=1}^{N} i x^i \theta_0
 	%
 	\intertext{and therefore}
