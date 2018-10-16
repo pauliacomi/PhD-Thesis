@@ -3,7 +3,7 @@
 %%% Acronyms
 
 
-\newacronym{CUS}{CUS}{coordinatively unsaturated sites)}
+\newacronym{CUS}{CUS}{coordinatively unsaturated sites}
 \newacronym{BTC}{BTC}{trimethyl 1,3,5-benzenetricarboxylate (trimesic acid)}
 \newacronym{BDC}{BDC}{1,4-benzenetricarboxylate (terephtalic acid)}
 \newacronym{VST}{VST}{vacancy solution theory}
@@ -112,6 +112,12 @@
   unit=\si{\kilo\gram\per\metre^3},
   description={density}
 }
+\newglossaryentry{rhol}{
+  type=notation,
+  name={\( \rho_l \)},
+  unit=\si{\kilo\gram\per\metre^3},
+  description={liquid density}
+}
 \newglossaryentry{vm}{
   type=notation,
   name={\( v_l \)},
@@ -169,11 +175,17 @@
   unit=\si{\metre^2},
   description={accessible surface area}
 }
+\newglossaryentry{cads}{
+  type=notation,
+  name={\(c_{ads}\)},
+  unit=\si{\mol\per\metre^3},
+  description={adsorbate concentration}
+}
 \newglossaryentry{cbulk}{
   type=notation,
   name={\(c_{bulk}\)},
   unit=\si{\mol\per\metre^3},
-  description={bulk fluid concentration}
+  description={bulk adsorbate concentration}
 }
 \newglossaryentry{nads}{
   type=notation,
@@ -236,6 +248,48 @@
   name={\(K_{H_0}\)},
   unit=\si{\milli\mol\gram^{-1}\bar^{-1}},
   description={Henry constant at zero loading}
+}
+\newglossaryentry{tToth}{
+  type=notation,
+  name={\( t \)},
+  unit=---,
+  description={Toth model power parameter}
+}
+\newglossaryentry{yVST}{
+  type=notation,
+  name={\( y_v \)},
+  unit=---,
+  description={activity coefficient of vacancy for VST}
+}
+\newglossaryentry{xVST}{
+  type=notation,
+  name={\( x_v \)},
+  unit=---,
+  description={molar fraction of vacancy for VST}
+}
+\newglossaryentry{caVST}{
+  type=notation,
+  name={\( \Lambda_{v1} \)},
+  unit=---,
+  description={interaction constant for Wilson VST model}
+}
+\newglossaryentry{cbVST}{
+  type=notation,
+  name={\( \Lambda_{v1} \)},
+  unit=---,
+  description={interaction constant for Wilson VST model}
+}
+\newglossaryentry{ccVST}{
+  type=notation,
+  name={\( \alpha_{1} \)},
+  unit=---,
+  description={adsorbate molar area for Flory-Huggins VST model}
+}
+\newglossaryentry{cdVST}{
+  type=notation,
+  name={\( \alpha_{v} \)},
+  unit=---,
+  description={vacancy molar area for Flory-Huggins VST model}
 }
 \newglossaryentry{Eads}{
   type=notation,
@@ -303,6 +357,24 @@
   unit=\si{\gram\per\milli\mol},
   description={Langmuir transform graph intercept}
 }
+\newglossaryentry{stpl}{
+  type=notation,
+  name={\(s_{t}\)},
+  unit=\si{\gram\per\milli\mol},
+  description={linear t-plot graph slope}
+}
+\newglossaryentry{itpl}{
+  type=notation,
+  name={\(i_{t}\)},
+  unit=\si{\gram\per\milli\mol},
+  description={linear t-plot graph intercept}
+}
+\newglossaryentry{salpha}{
+  type=notation,
+  name={\(s_{\alpha}\)},
+  unit=\si{\gram\per\milli\mol},
+  description={linear \(\alpha\)-plot graph slope}
+}
 % calorimetry
 
 \newglossaryentry{sexcess}{
@@ -327,7 +399,7 @@
   type=notation,
   name={\( r \)},
   unit=\si{\metre},
-  description={distance between particles in the Lennard-Jones potential}
+  description={inter-particle distance in the Lennard-Jones potential}
 }
 \newglossaryentry{LJs}{
   type=notation,

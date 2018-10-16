@@ -171,11 +171,11 @@ it will represent the total surface area of the material.
 If at the end of the curve, it will instead represent adsorption on
 external surface area. The formula to calculate an area starting
 from the t-plot slope is presented in \autoref{pyg:fig:areatplot},
-where \(\rho_{l}\) is the liquid density of the adsorbate at experimental
+where \gls{rhol} is the liquid density of the adsorbate at experimental
 conditions and \gls{mm} the molecular mass of the probe.
 %
 \begin{equation}\label{pyg:fig:areatplot}
-	A_{t-plot} = \frac{s M_m}{\rho_{l}}
+	A_{t-plot} = \frac{s_t M_m}{\rho_{l}}
 \end{equation}
 
 If the linear region selected is after a vertical deviation,
@@ -184,7 +184,7 @@ the origin. This intercept can be used to calculate the volume of
 the filled pores through the following equation:
 %
 \begin{equation}
-	V_{ads} = \frac{i M_m}{\rho_{l}}
+	V_{ads} = \frac{i_t M_m}{\rho_{l}}
 \end{equation}
 
 As the t-plot method compares the experimental isotherm
@@ -220,7 +220,7 @@ that the surface area calculation from linear regions observed
 uses the known specific area of the reference material.
 %
 \begin{equation}
-	A_{\alpha_s} = \frac{s A_{ref}}{{(n_{ads, ref}^{0.4})}}
+	A_{\alpha_s} = \frac{s_{\alpha} A_{ref}}{{(n_{ads, ref}^{0.4})}}
 \end{equation}
 
 The reference isotherm chosen for the \(\alpha_s\) method must

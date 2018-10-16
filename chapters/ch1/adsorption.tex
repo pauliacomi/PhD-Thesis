@@ -144,7 +144,9 @@ of a Gibbs dividing surface.
 This approach describes the adsorbed phase only in terms
 of an \textit{excess} from the properties of the bulk phase.
 As represented in \autoref{pyg:fig:gibbs-surface}, the total
-or \textit{absolute} amount adsorbed (\gls{ntot}) can be defined as:
+or \textit{absolute} amount adsorbed (\gls{ntot}) can be defined as
+the integral of the adsorbate concentration gradient (\gls{cads}) from 
+the adsorbate surface to the bulk concentration delimiting surface:
 %
 \begin{equation}
 	n_{ads}^{a} = A \int_0^r c_{ads}\ dz
@@ -247,13 +249,13 @@ is based on several assumptions.
 \end{itemize}
 
 Using these assumptions we can define rates for both adsorption and
-desorption. The adsorption rate \(r_a\) (\autoref{pyg:eqn:langmuir_ads})
+desorption. The adsorption rate (\(r_a\), \autoref{pyg:eqn:langmuir_ads})
 will be proportional to the number of sites available on the surface,
 as well as the number of molecules in the gas, which is given by
 pressure.
-The desorption rate \(r_d\), on the other hand, will be proportional to the
+The desorption rate, on the other hand, will be proportional to the
 number of occupied sites and the energy of adsorption
-(\autoref{pyg:eqn:langmuir_des}).
+(\(r_d\), \autoref{pyg:eqn:langmuir_des}).
 It is also useful to define \(\theta = n_{ads}/n_{ads}^m\) as the fractional
 surface coverage, the number of sites occupied divided by the total 
 sites. At equilibrium, the rate of adsorption and the rate of
@@ -264,13 +266,15 @@ loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
 \begin{align}
 	r_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
 	r_d                & = k_d \theta \label{pyg:eqn:langmuir_des} \\
-	r_a                & = r_d                                             \\
+	%
+	\intertext{and since at equilibrium \(r_a = r_d\)}
+	%
 	k_a p (1 - \theta) & = k_d \theta \\
 	n_{ads}(p)             & = n_{ads}^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
 \end{align}
 %
-The Langmuir constant \(K\) is the product of the individual
-desorption and adsorption constants \(k_a\) and \(k_d\) and exponentially
+The Langmuir constant \(K\) is the division of the individual
+desorption and adsorption rate constants \(k_a\) and \(k_d\) and exponentially
 related to the energy of adsorption \gls{Eads}.
 
 A common extension to the Langmuir model is to consider
@@ -312,15 +316,17 @@ are formed. The conditions imagined by the \gls{BET} model are:
 
 A percentage of the surface \(\theta_x\) is occupied with
 x layers. For each layer at equilibrium, the adsorption 
-\(k_{a_x}\) and desorption \(k_{d_x}\) constants must be equal.
-The Langmuir model is then applied for each of layer
-as shown in \autoref{pyg:tbl:bet-deriv}. It is assumed
-that the adsorption energy of a molecule on the second
+and desorption rates must be equal.
+The Langmuir model is then applied for each layer, with a 
+mathematical description found in \autoref{pyg:tbl:bet-deriv}.
+The energy of adsorption on the material surface is identical 
+for all molecules and is represented by \(E_1\).
+It is assumed that the adsorption energy of a molecule on the second
 and higher layers is just the condensation energy of the
 adsorbent \(E_{i>1} = E_L\). Since it follows that
 all layers beside the first have the same properties,
-we can also define \(g= {k_{d_2}}/{k_{a_2}} = {k_{d_3}}/{k_{a_3}} =
-\cdots \).
+we can also define a constant 
+\(g= {k_{d_2}}/{k_{a_2}} = {k_{d_3}}/{k_{a_3}} = \cdots \).
 
 \begin{table}[h]
 	\centering
@@ -356,13 +362,13 @@ we can also define \(g= {k_{d_2}}/{k_{a_2}} = {k_{d_3}}/{k_{a_3}} =
 	\end{tabular}
 \end{table}
 %
-The coverage for each layer \gls{cov} can now be
+The coverage for an arbitrary layer \(\theta_i\) can now be
 expressed in terms of \(\theta_0\).
 %
 \begin{align}
-	\theta_i & = \Big[p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(-\frac{E_1}{R_gT}\Big)}\Big] x^{i-1} \theta_0
+	\theta_i & = \Big[p \frac{k_{a_1}}{k_{d_1}} \exp{\Big(\frac{E_1}{R_gT}\Big)}\Big] x^{i-1} \theta_0
 	\intertext{where}
-	x        & = \frac{p}{g} \exp{\Big(-\frac{E_L}{R_gT}\Big)}
+	x        & = \frac{p}{g} \exp{\Big(\frac{E_L}{R_gT}\Big)}
 \end{align}
 %
 A constant \gls{C} may be defined such that:
@@ -409,7 +415,7 @@ the following expression:
 	n_{ads}(p) = n_{ads}^m \frac{K p}{{[1 + {(K p)}^t]}^{1/t}}
 \end{equation}
 %
-The parameter \(t\) is a measure of the system heterogeneity.
+The parameter \gls{tToth} is a measure of the system heterogeneity.
 Thanks to this additional parameter, the Toth equation can
 accurately describe a large number of adsorbent/adsorbate systems
 and, due to its correct behaviour when approaching both the low and high
@@ -422,7 +428,7 @@ and alcohols on activated carbons and zeolites.
 The Temkin adsorption
 isotherm~\cite{temkinKineticsAmmoniaSynthesis1940},
 like the Langmuir model, considers
-a surface with \gls{namon} identical adsorption sites, but takes into
+a surface with identical adsorption sites, but takes into
 account adsorbate-adsorbate interactions by assuming that the
 enthalpy of adsorption is a linear function of coverage.
 The formula in \autoref{pyg:eqn:temkin} is derived
@@ -553,7 +559,7 @@ equated give the following equation of state for the adsorbed phase:
 	\pi = - \frac{R_g T}{\sigma_v} \ln{y_v x_v}
 \end{equation}
 %
-where \(y_v\) is the activity coefficient and \(x_v\) is the mole
+where \gls{yVST} is the activity coefficient and \gls{xVST} is the mole
 fraction of the vacancy in the adsorbed phase, while \gls{pmola}
 is the partial molar area of the adsorbate following the 
 convention of \citet{lucassen-reyndersSurfaceEquationState1972}. 
@@ -574,7 +580,7 @@ coefficients \(f(\theta)\). One option is to use the
 Wilson~\cite{suwanayuenGasAdsorptionIsotherm1980} approach,
 which expresses the activity coefficient in terms
 of the mole fractions of the two species (adsorbate and vacancy) and
-two constants \(\Lambda_{1v}\) and \(\Lambda_{1v}\). The equation
+two constants \gls{caVST} and \gls{cbVST}. The equation
 then for activity coefficients becomes:
 %
 \begin{equation}\label{pyg:eqn:wvst}
@@ -598,7 +604,7 @@ activity coefficient. \(f(\theta)\) is represented as
 	\alpha_{1v} = \frac{\alpha_{1}}{\alpha_{v}} - 1
 \end{equation}
 %
-where \(\alpha_{1}\) and \(\alpha_{v}\) are the molar areas of the
+where \gls{ccVST} and \gls{cdVST} are the molar areas of the
 adsorbate and the vacancy respectively.
 Both the Wilson and Flory–Huggins expressions for the vacancy-adsorbate
 interactions can be directly inserted in the general \gls{VST} model
