@@ -267,7 +267,7 @@ desorption are equal, therefore the two equations can be combined.
 	%
 	\intertext{and since at equilibrium \(r_a = r_d\)}
 	%
-	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)} \\
+	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)}
 \end{align}
 %
 The equation can then be arranged to obtain an expression for the
@@ -384,18 +384,21 @@ A constant \gls{C} may be defined such that:
 %
 For all layers \(N\), the equations can be summed:
 %
-\begin{align}
-	\frac{n}{n_m} & = \sum_{i=1}^{N} i \theta_i = C
+\begin{equation}\label{pyg:eqn:pre-bet}
+	\frac{n}{n_m} = \sum_{i=1}^{N} i \theta_i = C
 	\sum_{i=1}^{N} i x^i \theta_0
-	%
-	\intertext{and also}
-	%
-	\theta_0      & = 1 - \sum_{1}^{N} \theta_i \\
+\end{equation}
+%
+The following two relationships can also be written:
+%
+\begin{align}
+	\theta      & = 1 - \sum_{i=1}^{N} \theta_i &\quad
 	\sum_{i=1}^{N} i x^i & = \frac{x}{{(1-x)}^2}
 \end{align}
 %
-It is usually assumed that the number of layers tends to infinity 
-\(N = \infty\) as the partial pressure increases to 1. 
+which can be substituted in \autoref{pyg:eqn:pre-bet}.
+It is also usually assumed that the number of layers tends to infinity 
+\( N = \infty \) as the partial pressure increases to 1. 
 In this case, we obtain the \gls{BET} equation as:
 %
 \begin{equation}\label{pyg:eqn:bet}
