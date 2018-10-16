@@ -160,6 +160,8 @@ _minted*
 
 # nomencl
 *.nlg
+*.not
+*.ntn
 *.nlo
 *.nls
 
