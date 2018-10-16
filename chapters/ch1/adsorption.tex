@@ -260,18 +260,22 @@ It is also useful to define \(\theta = n_{ads}/n_{ads}^m\) as the fractional
 surface coverage, the number of sites occupied divided by the total 
 sites. At equilibrium, the rate of adsorption and the rate of
 desorption are equal, therefore the two equations can be combined.
-The equation can then be arranged to obtain an expression for the
-loading called the Langmuir model (\autoref{pyg:eqn:langmuir}).
 %
 \begin{align}
 	r_a                & = k_a p (1 - \theta) \label{pyg:eqn:langmuir_ads} \\
-	r_d                & = k_d \theta \label{pyg:eqn:langmuir_des} \\
+	r_d                & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)} \label{pyg:eqn:langmuir_des} \\
 	%
 	\intertext{and since at equilibrium \(r_a = r_d\)}
 	%
-	k_a p (1 - \theta) & = k_d \theta \\
-	n_{ads}(p)             & = n_{ads}^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
+	k_a p (1 - \theta) & = k_d \theta \exp{\Big(-\frac{E_{ads}}{R_gT}\Big)} \\
 \end{align}
+%
+The equation can then be arranged to obtain an expression for the
+loading, the Langmuir model (\autoref{pyg:eqn:langmuir}).
+%
+\begin{equation}
+	n_{ads}(p) = n_{ads}^m \frac{Kp}{1+Kp} \label{pyg:eqn:langmuir}
+\end{equation}
 %
 The Langmuir constant \(K\) is the division of the individual
 desorption and adsorption rate constants \(k_a\) and \(k_d\) and exponentially
@@ -384,10 +388,10 @@ For all layers \(N\), the equations can be summed:
 	\frac{n}{n_m} & = \sum_{i=1}^{N} i \theta_i = C
 	\sum_{i=1}^{N} i x^i \theta_0
 	%
-	\intertext{and therefore}
+	\intertext{and also}
 	%
-	\theta_0      & = 1 - \sum_{1}^{N} \theta_i
-	\sum_{i=1}^{N} i x^i = \frac{x}{{(1-x)}^2}
+	\theta_0      & = 1 - \sum_{1}^{N} \theta_i \\
+	\sum_{i=1}^{N} i x^i & = \frac{x}{{(1-x)}^2}
 \end{align}
 %
 It is usually assumed that the number of layers tends to infinity 
