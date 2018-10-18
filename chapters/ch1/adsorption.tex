@@ -319,7 +319,22 @@ are formed. The conditions imagined by the \gls{BET} model are:
 \end{itemize}
 
 A percentage of the surface \(\theta_x\) is occupied with
-x layers. For each layer at equilibrium, the adsorption 
+x layers up to the maximum of \(N\) layers. 
+The sum of all these fractions adds up to unity.
+%
+\begin{align}
+	\sum_{i=0}^{N} \theta_i = 1 &\quad consequently &\quad 
+	\theta_0 &= 1 - \sum_{i=1}^{N} \theta_i
+\end{align}
+%
+Furthermore, the total amount adsorbed can be expressed as 
+a function of the amount adsorbed at monolayer capacity.
+%
+\begin{equation}\label{pyg:eqn:bet-amount}
+	\frac{n}{n_m} = \sum_{i=1}^{N} i \theta_i 
+\end{equation}
+%
+For each layer at equilibrium, the adsorption 
 and desorption rates must be equal.
 The Langmuir model is then applied for each layer, with a 
 mathematical description found in \autoref{pyg:tbl:bet-deriv}.
@@ -382,24 +397,27 @@ A constant \gls{C} may be defined such that:
 	\theta_i & = C x^i \theta_0
 \end{align}
 %
-For all layers \(N\), the equations can be summed:
+The expression for \(\theta_i\) can be substituted in \autoref{pyg:eqn:bet-amount}
 %
 \begin{equation}\label{pyg:eqn:pre-bet}
 	\frac{n}{n_m} = \sum_{i=1}^{N} i \theta_i = C
 	\sum_{i=1}^{N} i x^i \theta_0
 \end{equation}
 %
-The following two relationships can also be written:
+The following two mathematical relationships can also be written:
 %
 \begin{align}
-	\theta      & = 1 - \sum_{i=1}^{N} \theta_i &\quad
+	\sum_{i=1}^{N} x^i & = \frac{x}{(1-x)} &\quad
 	\sum_{i=1}^{N} i x^i & = \frac{x}{{(1-x)}^2}
 \end{align}
 %
-which can be substituted in \autoref{pyg:eqn:pre-bet}.
+which can be substituted in \autoref{pyg:eqn:pre-bet}
+together with the expression for \(\theta_0\).
 It is also usually assumed that the number of layers tends to infinity 
-\( N = \infty \) as the partial pressure increases to 1. 
-In this case, we obtain the \gls{BET} equation as:
+\( N = \infty \) as the partial pressure increases to 1.
+In this case, we replace \(x\) by the ratio of \(p\) and 
+the vapour pressure of the adsorbent to obtain the \gls{BET} 
+equation as:
 %
 \begin{equation}\label{pyg:eqn:bet}
 	n_{ads}(p) = n_{ads}^m \frac{C (p/p_0)}{(1-p/p_0)[1-(p/p_0)+ C (p/p_0)]}
