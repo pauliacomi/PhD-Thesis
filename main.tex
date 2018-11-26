@@ -20,7 +20,6 @@
 \input{frontmatter/license}
 \input{frontmatter/quote}
 \newpage\null\thispagestyle{empty}\newpage
-\input{frontmatter/abstract}
 \pagebreak
 \input{frontmatter/acknowledgements}
 \pagebreak
@@ -82,6 +81,7 @@
 \protect\KOMAoptions{chapterentrydots}
 \RedeclareSectionCommand{chapter}
 }
+
 \newcommand*{\thisappx}{backmatter}
 
 \renewcommand*{\thisappx}{backmatter/a-charac}
@@ -92,6 +92,9 @@
 
 \renewcommand*{\thisappx}{backmatter/a-uncert}
 \include{\thisappx/appx-main}
+
+\renewcommand*{\thisappx}{backmatter}
+\include{\thisappx/contributions}
 
 \renewcommand*{\thisappx}{backmatter/a-ch1}
 \renewcommand*{\thisch}{chapters/ch1}
@@ -115,6 +118,10 @@
 
 % Backmatter
 \backmatter{}
+
+\newpage\null\thispagestyle{empty}\newpage
+\pagebreak
+\input{frontmatter/abstract}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
