@@ -182,11 +182,11 @@ Both \texttt{PointIsotherm}s and \texttt{ModelIsotherm} can
 be created from an instance of the other, by using the 
 available functions. As an example, a \texttt{ModelIsotherm} is automatically
 generated from the previous isotherm using the function in
-\autoref{lst:model}, which fits all available models and selects
+\autoref{pyg:lst:model}, which fits all available models and selects
 the one with the lowest residuals between the fitted function
 and the real data.
 
-\begin{python}[caption={Guessing the best model},label={lst:model}]
+\begin{python}[caption={Guessing the best model},label={pyg:lst:model}]
 model = pygaps.ModelIsotherm.from_pointisotherm(iso, guess_model=True)
 \end{python}
 \begin{pythonout}
